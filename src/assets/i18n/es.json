@@ -1,0 +1,91 @@
+{
+  "lenVal": "es",
+  "navbar": {
+    "volunteer-head": "Soy voluntario",
+    "want-coll": "Quiero Aportar",
+    "activities": "Actividades"
+  },
+
+  "want-donate": {
+    "title": "FORMULARIO DE REGISTRO DE INFORMACIÓN",
+    "next-button": "SIGUIENTE"
+  },
+  "personal-info":{
+    "title": "INFORMACIÒN PERSONAL",
+    "subtitle":"PARA PODER SER PARTE DEL PROGRAMA SEMILLAS, INGRESA Y ENVIA TUS DATOS",
+    "fieldName":"Nombre(s)",
+    "fieldNameHint":"Puede Ingresar mas de un nombre",
+    "fieldNameError":"Debe ingresar el nombre",
+    "fieldLastName":"Apellido(s)",
+    "fieldLastNameHint":"Puede Ingresar mas de un apellido",
+    "fieldLastNameError":"Debe ingresar el apellido",
+    "fieldEmail":"Correo",
+    "fieldEmailError":"Debe ingresar el correo",
+    "fieldPhone":"Celular",
+    "fieldPhoneError":"Debe ingresar un celular",
+    "fieldBirthdate":"Fecha de nacimiento",
+    "fieldId":"Carnet De Identidad",
+    "fieldIdError":"Debe ingresar el carnet de identidad",
+    "fieldCountry":"País",
+    "fieldCity":"Ciudad",
+    "fieldAddress":"Dirección",
+    "fieldAddressError":"Debe ingresar una dirección"
+  },
+
+  "tipos-de-aporte":{
+    "title-aporte-unico":"Consiste en realizar un aporte de mas de 25 $ o su equivalente de 175 Bs. Podrá elegir el metodo de pago de su eleccion y el dia del es actual en elque realizará sus aporte. Asi mismo, si desea  recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos. ",
+    "title-aporte-constante":"Consiste en realizar un aporte mensual de mas de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el que desee empezar el proceso de aporte (Solo Podra elegir los 3 meses de a partir del mes actual). Podrá elegir el método de pago de su elección la fecha de cobro en la que se espera su aporte, el medio por el cual se desea recibir su recordatorio de aporte mensual. Asi mismo, si desea recibir noticias de los últimos logros delPrograma Semillas gracias a los aportes obtenidos.",
+    "opcion-1":"Opción 1",
+    "opcion-2":"Opción 2",
+    "boton-volver":"VOLVER",
+    "boton-siguiente":"SIGUIENTE"
+  },
+
+  "detalles-del-aporte":{
+    "title-aporte-unico":"APORTE UNICO",
+    "campo-monto-aporte-unico":"Monto de Aporte",
+    "campo-obligatorio-monto-aporte-unico":"Debe ingresar el monto de aporte",
+    "campo-metodo-de-pago-aporte-unico":"Método de Pago",
+    "campo-obligatorio-metodo-de-pago-aporte-unico":"Debe elegir el metodo de pago",
+    "campo-fecha-de-aporte-unico":"Fecha de aporte",
+    "campo-obligatorio-fecha-de-aporte-unico":"Debe elegir una fecha",
+    "title-aporte-constante":"APORTE CONSTANTE",
+    "campo-monto-aporte-constante":"Monto de Aporte",
+    "campo-obligatorio-monto-aporte-constante":"Debe ingresar el monto de aporte",
+    "campo-metodo-de-pago-aporte-constante":"Método de Pago",
+    "campo-obligatorio-metodo-de-pago-aporte-constante":"Debe elegir el metodo de pago",
+    "campo-mes-de-inicio-aporte-constante":"Mes de inicio",
+    "campo-obligatorio-mes-de-inicio-aporte-constante":"Debe elegirel mes en el que empezara el ciclo de aportes",
+    "campo-dia-de-aporte-constante":"Dia de aporte",
+    "campo-obligatorio-dia-de-aporte-constante":"Debe elegir el dia del mes en el ue realizara su aporte",
+    "campo-metodo-de-recordatorio-de-aporte-constante":"Metodo de recordatorio",
+    "campo-obligatorio-metodo-de-recordatorio-aporte-constante":"Debe elegir un metodo para recibir recordatorios",
+    "campo-metodo-envio-de-noticias-aporte-constante":"Metodo envio de noticias",
+    "campo-desea-recibir-noticias":"¿Desea recibir noticias?",
+    "boton-si":"SI",
+    "boton-no":"NO",
+    "boton-volver":"VOLVER",
+    "boton-siguiente":"SIGUIENTE"
+  },
+
+  "enviar-datos":{
+    "campo-pregunta-eviar-datos":"¿Esta segur@ de enviar sus datos?",
+    "campo-si-estoy-seguro":"SI, ESTOY SEGUR@",
+    "boton-enviar-datos":"ENVIAR DATOS"
+  },
+
+  "dolares-en-alimento":{
+    "title-pregunta":"¿COMO SE TRANSFORMA 5 DOLARES EN ALIMENTO?",
+    "texto-1":"Todos los fondos recaudados por el Programa Semilla tienen como objetivo explusivo optimizar el trabajo de la Institución mediante la compra de: ",
+    "texto-alimneto-duradero":"Alimentos duraderos u alimentos no habituales en donaciones",
+    "texto-combustible-gasto":"Combustible y otros gastos de logistica que implican el traslado de alimentos",
+    "texto-material":"Material de bioseguridad para nuestros voluntarios"
+  },
+
+  "eres-voluntario":{
+    "texto-voluntario":"Si eres voluntario, por favor Inicia Sesión con las credenciales proporcionadas por el Programa Semillas",
+    "boton-inicio-sesion":"INICIAR SESION"
+  }
+
+
+}

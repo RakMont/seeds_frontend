@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "value": "LLAMADA_TELEFONICA",
+      "selected": true,
+      "name": "LLAMADA TELEFÓNICA"
+    },
+    {
+      "value": "CORREO_ELECTRONICO",
+      "selected": false,
+      "name": "CORREO ELECTRÓNICO"
+    },
+    {
+      "value": "MENSAJE_WHATSSAP",
+      "selected": false,
+      "name": "MENSAJE DE WHATSAPP"
+    }
+  ]
+}

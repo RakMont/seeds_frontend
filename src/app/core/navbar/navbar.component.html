@@ -1,0 +1,57 @@
+<div class="nav1">
+  <div class="menu">
+  </div>
+</div>
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="leftmenu">
+    <button *ngIf="loggedIn && inputSideNav.mode === 'over'"
+            mat-icon-button (click)="inputSideNav.toggle()">
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../../assets/seeds.png" /></a>
+  </div>
+  <button mat-icon-button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+          aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarButtonsExample">
+    <ul class="navbar-nav justify-content-start">
+      <li class="nav-item" *ngIf="!loggedIn">
+        <a class="nav-link" routerLink="quiero-aportar">{{'navbar.want-coll' | translate}}</a>
+      </li>
+      <li class="nav-item" *ngIf="!loggedIn">
+        <a class="nav-link" routerLink="login-volunteer">{{'navbar.volunteer-head' | translate}}</a>
+      </li>
+      <li class="nav-item" role="presentation" *ngIf="!loggedIn">
+        <a class="nav-link" routerLink="actividades-organizacion">{{'navbar.activities' | translate}}</a>
+      </li>
+      <li class="nav-item" role="presentation" *ngIf="!loggedIn">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button (click)="changeLen('en')" mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>EN</span>
+          </button>
+          <button (click)="changeLen('es')" mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>ES</span>
+          </button>
+        </mat-menu>
+      </li>
+      <li class="nav-item" role="presentation" *ngIf="loggedIn">
+        <div class="current-user" *ngIf="currentUser">{{currentUser.name}} {{currentUser.lastname}}</div>
+      </li>
+
+      <li class="nav-item" role="presentation" *ngIf=" loggedIn">
+        <a class="item">
+          <button mat-icon-button  (click)="logOut()" class="ui green button">
+            <mat-icon> person_pin</mat-icon>
+          </button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

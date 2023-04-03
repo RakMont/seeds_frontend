@@ -1,0 +1,362 @@
+{
+  "rows": [
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "No",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Nombre",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Elia Martell",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Correo",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "elia@gmail.com",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo Aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e0b51c",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Aporte Único",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Ingreso",
+            "order": 0,
+            "propertyType": "Date",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "2022-10-01 09:12:27.183",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "library_books",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "Donations",
+              "contentTooltip": "Ver semillas asignadas",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "seedId",
+                  "paramContent": "1"
+                },
+                {
+                  "paramName": "trackingAssignmentId",
+                  "paramContent": "1"
+                },
+                {
+                  "paramName": "contributionConfigId",
+                  "paramContent": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "No",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "2",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Nombre",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "prueba isdasd",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Correo",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "ari2@gmail.com",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo Aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e0b51c",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Aporte Constante",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Ingreso",
+            "order": 0,
+            "propertyType": "Date",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "2022-10-03 02:19:43.72",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "library_books",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "Donations",
+              "contentTooltip": "Ver semillas asignadas",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "seedId",
+                  "paramContent": "1"
+                },
+                {
+                  "paramName": "trackingAssignmentId",
+                  "paramContent": "1"
+                },
+                {
+                  "paramName": "contributionConfigId",
+                  "paramContent": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

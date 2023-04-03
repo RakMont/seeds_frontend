@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "value": "1",
+      "selected": true,
+      "name": "ENERO"
+    },
+    {
+      "value": "2",
+      "selected": false,
+      "name": "FEBRERO"
+    },
+    {
+      "value": "3",
+      "selected": false,
+      "name": "MARZO"
+    },
+    {
+      "value": "4",
+      "selected": false,
+      "name": "ABRIL"
+    },
+    {
+      "value": "5",
+      "selected": false,
+      "name": "MAYO"
+    },
+    {
+      "value": "6",
+      "selected": false,
+      "name": "JUNIO"
+    },
+    {
+      "value": "7",
+      "selected": false,
+      "name": "JULIO"
+    },
+    {
+      "value": "8",
+      "selected": false,
+      "name": "AGOSTO"
+    },
+    {
+      "value": "9",
+      "selected": false,
+      "name": "SEPTIEMBRE"
+    },
+    {
+      "value": "10",
+      "selected": false,
+      "name": "OCTUBRE"
+    },
+    {
+      "value": "11",
+      "selected": false,
+      "name": "NOVIEMBRE"
+    },
+    {
+      "value": "12",
+      "selected": false,
+      "name": "DICIEMBRE"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "rows": [
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "prueba isdasd",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "312312",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#6db669",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Aceptado",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "edit",
+              "color": "#8B9068",
+              "clickable": true,
+              "clickedAction": "EditContr",
+              "contentTooltip": "Editar Datos",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "1"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "voice_over_off",
+              "color": "#DB4035",
+              "clickable": true,
+              "clickedAction": "Unactive",
+              "contentTooltip": "Desactivar",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "1"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+[
+  {
+    "text": "Semillas",
+    "icon": "wc",
+    "children": [
+      {
+        "text": "Pendientes de revisión",
+        "icon": "hourglass_empty",
+        "routerLink": "admin/semillas/pendientes"
+      },
+      {
+        "text": "Rechazados",
+        "icon": "thumb_down_alt",
+        "routerLink": "admin/semillas/rechazadas"
+      },
+      {
+        "text": "Semillas Oficiales",
+        "icon": "how_to_reg",
+        "routerLink": "admin/semillas"
+      },
+      {
+        "text": "Registrar Semilla",
+        "icon": "person_add",
+        "routerLink": "/admin/new-seed"
+      }
+    ]
+  },
+  {
+    "text": "Responsables",
+    "icon": "supervised_user_circle",
+    "children": [
+      {
+        "text": "Responsables",
+        "icon": "group",
+        "routerLink": "admin/ver-voluntarios"
+      }
+    ]
+  },
+  {
+    "text": "Seguimiento",
+    "icon": "track_changes",
+    "children": [
+      {
+        "text": "Responsables de seguimiento",
+        "icon": "supervisor_account",
+        "routerLink": "/admin/tracking"
+      },
+      {
+        "text": "Reportes Semillas",
+        "icon": "layers",
+        "routerLink": "/admin/tracking/all-seeds"
+      },
+      {
+        "text": "Aportes recibidos",
+        "icon": "layers",
+        "routerLink": "/admin/tracking/donations"
+      },
+      {
+        "text": "Recordatorios",
+        "icon": "email",
+        "routerLink": "/admin/tracking/reminder-emails"
+      }
+    ]
+  },
+  {
+    "text": "Administración",
+    "icon": "inventory_2",
+    "children": [
+      {
+        "text": "Souvenirs",
+        "icon": "card_giftcard",
+        "routerLink": "/admin/souvenirs/benefited-seeds"
+      },
+      {
+        "text": "Actividades",
+        "icon": "local_activity",
+        "routerLink": "/admin/activities/manage-activities"
+      }
+    ]
+  }
+]

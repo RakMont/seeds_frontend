@@ -1,0 +1,430 @@
+{
+  "rows": [
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "No",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Fecha Prevista",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "12/02/2022",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Fecha Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "12/02/2022",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Monto de Pago",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "35 BOB",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Método de Pago",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e0b51c",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Codigo QR",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Voluntario Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo.Sangueza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "edit",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "EditTracking",
+              "contentTooltip": "EDITAR",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "trackingrecordId",
+                  "paramContent": "1"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "delete",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "DeleteRecord",
+              "contentTooltip": "ELIMINAR",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "trackingrecordId",
+                  "paramContent": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "No",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Fecha Prevista",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "12/02/2022",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Fecha Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "12/02/2022",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Monto de Pago",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "35 BOB",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Método de Pago",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e0b51c",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Codigo QR",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Voluntario Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo.Sangueza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "edit",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "EditTracking",
+              "contentTooltip": "EDITAR",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "trackingrecordId",
+                  "paramContent": "1"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "delete",
+              "color": "#88cc77",
+              "clickable": true,
+              "clickedAction": "DeleteRecord",
+              "contentTooltip": "ELIMINAR",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "trackingrecordId",
+                  "paramContent": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

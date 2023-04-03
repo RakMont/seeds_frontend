@@ -1,0 +1,748 @@
+{
+  "rows": [
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla aplicante",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ariana Lusendri Sagab",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "65987213",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "PENDIENTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Registrador",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo Sanguesa",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Acciones",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla aplicante",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ariana Lusendri Sagab",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "65987213",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "PENDIENTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Registrador",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo Sanguesa",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Acciones",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla aplicante",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ariana Lusendri Sagab",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "65987213",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "PENDIENTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Registrador",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo Sanguesa",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Acciones",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla aplicante",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ariana Lusendri Sagab",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "65987213",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "PENDIENTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Registrador",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Cielo Sanguesa",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Acciones",
+            "order": 0,
+            "propertyType": "string",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": null
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
