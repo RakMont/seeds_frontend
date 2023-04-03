@@ -48,13 +48,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { HomeComponent } from './feature/home/home.component';
+import { PublicActivitiesComponent } from './feature/public-activities/public-activities.component';
+import { LoginPageComponent } from './feature/login-page/login-page.component';
+import { SeedFormPageComponent } from './feature/seed-form-page/seed-form-page.component';
+import { LogInComponent } from './feature/login-page/log-in/log-in.component';
+import { PersonalInfoComponent } from './shared/seed-form/personal-info/personal-info.component';
+import { ConstantDonationComponent } from './shared/seed-form/constant-donation/constant-donation.component';
+import { UniqueDonationComponent } from './shared/seed-form/unique-donation/unique-donation.component';
+import { NewSeedFormComponent } from './shared/seed-form/new-seed-form/new-seed-form.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    PublicActivitiesComponent,
+    LoginPageComponent,
+    SeedFormPageComponent,
+    LogInComponent,
+    PersonalInfoComponent,
+    ConstantDonationComponent,
+    UniqueDonationComponent,
+    NewSeedFormComponent
   ],
   imports: [
     BrowserModule,

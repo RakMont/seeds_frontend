@@ -2,3 +2,95 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.mat-mdc-form-field{
+  width: 100%;
+  font-size: 14px!important;
+  letter-spacing: 0.05em !important;
+  //margin-bottom: 12px;
+  .mat-mdc-floating-label{
+    font-size: 16px!important;
+    letter-spacing: 0.08em !important;
+    //color: #000000!important;
+  }
+  .input{
+    font-size: 14px!important;
+    letter-spacing: 0.05em !important;
+  }
+  .mat-mdc-select-value-text{
+    font-size: 14px!important;
+  }
+}
+
+.header{
+  border-bottom: 1px solid #2e7d32;
+  width: 96% !important;
+  padding-bottom: 8px;
+  margin: 0 auto !important;
+}
+
+.img{
+  width: 200px;
+  max-height: 50px;
+}
+.title{
+  float: right;
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding: 10px 0;
+}
+
+.mat-dialog-content{
+  padding: 36px !important;
+  letter-spacing: 1px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/*NUEVO*/
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
+}
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  //background-color: #A5D6A7;
+  background-color: #162939;
+  color: #FFFFFF!important;
+  //width: 94%;
+  //position: relative;
+}
+.dialog-header{
+  //padding:  12px;
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}
+
+
+.mat-mdc-dialog-actions{
+  padding-bottom: 16px!important;
+}
+
+mat-error{
+  color: 	#ff5a5f!important;
+}

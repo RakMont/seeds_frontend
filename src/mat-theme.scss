@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+$yellow-accent: '#e0b51c';
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$green-palette, 800);
+$my-accent: mat.define-palette(mat.$yellow-palette, 800);
+
+$my-warn: mat.define-palette(mat.$grey-palette, 900);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+@include mat.core-theme($my-theme);
+@include mat.button-theme($my-theme);
+@include mat.all-component-themes($my-theme);
