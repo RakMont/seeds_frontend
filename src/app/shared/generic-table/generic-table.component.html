@@ -1,0 +1,63 @@
+<div class="table-cont">
+  <table mat-table [dataSource]="data" matSort (matSortChange)="sortData($event)">
+    <ng-container [matColumnDef]="column.key" *ngFor="let column of columns">
+      <ng-container *ngIf="column.canSort; else noSort">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="{{ column.key }}">
+          {{ column.key }}
+        </th>
+      </ng-container>
+      <ng-template #noSort>
+        <th mat-header-cell *matHeaderCellDef>{{ column.key }}</th>
+      </ng-template>
+      <ng-container mat-cell *matCellDef="let element">
+        <ng-container *ngFor="let cell of element['cells']">
+          <ng-container *ngIf="cell['cellHeader'].key === column.key">
+            <td
+              [ngStyle]="{'background-color':cell['cellProperty'].color}"
+              [class]="!cell['cellProperty'].color ? 'none' : 'none'">
+              <ng-container *ngIf="!isChip(cell['contents']) else chips">
+                <ng-container *ngFor="let cont of cell['contents']">
+                  <ng-container *ngIf="cont['contentType'] === 'text'">
+                    <span>{{ cont.content }}</span>
+                  </ng-container>
+                  <!--
+                   <ng-container *ngIf="cont['contentType'] === 'chipContent'">
+                    <span
+                      class="chip-element"
+                      [ngStyle]="{'background-color': cont.color, 'color':'#FFFFFF'}">
+                      {{cont.content}}
+                    </span>
+                  </ng-container>
+                   -->
+                  <ng-container *ngIf="cont['contentType'] === 'iconAccion'">
+                    <button
+                      class="mat-icon-button"
+                      [matTooltip]="cont['contentTooltip']"
+                      matTooltipClass="tooltip"
+                      mat-icon-button
+                      (click)="onclickevent(cont)">
+                      <mat-icon [ngStyle]="{'color': cont.color}">{{cont.iconName}}</mat-icon>
+                    </button>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+              <ng-template #chips>
+                <mat-chip-listbox>
+                  <mat-chip *ngFor="let cont of cell['contents']"
+                            [ngStyle]="{'background-color': cont.color}">
+                    <span class="mat-chip"> {{cont.content}}</span>
+                  </mat-chip>
+                </mat-chip-listbox>
+              </ng-template>
+            </td>
+          </ng-container>
+
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
