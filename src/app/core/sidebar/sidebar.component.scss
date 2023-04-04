@@ -1,0 +1,38 @@
+.example-events {
+  width: 250px;
+  height: 150px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
+.active, .active:hover{
+  background-color: #049B2D;
+}
+.mat-nav-list .mat-list-item{
+  color: #343A40;
+  font-size: 0.8em!important;
+  //font-size: 13px;
+}
+.mat-nav-list .mat-expansion-panel-header{
+  color: #343A40;
+  font-size: 0.8em!important;
+  background-color: #A5D6A7;
+  //font-size: 13px;
+}
+
+.active2, .active2:hover{
+  background-color: #049B2D;
+}
+
+.element{
+  font-size: 12px!important;
+  font-weight: 400!important;
+  display: flex;
+  padding: 4px 0;
+}
+.element-inside{
+  font-size: 12px!important;
+  font-weight: 400!important;
+  display: flex;
+  padding: 6px 0 6px 16px;
+}
