@@ -103,4 +103,12 @@ export class PersonalInfoComponent implements OnInit {
       }
     })
   }
+
+
+  next(): void {
+    this.emitter.emit({tabAction: {number: 0}}) ;
+  }
+  goDetails(donationType: string): void {
+    this.emitter.emit({tabAction: {number: 2, action: donationType}}) ;
+  }
 }

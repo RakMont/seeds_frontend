@@ -101,4 +101,45 @@
       </div>
     </div>
   </form>
+
+  <div class="donations">
+      <mat-card (click)="goDetails('UNIQUE')">
+        <mat-card-title>
+          <button mat-button class="positive">APORTE ÚNICO</button>
+        </mat-card-title>
+        <mat-card-content class="content">
+          Consiste en realizar un aporte
+          de más de 25$ o su equivalente de 175 Bs.
+          Podrá elegir el método de pago de su elección y el día del mes actual en el que realizará su aporte.
+          Así mismo, si desea
+          recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos.
+
+        </mat-card-content>
+        <mat-card-actions class="float-bottom">
+          <mat-icon matSuffix>check_circle</mat-icon>
+          Opcion 1
+        </mat-card-actions>
+      </mat-card>
+      <mat-card (click)="goDetails('CONSTANT')">
+        <mat-card-title>
+          <button  mat-button  class="positive">APORTE
+            CONSTANTE</button>
+        </mat-card-title>
+        <mat-card-content class="content">
+          onsiste en realizar un aporte mensual de más
+          de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el
+          que desea empezar el proceso de aporte (Solo Podrá elegir los 3 meses a partir del mes actual). Podrá
+          elegir el método
+          de pago de su elección la fecha de cobro en la que se esperara su aporte,
+          el medio por el cual desea recibir su recordatorio de aporte mensual. Así mismo, si desea recibir
+          noticias de los
+          últimos logros del Programa Semillas gracias a los aportes obtenidos.
+        </mat-card-content>
+        <mat-card-actions class="float-bottom">
+          <mat-icon matSuffix>check_circle</mat-icon>
+          Opcion 2
+        </mat-card-actions>
+      </mat-card>
+    </div>
 </div>
+
