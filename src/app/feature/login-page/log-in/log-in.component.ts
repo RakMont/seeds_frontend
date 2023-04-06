@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatDialogRef} from "@angular/material/dialog";
+import {OauthService} from "../../../core/services/oauth.service";
 
 @Component({
   selector: 'app-log-in',
@@ -10,7 +11,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 })
 export class LogInComponent implements OnInit {
   constructor(public formgroup: UntypedFormBuilder,
-             // private oauthservice: OauthService,
+              private oauthservice: OauthService,
               private router: Router,
               public dialogRef: MatDialogRef<LogInComponent>)
   { }
@@ -23,8 +24,8 @@ export class LogInComponent implements OnInit {
   }
 
   login(): void{
-    //const payload = this.formLogin.value;
-    /*this.oauthservice.loginVolunter(payload)
+    const payload = this.formLogin.value;
+    this.oauthservice.loginVolunter(payload)
       .subscribe((data) => {
         this.dialogRef.close();
         this.oauthservice.login(data.token);
@@ -39,7 +40,7 @@ export class LogInComponent implements OnInit {
       }, ((error) => {
         this.oauthservice.logout();
         console.log('error', error);
-      }));*/
+      }));
   }
 
   get getUsernameError(): string{

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {LogInComponent} from "./log-in/log-in.component";
+import {TokenService} from "../../core/services/token.service";
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +16,7 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    //private tokenService: TokenService,
+    private tokenService: TokenService,
     //private oauthService: OauthService,
   ) { }
 
