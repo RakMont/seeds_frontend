@@ -32,7 +32,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
-import { CdkStepperModule } from '@angular/cdk/stepper';
+import {CdkStepperModule, STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -57,6 +57,15 @@ import { PersonalInfoComponent } from './shared/seed-form/personal-info/personal
 import { ConstantDonationComponent } from './shared/seed-form/constant-donation/constant-donation.component';
 import { UniqueDonationComponent } from './shared/seed-form/unique-donation/unique-donation.component';
 import { NewSeedFormComponent } from './shared/seed-form/new-seed-form/new-seed-form.component';
+import { MessageSnackBarComponent } from './shared/message-snack-bar/message-snack-bar.component';
+import { SentDataMessageComponent } from './shared/seed-form/sent-data-message/sent-data-message.component';
+import { GenericTableComponent } from './shared/generic-table/generic-table.component';
+import { SidebarComponent } from './core/sidebar/sidebar.component';
+import { ListVolunteersComponent } from './feature/volunteer-manage/list-volunteers/list-volunteers.component';
+import { VolunterDialogComponent } from './feature/volunteer-manage/volunter-dialog/volunter-dialog.component';
+import { VolunterDetailsComponent } from './feature/volunteer-manage/volunter-details/volunter-details.component';
+import { ExitElementComponent } from './shared/exit-element/exit-element.component';
+import { ListSeedsComponent } from './feature/seeds-manage/list-seeds/list-seeds.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -72,7 +81,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     PersonalInfoComponent,
     ConstantDonationComponent,
     UniqueDonationComponent,
-    NewSeedFormComponent
+    NewSeedFormComponent,
+    MessageSnackBarComponent,
+    SentDataMessageComponent,
+    GenericTableComponent,
+    SidebarComponent,
+    ListVolunteersComponent,
+    VolunterDialogComponent,
+    VolunterDetailsComponent,
+    ExitElementComponent,
+    ListSeedsComponent
   ],
   imports: [
     BrowserModule,
@@ -126,7 +144,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS,
+    useValue: { displayDefaultIndicatorType: false }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
