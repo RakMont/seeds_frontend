@@ -33,6 +33,7 @@
   },
 
   "tipos-de-aporte":{
+    "donation-details-span": "CONTRIBUTION DETAILS",
     "title-aporte-unico":"It consists of making a contribution of more than $25 or its equivalent of 175 Bs. You can choose the payment method of your choice and the current day in which you will make your contribution. Likewise, if you want to receive news about the latest achievements of the Seeds Program thanks to the contributions obtained. ",
     "title-aporte-constante":"It consists of making a monthly contribution of more than $5 for feeding a child or its equivalent of 35 Bs. You can choose the month in which you want to start the contribution process (You can only choose 3 months from the current month). You can choose the payment method of your choice, the collection date on which your contribution is expected, the means by which you want to receive your monthly contribution reminder. Likewise, if would like to receive news of the latest achievements of the Semillas Program thanks to the contributions obtained.",
     "opcion-1":"Option 1",

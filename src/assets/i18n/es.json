@@ -33,6 +33,7 @@
   },
 
   "tipos-de-aporte":{
+    "donation-details-span": "DETALLES DEL APORTE",
     "title-aporte-unico":"Consiste en realizar un aporte de mas de 25 $ o su equivalente de 175 Bs. Podrá elegir el metodo de pago de su eleccion y el dia del es actual en elque realizará sus aporte. Asi mismo, si desea  recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos. ",
     "title-aporte-constante":"Consiste en realizar un aporte mensual de mas de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el que desee empezar el proceso de aporte (Solo Podra elegir los 3 meses de a partir del mes actual). Podrá elegir el método de pago de su elección la fecha de cobro en la que se espera su aporte, el medio por el cual se desea recibir su recordatorio de aporte mensual. Asi mismo, si desea recibir noticias de los últimos logros delPrograma Semillas gracias a los aportes obtenidos.",
     "opcion-1":"Opción 1",
