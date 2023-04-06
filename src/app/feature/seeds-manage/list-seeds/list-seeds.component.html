@@ -1,0 +1,23 @@
+<div class="container" id="htmlData">
+  <mat-card>
+    <div  class="header">
+      <span class="title">PENDIENTES DE REVISIÓN</span>
+      <img class="img" src="../../../../assets/logo.png" />
+    </div>
+    <hr>
+  </mat-card>
+  <ng-container *ngIf="!loadingtable else loading">
+    <mat-card>
+      <app-generic-table
+        *ngIf="data"
+        [inputTable]="data.rows"
+        (actionOutput)="actionOutput($event)"
+      >
+      </app-generic-table>
+    </mat-card>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
+</div>

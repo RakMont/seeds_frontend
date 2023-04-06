@@ -1,0 +1,35 @@
+.container {
+  margin-top: 70px;
+  width: 96%;
+}
+mat-card{
+  margin-bottom: 12px;
+  padding: 16px;
+}
+mat-chip{
+  font-size: 10px;
+}
+
+.loading{
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+}
+.title{
+  float: left;
+  font-size: 18px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 14px 0;
+}
+
+hr{
+  width: 96%;
+  margin: 12px auto;
+}
