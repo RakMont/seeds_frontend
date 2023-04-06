@@ -1,0 +1,145 @@
+.header{
+  border-bottom: 1px solid #2e7d32;
+  width: 96%;
+  padding-bottom: 8px;
+  margin: 0 auto;
+}
+
+.img{
+  width: 200px;
+  max-height: 50px;
+}
+.title{
+  float: right;
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding: 10px 0;
+}
+
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+::ng-deep .icon-outside .close-button{
+  float: right;
+  top:-52px;
+  right:-52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+  overflow: unset
+}
+
+.mat-form-field{
+  //width: 100%;
+  letter-spacing: 0.05rem;
+}
+
+.accept-bt{
+  color: white;
+  letter-spacing: 0.05rem;
+}
+
+.close-buton{
+  position: relative;
+  float: right;
+  top: -4px;
+  mat-icon{
+    color: #000000;
+  }
+}
+
+.mat-dialog-actions{
+  padding: 8px;
+}
+
+.content{
+  color: #333333;
+  font-size: 13px;
+  letter-spacing: 0.06rem;
+}
+.close-buton{
+  position: relative;
+  float: right;
+  top: -4px;
+  mat-icon{
+    color: #000000;
+  }
+}
+
+mat-dialog-content{
+  padding: 24px 32px;
+}
+
+.volunter-cont{
+  border-bottom: 1px solid rgba(76, 175, 80, 0.6);
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  display: flex;
+  justify-content: space-between;
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}
+.mat-chip{
+  background-color: #102027;
+  span{
+    color: white!important;
+    display: flex;
+    padding: 6px 0;
+  }
+}
+
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
+}
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  //background-color: #A5D6A7;
+  //width: 94%;
+  //position: relative;
+}
+.dialog-header{
+  //padding:  12px;
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}
+
+.contr-type{
+  background-color: #1b7549;
+  span{
+    color: #FFFFFF;
+    font-size: 0.9em;
+  }
+}
+.mat-mdc-form-field{
+  .mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background-color: #FFFFFF;
+  }
+}

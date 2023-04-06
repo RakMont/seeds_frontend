@@ -7,14 +7,14 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "allowJs": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "allowJs": true,
     "target": "es2020",
     "module": "es2020",
     "lib": [
-      "es2020",
+      "es2018",
       "dom"
     ]
   },
