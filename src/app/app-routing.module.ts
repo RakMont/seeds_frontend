@@ -5,6 +5,7 @@ import {PublicActivitiesComponent} from './feature/public-activities/public-acti
 import {LoginPageComponent} from './feature/login-page/login-page.component';
 import {SeedFormPageComponent} from './feature/seed-form-page/seed-form-page.component';
 import {ListVolunteersComponent} from "./feature/volunteer-manage/list-volunteers/list-volunteers.component";
+import {ListSeedsComponent} from "./feature/seeds-manage/list-seeds/list-seeds.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
   {
     path: 'admin/ver-voluntarios',
     component: ListVolunteersComponent,
+  },{
+    path: 'admin/semillas', component: ListSeedsComponent
   },
 ];
 

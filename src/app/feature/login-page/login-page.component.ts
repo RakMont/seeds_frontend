@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
     private router: Router,
     private dialog: MatDialog,
     private tokenService: TokenService,
-    //private oauthService: OauthService,
+    //private oauthService: AuthService,
   ) { }
 
   ngOnInit(): void {

@@ -3,7 +3,7 @@ import {CellContent, CellParam, Table} from "../../../core/models/Table.model";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {OauthService} from "../../../core/services/oauth.service";
+import {AuthService} from "../../../core/services/auth.service";
 import {ApplicantService} from "../../../core/services/applicant.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 import {ModalProcessSeedComponent} from "../../../shared/modal-process-seed/modal-process-seed.component";
@@ -22,7 +22,7 @@ export class ListSeedsComponent implements OnInit {
   constructor(private router: Router,
               private dialog: MatDialog,
               private matSnackBar: MatSnackBar,
-              private authService: OauthService,
+              private authService: AuthService,
               private applicantService: ApplicantService) { }
 
   ngOnInit(): void {

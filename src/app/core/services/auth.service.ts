@@ -7,7 +7,7 @@ import {PayloadLogin} from "../models/Utils.model";
 @Injectable({
   providedIn: 'root'
 })
-export class OauthService {
+export class AuthService {
   oauthURL = 'http://localhost:8080/oauth/';
 
   constructor(private httpClient: HttpClient) { }

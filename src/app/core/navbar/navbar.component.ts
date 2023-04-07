@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
 import {Router} from '@angular/router';
+import {TokenService} from "../services/token.service";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'sml-navbar',
@@ -22,8 +24,8 @@ export class NavbarComponent implements OnInit {
   loadingUser = true;
   constructor(
     private router: Router,
-    //private tokenService: TokenService,
-    //private oauthService: OauthService,
+    private tokenService: TokenService,
+    private oauthService: AuthService,
   ) { }
 
 
@@ -34,15 +36,15 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut(): void {
-    /*this.oauthService.logout();
-    window.location.reload();*/
+    this.oauthService.logout();
+    window.location.reload();
   }
 
   ngOnInit(): void {
-    //this.getUser();
+    this.getUser();
   }
 
-  /*getUser(): void{
+  getUser(): void{
     this.oauthService.getCurrentUser().subscribe((usr)=>{
       this.oauthService.setUser(usr);
       this.currentUser = usr;
@@ -57,7 +59,7 @@ export class NavbarComponent implements OnInit {
   }
   refreshToken(): void {
   }
-*/
+
   changeLen(len: string){
     this.emitLen.emit(len);
   }

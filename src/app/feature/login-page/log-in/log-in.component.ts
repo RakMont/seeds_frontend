@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatDialogRef} from "@angular/material/dialog";
-import {OauthService} from "../../../core/services/oauth.service";
+import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +11,7 @@ import {OauthService} from "../../../core/services/oauth.service";
 })
 export class LogInComponent implements OnInit {
   constructor(public formgroup: UntypedFormBuilder,
-              private oauthservice: OauthService,
+              private oauthservice: AuthService,
               private router: Router,
               public dialogRef: MatDialogRef<LogInComponent>)
   { }
@@ -32,7 +32,7 @@ export class LogInComponent implements OnInit {
         this.oauthservice.getCurrentUser().subscribe((usr)=>{
           this.oauthservice.setUser(usr);
           if (this.oauthservice.getUserRoles().length > 0){
-            this.router.navigate(['/admin']).then(() => {
+            this.router.navigate(['/admin/ver-voluntarios']).then(() => {
               window.location.reload();
             });
           }

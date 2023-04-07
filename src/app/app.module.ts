@@ -68,6 +68,8 @@ import { ExitElementComponent } from './shared/exit-element/exit-element.compone
 import { ListSeedsComponent } from './feature/seeds-manage/list-seeds/list-seeds.component';
 import { ModalProcessSeedComponent } from './shared/modal-process-seed/modal-process-seed.component';
 import { ModalViewSeedComponent } from './feature/seeds-manage/modal-view-seed/modal-view-seed.component';
+import {authInterceptorProviders} from "./core/interceptors/auth.interceptor";
+import {EncodeHttpParamsInterceptor} from "./core/interceptors/encoder.interceptor";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -148,10 +150,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [{
-    provide: STEPPER_GLOBAL_OPTIONS,
-    useValue: { displayDefaultIndicatorType: false }
-  }],
+  providers: [
+    authInterceptorProviders,
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false }
+     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: EncodeHttpParamsInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
