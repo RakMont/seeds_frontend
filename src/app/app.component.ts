@@ -55,7 +55,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   }
   get isLogged(): boolean{
     return this.oauthService.isLoggedIn();
-    return false;
+    //return false;
   }
 
   getMenu(){

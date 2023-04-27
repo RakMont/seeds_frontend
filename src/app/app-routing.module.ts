@@ -6,6 +6,10 @@ import {LoginPageComponent} from './feature/login-page/login-page.component';
 import {SeedFormPageComponent} from './feature/seed-form-page/seed-form-page.component';
 import {ListVolunteersComponent} from "./feature/volunteer-manage/list-volunteers/list-volunteers.component";
 import {ListSeedsComponent} from "./feature/seeds-manage/list-seeds/list-seeds.component";
+import {LoginGuardGuard} from "./core/guards/login-guard.guard";
+import {
+  ListSeedsApplicantsComponent
+} from "./feature/seeds-manage/list-seeds-applicants/list-seeds-applicants.component";
 
 const routes: Routes = [
   {
@@ -23,8 +27,17 @@ const routes: Routes = [
   {
     path: 'admin/ver-voluntarios',
     component: ListVolunteersComponent,
-  },{
-    path: 'admin/semillas', component: ListSeedsComponent
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'admin/semillas',
+    component: ListSeedsComponent,
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'admin/aplicantes',
+    component: ListSeedsApplicantsComponent,
+    canActivate: [LoginGuardGuard]
   },
 ];
 

@@ -55,6 +55,7 @@ export class NavbarComponent implements OnInit {
       this.currentUser = null;
       this.loadingUser = false;
       this.loggedIn = false;
+      this.oauthService.logout();
     }));
   }
   refreshToken(): void {

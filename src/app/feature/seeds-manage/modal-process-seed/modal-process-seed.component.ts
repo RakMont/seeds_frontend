@@ -2,8 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {ApplicantService} from "../../core/services/applicant.service";
-import {MessageSnackBarComponent} from "../message-snack-bar/message-snack-bar.component";
+import {ApplicantService} from "../../../core/services/applicant.service";
+import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 
 export interface DialogData {
   contributorId: string;

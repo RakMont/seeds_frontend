@@ -66,10 +66,11 @@ import { VolunterDialogComponent } from './feature/volunteer-manage/volunter-dia
 import { VolunterDetailsComponent } from './feature/volunteer-manage/volunter-details/volunter-details.component';
 import { ExitElementComponent } from './shared/exit-element/exit-element.component';
 import { ListSeedsComponent } from './feature/seeds-manage/list-seeds/list-seeds.component';
-import { ModalProcessSeedComponent } from './shared/modal-process-seed/modal-process-seed.component';
+import { ModalProcessSeedComponent } from './feature/seeds-manage/modal-process-seed/modal-process-seed.component';
 import { ModalViewSeedComponent } from './feature/seeds-manage/modal-view-seed/modal-view-seed.component';
 import {authInterceptorProviders} from "./core/interceptors/auth.interceptor";
 import {EncodeHttpParamsInterceptor} from "./core/interceptors/encoder.interceptor";
+import { ListSeedsApplicantsComponent } from './feature/seeds-manage/list-seeds-applicants/list-seeds-applicants.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -96,7 +97,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExitElementComponent,
     ListSeedsComponent,
     ModalProcessSeedComponent,
-    ModalViewSeedComponent
+    ModalViewSeedComponent,
+    ListSeedsApplicantsComponent
   ],
   imports: [
     BrowserModule,

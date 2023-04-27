@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-card>
+    <div  class="header">
+      <span class="title">SEMILLAS OFICIALES</span>
+      <img class="img" src="../../../../assets/logo.png" />
+    </div>
+    <hr>
+    <form [formGroup]="val" class="volunteer-head">
+      <mat-chip-listbox formControlName="state">
+        <mat-chip-option class="active" [value]="'CONFIRMED'" color="primary" selected>Registro Completo</mat-chip-option>
+        <mat-chip-option class="pending" [value]="'PENDING'" color="primary">Registro Pendiente</mat-chip-option>
+        <mat-chip-option class="inactive" [value]="'REJECTED'" color="primary">Registros Descartados</mat-chip-option>
+      </mat-chip-listbox>
+    </form>
+  </mat-card>
+
+  <ng-container *ngIf="!loadingtable else loading">
+    <mat-card>
+      <app-generic-table
+        *ngIf="data"
+        [inputTable]="data.rows"
+        (actionOutput)="actionOutput($event)"
+      >
+      </app-generic-table>
+    </mat-card>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
+</div>

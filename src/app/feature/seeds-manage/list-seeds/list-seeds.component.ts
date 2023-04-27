@@ -6,7 +6,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../../core/services/auth.service";
 import {ApplicantService} from "../../../core/services/applicant.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
-import {ModalProcessSeedComponent} from "../../../shared/modal-process-seed/modal-process-seed.component";
+import {ModalProcessSeedComponent} from "../modal-process-seed/modal-process-seed.component";
 import {ModalViewSeedComponent} from "../modal-view-seed/modal-view-seed.component";
 
 @Component({
@@ -51,7 +51,7 @@ export class ListSeedsComponent implements OnInit {
       disableClose: false,
       panelClass: 'icon-outside',
       autoFocus: true,
-      width: '700px',
+      width: '600px',
       data: {
         contributorId: applicantId,
         volunteerId: this.volunteerProcess,
@@ -70,7 +70,7 @@ export class ListSeedsComponent implements OnInit {
       disableClose: false,
       panelClass: 'icon-outside',
       autoFocus: true,
-      width: '700px',
+      width: '600px',
       data: {
         contributorId: applicantId,
         volunteerId: this.volunteerProcess,
@@ -88,7 +88,7 @@ export class ListSeedsComponent implements OnInit {
     const dialogConfig =  this.dialog.open(ModalViewSeedComponent, {
       disableClose: false,
       autoFocus: true,
-      width: '800px',
+      width: '700px',
       data: {
         contributorId: id,
       }
