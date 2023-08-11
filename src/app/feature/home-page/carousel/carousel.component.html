@@ -1,0 +1,24 @@
+<div class="wrap" [style.height]="itemHeigth+'px'">
+  <div #carousel>
+    <div #content class="item" [style.width]="3*itemsQuantity*itemWidth+'px'">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <ng-content select=".prev-button"></ng-content>
+  <ng-content select=".next-button"></ng-content>
+  <ng-container *ngIf="showControls">
+    <div [style.line-height]="itemHeigth+'px'"  class="carousel_prev-button" (click)="prev()">
+      <i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i>
+    </div>
+    <div [style.line-height]="itemHeigth+'px'" class="carousel_next-button" (click)="next()">
+      <i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i>
+    </div>
+  </ng-container>
+</div>
+<ng-container *ngIf="showSelectors">
+  <div class="selectors" >
+    <div class="selector" *ngFor="let t of ' ' .repeat(itemsQuantity).split('');let i=index" (click)="setSlide(i)"
+         [style.background-color]="i==(currentSlide%itemsQuantity)?'black':'transparent'">
+    </div>
+  </div>
+</ng-container>
