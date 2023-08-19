@@ -1,7 +1,25 @@
 <div class="carr">
-  <!--
-   <app-carusel></app-carusel>
-   -->
+  <app-carousel
+    #carousel
+    [itemWidth]="900"
+    [itemHeigth]="500"
+    [itemsQuantity]="6"
+    [showControls]="true"
+  >
+    <ng-container *duplicate>
+      <img *ngFor="let item of items" [src]="item.img" />
+
+    </ng-container>
+  </app-carousel>
+  <div style="text-align:center">
+    <img
+      *ngFor="let item of items; let i = index"
+      width="40px"
+      style="margin:.25rem"
+      (click)="carousel.setSlide(i)"
+      [src]="item.img"
+    />
+  </div>
 </div>
 <div class="gutters">
   <div class="box-pasos">

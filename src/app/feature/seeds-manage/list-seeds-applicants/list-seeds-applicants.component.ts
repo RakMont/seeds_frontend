@@ -9,6 +9,7 @@ import {ApplicantService} from "../../../core/services/applicant.service";
 import {ModalProcessSeedComponent} from "../modal-process-seed/modal-process-seed.component";
 import {ModalViewSeedComponent} from "../modal-view-seed/modal-view-seed.component";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
+import {SeedFilter} from "../../../core/models/Seed.model";
 
 @Component({
   selector: 'app-list-seeds-applicants',
@@ -35,7 +36,7 @@ export class ListSeedsApplicantsComponent implements OnInit{
     //this.getAprovedSeeds();
     this.valueChanges();
     this.getCurrentUser();
-    this.val.patchValue({state: 'CONFIRMED'});
+    this.val.patchValue({state: 'ACCEPTED'});
   }
 
   getAprovedSeeds(): void{
@@ -50,7 +51,7 @@ export class ListSeedsApplicantsComponent implements OnInit{
 
   actionOutput(event: CellContent): void{
     const id = this.getSeedId(event.params);
-    if (event.clickedAction === 'AceptSeed'){
+    if (event.clickedAction === 'AcceptSeed'){
       this.onAccept(id);
     }else if (event.clickedAction === 'RejectSeed'){
       this.onReject(id);
@@ -129,18 +130,33 @@ export class ListSeedsApplicantsComponent implements OnInit{
   valueChanges(){
     this.val.get('state').valueChanges.subscribe((value => {
       if(value && value!=this.lastStatus){
-        if(value==='CONFIRMED'){
+       /* if(value==='CONFIRMED'){
           this.getAprovedSeeds();
         }else if (value === 'REJECTED'){
           this.getRejectedSeeds();
         }else if (value==='PENDING'){
           this.getPendingSeeds();
-        }
+        }*/
+        this.getSeedsApplicants(value);
         this.lastStatus=value;
       }/*else{
         this.val.patchValue({state: 'ACTIVE'});
       }*/
     }))
+  }
+
+  getSeedsApplicants(state: string): void{
+    this.loadingtable = true;
+    let filter:SeedFilter = {
+      status:state,
+      viewPage: 'applicant'
+    }
+    this.applicantService.listSeedsAll(filter).subscribe(
+      (data) => {
+        this.data = data;
+        this.loadingtable = false;
+      }
+    );
   }
 
   getPendingSeeds(): void{

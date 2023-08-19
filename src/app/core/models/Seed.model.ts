@@ -65,3 +65,11 @@ export interface BoxSeed{
   phone: string;
   dni: string;
 }
+
+export interface SeedFilter{
+  status: string;
+  contributionType?: string;
+  seedName?: string;
+  applicantName?: string;
+  viewPage: string;
+}

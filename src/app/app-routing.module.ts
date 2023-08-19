@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from './feature/home/home.component';
+import {HomeComponent} from './feature/home-page/home.component';
 import {PublicActivitiesComponent} from './feature/public-activities/public-activities.component';
 import {LoginPageComponent} from './feature/login-page/login-page.component';
 import {SeedFormPageComponent} from './feature/seed-form-page/seed-form-page.component';

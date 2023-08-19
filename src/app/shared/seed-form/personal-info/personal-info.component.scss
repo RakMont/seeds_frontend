@@ -9,15 +9,6 @@ mat-form-field{
   }
 }
 
-.next-button{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  button{
-    width: 200px;
-  }
-}
-
 mat-error{
   color: 	#ff5a5f;
 }
@@ -35,8 +26,7 @@ mat-error{
 }
 ////////////////////////////////////////////////////////////////
 .positive{
-  background-color: #6db669;
-  color: white;
+  background-color: #ffbc3e;
   width: 100%;
 }
 
@@ -50,32 +40,31 @@ mat-error{
 
 mat-card{
   //min-width: 400px;
-  width: 500px;
+  width: 350px;
   height: 400px;
   padding: 15px;
   margin: auto;
 }
 
 mat-card:hover{
-  //color: white;
-  background-color: #d4d5b9;
+  //background-color: #d4d5b9;
   cursor: pointer;
 }
 
 .float-bottom{
   display: flex;
-  position: absolute;
   width: 95%;
   bottom: 0;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 .float-bottom mat-icon{
   color: #00A846;
   letter-spacing: 0.1rem;
-}
 
+}
 .next-button{
   padding-top: 32px;
   text-align: center;
@@ -85,9 +74,33 @@ mat-card:hover{
 }
 
 .content{
-  padding-top: 16px;
+  padding: 12px;
   color: #333333;
   font-size: 13px;
   justify-content: center;
   letter-spacing: 0.06rem;
+}
+
+.donation-section{
+  text-align: center;
+  //font-weight: bolder;
+ // padding: 8px;
+}
+.type_row_deactivated{
+  color: white;
+}
+.type_row_activated{
+  border: none;
+  height: 12px;
+  background: #2e7d32;
+  border-radius: 5px;
+}
+
+.donation-icon{
+  display: flex;
+  justify-content: center;
+  img{
+    width: 100px;
+    height: 100px;
+  }
 }

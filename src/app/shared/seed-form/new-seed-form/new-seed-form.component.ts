@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ApplicantService} from '../../../core/services/applicant.service';
 import {MessageSnackBarComponent} from "../../message-snack-bar/message-snack-bar.component";
 import {SentDataMessageComponent} from "../sent-data-message/sent-data-message.component";
+import {StepperSelectionEvent} from "@angular/cdk/stepper";
 
 @Component({
   selector: 'app-new-seed-form',
@@ -12,6 +13,7 @@ import {SentDataMessageComponent} from "../sent-data-message/sent-data-message.c
   styleUrls: ['./new-seed-form.component.scss']
 })
 export class NewSeedFormComponent implements OnInit {
+  @ViewChild('stepper') stepper;
   index = 0;
   donationType = null;
   showDonationTypes = false;
@@ -47,13 +49,26 @@ export class NewSeedFormComponent implements OnInit {
     console.log('asdas', this.applicantForm.value);
   }
   move_tab(event): void{
-    console.log('event', event.tabAction);
     this.index = event.tabAction.number;
     this.donationType = event.tabAction.action;
   }
 
+  selectionChange(event: StepperSelectionEvent) {
+    console.log('selectionChange',event.selectedStep.label);
+    //let stepLabel = event.selectedStep.label
+    this.index = event.selectedIndex;
+  }
+  chooseDonationType(event): void {
+    console.log('chooseDonationType', event);
+   // this.index = event.tabAction.number;
+    this.donationType = event.donationType;
+  }
   getPersonalInfo(event){
-    this.applicantForm = event;
+    console.log('event getPersonalInfo', event);
+    if(event){
+      this.applicantForm = event;
+      this.donationType = event.donationType;
+    }
   }
 
   onTabChanged(evento): void{

@@ -1,13 +1,7 @@
 <div class="nav1">
-  <div class="menu">
-  </div>
 </div>
-<nav class="navbar navbar-expand-md navbar-dark">
-  <div class="leftmenu">
-    <button *ngIf="loggedIn && inputSideNav.mode === 'over'"
-            mat-icon-button (click)="inputSideNav.toggle()">
-      <mat-icon>view_list</mat-icon>
-    </button>
+<nav class="navbar navbar-expand-md navbar-dark" *ngIf="!loggedIn else loggedNav">
+    <div class="leftmenu">
     <a class="navbar-brand" routerLink="/">
       <img src="../../../../assets/seeds.png" /></a>
   </div>
@@ -55,3 +49,27 @@
     </ul>
   </div>
 </nav>
+<ng-template #loggedNav>
+  <nav class="navbar2">
+    <div class="menu-icon">
+      <button *ngIf="inputSideNav.mode === 'over' else logoimage"
+              mat-icon-button (click)="inputSideNav.toggle()">
+        <mat-icon class="menu-button">view_list</mat-icon>
+      </button>
+      <ng-template #logoimage>
+        <div class="navbar-brand">
+          <img src="../../../../assets/logo.png" /></div>
+      </ng-template>
+    </div>
+    <div class="current-user-menu" role="presentation" *ngIf=" loggedIn">
+      <button mat-mini-fab disabled>
+        <mat-icon> account_circle</mat-icon>
+      </button>
+      <span class="current-user" *ngIf="currentUser">
+        {{currentUser.name}} {{currentUser.lastname}}</span>
+      <button mat-icon-button  (click)="logOut()">
+        <mat-icon> label_important</mat-icon>
+      </button>
+    </div>
+  </nav>
+</ng-template>

@@ -1,7 +1,7 @@
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from "rxjs";
-import {Applicant, ProcessSeedPayload, Seed} from '../models/Seed.model';
+import {Applicant, ProcessSeedPayload, Seed, SeedFilter} from '../models/Seed.model';
 import {PostMessage} from "../models/Message.model";
 import {Table} from "../models/Table.model";
 import {environment} from "../../../environments/environment";
@@ -50,6 +50,16 @@ export class ApplicantService {
   listOficialSeeds(): Observable<Table> {
     return this.http.get<Table>(environment.backend + '/seeds/applicants/acepted');
   }
+
+  listSeedsAll(filter:SeedFilter): Observable<Table> {
+    const p = new HttpParams().set('status', filter.status)
+      .set('viewPage', filter.viewPage)
+      //.set('contributionType', filter.contributionType? filter.contributionType : null)
+      .set('seedName', filter.seedName? filter.seedName : null)
+      .set('applicantName', filter.applicantName? filter.applicantName : null);
+    return this.http.get<Table>(environment.backend + '/seeds/applicants/all/', { params: p });
+  }
+
   listen(): Observable<any> {
     return this._listeners.asObservable();
   }

@@ -1,39 +1,35 @@
-.header{
-  border-bottom: 1px solid #2e7d32;
-  width: 96%;
-  padding-bottom: 8px;
-  margin: 0 auto;
+::ng-deep .icon-outside .mat-dialog-container {
+  overflow: unset
+}
+.dialog-header{
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
 }
 
-.img{
-  width: 200px;
-  max-height: 50px;
-}
-.title{
-  float: right;
+.dialog-title{
   font-size: 16px;
   letter-spacing: 0.08rem;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin-right: -20px;
-  padding: 10px 0;
+  padding:  16px 12px;
+  margin-top: 8px;
 }
 
-.close-button{
-  float: right;
-  top:-24px;
-  right:-24px;
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
 }
-
-::ng-deep .icon-outside .close-button{
-  float: right;
-  top:-52px;
-  right:-52px;
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  //background-color: #A5D6A7;
+  //width: 94%;
+  //position: relative;
 }
-
-::ng-deep .icon-outside .mat-dialog-container {
-  overflow: unset
-}
-
 .mat-form-field{
   //width: 100%;
   letter-spacing: 0.05rem;
@@ -42,15 +38,6 @@
 .accept-bt{
   color: white;
   letter-spacing: 0.05rem;
-}
-
-.close-buton{
-  position: relative;
-  float: right;
-  top: -4px;
-  mat-icon{
-    color: #000000;
-  }
 }
 
 .mat-dialog-actions{
@@ -62,20 +49,8 @@
   font-size: 13px;
   letter-spacing: 0.06rem;
 }
-.close-buton{
-  position: relative;
-  float: right;
-  top: -4px;
-  mat-icon{
-    color: #000000;
-  }
-}
 
-mat-dialog-content{
-  padding: 24px 32px;
-}
-
-.volunter-cont{
+.volunteer-cont{
   border-bottom: 1px solid rgba(76, 175, 80, 0.6);
   border-radius: 10px;
   padding: 16px 8px 12px 8px;
@@ -100,35 +75,6 @@ mat-dialog-content{
     display: flex;
     padding: 6px 0;
   }
-}
-
-mat-dialog-content{
-  padding: 24px !important;
-  font-size: 0.9em!important;
-}
-.mdc-dialog__title{
-  margin: 0 auto !important;
-  display: flex;
-  padding: 0!important;
-  justify-content: space-between;
-  border-bottom: 1px solid #2e7d32;
-  //background-color: #A5D6A7;
-  //width: 94%;
-  //position: relative;
-}
-.dialog-header{
-  //padding:  12px;
-  width: 96% !important;
-  text-align: center;
-  padding-top: 8px;
-}
-.dialog-title{
-  font-size: 16px;
-  letter-spacing: 0.08rem;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  margin-right: -20px;
-  padding:  16px 12px;
-  margin-top: 8px;
 }
 
 .contr-type{

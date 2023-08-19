@@ -3,24 +3,31 @@
     <mat-card-header class="card-head">
       <span>{{'want-donate.title'|translate}}</span>
     </mat-card-header>
-    <mat-stepper *ngIf="!sendingData else sending"  orientation="vertical">
-      <mat-step label="{{'personal-info.title' | translate}}" [stepControl]="firstFormGroup" state="info">
+    <mat-stepper *ngIf="!sendingData else sending"
+                 linear
+                 [selectedIndex]="index"
+                 orientation="vertical"
+                 (selectionChange)="selectionChange($event)">
+      <mat-step label="{{'personal-info.title' | translate}}"
+                [stepControl]="applicantForm"
+                [editable]="true"
+                state="info">
         <app-personal-info
-          (emitter)="move_tab($event)"
-          (personalInfo)="getPersonalInfo($event)"
+          (donationTypeEmitter)="chooseDonationType($event)"
+          (personalInfoEmitter)="getPersonalInfo($event)"
         ></app-personal-info>
-        <div class="next-button">
+        <!--
+         <div class="next-button">
           <button color="warn"
                   [disabled]="!applicantForm"
                   mat-flat-button matStepperNext>{{'want-donate.next-button' | translate}}</button>
         </div>
-        <!--
-        <app-donations-types
-         (emitter)="move_tab($event)"
-       ></app-donations-types>
-        -->
+         -->
       </mat-step>
-      <mat-step label="{{'tipos-de-aporte.donation-details-span' | translate}}" [stepControl]="donationType" state="phone">
+      <mat-step label="{{'tipos-de-aporte.donation-details-span' | translate}}"
+                [stepControl]="donationType"
+                [editable]="false"
+                state="phone">
         <ng-container *ngIf="donationType==='CONSTANT'">
           <app-constant-donation
             (constantContribution)="emitConstantContribution($event)">
@@ -36,11 +43,12 @@
           <button color="warn" [disabled]="!canSendForm" mat-flat-button matStepperNext>{{'want-donate.next-button' | translate}}</button>
         </div>
       </mat-step>
-      <mat-step label="ENVIAR DATOS"  state="chat">
+      <mat-step [editable]="false" label="ENVIAR DATOS"  state="chat">
         <div class="send-data">
-          <span>¿ Esta segur@ de enviar sus datos ?</span>
+          <span class="send-data-title">¿ Esta segur@ de enviar sus datos ?</span>
           <section class="send-data-check">
-            <mat-checkbox class="example-margin" [(ngModel)]="confCheck">SÍ, ESTOY SEGUR@</mat-checkbox>
+            <mat-checkbox color="primary" [(ngModel)]="confCheck">Sí, estoy segur@
+            </mat-checkbox>
           </section>
 
           <button [disabled]="!canSendForm || !confCheck"

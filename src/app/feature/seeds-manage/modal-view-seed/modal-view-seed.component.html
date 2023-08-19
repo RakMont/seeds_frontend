@@ -1,6 +1,70 @@
 <div mat-dialog-title>
-
+  <div class="dialog-header">
+    <span class="dialog-title">VER INFORMACIÓN</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
 </div>
 <mat-dialog-content>
+  <div class="unique-title">INFORMACIÓN PERSONAL</div>
+  <hr>
+  <div class="row">
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Nombre: </span>{{seed.name}} {{seed.lastname}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Correo: </span>{{seed.email}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Celular: </span>{{seed.phone}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Dni: </span>{{seed.dni}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Fecha de nacimiento: </span>{{seed.birthdate}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      País: </span>{{seed.country}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Ciudad: </span>{{seed.city}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Dirección: </span>{{seed.address}}</span>
+  </div>
 
+  <div class="unique-title">INFORMACIÓN DEL APORTE</div>
+  <hr>
+  <div class="row">
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Tipo de aporte: </span>
+      {{seed.contributionConfig.contribution_key}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Monto de contribución: </span>
+      {{seed.contributionConfig.contribution.contribution_amount}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Metodo de Pago: </span>
+      {{seed.contributionConfig.contribution.paymentMethod}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Metodo de recordatorio </span>
+      {{seed.contributionConfig.contribution.remainderType}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Recibir noticias </span>
+      {{seed.contributionConfig.contribution.send_news ? 'Sí' : 'No'}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Envío de noticias </span>
+      {{seed.contributionConfig.contribution.sendNewsType}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Fecha inicio de aporte </span>
+      {{seed.contributionConfig.contribution.contributionStartDate}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Fecha fin de aporte </span>
+      {{seed.contributionConfig.contribution.contributionEndDate}}</span>
+    <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Mes de inicio </span>
+      {{seed.contributionConfig.contribution.start_month}}</span>
+  </div>
 </mat-dialog-content>

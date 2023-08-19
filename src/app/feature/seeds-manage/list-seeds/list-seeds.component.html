@@ -1,13 +1,29 @@
 <div class="container" id="htmlData">
-  <mat-card>
-    <div  class="header">
-      <span class="title">PENDIENTES DE REVISIÓN</span>
-      <img class="img" src="../../../../assets/logo.png" />
-    </div>
-    <hr>
-  </mat-card>
+
   <ng-container *ngIf="!loadingtable else loading">
+    <div class="volunter-cont">
+      <div class="name">
+        <mat-icon>person</mat-icon>
+        <span class="title">GESTIONAR SEMILLAS</span>
+      </div>
+      <mat-chip-listbox>
+        <mat-chip class="contr-type">
+          <span>Aporte unico</span></mat-chip>
+      </mat-chip-listbox>
+    </div>
     <mat-card>
+      <form [formGroup]="val" class="volunteer-head">
+        <mat-chip-listbox formControlName="state">
+          <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
+          <mat-chip-option class="pending" [value]="'PAUSED'" color="primary">En Pausa</mat-chip-option>
+          <mat-chip-option class="inactive" [value]="'DESERTANT'" color="primary">Desertantes</mat-chip-option>
+        </mat-chip-listbox>
+      </form>
+      <p></p>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Buscar....">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
       <app-generic-table
         *ngIf="data"
         [inputTable]="data.rows"

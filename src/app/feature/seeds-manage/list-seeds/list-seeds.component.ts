@@ -8,6 +8,7 @@ import {ApplicantService} from "../../../core/services/applicant.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 import {ModalProcessSeedComponent} from "../modal-process-seed/modal-process-seed.component";
 import {ModalViewSeedComponent} from "../modal-view-seed/modal-view-seed.component";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-list-seeds',
@@ -17,12 +18,15 @@ import {ModalViewSeedComponent} from "../modal-view-seed/modal-view-seed.compone
 export class ListSeedsComponent implements OnInit {
   loadingtable = true;
   data: Table;
-
+  val = this.formBuilder.group({
+    state: [null]
+  });
   volunteerProcess: string;
   constructor(private router: Router,
               private dialog: MatDialog,
               private matSnackBar: MatSnackBar,
               private authService: AuthService,
+              private formBuilder: FormBuilder,
               private applicantService: ApplicantService) { }
 
   ngOnInit(): void {

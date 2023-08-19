@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from '@angular/forms';
 import {ComboElement} from '../../../core/models/Utils.model';
 import {ApplicantService} from '../../../core/services/applicant.service';
@@ -10,8 +10,8 @@ import {UtilService} from '../../../core/services/util.service';
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-  @Output() emitter: EventEmitter<{tabAction}> = new EventEmitter();
-  @Output() personalInfo: EventEmitter<any> = new EventEmitter();
+  @Output() donationTypeEmitter: EventEmitter<{donationType}> = new EventEmitter();
+  @Output() personalInfoEmitter: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
               private applicantService: ApplicantService,
               private utilsService: UtilService) { }
@@ -24,9 +24,10 @@ export class PersonalInfoComponent implements OnInit {
     dni: [null, Validators.required],
     birthdate: [new Date(new Date().setFullYear(new Date().getFullYear() - 16))
       ,Validators.required],
-    country: [null, Validators.required],
-    city: [null, Validators.required],
+    country: ['', Validators.required],
+    city: ['', Validators.required],
     address: [null, Validators.required],
+    donationType:['', Validators.required]
   });
   myFilter = (d: Date | null): boolean => {
     const year = new Date().getFullYear();
@@ -36,6 +37,7 @@ export class PersonalInfoComponent implements OnInit {
     this.getCountries();
     this.manageInfoFormChanges();
   }
+
   getErrorMessage(): any {
     if (this.applicantForm.get('name').hasError('required')) {
       return 'Debe ingresar el nombre';
@@ -91,24 +93,35 @@ export class PersonalInfoComponent implements OnInit {
     this.utilsService.getCountries()
       .subscribe((data) => {
         this.countries = data.data;
+        this.applicantForm.get('country').setValue(this.countries[0].value);
       });
   }
 
   manageInfoFormChanges(){
-    this.applicantForm.valueChanges.subscribe(() => {
+    this.applicantForm.valueChanges.subscribe((changes) => {
+      console.log('manageInfoFormChanges', changes)
       if (this.applicantForm.valid){
-        this.personalInfo.emit(this.applicantForm.value);
+        this.personalInfoEmitter.emit(this.applicantForm.value);
       }else {
-        this.personalInfo.emit(null);
+        this.applicantForm.get('donationType').value ?
+          this.applicantForm.markAllAsTouched()
+          : this.personalInfoEmitter.emit(null);
       }
     })
   }
 
-
+/*
   next(): void {
-    this.emitter.emit({tabAction: {number: 0}}) ;
+    this.donationTypeEmitter.emit({tabAction: {number: 0}}) ;
+  }*/
+  emitDonationType(donationType: string): void {
+    this.applicantForm.get('donationType').setValue(donationType);
+    //this.emitter.emit({tabAction: {number: 2, action: donationType}});
+    /*if (this.applicantForm.valid){
+      this.donationTypeEmitter.emit({tabAction: {number: 1}});
+    }*/
+    this.donationTypeEmitter.emit({donationType: this.applicantForm.get('donationType').value});
   }
-  goDetails(donationType: string): void {
-    this.emitter.emit({tabAction: {number: 2, action: donationType}}) ;
-  }
+
+
 }

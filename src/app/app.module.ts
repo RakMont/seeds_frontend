@@ -48,7 +48,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './core/navbar/navbar.component';
-import { HomeComponent } from './feature/home/home.component';
+import { HomeComponent } from './feature/home-page/home.component';
 import { PublicActivitiesComponent } from './feature/public-activities/public-activities.component';
 import { LoginPageComponent } from './feature/login-page/login-page.component';
 import { SeedFormPageComponent } from './feature/seed-form-page/seed-form-page.component';
@@ -71,6 +71,9 @@ import { ModalViewSeedComponent } from './feature/seeds-manage/modal-view-seed/m
 import {authInterceptorProviders} from "./core/interceptors/auth.interceptor";
 import {EncodeHttpParamsInterceptor} from "./core/interceptors/encoder.interceptor";
 import { ListSeedsApplicantsComponent } from './feature/seeds-manage/list-seeds-applicants/list-seeds-applicants.component';
+import { CarouselComponent } from './feature/home-page/carousel/carousel.component';
+import { DuplicateDirective } from './core/directives/duplicate.directive';
+import { TitleBannerComponent } from './shared/title-banner/title-banner.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -98,7 +101,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListSeedsComponent,
     ModalProcessSeedComponent,
     ModalViewSeedComponent,
-    ListSeedsApplicantsComponent
+    ListSeedsApplicantsComponent,
+    CarouselComponent,
+    DuplicateDirective,
+    TitleBannerComponent
   ],
   imports: [
     BrowserModule,

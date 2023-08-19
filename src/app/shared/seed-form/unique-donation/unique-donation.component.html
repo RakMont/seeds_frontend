@@ -1,7 +1,6 @@
 <div class="donations">
   <form [formGroup]="donationForm" class="row">
-    <div class="col-md-12 unique-title" >APORTE ÚNICO</div>
-
+    <app-title-banner [title]="'APORTE ÚNICO'"></app-title-banner>
     <div class="col-md-6">
       <mat-form-field floatLabel="always"
                       appearance="fill">
@@ -46,10 +45,10 @@
       </mat-form-field>
     </div>
     <div class="col-md-6 views-fields">
-      <div class="subtittle">¿ Desea recibir noticias ?</div>
+      <div class="subtitle">¿ Desea recibir noticias ?</div>
       <mat-chip-listbox formControlName="send_news">
-        <mat-chip-option [value]="true" color="accent" selected>SÍ</mat-chip-option>
-        <mat-chip-option [value]="false" color="warn">NÓ</mat-chip-option>
+        <mat-chip-option [value]="true" color="accent" selected>Sí</mat-chip-option>
+        <mat-chip-option [value]="false" color="warn">No</mat-chip-option>
       </mat-chip-listbox>
     </div>
     <div class="col-md-6">

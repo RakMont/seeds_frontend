@@ -12,7 +12,9 @@ export class UtilService {
   getCountries(): Observable<ComboResponse> {
     return this.http.get<ComboResponse>('./assets/statics/countries.json');
   }
-
+  getCountryCities(): Observable<ComboResponse> {
+    return this.http.get<ComboResponse>('./assets/statics/countries.json');
+  }
   getPaymentMethods(): Observable<ComboResponse> {
     return this.http.get<ComboResponse>('./assets/statics/payment_methods.json');
   }

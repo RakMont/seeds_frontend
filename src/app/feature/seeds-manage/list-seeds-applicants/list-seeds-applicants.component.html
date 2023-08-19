@@ -1,21 +1,25 @@
 <div class="container">
-  <mat-card>
-    <div  class="header">
-      <span class="title">SEMILLAS OFICIALES</span>
-      <img class="img" src="../../../../assets/logo.png" />
-    </div>
-    <hr>
-    <form [formGroup]="val" class="volunteer-head">
-      <mat-chip-listbox formControlName="state">
-        <mat-chip-option class="active" [value]="'CONFIRMED'" color="primary" selected>Registro Completo</mat-chip-option>
-        <mat-chip-option class="pending" [value]="'PENDING'" color="primary">Registro Pendiente</mat-chip-option>
-        <mat-chip-option class="inactive" [value]="'REJECTED'" color="primary">Registros Descartados</mat-chip-option>
-      </mat-chip-listbox>
-    </form>
-  </mat-card>
-
   <ng-container *ngIf="!loadingtable else loading">
+    <app-title-banner
+      [hasTranslate]="false"
+      [title]="'APLICANTES A SEMILLAS'">
+
+    </app-title-banner>
+
     <mat-card>
+      <div class="volunteer-cont">
+        <form [formGroup]="val" class="volunteer-head">
+          <mat-chip-listbox formControlName="state">
+            <mat-chip-option class="active" [value]="'ACCEPTED'" color="primary" selected>Registro Completo</mat-chip-option>
+            <mat-chip-option class="pending" [value]="'PENDING'" color="primary">Registro Pendiente</mat-chip-option>
+            <mat-chip-option class="inactive" [value]="'REJECTED'" color="primary">Registros Descartados</mat-chip-option>
+          </mat-chip-listbox>
+        </form>
+      </div>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Buscar....">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
       <app-generic-table
         *ngIf="data"
         [inputTable]="data.rows"
