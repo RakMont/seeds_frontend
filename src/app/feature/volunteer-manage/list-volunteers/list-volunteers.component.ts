@@ -58,8 +58,7 @@ export class ListVolunteersComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.volunters = result;
+      if (result) { this.getActiveVolunters(this.val.get('state').value); }
     });
   }
 
@@ -87,7 +86,7 @@ export class ListVolunteersComponent implements OnInit {
       panelClass: 'icon-outside',
       width: '800px',
       data: {
-        volunterId: volunterId,
+        volunteerId: volunterId,
         edit: false
       }
     });
@@ -114,12 +113,39 @@ export class ListVolunteersComponent implements OnInit {
         this.voluntersService.exitvolunter(payload)
           .subscribe(( result ) => {
             this.showMessage(result);
-            console.log('done', result);
+            if (result) { this.getActiveVolunters(this.val.get('state').value); }
           });
       }
     });
   }
 
+  reactivateVolunter(volunterId): void {
+    const dialogRef = this.dialog.open(ExitElementComponent, {
+      disableClose: false,
+      panelClass: 'icon-outside',
+      autoFocus: true,
+      width: '500px',
+      data: {
+        title: 'REACTIVAR RESPONSABLE',
+        question: 'Al confirmar se reactivará al voluntario y' +
+          ' podrá verlo en el menú de responsables activados,' +
+          ' ¿ Está seguro de reactivarlo ?'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result?.status === 'afirmative'){
+        const payload = {
+          message: result.message,
+          volunteerId: volunterId
+        };
+        this.voluntersService.activateVolunteer(payload)
+          .subscribe(( result ) => {
+            this.showMessage(result);
+            if (result) { this.getActiveVolunters(this.val.get('state').value); }
+          });
+      }
+    });
+  }
   outputEvent(event: CellContent): void{
     console.log('event', event);
     const id = this.getVolunteerId(event.params);
@@ -131,6 +157,8 @@ export class ListVolunteersComponent implements OnInit {
       this.inactiveVolunter(id);
     } else  if (event.clickedAction === 'deleteVolunter'){
       this.ondelete(id);
+    }else  if (event.clickedAction === 'activateVolunter') {
+      this.reactivateVolunter(id);
     }
   }
   ondelete(id): void {

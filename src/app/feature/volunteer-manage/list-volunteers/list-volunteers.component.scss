@@ -45,3 +45,22 @@ hr{
     background-color: #bd5533;
   }
 }
+
+.volunteer-cont{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  //display: flex;
+  //justify-content: space-between;
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}

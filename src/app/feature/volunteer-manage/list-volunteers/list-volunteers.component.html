@@ -1,31 +1,35 @@
 <div class="container" id="htmlData">
+  <ng-container>
+    <app-title-banner
+      [hasTranslate]="false"
+      [title]="'VOLUNTARIOS RESPONSABLES'">
+
+    </app-title-banner>
+  </ng-container>
+
   <mat-card>
-    <div  class="header">
-      <span class="title">VOLUNTARIOS RESPONSABLES</span>
-      <img class="img" src="../../../../assets/logo.png" />
-    </div>
-    <hr>
-    <form [formGroup]="val" class="volunteer-head">
-      <mat-chip-listbox formControlName="state">
-        <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
-        <mat-chip-option class="inactive" [value]="'INACTIVE'" color="primary">Inactivos</mat-chip-option>
-      </mat-chip-listbox>
-      <button mat-mini-fab color="accent"
-              (click)="onAdding()"
-              matTooltip="REGISTRAR NUEVO VOLUNTARIO">
-        <mat-icon>person_add</mat-icon>
-      </button>
-    </form>
-  </mat-card>
+   <div class="volunteer-cont">
+     <form [formGroup]="val" class="volunteer-head">
+       <mat-chip-listbox formControlName="state">
+         <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
+         <mat-chip-option class="inactive" [value]="'INACTIVE'" color="primary">Inactivos</mat-chip-option>
+       </mat-chip-listbox>
+       <button mat-mini-fab color="accent"
+               (click)="onAdding()"
+               matTooltip="REGISTRAR NUEVO VOLUNTARIO">
+         <mat-icon>person_add</mat-icon>
+       </button>
+     </form>
+   </div>
   <ng-container *ngIf="!loadingVolunteers else isloading">
-    <mat-card>
       <app-generic-table
         *ngIf="volunteers"
         [inputTable]="volunteers.rows"
         (actionOutput)="outputEvent($event)">
       </app-generic-table>
-    </mat-card>
   </ng-container>
+  </mat-card>
+
   <ng-template #isloading>
     <mat-spinner class="loading">
     </mat-spinner>
