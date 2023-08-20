@@ -13,7 +13,9 @@
 <ng-template #childMenu let-menu="menu">
   <mat-expansion-panel [class.mat-elevation-z0]="true">
     <mat-expansion-panel-header>
-      <span class="element"><mat-icon mat-list-icon>{{menu.icon}}</mat-icon>{{menu.text}}</span>
+      <span class="element">
+        <mat-icon>{{menu.icon}}</mat-icon>
+       <span> {{menu.text}}</span></span>
     </mat-expansion-panel-header>
     <mat-nav-list>
       <mat-list-item
@@ -21,7 +23,8 @@
         [routerLink]="submenu.routerLink"
         *ngFor="let submenu of menu.children"
         [routerLinkActiveOptions]="{exact:true}">
-        <span class="element-inside"><mat-icon>{{submenu.icon}}</mat-icon> {{submenu.text}}</span>
+        <span class="element-inside">
+          <mat-icon>{{submenu.icon}}</mat-icon> {{submenu.text}}</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-expansion-panel>

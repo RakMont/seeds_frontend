@@ -16,6 +16,7 @@ export interface  Volunter{
 export interface  Role{
   roleId: number ;
   role_name: string;
+  name: string;
 }
 
 export interface VolunterFilter{

@@ -16,7 +16,7 @@
         </div>
         <mat-chip-listbox>
           <mat-chip class="contr-type">
-            <span>{{seed.contributionType}}</span></mat-chip>
+            <span>{{seed.contributionType | uppercase}}</span></mat-chip>
         </mat-chip-listbox>
       </div>
     </div>
@@ -25,7 +25,7 @@
         class="col-md-6"
         floatLabel="always"
         appearance="fill">
-        <mat-label>Ingrese la fecha de inicio del ciclo de aportes</mat-label>
+        <mat-label>Fecha de inicio del ciclo de aportes</mat-label>
         <input formControlName="contributionStartDate"
                matInput
                required
@@ -38,7 +38,7 @@
         class="col-md-6"
         floatLabel="always"
         appearance="fill">
-        <mat-label>Ingrese la fecha de fin del ciclo de aportes</mat-label>
+        <mat-label>Fecha de fin del ciclo de aportes</mat-label>
         <input formControlName="contributionEndDate"
                matInput
                required

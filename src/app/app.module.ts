@@ -74,6 +74,8 @@ import { ListSeedsApplicantsComponent } from './feature/seeds-manage/list-seeds-
 import { CarouselComponent } from './feature/home-page/carousel/carousel.component';
 import { DuplicateDirective } from './core/directives/duplicate.directive';
 import { TitleBannerComponent } from './shared/title-banner/title-banner.component';
+import { NewSeedFromVolunteerComponent } from './feature/seeds-manage/new-seed-from-volunteer/new-seed-from-volunteer.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -104,7 +106,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListSeedsApplicantsComponent,
     CarouselComponent,
     DuplicateDirective,
-    TitleBannerComponent
+    TitleBannerComponent,
+    NewSeedFromVolunteerComponent
   ],
   imports: [
     BrowserModule,

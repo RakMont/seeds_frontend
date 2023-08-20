@@ -9,11 +9,11 @@
   background-color: #049B2D;
 }
 .mat-nav-list .mat-list-item{
-  color: #343A40;
+  color: #FFFFFF;
   font-size: 0.8em!important;
 }
 .mat-nav-list .mat-expansion-panel-header{
-  color: #343A40;
+  color: #FFFFFF;
   font-size: 0.8em!important;
 }
 
@@ -25,8 +25,13 @@
   font-size: 12px!important;
   font-weight: 400!important;
   display: flex;
-  padding: 4px 0;
   color: #FFFFFF;
+  span{
+    margin: auto 4px;
+  }
+  mat-icon{
+    color: #FFFFFF;
+  }
 }
 .element-inside{
   font-size: 12px!important;
@@ -34,12 +39,19 @@
   display: flex;
   padding: 6px 0 6px 16px;
   color: #FFFFFF;
-}
-
-.mat-expansion-panel-header, .mat-mdc-list-base{
-  background-color: #26404e;
+  mat-icon{
+    color: #FFFFFF;
+    margin-right: 4px;
+  }
 }
 
 .mat-expansion-panel{
   background-color: #26404e;
+  //color: #FFFFFF;
+}
+
+.mat-expansion-indicator::after {
+  height: 10px;
+  width: 10px;
+  color: #C02126!important;
 }

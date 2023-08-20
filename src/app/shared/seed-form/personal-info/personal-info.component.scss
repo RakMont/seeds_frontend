@@ -25,31 +25,6 @@ mat-error{
   margin-bottom: 32px;
 }
 ////////////////////////////////////////////////////////////////
-.positive{
-  background-color: #ffbc3e;
-  width: 100%;
-}
-
-.donations{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-mat-card{
-  //min-width: 400px;
-  width: 350px;
-  height: 400px;
-  padding: 15px;
-  margin: auto;
-}
-
-mat-card:hover{
-  //background-color: #d4d5b9;
-  cursor: pointer;
-}
 
 .float-bottom{
   display: flex;
@@ -83,8 +58,11 @@ mat-card:hover{
 
 .donation-section{
   text-align: center;
-  //font-weight: bolder;
- // padding: 8px;
+  span{
+    color: #2e7d32;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
 }
 .type_row_deactivated{
   color: white;
@@ -103,4 +81,14 @@ mat-card:hover{
     width: 100px;
     height: 100px;
   }
+}
+.subtitle {
+  border: 1px solid #6b9074;
+  //margin-bottom: 16px;
+  width: 96%;
+  margin: 4px auto 16px ;
+}
+
+.donation-chip-section{
+  padding: 16px  24px;
 }

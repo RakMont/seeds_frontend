@@ -100,7 +100,7 @@ export class ListSeedsComponent implements OnInit {
   }
   actionOutput(event: CellContent): void{
     const id = this.getSeedId(event.params);
-    if (event.clickedAction === 'AceptSeed'){
+    if (event.clickedAction === 'AcceptSeed'){
       this.onAcept(id);
     }else if (event.clickedAction === 'RejectSeed'){
       this.onReject(id);

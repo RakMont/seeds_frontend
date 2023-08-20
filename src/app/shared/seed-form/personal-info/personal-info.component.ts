@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from '@angular/forms';
 import {ComboElement} from '../../../core/models/Utils.model';
 import {ApplicantService} from '../../../core/services/applicant.service';
@@ -10,6 +10,7 @@ import {UtilService} from '../../../core/services/util.service';
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
+  @Input() isFromVolunteer: boolean;
   @Output() donationTypeEmitter: EventEmitter<{donationType}> = new EventEmitter();
   @Output() personalInfoEmitter: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder,

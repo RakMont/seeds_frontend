@@ -10,6 +10,7 @@ import {LoginGuardGuard} from "./core/guards/login-guard.guard";
 import {
   ListSeedsApplicantsComponent
 } from "./feature/seeds-manage/list-seeds-applicants/list-seeds-applicants.component";
+import {NewSeedFromVolunteerComponent} from "./feature/seeds-manage/new-seed-from-volunteer/new-seed-from-volunteer.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'admin/aplicantes',
     component: ListSeedsApplicantsComponent,
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'admin/new-seed',
+    component: NewSeedFromVolunteerComponent,
     canActivate: [LoginGuardGuard]
   },
 ];

@@ -1,25 +1,22 @@
 <div class="container" id="htmlData">
 
   <ng-container *ngIf="!loadingtable else loading">
-    <div class="volunter-cont">
-      <div class="name">
-        <mat-icon>person</mat-icon>
-        <span class="title">GESTIONAR SEMILLAS</span>
-      </div>
-      <mat-chip-listbox>
-        <mat-chip class="contr-type">
-          <span>Aporte unico</span></mat-chip>
-      </mat-chip-listbox>
-    </div>
+    <app-title-banner
+      [hasTranslate]="false"
+      [title]="'GESTIONAR SEMILLAS'">
+
+    </app-title-banner>
+
     <mat-card>
-      <form [formGroup]="val" class="volunteer-head">
-        <mat-chip-listbox formControlName="state">
-          <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
-          <mat-chip-option class="pending" [value]="'PAUSED'" color="primary">En Pausa</mat-chip-option>
-          <mat-chip-option class="inactive" [value]="'DESERTANT'" color="primary">Desertantes</mat-chip-option>
-        </mat-chip-listbox>
-      </form>
-      <p></p>
+      <div class="volunteer-cont">
+        <form [formGroup]="val" class="volunteer-head">
+          <mat-chip-listbox formControlName="state">
+            <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
+            <mat-chip-option class="pending" [value]="'PAUSED'" color="primary">En Pausa</mat-chip-option>
+            <mat-chip-option class="inactive" [value]="'DESERTANT'" color="primary">Desertantes</mat-chip-option>
+          </mat-chip-listbox>
+        </form>
+      </div>
       <mat-form-field appearance="fill">
         <input matInput placeholder="Buscar....">
         <mat-icon matSuffix>search</mat-icon>

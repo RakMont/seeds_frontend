@@ -26,9 +26,6 @@ mat-dialog-content{
   padding: 0!important;
   justify-content: space-between;
   border-bottom: 1px solid #2e7d32;
-  //background-color: #A5D6A7;
-  //width: 94%;
-  //position: relative;
 }
 .mat-form-field{
   //width: 100%;
@@ -51,22 +48,25 @@ mat-dialog-content{
 }
 
 .volunteer-cont{
-  border-bottom: 1px solid rgba(76, 175, 80, 0.6);
+  border-bottom: 2px solid #6b9074;
   border-radius: 10px;
-  padding: 16px 8px 12px 8px;
+  padding: 12px;
   margin-bottom: 16px;
   background: rgba(76, 175, 80, 0.1);
   display: flex;
   justify-content: space-between;
   .name{
+    margin: auto 0;
     display: flex;
     span{
       padding-top: 2px;
       margin-left: 8px;
       font-size: 0.9em;
-      letter-spacing: 1px;
     }
   }
+}
+span{
+  letter-spacing: 1px;
 }
 .mat-chip{
   background-color: #102027;
