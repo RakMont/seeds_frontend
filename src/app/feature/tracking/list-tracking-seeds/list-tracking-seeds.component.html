@@ -1,0 +1,32 @@
+<!--
+ <mat-toolbar class="toolbar">
+  <i (click)="back()" class="fa fa-chevron-left fa-3x" aria-hidden="true"></i>
+</mat-toolbar>
+ -->
+<ng-container *ngIf="!loadingVolunteer else loadingData">
+    <div class="volunteer-cont">
+      <span class="name-cont"> <mat-icon>local_library</mat-icon>
+            <span style="font-weight: 500">Responsable : </span>
+        <span> {{ volunteer?.name}} {{volunteer?.lastname}}</span></span>
+        <button (click)="openAssinDialog()"
+                matTooltip="Asignar otra semilla"
+                mat-mini-fab color="accent">
+          <mat-icon>group_add</mat-icon>
+        </button>
+    </div>
+  <ng-container *ngIf="!loadingtable else loading">
+      <app-generic-table
+        *ngIf="data"
+        [inputTable]="data.rows"
+        (actionOutput)="actionOutput($event)"
+      >
+      </app-generic-table>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
+</ng-container>
+<ng-template #loadingData>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
