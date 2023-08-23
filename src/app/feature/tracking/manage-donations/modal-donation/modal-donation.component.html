@@ -1,0 +1,115 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">NUEVO APORTE</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <form [formGroup]="donation" class="row">
+    <mat-form-field floatLabel="always" class="col-md-6" appearance="fill">
+      <mat-label>Método de pago</mat-label>
+      <mat-select class="option" formControlName="paymentMethod" required>
+        <mat-option class="option" *ngFor="let pm of paymentMethods" [value]="pm.value">
+          {{pm.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field floatLabel="always"
+                    class="col-md-6" appearance="fill">
+      <mat-label>Monto de Aporte</mat-label>
+      <input class="example-right-align"
+             required matInput type="number"
+             formControlName="contribution_ammount" placeholder="0">
+      <mat-error *ngIf="donationAmount.invalid">{{getDonationAmountError()}}</mat-error>
+      <!--<span matPrefix>{{dolarsamount}}&nbsp;</span> -->
+      <span matSuffix>.00 BOB</span>
+      <mat-hint>{{childscount}}</mat-hint>
+    </mat-form-field>
+    <mat-form-field
+      class="col-md-6"
+      floatLabel="always"
+      appearance="fill">
+      <mat-label>Fecha de Pago Prevista</mat-label>
+      <input formControlName="expected_payment_date"
+             matInput
+             required
+             [matDatepicker]="picker2">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 startView="year"></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field
+      class="col-md-6"
+      floatLabel="always"
+      appearance="fill">
+      <mat-label>Fecha de Realizado</mat-label>
+      <input formControlName="payment_date"
+             matInput
+             required
+             [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year"></mat-datepicker>
+    </mat-form-field>
+
+    <div class="col-md-12">
+      <span class="message">
+        <mat-icon color="primary">priority_high</mat-icon>
+        ¿ Pruebas del pago recibidas ?</span>
+      <mat-chip-listbox formControlName="sent_payment_proof">
+        <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
+        <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <ng-container *ngIf="donation.get('sent_payment_proof').value">
+      <mat-form-field class="col-md-6"
+                      floatLabel="always"
+                      appearance="fill">
+        <mat-label>Número de recibo</mat-label>
+        <input formControlName="receipt_number"
+               matInput
+               placeholder="#..">
+        <mat-hint>Ingrese el número de recibo</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="col-md-6"
+                      floatLabel="always"
+                      appearance="fill">
+        <mat-label>Codigo de recibo</mat-label>
+        <input formControlName="receipt_code"
+               matInput
+               placeholder="...">
+        <mat-hint>Ingrese el codigo de recibo</mat-hint>
+      </mat-form-field>
+    </ng-container>
+    <div class="col-md-6">
+      <span class="message">
+        <mat-icon color="primary">priority_high</mat-icon>
+        ¿ Desea registrar algun ingreso extra ?</span>
+      <mat-chip-listbox formControlName="hasExtra">
+        <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
+        <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <ng-container *ngIf="donation.get('hasExtra').value">
+      <mat-form-field floatLabel="always"
+                      class="col-md-6 extra" appearance="fill">
+        <mat-label>Aporte extra</mat-label>
+        <input class="example-right-align"
+               required matInput type="number"
+               formControlName="extra_income_ammount" placeholder="0">
+        <mat-error *ngIf="donationAmount.invalid">{{getDonationAmountError()}}</mat-error>
+        <span matSuffix>.00 BOB</span>
+      </mat-form-field>
+    </ng-container>
+  </form>
+  <!--   {{donation.value | json}}
+  -->
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button [disabled]="!donation.valid"
+          mat-flat-button
+          (click)="sendData()"
+          color="primary">REGISTRAR APORTE</button>
+</mat-dialog-actions>
