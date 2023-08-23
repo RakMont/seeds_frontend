@@ -156,12 +156,12 @@ export class ListVolunteersComponent implements OnInit {
     } else if (event.clickedAction === 'inactiveVolunter'){
       this.inactiveVolunter(id);
     } else  if (event.clickedAction === 'deleteVolunter'){
-      this.ondelete(id);
+      this.onDelete(id);
     }else  if (event.clickedAction === 'activateVolunter') {
       this.reactivateVolunter(id);
     }
   }
-  ondelete(id): void {
+  onDelete(id): void {
     const dialogRef = this.dialog.open(ExitElementComponent, {
       disableClose: false,
       panelClass: 'icon-outside',

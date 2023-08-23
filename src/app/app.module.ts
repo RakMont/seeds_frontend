@@ -75,6 +75,13 @@ import { CarouselComponent } from './feature/home-page/carousel/carousel.compone
 import { DuplicateDirective } from './core/directives/duplicate.directive';
 import { TitleBannerComponent } from './shared/title-banner/title-banner.component';
 import { NewSeedFromVolunteerComponent } from './feature/seeds-manage/new-seed-from-volunteer/new-seed-from-volunteer.component';
+import { ManageTrackingComponent } from './feature/tracking/manage-tracking/manage-tracking.component';
+import { ListTrackingSeedsComponent } from './feature/tracking/list-tracking-seeds/list-tracking-seeds.component';
+import { ManageDonationsComponent } from './feature/tracking/manage-donations/manage-donations.component';
+import { ListSeedDonationsComponent } from './feature/tracking/list-seed-donations/list-seed-donations.component';
+import { AsignSeedVolunteerComponent } from './feature/tracking/manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component';
+import { ModalDonationComponent } from './feature/tracking/manage-donations/modal-donation/modal-donation.component';
+import { ViewDonationComponent } from './feature/tracking/manage-donations/view-donation/view-donation.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -107,7 +114,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     CarouselComponent,
     DuplicateDirective,
     TitleBannerComponent,
-    NewSeedFromVolunteerComponent
+    NewSeedFromVolunteerComponent,
+    ManageTrackingComponent,
+    ListTrackingSeedsComponent,
+    ManageDonationsComponent,
+    ListSeedDonationsComponent,
+    AsignSeedVolunteerComponent,
+    ModalDonationComponent,
+    ViewDonationComponent
   ],
   imports: [
     BrowserModule,

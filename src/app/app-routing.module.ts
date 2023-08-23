@@ -11,6 +11,9 @@ import {
   ListSeedsApplicantsComponent
 } from "./feature/seeds-manage/list-seeds-applicants/list-seeds-applicants.component";
 import {NewSeedFromVolunteerComponent} from "./feature/seeds-manage/new-seed-from-volunteer/new-seed-from-volunteer.component";
+import {ManageDonationsComponent} from "./feature/tracking/manage-donations/manage-donations.component";
+import {ManageTrackingComponent} from "./feature/tracking/manage-tracking/manage-tracking.component";
+import {ListTrackingSeedsComponent} from "./feature/tracking/list-tracking-seeds/list-tracking-seeds.component";
 
 const routes: Routes = [
   {
@@ -45,6 +48,21 @@ const routes: Routes = [
     component: NewSeedFromVolunteerComponent,
     canActivate: [LoginGuardGuard]
   },
+  {
+    path: 'admin/tracking',
+    component: ManageTrackingComponent,
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path: 'admin/tracking/volunteer-seeds',
+    component: ListTrackingSeedsComponent,
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path:'admin/tracking/donations',
+    component: ManageDonationsComponent,
+    canActivate: [LoginGuardGuard]
+  }
 ];
 
 @NgModule({

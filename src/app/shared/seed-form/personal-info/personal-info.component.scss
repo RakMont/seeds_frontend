@@ -56,14 +56,6 @@ mat-error{
   letter-spacing: 0.06rem;
 }
 
-.donation-section{
-  text-align: center;
-  span{
-    color: #2e7d32;
-    letter-spacing: 1px;
-    font-weight: 500;
-  }
-}
 .type_row_deactivated{
   color: white;
 }
@@ -87,6 +79,15 @@ mat-error{
   //margin-bottom: 16px;
   width: 96%;
   margin: 4px auto 16px ;
+}
+
+.donation-section{
+  text-align: center;
+  span{
+    color: #2e7d32;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
 }
 
 .donation-chip-section{

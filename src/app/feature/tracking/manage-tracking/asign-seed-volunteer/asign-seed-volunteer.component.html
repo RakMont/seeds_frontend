@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">ASIGNAR SEMILLA A RESPONSABLE</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <form [formGroup]="assignForm" class="row">
+    <div class="col-md-12">
+      <div class="volunter-cont" *ngIf="volunter">
+        <mat-icon>person</mat-icon>
+        <span>{{volunter.name}} {{volunter.lastname}}</span>
+      </div>
+    </div>
+    <mat-form-field appearance="fill"
+                    [floatLabel]="'always'"
+                    class="col-md-12">
+      <mat-label>Seleccionar la semilla</mat-label>
+      <input type="text"
+             placeholder="Lucia...."
+             aria-label="Number"
+             matInput
+             required
+             formControlName="searchValue"
+             [matAutocomplete]="auto">
+      <mat-autocomplete
+        (optionSelected)="selected($event)"
+        autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option  (onSelectionChange)="updateMySelection($event)"
+                     *ngFor="let option of filteredSeeds | async" [value]="option">
+          {{option.largename}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field
+      class="col-md-6"
+      floatLabel="always"
+      appearance="fill">
+      <mat-label>Inicio de asignación</mat-label>
+      <input formControlName="start_date"
+             matInput
+             required
+             [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field
+      class="col-md-6"
+      floatLabel="always"
+      appearance="fill">
+      <mat-label>Fin de asignación</mat-label>
+      <input formControlName="end_date"
+             matInput
+             required
+             [matDatepicker]="picker2">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+    (click)="confirm()"
+    [disabled]="!assignForm.valid"
+    mat-raised-button color="primary">ASIGNAR</button>
+</mat-dialog-actions>
