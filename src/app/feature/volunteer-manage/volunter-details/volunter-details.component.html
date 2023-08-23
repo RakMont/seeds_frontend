@@ -1,0 +1,77 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">DETALLES</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div *ngIf="volunteer else recuperando">
+    <div class="unique-title">INFORMACIÓN PERSONAL</div>
+    <hr>
+    <div class="row">
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Nombre: </span> {{volunteer.name}} {{volunteer.lastname}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Email: </span>{{volunteer.email}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Telefono: </span>{{volunteer.phone}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Dni: </span>{{volunteer.dni}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Estado: </span>{{volunteer.status}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Fecha de nacimiento: </span>{{volunteer.birthdate | date:'mediumDate'}}</span>
+
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Fecha de Ingreso: </span>{{volunteer.entry_date | date:'mediumDate'}}</span>
+
+      <span  class="col-md-12"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Roles del Voluntario: </span>
+      <ng-container *ngIf="messageRoles===''  else mensajeroles">
+        <mat-chip-listbox *ngFor="let role of volunteer.roles">
+          <mat-chip  [ngStyle]="{'background-color': '#4b597b'}">
+            <span class="mat-chip">{{role.name | titlecase}}</span>
+          </mat-chip>
+        </mat-chip-listbox>
+      </ng-container>
+      </span>
+      <ng-template #mensajeroles>
+        {{messageRoles}}
+      </ng-template>
+    </div>
+    <ng-container *ngIf="volunteer.status != 'ACTIVE'">
+      <div class="unique-title">DETALLES DE DESACTIVACIÓN</div>
+      <hr>
+      <div class="row">
+          <ng-container *ngFor="let message of exitMessages">
+            <span  class="col-md-12"><span style="font-weight: 500">
+            <mat-icon>label_important</mat-icon>
+            Fecha: </span>[ {{message.registerDate | date:'mediumDate'}} ]
+              {{message.message}}
+            </span>
+
+          </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <ng-template #recuperando align="center">
+      <mat-spinner mode="indeterminate" class="center-spinner"></mat-spinner>
+    </ng-template>
+  </div>
+</mat-dialog-content>

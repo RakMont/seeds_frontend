@@ -1,0 +1,59 @@
+.container{
+  margin-top: 60px;
+  width: 94%;
+}
+
+mat-card{
+  margin-bottom: 12px;
+  padding: 16px;
+}
+
+.loading{
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  letter-spacing: 0.1rem;
+  font-size: 16px;
+  font-weight: 400;
+}
+.title{
+  float: left;
+  font-size: 18px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 14px 0;
+}
+hr{
+  width: 96%;
+  margin: 12px auto;
+}
+
+.option{
+  font-size: 14px;
+}
+
+.volunteer-head{
+  display: flex;
+  justify-content: space-between;
+  .active.mat-primary.mat-mdc-chip-selected{
+    background-color: #6db669;
+  }
+
+  .inactive.mat-primary.mat-mdc-chip-selected{
+    background-color: #bd5533;
+  }
+
+  .pending.mat-primary.mat-mdc-chip-selected{
+    background-color: #ce7e00;
+  }
+}
+
+mat-chip-option{
+  font-size: 12px;
+}

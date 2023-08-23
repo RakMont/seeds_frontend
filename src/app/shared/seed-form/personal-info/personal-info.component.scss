@@ -1,0 +1,95 @@
+mat-form-field{
+  width: 100%;
+  padding-bottom: 16px;
+}
+.personal-info{
+  padding: 8px;
+  form{
+    margin: 8px;
+  }
+}
+
+mat-error{
+  color: 	#ff5a5f;
+}
+
+.header-message{
+  border-radius: 15px;
+  background-color: #6db669;
+  color: #212121;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 32px;
+}
+////////////////////////////////////////////////////////////////
+
+.float-bottom{
+  display: flex;
+  width: 95%;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.float-bottom mat-icon{
+  color: #00A846;
+  letter-spacing: 0.1rem;
+
+}
+.next-button{
+  padding-top: 32px;
+  text-align: center;
+  button{
+    width: 200px;
+  }
+}
+
+.content{
+  padding: 12px;
+  color: #333333;
+  font-size: 13px;
+  justify-content: center;
+  letter-spacing: 0.06rem;
+}
+
+.type_row_deactivated{
+  color: white;
+}
+.type_row_activated{
+  border: none;
+  height: 12px;
+  background: #2e7d32;
+  border-radius: 5px;
+}
+
+.donation-icon{
+  display: flex;
+  justify-content: center;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}
+.subtitle {
+  border: 1px solid #6b9074;
+  //margin-bottom: 16px;
+  width: 96%;
+  margin: 4px auto 16px ;
+}
+
+.donation-section{
+  text-align: center;
+  span{
+    color: #2e7d32;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+}
+
+.donation-chip-section{
+  padding: 16px  24px;
+}

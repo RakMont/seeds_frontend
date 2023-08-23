@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "value": "1",
+      "selected": true,
+      "name": "5 DE CADA MES"
+    },
+    {
+      "value": "2",
+      "selected": false,
+      "name": "10 DE CADA MES"
+    },
+    {
+      "value": "3",
+      "selected": false,
+      "name": "15 DE CADA MES"
+    },
+    {
+      "value": "4",
+      "selected": false,
+      "name": "20 DE CADA MES"
+    },
+    {
+      "value": "5",
+      "selected": false,
+      "name": "25 DE CADA MES"
+    }
+  ]
+}

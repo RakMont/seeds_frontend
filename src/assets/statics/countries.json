@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "value": "bolivia",
+      "selected": true,
+      "name": "Bolivia"
+    },
+    {
+      "value": "argentina",
+      "selected": false,
+      "name": "Argentina"
+    },
+    {
+      "value": "chile",
+      "selected": false,
+      "name": "Chile"
+    },
+    {
+      "value": "brasil",
+      "selected": false,
+      "name": "Brasil"
+    },
+    {
+      "value": "eeuu",
+      "selected": false,
+      "name": "EEUU"
+    }
+  ]
+
+}

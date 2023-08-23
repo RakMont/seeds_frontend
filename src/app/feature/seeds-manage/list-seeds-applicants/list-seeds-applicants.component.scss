@@ -1,0 +1,52 @@
+.container{
+  margin-top: 70px;
+  width: 96%;
+}
+mat-card{
+  margin-bottom: 12px;
+  padding: 16px;
+}
+
+.loading{
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.volunteer-head{
+  display: flex;
+  justify-content: space-between;
+  .active.mat-primary.mat-mdc-chip-selected{
+    background-color: #6db669;
+  }
+
+  .inactive.mat-primary.mat-mdc-chip-selected{
+    background-color: #bd5533;
+  }
+
+  .pending.mat-primary.mat-mdc-chip-selected{
+    background-color: #ce7e00;
+  }
+}
+
+mat-chip-option{
+  font-size: 12px;
+}
+//////////////////////////////////////////////
+.volunteer-cont{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  display: flex;
+  justify-content: space-between;
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}

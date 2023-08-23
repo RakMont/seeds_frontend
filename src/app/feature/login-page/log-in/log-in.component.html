@@ -1,0 +1,36 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">INCIAR SESIÓN</span>
+  </div>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formLogin" class="row">
+    <mat-form-field appearance="fill"
+                    floatLabel="always"
+                    class="col-md-12">
+      <mat-label>Usuario</mat-label>
+      <input matInput required formControlName="username">
+      <mat-error *ngIf="formLogin.get('username').invalid">{{getUsernameError}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill"
+                    floatLabel="always"
+                    class="col-md-12">
+      <mat-label>Contraseña</mat-label>
+      <input required matInput formControlName="password"
+             [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  {{formLogin.value | json}}
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-flat-button
+          (click)="login()"
+          [disabled]="!formLogin.valid"
+          color="primary">INICIAR</button>
+</mat-dialog-actions>

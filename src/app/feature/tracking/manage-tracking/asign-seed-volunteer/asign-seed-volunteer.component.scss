@@ -1,0 +1,67 @@
+::ng-deep .icon-outside .close-button{
+  float: right;
+  top:-52px;
+  right:-52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+  overflow: unset
+}
+
+.mat-dialog-content{
+  padding: 36px;
+  letter-spacing: 1px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.volunter-cont{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  display: flex;
+  span{
+    padding-top: 2px;
+    margin-left: 8px;
+    font-size: 0.9em;
+  }
+}
+
+
+/*******/
+
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
+}
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  background-color: #162939;
+  color: #FFFFFF;
+  //width: 94%;
+  //position: relative;
+}
+.dialog-header{
+  //padding:  12px;
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}
+.mat-chip{
+  font-size: 0.8em !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+}

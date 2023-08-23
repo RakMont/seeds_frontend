@@ -1,0 +1,217 @@
+<div class="personal-info">
+  <mat-list>
+    <mat-list-item class="donation-section" *ngIf="!isFromVolunteer">
+      <span>{{'personal-info.subtitle' | translate}}</span>
+    </mat-list-item>
+    <mat-list-item class="donation-section" *ngIf="isFromVolunteer">
+      <span>INFORMACIÓN PERSONAL</span>
+    </mat-list-item>
+    <mat-divider class="subtitle"></mat-divider>
+
+    <form [formGroup]="applicantForm"
+          class="row justify-content-between">
+      <!-- <div class="col-md-12 header-message" >{{'personal-info.subtitle' | translate}}</div>-->
+      <div class="col-md-6">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill">
+          <mat-label>{{'personal-info.fieldName' | translate}}</mat-label>
+          <input required matInput formControlName="name" >
+          <mat-error *ngIf="name.invalid">{{'personal-info.fieldNameError' | translate}}</mat-error>
+          <mat-hint>{{'personal-info.fieldNameHint' | translate}}</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill">
+          <mat-label>{{'personal-info.fieldLastName' | translate}}</mat-label>
+          <input required matInput formControlName="lastname">
+          <mat-error *ngIf="lastname.invalid">{{'personal-info.fieldLastNameError' | translate}}</mat-error>
+          <mat-hint>{{'personal-info.fieldLastNameHint' | translate}}</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill">
+          <mat-label>{{'personal-info.fieldEmail' | translate}}</mat-label>
+          <input required matInput formControlName="email">
+          <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+          <mat-hint>correo@gmail.vom</mat-hint>
+          <mat-icon matSuffix>alternate_email</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>{{'personal-info.fieldPhone' | translate}}</mat-label>
+          <input matInput formControlName="phone">
+          <mat-error *ngIf="phone.invalid">{{'personal-info.fieldPhoneError' | translate}}</mat-error>
+          <mat-hint>515151355.....</mat-hint>
+          <mat-icon matSuffix> call</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>{{'personal-info.fieldBirthdate' | translate}}</mat-label>
+          <input required matInput
+                 formControlName="birthdate"
+                 [matDatepickerFilter]="myFilter"
+                 [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker ></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>{{'personal-info.fieldId' | translate}}</mat-label>
+          <input required matInput formControlName="dni">
+          <mat-error *ngIf="dni.invalid">{{'personal-info.fieldIdError' | translate}}</mat-error>
+          <mat-hint>6846545</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>{{'personal-info.fieldCountry' | translate}}</mat-label>
+          <mat-select required formControlName="country">
+            <mat-option *ngFor="let c of countries" [value]="c.value">
+              {{c.name | uppercase}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>{{'personal-info.fieldCity' | translate}}</mat-label>
+          <mat-select required formControlName="city">
+            <mat-option *ngFor="let c of countries" [value]="c.value">
+              {{c.name |uppercase}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <mat-form-field floatLabel="always" appearance="fill">
+          <mat-label>{{'personal-info.fieldAddress' | translate}}</mat-label>
+          <textarea matInput
+                    required
+                    formControlName="address"
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+          <mat-error *ngIf="dni.invalid">{{'personal-info.fieldAddressError' | translate}}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <ng-container *ngIf="!isFromVolunteer else volunteerView">
+    <mat-list-item class="donation-section">
+      <span>ELIJA EL TIPO DE APORTE QUE DESEA REALIZAR</span>
+    </mat-list-item>
+      <mat-divider class="subtitle"></mat-divider>
+
+      <div class="row">
+     <div class="col-md-4">
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>
+           <mat-panel-description>
+             <mat-icon>account_circle</mat-icon>
+             APORTE ÚNICO
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p class="content">Consiste en realizar un aporte
+           de más de 25$ o su equivalente de 175 Bs.
+           Podrá elegir el método de pago de su elección y el día del mes actual en el que realizará su aporte.
+           Así mismo, si desea
+           recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos.
+         </p>
+         <p class="donation-icon">
+           <img  src="../../../../assets/donation.png" alt="" srcset="">
+         </p>
+         <span (click)="emitDonationType('UNIQUE')" class="float-bottom">
+            <mat-icon matSuffix>check_circle</mat-icon>
+          Opcion 1
+          </span>
+
+       </mat-expansion-panel>
+       <hr
+         [class]="this.applicantForm.get('donationType').value == 'UNIQUE' ?
+         'type_row_activated' : 'type_row_deactivated'">
+     </div>
+     <div class="col-md-4">
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>
+           <mat-panel-description>
+             <mat-icon>account_circle</mat-icon>
+             APORTE CONSTANTE
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p class="content">Consiste en realizar un aporte mensual de más
+           de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el
+           que desea empezar el proceso de aporte (Solo Podrá elegir los 3 meses a partir del mes actual). Podrá
+           elegir el método
+           de pago de su elección la fecha de cobro en la que se esperara su aporte,
+           el medio por el cual desea recibir su recordatorio de aporte mensual. Así mismo, si desea recibir
+           noticias de los
+           últimos logros del Programa Semillas gracias a los aportes obtenidos..
+         </p>
+         <p class="donation-icon">
+           <img  src="../../../../assets/cycle-96.png" alt="" srcset="">
+         </p>
+         <span (click)="emitDonationType('CONSTANT')" class="float-bottom">
+            <mat-icon matSuffix>check_circle</mat-icon>
+            Opcion 2
+          </span>
+       </mat-expansion-panel>
+       <hr
+         [class]="
+        this.applicantForm.get('donationType').value == 'CONSTANT' ?
+         'type_row_activated' : 'type_row_deactivated'">
+     </div>
+     <div class="col-md-4">
+       <mat-expansion-panel>
+         <mat-expansion-panel-header>
+           <mat-panel-description>
+             <mat-icon>account_circle</mat-icon>
+             APORTE DE EMPRESAS
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p class="content">Consiste en realizar un aporte mensual de más
+           de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el
+           que desea empezar el proceso de aporte (Solo Podrá elegir los 3 meses a partir del mes actual). Podrá
+           elegir..
+         </p>
+         <p class="donation-icon">
+           <img  src="../../../../assets/csr.png" alt="" srcset="">
+         </p>
+         <span class="float-bottom" (click)="emitDonationType('COMPANY')">
+            <mat-icon matSuffix>check_circle</mat-icon>
+            Opcion 3
+          </span>
+       </mat-expansion-panel>
+       <hr
+         [class]="
+        this.applicantForm.get('donationType').value == 'COMPANY' ?
+         'type_row_activated' : 'type_row_deactivated' ">
+     </div>
+   </div>
+ </ng-container>
+    <ng-template #volunteerView>
+      <mat-list-item class="donation-section">
+        <span>ELIJA EL TIPO DE APORTE</span>
+
+      </mat-list-item>
+      <mat-divider class="subtitle"></mat-divider>
+
+      <mat-chip-listbox class="donation-chip-section">
+        <mat-chip-option (click)="emitDonationType('UNIQUE')">APORTE ÚNICO</mat-chip-option>
+        <mat-chip-option (click)="emitDonationType('CONSTANT')"color="accent" selected>APORTE CONSTANTE</mat-chip-option>
+        <mat-chip-option (click)="emitDonationType('COMPANY')"color="warn">APORTE DE EMPRESAS</mat-chip-option>
+      </mat-chip-listbox>
+    </ng-template>
+  </mat-list>
+</div>

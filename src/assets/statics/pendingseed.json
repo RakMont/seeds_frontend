@@ -1,0 +1,4336 @@
+{
+  "row": [
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "1",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Helena Tars",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "231212",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "4"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "4"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "2",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Lucia Villegas",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "678945652",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "6"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "6"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "3",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Elenea  Vellegas",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "6736127",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "7"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "7"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "4",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Elenea 2 Vellegas2",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "6736127",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "8"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "8"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "5",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Lianna Vellegas2",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "6736127",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "9"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "9"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "6",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Fernando Aparicio",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "61873681",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "10"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "10"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "10"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "7",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ana Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "11"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "11"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "11"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Ana Lucia Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "12"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "12"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "12"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "9",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Marcela Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "13"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "13"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "13"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "10",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Lucrecia Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "14"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "14"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "14"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "11",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "mariana Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "15"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "15"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "12",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "sofia Smith",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "8676875",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "16"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "16"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "16"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "13",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Freddy vang",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "817263817",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_CONSTANTE",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "17"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "17"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "14",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Armando  mendoza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "18"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "18"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "15",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "nicolas mendoza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "19"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "19"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "19"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "16",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "betty mendoza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "20"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "20"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "17",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "patty mendoza",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "21"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "21"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "21"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "18",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "patzy pat",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "22"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "22"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cells": [
+        {
+          "cellHeader": {
+            "key": "#",
+            "order": 0,
+            "propertyType": "Integer",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "19",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Semilla",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "patzypaz pat",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Celular",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "63453453",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Estado",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "chipContent",
+              "iconName": null,
+              "color": "#e7d042",
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "Pendiente",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Responsable Registro",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "SISTEMA",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Tipo aporte",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": true,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "text",
+              "iconName": null,
+              "color": null,
+              "clickable": false,
+              "clickedAction": null,
+              "contentTooltip": null,
+              "content": "APORTE_UNICO",
+              "params": null
+            }
+          ]
+        },
+        {
+          "cellHeader": {
+            "key": "Opciones",
+            "order": 0,
+            "propertyType": "String",
+            "canSort": false,
+            "toolTip": null
+          },
+          "cellProperty": {
+            "color": null,
+            "clickable": false,
+            "clickedAction": null,
+            "cellTooltip": null
+          },
+          "contents": [
+            {
+              "contentType": "iconAccion",
+              "iconName": "offline_pin",
+              "color": "#5c9254",
+              "clickable": true,
+              "clickedAction": "AceptSeed",
+              "contentTooltip": "Aceptar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "23"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "highlight_off",
+              "color": "#db504a",
+              "clickable": true,
+              "clickedAction": "RejectSeed",
+              "contentTooltip": "Rechazar semilla",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "23"
+                }
+              ]
+            },
+            {
+              "contentType": "iconAccion",
+              "iconName": "remove_red_eye",
+              "color": "#ffe599",
+              "clickable": true,
+              "clickedAction": "SeedInfo",
+              "contentTooltip": "Ver información",
+              "content": null,
+              "params": [
+                {
+                  "paramName": "contributorId",
+                  "paramContent": "23"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

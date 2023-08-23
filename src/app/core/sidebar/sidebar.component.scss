@@ -1,0 +1,57 @@
+.example-events {
+  width: 250px;
+  height: 150px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
+.active, .active:hover{
+  background-color: #049B2D;
+}
+.mat-nav-list .mat-list-item{
+  color: #FFFFFF;
+  font-size: 0.8em!important;
+}
+.mat-nav-list .mat-expansion-panel-header{
+  color: #FFFFFF;
+  font-size: 0.8em!important;
+}
+
+.active2, .active2:hover{
+  background-color: #1b7549;
+}
+
+.element{
+  font-size: 12px!important;
+  font-weight: 400!important;
+  display: flex;
+  color: #FFFFFF;
+  span{
+    margin: auto 4px;
+  }
+  mat-icon{
+    color: #FFFFFF;
+  }
+}
+.element-inside{
+  font-size: 12px!important;
+  font-weight: 400!important;
+  display: flex;
+  padding: 6px 0 6px 16px;
+  color: #FFFFFF;
+  mat-icon{
+    color: #FFFFFF;
+    margin-right: 4px;
+  }
+}
+
+.mat-expansion-panel{
+  background-color: #26404e;
+  //color: #FFFFFF;
+}
+
+.mat-expansion-indicator::after {
+  height: 10px;
+  width: 10px;
+  color: #C02126!important;
+}
