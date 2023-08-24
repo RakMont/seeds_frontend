@@ -37,7 +37,7 @@ export class ListVolunteersComponent implements OnInit {
 
   getActiveVolunters(state): void{
     this.loadingVolunteers = true;
-    this.voluntersService.listvolunters(state)
+    this.voluntersService.listVolunteers(state)
       .subscribe(data => {
         this.volunteers = data;
         this.loadingVolunteers = false;
@@ -110,7 +110,7 @@ export class ListVolunteersComponent implements OnInit {
           message: result.message,
           volunteerId: volunterId
         };
-        this.voluntersService.exitvolunter(payload)
+        this.voluntersService.exitVolunteer(payload)
           .subscribe(( result ) => {
             this.showMessage(result);
             if (result) { this.getActiveVolunters(this.val.get('state').value); }
@@ -126,6 +126,7 @@ export class ListVolunteersComponent implements OnInit {
       autoFocus: true,
       width: '500px',
       data: {
+        isDelete: true,
         title: 'REACTIVAR RESPONSABLE',
         question: 'Al confirmar se reactivará al voluntario y' +
           ' podrá verlo en el menú de responsables activados,' +
@@ -176,10 +177,10 @@ export class ListVolunteersComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result?.status === 'afirmative'){
-        this.voluntersService.deleteVolunter(id)
+        this.voluntersService.deleteVolunteer(id)
           .subscribe(( res ) => {
             this.showMessage(res);
-            console.log('done', res);
+            if (res) { this.getActiveVolunters(this.val.get('state').value); }
           }, ( error ) => {
             this.showMessage(error);
           });

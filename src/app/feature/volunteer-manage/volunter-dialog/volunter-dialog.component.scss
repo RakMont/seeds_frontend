@@ -3,7 +3,8 @@
   span{
     color: white!important;
     display: flex;
-    padding: 6px 0;
+    padding: 4px 0;
+    font-size: 13px;
   }
 }
 
@@ -11,6 +12,7 @@ mat-dialog-content{
   padding: 24px !important;
   font-size: 0.9em!important;
 }
+
 .mdc-dialog__title{
   margin: 0 auto !important;
   display: flex;
@@ -19,11 +21,9 @@ mat-dialog-content{
   border-bottom: 1px solid #2e7d32;
   background-color: #162939;
   color: #FFFFFF;
-  //width: 94%;
-  //position: relative;
 }
+
 .dialog-header{
-  //padding:  12px;
   width: 96% !important;
   text-align: center;
   padding-top: 8px;
@@ -35,4 +35,7 @@ mat-dialog-content{
   margin-right: -20px;
   padding:  16px 12px;
   margin-top: 8px;
+}
+mat-option{
+  font-size: 12px;
 }

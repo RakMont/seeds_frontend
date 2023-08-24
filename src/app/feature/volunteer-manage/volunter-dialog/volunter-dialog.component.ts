@@ -17,7 +17,7 @@ export interface DialogData {
   styleUrls: ['./volunter-dialog.component.scss']
 })
 export class VolunterDialogComponent implements OnInit {
-  volunterform = this.fb.group({
+  volunteerForm = this.fb.group({
     userId: [null],
     name: ['', Validators.required],
     username: [null],
@@ -32,7 +32,7 @@ export class VolunterDialogComponent implements OnInit {
   hide = true;
   roles: Role[] = [];
   allRoles: Role[] = [];
-  volunter: Volunter = null;
+  volunteer: Volunter = null;
   title: string;
   filteredRoles: Role[] = [];
 
@@ -51,19 +51,19 @@ export class VolunterDialogComponent implements OnInit {
     this.getTitle();
   }
   getVolunter(): void{
-    this.volunterService.getvolunter(this.data.volunterId)
+    this.volunterService.getVolunteer(this.data.volunterId)
       .subscribe((response) => {
-        this.volunter = response;
-        this.volunterform.patchValue({
-          userId: this.volunter.userId,
-          name: this.volunter.name,
-          lastname: this.volunter.lastname,
-          email: this.volunter.email,
-          phone: this.volunter.phone ? this.volunter.phone : '',
-          dni: this.volunter.dni ? this.volunter.dni : '',
-          birthdate: new Date(this.volunter.birthdate)
+        this.volunteer = response;
+        this.volunteerForm.patchValue({
+          userId: this.volunteer.userId,
+          name: this.volunteer.name,
+          lastname: this.volunteer.lastname,
+          email: this.volunteer.email,
+          phone: this.volunteer.phone ? this.volunteer.phone : '',
+          dni: this.volunteer.dni ? this.volunteer.dni : '',
+          birthdate: new Date(this.volunteer.birthdate)
         });
-        this.roles = this.volunter.roles;
+        this.roles = this.volunteer.roles;
         this.filterRoles();
       });
   }
@@ -77,30 +77,30 @@ export class VolunterDialogComponent implements OnInit {
   onSubmit(): void{
     if ( !this.data.edit ) {
       const data = {
-        user: this.volunterform.value,
+        user: this.volunteerForm.value,
         entry_date: new Date(),
         roles: this.roles,
-        username: this.volunterform.get('username').value,
-        password: this.volunterform.get('password').value
+        username: this.volunteerForm.get('username').value,
+        password: this.volunteerForm.get('password').value
       };
-      this.volunterService.addvolunter(data)
+      this.volunterService.addVolunteer(data)
         .subscribe(( data ) => {
           this.showMessage(data);
           this.dialogRef.close('success');
         }, (error) => {
           this.showMessage(error.error);
           //this.dialogRef.close();
-          console.log('error', this.volunterform.value);
+          console.log('error', this.volunteerForm.value);
         });
     }else{
       const data = {
-        volunterId: this.volunter.volunterId,
-        user: this.volunterform.value,
+        volunterId: this.volunteer.volunterId,
+        user: this.volunteerForm.value,
         roles: this.roles,
-        username: this.volunterform.get('username').value,
-        password: this.volunterform.get('password').value
+        username: this.volunteerForm.get('username').value,
+        password: this.volunteerForm.get('password').value
       };
-      this.volunterService.updatevolunter(data)
+      this.volunterService.updateVolunteer(data)
         .subscribe(( data ) => {
           this.showMessage(data);
           this.dialogRef.close('success');
@@ -110,46 +110,46 @@ export class VolunterDialogComponent implements OnInit {
     }
   }
   getErrorMessage(): any {
-    if (this.volunterform.get('name').hasError('required')) {
+    if (this.volunteerForm.get('name').hasError('required')) {
       return 'Debes Ingresar el nombre';
     }
   }
   getErrorMessageLastname(): any {
-    if (this.volunterform.get('lastname').hasError('required')){
+    if (this.volunteerForm.get('lastname').hasError('required')){
       return 'Debes Ingresar el apellido';
     }
   }
   getErrorMessageEmail(): any {
-    if (this.volunterform.get('email').hasError('required')){
+    if (this.volunteerForm.get('email').hasError('required')){
       return 'Debes Ingresar el Correo';
     }
     return this.email.hasError('email') ? 'Debes Ingresar un Correo valido' : '';
   }
 
   getErrorMessagePhone(): any {
-    if (this.volunterform.get('phone').hasError('required')){
+    if (this.volunteerForm.get('phone').hasError('required')){
       return 'Debes Ingresar un Celular';
     }
   }
   getErrorMessageDNI(): any {
-    if (this.volunterform.get('dni').hasError('required')){
+    if (this.volunteerForm.get('dni').hasError('required')){
       return 'Debes ingresar el Carnet de Identidad';
     }
   }
   get name(): any {
-    return this.volunterform.get('name');
+    return this.volunteerForm.get('name');
   }
   get lastname(): any {
-    return this.volunterform.get('lastname');
+    return this.volunteerForm.get('lastname');
   }
   get email(): any {
-    return this.volunterform.get('email');
+    return this.volunteerForm.get('email');
   }
   get phone(): any {
-    return this.volunterform.get('phone');
+    return this.volunteerForm.get('phone');
   }
   get dni(): any {
-    return this.volunterform.get('dni');
+    return this.volunteerForm.get('dni');
   }
   get confirmButton(): string{
     return this.data.edit ? 'GUARDAR EDICIÓN' : 'GUARDAR RESPONSABLE';

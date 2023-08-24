@@ -14,24 +14,24 @@ export class VolunteerService {
   // tslint:disable-next-line:variable-name
   private _listeners = new Subject<any>();
 
-  listvolunters(status: string): Observable<Table> {
+  listVolunteers(status: string): Observable<Table> {
     const p = new HttpParams().set('status', status);
     return this.http.get<Table>(environment.backend + '/seeds/volunters/all/', { params: p });
   }
   getAllRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(environment.backend + '/seeds/volunters/roles');
   }
-  listExitevolunters(): Observable<Table> {
+  listExiteVolunteers(): Observable<Table> {
     const p = new HttpParams().set('status', 'INACTIVE');
     return this.http.get<Table>(environment.backend +
       '/seeds/volunters/exitvolunters', { params: p });
   }
 
-  listTrackingvolunters(): Observable<Table> {
+  listTrackingVolunteers(): Observable<Table> {
     //return this.http.get<Table>('./assets/statics/trackingvolunters.json');
     return this.http.get<Table>(environment.backend + '/seeds/volunters/trackingVolunteers/');
   }
-  getvolunter(volunterId: any): Observable<Volunter> {
+  getVolunteer(volunterId: any): Observable<Volunter> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     const p = new HttpParams().set('id', volunterId);
@@ -39,15 +39,15 @@ export class VolunteerService {
       '/seeds/volunters/getVolunter', { params: p });
   }
 
-  addvolunter(volunter: Volunter): Observable<any> {
+  addVolunteer(volunter: Volunter): Observable<any> {
     return this.http.post<any>(environment.backend + '/seeds/volunters/create/', volunter);
   }
 
-  updatevolunter(volunter: Volunter): Observable<any> {
+  updateVolunteer(volunter: Volunter): Observable<any> {
     return this.http.put<any>(environment.backend + '/seeds/volunters/updateVolunter',  volunter);
   }
 
-  exitvolunter(payload: any): Observable<any>{
+  exitVolunteer(payload: any): Observable<any>{
     return this.http.post<any>(environment.backend + '/seeds/volunters/exitVolunter', payload
     );
   }
@@ -57,7 +57,7 @@ export class VolunteerService {
     );
   }
 
-  deleteVolunter(payload: any): Observable<any>{
+  deleteVolunteer(payload: any): Observable<any>{
     return this.http.post<any>(environment.backend + '/seeds/volunters/deleteVolunter', payload
     );
   }
@@ -67,7 +67,7 @@ export class VolunteerService {
     return this.http.get<any>(environment.backend + '/seeds/volunters/getExitMessages', { params: p });
   }
 
-  listexitvolunter(filter: VolunterFilter): Observable<Volunter[]> {
+  listExitVolunteer(filter: VolunterFilter): Observable<Volunter[]> {
     const p = new HttpParams()
       .set('status', filter.status)
       .set('roleId', filter.roleId);
