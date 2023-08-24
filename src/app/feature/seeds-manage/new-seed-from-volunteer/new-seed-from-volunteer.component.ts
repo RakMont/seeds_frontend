@@ -63,7 +63,7 @@ export class NewSeedFromVolunteerComponent implements OnInit{
           this.showMessage(error.error);
         });
     }else {
-      this.applicantService.createConstantapplicant(this.contributionPayload)
+      this.applicantService.createConstantApplicant(this.contributionPayload)
         .subscribe((response) => {
           this.sendingData = false;
           this.sentInformaTionMessage(response);

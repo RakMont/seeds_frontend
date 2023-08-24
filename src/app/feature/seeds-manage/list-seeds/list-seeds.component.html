@@ -1,6 +1,6 @@
 <div class="container" id="htmlData">
 
-  <ng-container *ngIf="!loadingtable else loading">
+  <ng-container *ngIf="!loadingTable else loading">
     <app-title-banner
       [hasTranslate]="false"
       [title]="'GESTIONAR SEMILLAS'">
@@ -11,9 +11,9 @@
       <div class="volunteer-cont">
         <form [formGroup]="val" class="volunteer-head">
           <mat-chip-listbox formControlName="state">
-            <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
+            <mat-chip-option class="active" [value]="'ACCEPTED'" color="primary" selected>Activos</mat-chip-option>
             <mat-chip-option class="pending" [value]="'PAUSED'" color="primary">En Pausa</mat-chip-option>
-            <mat-chip-option class="inactive" [value]="'DESERTANT'" color="primary">Desertantes</mat-chip-option>
+            <mat-chip-option class="inactive" [value]="'DESERTER'" color="primary">Desertantes</mat-chip-option>
           </mat-chip-listbox>
         </form>
       </div>

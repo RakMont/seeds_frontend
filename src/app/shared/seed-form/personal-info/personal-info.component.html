@@ -3,11 +3,13 @@
     <mat-list-item class="donation-section" *ngIf="!isFromVolunteer">
       <span>{{'personal-info.subtitle' | translate}}</span>
     </mat-list-item>
-    <mat-list-item class="donation-section" *ngIf="isFromVolunteer">
-      <span>INFORMACIÓN PERSONAL</span>
-    </mat-list-item>
-    <mat-divider class="subtitle"></mat-divider>
-
+    <ng-container  *ngIf="isFromVolunteer && !seedData">
+      <mat-list-item class="donation-section">
+        <span>INFORMACIÓN PERSONAL</span>
+      </mat-list-item>
+      <mat-divider class="subtitle"></mat-divider>
+    </ng-container>
+    <app-title-banner *ngIf="seedData" [title]="'INFORMACIÓN PERSONAL'"></app-title-banner>
     <form [formGroup]="applicantForm"
           class="row justify-content-between">
       <!-- <div class="col-md-12 header-message" >{{'personal-info.subtitle' | translate}}</div>-->
@@ -107,6 +109,19 @@
           <mat-error *ngIf="dni.invalid">{{'personal-info.fieldAddressError' | translate}}</mat-error>
         </mat-form-field>
       </div>
+      <ng-template #volunteerView>
+        <mat-list-item class="donation-section">
+          <span>ELIJA EL TIPO DE APORTE</span>
+
+        </mat-list-item>
+        <mat-divider class="subtitle"></mat-divider>
+
+        <mat-chip-listbox formControlName="donationType" class="donation-chip-section">
+          <mat-chip-option [value]="'APORTE_UNICO'" (click)="emitDonationType('APORTE_UNICO')">APORTE ÚNICO</mat-chip-option>
+          <mat-chip-option [value]="'APORTE_CONSTANTE'"  (click)="emitDonationType('APORTE_CONSTANTE')" selected>APORTE CONSTANTE</mat-chip-option>
+          <mat-chip-option  [value]="'APORTE_EMPRESAS'" (click)="emitDonationType('APORTE_EMPRESAS')">APORTE DE EMPRESAS</mat-chip-option>
+        </mat-chip-listbox>
+      </ng-template>
     </form>
     <ng-container *ngIf="!isFromVolunteer else volunteerView">
     <mat-list-item class="donation-section">
@@ -132,14 +147,14 @@
          <p class="donation-icon">
            <img  src="../../../../assets/donation.png" alt="" srcset="">
          </p>
-         <span (click)="emitDonationType('UNIQUE')" class="float-bottom">
+         <span (click)="emitDonationType('APORTE_UNICO')" class="float-bottom">
             <mat-icon matSuffix>check_circle</mat-icon>
           Opcion 1
           </span>
 
        </mat-expansion-panel>
        <hr
-         [class]="this.applicantForm.get('donationType').value == 'UNIQUE' ?
+         [class]="this.applicantForm.get('donationType').value == 'APORTE_UNICO' ?
          'type_row_activated' : 'type_row_deactivated'">
      </div>
      <div class="col-md-4">
@@ -162,14 +177,14 @@
          <p class="donation-icon">
            <img  src="../../../../assets/cycle-96.png" alt="" srcset="">
          </p>
-         <span (click)="emitDonationType('CONSTANT')" class="float-bottom">
+         <span (click)="emitDonationType('APORTE_CONSTANTE')" class="float-bottom">
             <mat-icon matSuffix>check_circle</mat-icon>
             Opcion 2
           </span>
        </mat-expansion-panel>
        <hr
          [class]="
-        this.applicantForm.get('donationType').value == 'CONSTANT' ?
+        this.applicantForm.get('donationType').value == 'APORTE_CONSTANTE' ?
          'type_row_activated' : 'type_row_deactivated'">
      </div>
      <div class="col-md-4">
@@ -188,30 +203,18 @@
          <p class="donation-icon">
            <img  src="../../../../assets/csr.png" alt="" srcset="">
          </p>
-         <span class="float-bottom" (click)="emitDonationType('COMPANY')">
+         <span class="float-bottom" (click)="emitDonationType('APORTE_EMPRESAS')">
             <mat-icon matSuffix>check_circle</mat-icon>
             Opcion 3
           </span>
        </mat-expansion-panel>
        <hr
          [class]="
-        this.applicantForm.get('donationType').value == 'COMPANY' ?
+        this.applicantForm.get('donationType').value == 'APORTE_EMPRESAS' ?
          'type_row_activated' : 'type_row_deactivated' ">
      </div>
    </div>
  </ng-container>
-    <ng-template #volunteerView>
-      <mat-list-item class="donation-section">
-        <span>ELIJA EL TIPO DE APORTE</span>
 
-      </mat-list-item>
-      <mat-divider class="subtitle"></mat-divider>
-
-      <mat-chip-listbox class="donation-chip-section">
-        <mat-chip-option (click)="emitDonationType('UNIQUE')">APORTE ÚNICO</mat-chip-option>
-        <mat-chip-option (click)="emitDonationType('CONSTANT')"color="accent" selected>APORTE CONSTANTE</mat-chip-option>
-        <mat-chip-option (click)="emitDonationType('COMPANY')"color="warn">APORTE DE EMPRESAS</mat-chip-option>
-      </mat-chip-listbox>
-    </ng-template>
   </mat-list>
 </div>

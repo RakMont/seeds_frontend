@@ -6,9 +6,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../../../core/services/auth.service";
 import {ApplicantService} from "../../../core/services/applicant.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
-import {ModalProcessSeedComponent} from "../modal-process-seed/modal-process-seed.component";
 import {ModalViewSeedComponent} from "../modal-view-seed/modal-view-seed.component";
 import {FormBuilder} from "@angular/forms";
+import {ModalEditSeedComponent} from "../modal-edit-seed/modal-edit-seed.component";
+import {ModalUnactiveSeedComponent} from "../modal-unactive-seed/modal-unactive-seed.component";
+import {SeedFilter} from "../../../core/models/Seed.model";
 
 @Component({
   selector: 'app-list-seeds',
@@ -16,10 +18,11 @@ import {FormBuilder} from "@angular/forms";
   styleUrls: ['./list-seeds.component.scss']
 })
 export class ListSeedsComponent implements OnInit {
-  loadingtable = true;
+  loadingTable = true;
+  lastStatus = '';
   data: Table;
   val = this.formBuilder.group({
-    state: [null]
+    state: ['ACCEPTED']
   });
   volunteerProcess: string;
   constructor(private router: Router,
@@ -30,28 +33,33 @@ export class ListSeedsComponent implements OnInit {
               private applicantService: ApplicantService) { }
 
   ngOnInit(): void {
-    this.getPendingSeeds();
+    this.valuechanges();
+    //this.getPendingSeeds();
     this.getCurrentUser();
+    this.val.patchValue({state: 'ACCEPTED'});
   }
 
   getCurrentUser(){
     this.authService.getCurrentUser()
       .subscribe((data) =>{
-        console.log('aksjdhkasjdh', data);
+        console.log('getCurrentUser', data);
         this.volunteerProcess = data.volunterId;
       })
   }
-  getPendingSeeds(): void{
-    this.loadingtable = true;
-    this.applicantService.listPendingSeeds().subscribe(
+  getAprovedSeeds(state): void{
+    this.loadingTable = true;
+    let filter:SeedFilter = {
+      status:state
+    }
+    this.applicantService.listConfirmedSeeds(filter).subscribe(
       (data) => {
         this.data = data;
-        this.loadingtable = false;
+        this.loadingTable = false;
       }
     );
   }
-  onReject(applicantId: string): void {
-    const dialogConfig =  this.dialog.open(ModalProcessSeedComponent, {
+  onDeactivate(applicantId: string): void {
+    const dialogConfig =  this.dialog.open(ModalUnactiveSeedComponent, {
       disableClose: false,
       panelClass: 'icon-outside',
       autoFocus: true,
@@ -64,17 +72,46 @@ export class ListSeedsComponent implements OnInit {
     });
     dialogConfig.afterClosed().subscribe(result => {
       if (result){
-        this.getPendingSeeds();
+        this.getAprovedSeeds(this.val.get('state').value);
       }
     });
   }
+  valuechanges(){
+    this.val.get('state').valueChanges.subscribe((value => {
+      if(value && value!=this.lastStatus){
+        this.getAprovedSeeds(value);
+        this.lastStatus=value;
+      }
+    }))
+  }
 
-  onAcept(applicantId): void {
-    const dialogConfig =  this.dialog.open(ModalProcessSeedComponent, {
+  onView(id): void{
+    const dialogConfig =  this.dialog.open(ModalViewSeedComponent, {
+      disableClose: false,
+      autoFocus: true,
+      width: '800px',
+      data: {
+        contributorId: id,
+      }
+    });
+  }
+  actionOutput(event: CellContent): void{
+    const id = this.getSeedId(event.params);
+    console.log('actionOutput',event.clickedAction )
+    if (event.clickedAction === 'EditContr'){
+      this.onEditSeed(id);
+    }else if (event.clickedAction === 'Unactive'){
+      this.onDeactivate(id);
+    } else if (event.clickedAction === 'SeedInfo'){
+      this.onView(id);
+    }
+  }
+  onEditSeed(applicantId): void {
+    const dialogConfig =  this.dialog.open(ModalEditSeedComponent, {
       disableClose: false,
       panelClass: 'icon-outside',
       autoFocus: true,
-      width: '600px',
+      width: '800px',
       data: {
         contributorId: applicantId,
         volunteerId: this.volunteerProcess,
@@ -83,32 +120,10 @@ export class ListSeedsComponent implements OnInit {
     });
     dialogConfig.afterClosed().subscribe(result => {
       if (result){
-        this.getPendingSeeds();
+        this.getAprovedSeeds(this.val.get('state').value);
       }
     });
   }
-
-  onView(id): void{
-    const dialogConfig =  this.dialog.open(ModalViewSeedComponent, {
-      disableClose: false,
-      autoFocus: true,
-      width: '700px',
-      data: {
-        contributorId: id,
-      }
-    });
-  }
-  actionOutput(event: CellContent): void{
-    const id = this.getSeedId(event.params);
-    if (event.clickedAction === 'AcceptSeed'){
-      this.onAcept(id);
-    }else if (event.clickedAction === 'RejectSeed'){
-      this.onReject(id);
-    } else if (event.clickedAction === 'SeedInfo'){
-      this.onView(id);
-    }
-  }
-
   getSeedId(params: CellParam[]): string{
     return params.find(p => p.paramName === 'contributorId')?.paramContent;
   }
