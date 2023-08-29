@@ -1,0 +1,91 @@
+{
+  "lenVal": "en",
+  "navbar": {
+    "volunteer-head": "I am volunteer",
+    "want-coll": "Want Collaborate",
+    "activities": "Activities"
+  },
+
+  "want-donate": {
+    "title": "INFORMATION REGISTER FORM",
+    "next-button": "NEXT"
+  },
+  "personal-info":{
+    "title": "PERSONAL INFORMATION",
+    "subtitle":"TO BE ABLE TO BE PART OF THE SEEDS PROGRAM, ENTER AND SEND YOUR DETAILS",
+    "fieldName":"Name(s)",
+    "fieldNameHint": "Can enter more than one name",
+    "fieldNameError":"You must enter the name",
+    "fieldLastName":"Last Name(s)",
+    "fieldLastNameHint":"Can enter more than one lastname",
+    "fieldLastNameError":"You must enter the last name",
+    "fieldEmail":"Email",
+    "fieldEmailError":"You must enter the email",
+    "fieldPhone":"Phone",
+    "fieldPhoneError":"You must enter a cell phone",
+    "fieldBirthdate":"Birthdate",
+    "fieldId":"ID",
+    "fieldIdError":"You must enter your ID",
+    "fieldCountry":"Country",
+    "fieldCity":"City",
+    "fieldAddress":"Address",
+    "fieldAddressError":"You must enter an addres"
+  },
+
+  "tipos-de-aporte":{
+    "donation-details-span": "CONTRIBUTION DETAILS",
+    "title-aporte-unico":"It consists of making a contribution of more than $25 or its equivalent of 175 Bs. You can choose the payment method of your choice and the current day in which you will make your contribution. Likewise, if you want to receive news about the latest achievements of the Seeds Program thanks to the contributions obtained. ",
+    "title-aporte-constante":"It consists of making a monthly contribution of more than $5 for feeding a child or its equivalent of 35 Bs. You can choose the month in which you want to start the contribution process (You can only choose 3 months from the current month). You can choose the payment method of your choice, the collection date on which your contribution is expected, the means by which you want to receive your monthly contribution reminder. Likewise, if would like to receive news of the latest achievements of the Semillas Program thanks to the contributions obtained.",
+    "opcion-1":"Option 1",
+    "opcion-2":"Option 2",
+    "boton-volver":"BACK",
+    "boton-siguiente":"NEXT"
+  },
+
+  "detalles-del-aporte":{
+    "title-aporte-unico":"UNIQUE CONTRIBUTION",
+    "campo-monto-aporte-unico":"Contribution Amount",
+    "campo-obligatorio-monto-aporte-unico":"You must enter the amount of contribution",
+    "campo-metodo-de-pago-aporte-unico":"Payment Method",
+    "campo-obligatorio-metodo-de-pago-aporte-unico":"You must choose the payment method",
+    "campo-fecha-de-aporte-unico":"Date of contribution",
+    "campo-obligatorio-fecha-de-aporte-unico":"You must choose a date",
+    "title-aporte-constante":"CONSTANT CONTRIBUTION",
+    "campo-monto-aporte-constante":"Contribution Amount",
+    "campo-obligatorio-monto-aporte-constante":"You must enter the contribution amount",
+    "campo-metodo-de-pago-aporte-constante":"Payment Method",
+    "campo-obligatorio-metodo-de-pago-aporte-constante":"You must choose the payment method",
+    "campo-mes-de-inicio-aporte-constante":"Start month",
+    "campo-obligatorio-mes-de-inicio-aporte-constante":"You must choose the month in which the contribution cycle will begin",
+    "campo-dia-de-aporte-constante":"Contribution day",
+    "campo-obligatorio-dia-de-aporte-constante":"You must choose the day of the month on which you will make your contribution",
+    "campo-metodo-de-recordatorio-de-aporte-constante":"Reminder method",
+    "campo-obligatorio-metodo-de-recordatorio-aporte-constante":"You must choose a method to receive reminders",
+    "campo-metodo-envio-de-noticias-aporte-constante":"News sending method",
+    "campo-desea-recibir-noticias":"Would you like to receive news?",
+    "boton-si":"YES",
+    "boton-no":"NO",
+    "boton-volver":"BACK",
+    "boton-siguiente":"NEXT"
+  },
+
+  "enviar-datos":{
+    "campo-pregunta-eviar-datos":"Are you sure to send your data?",
+    "campo-si-estoy-seguro":"YES, I'M SURE",
+    "boton-enviar-datos":"SEND DATA"
+  },
+
+  "dolares-en-alimento":{
+    "title-pregunta":"HOW DOES 5 DOLLARS TURN INTO FOOD?",
+    "texto-1":"All the funds raised by the Seed Program have the exclusive objective of optimizing the work of the Institution through the purchase of:  ",
+    "texto-alimneto-duradero":"Durable food or food not usual in donations",
+    "texto-combustible-gasto":"Fuel and other logistics expenses that involve the transfer of food",
+    "texto-material":"Biosafety material for our volunteers"
+  },
+
+  "eres-voluntario":{
+    "texto-voluntario":"If you are a volunteer, please Login with the credentials provided by the Seeds Program",
+    "boton-inicio-sesion":"LOG IN"
+  }
+
+}

@@ -1,0 +1,43 @@
+.header{
+  font-size: 14px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: center;
+  border-bottom: 1px solid #2e7d32;
+  padding-bottom: 16px;
+}
+.content{
+  color: #333333;
+  font-size: 13px;
+  letter-spacing: 0.06rem;
+}
+
+.ref-text{
+  padding-top: 16px;
+}
+
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
+}
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  //background-color: #A5D6A7;
+}
+.dialog-header{
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}

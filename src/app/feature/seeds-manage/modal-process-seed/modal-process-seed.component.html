@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">{{title}}</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <form  [formGroup]="contributor" class="row">
+    <div class="col-md-12">
+      <div class="volunteer-cont" *ngIf="seed">
+        <div class="name">
+          <mat-icon>person</mat-icon>
+          <span>{{seed.name}} {{seed.lastname}}</span>
+        </div>
+        <mat-chip-listbox>
+          <mat-chip class="contr-type">
+            <span>{{seed.contributionType | uppercase}}</span></mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </div>
+    <ng-container *ngIf="!data.isReject">
+      <mat-form-field
+        class="col-md-6"
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Fecha de inicio del ciclo de aportes</mat-label>
+        <input formControlName="contributionStartDate"
+               matInput
+               required
+               [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field
+        class="col-md-6"
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Fecha de fin del ciclo de aportes</mat-label>
+        <input formControlName="contributionEndDate"
+               matInput
+               required
+               [matDatepicker]="picker2">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+      </mat-form-field>
+    </ng-container>
+    <mat-form-field
+      floatLabel="always"
+      class="col-md-12" appearance="fill">
+      <mat-label>Razón</mat-label>
+      <textarea matInput
+                formControlName="process_reason"
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="5"></textarea>
+      <mat-error *ngIf="processReason.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-hint align="end">{{processReason.value?.length || 0}}/100</mat-hint>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-flat-button
+          (click)="onSubmit()"
+          class="accept-bt"
+          [disabled]="!contributor.valid"
+          color="primary">PROCESAR SEMILLA</button>
+</mat-dialog-actions>

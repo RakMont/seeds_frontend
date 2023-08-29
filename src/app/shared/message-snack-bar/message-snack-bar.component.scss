@@ -1,0 +1,23 @@
+::ng-deep .snack-style{
+  background-color: #FFFFFF !important;
+  //color: #1b7549;
+  .mdc-snackbar__surface{
+    background-color: #FFFFFF !important;
+  }
+}
+
+.SUCCESS{
+  color: #2e7d32;
+}
+.ERROR{
+  color: #C02126;
+}
+.WARNING{
+  color: #fdc500;
+}
+.mess-container{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0 4px 0;
+  letter-spacing: 0.9px;
+}

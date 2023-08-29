@@ -1,0 +1,82 @@
+.container {
+  margin-top: 60px;
+  width: 96%;
+}
+.banner{
+  z-index: 100;
+  background: #FFFFFF;
+}
+.loading{
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.tab-group{
+  padding-right: 8px;
+  padding-left: 8px;
+  //z-index: -100
+}
+
+::ng-deep mat-tab-body {
+  z-index: -1 /*!important*/;
+  //padding: 8px;
+}
+
+mat-card{
+  margin: 12px 4px;
+  padding: 16px 8px 8px 8px;
+}
+
+.subtitle {
+  border: 1px solid #6b9074;
+  //margin-bottom: 16px;
+  width: 99%;
+  margin: 4px auto 16px ;
+}
+
+.tab-background{
+  z-index: 100;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.volunteer-cont{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  display: flex;
+  justify-content: space-between;
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+
+.volunteer-head{
+  display: flex;
+  justify-content: space-between;
+  .active.mat-primary.mat-mdc-chip-selected{
+    background-color: #6db669;
+  }
+
+  .inactive.mat-primary.mat-mdc-chip-selected{
+    background-color: #bd5533;
+  }
+
+  .pending.mat-primary.mat-mdc-chip-selected{
+    background-color: #ce7e00;
+  }
+}
+
+mat-chip-option{
+  font-size: 12px;
+}
+

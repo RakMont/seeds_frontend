@@ -1,0 +1,120 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">{{title}}</span>
+  </div>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <form [formGroup]="volunteerForm" class="row">
+    <div class="col-md-6">
+      <mat-form-field
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Nombres</mat-label>
+        <input matInput formControlName="name" >
+        <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="lastname">
+        <mat-error *ngIf="lastname.invalid">{{getErrorMessageLastname()}}</mat-error>
+        <mat-hint>Puedes Ingresar mas de un apellido</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+        <mat-hint>correo@gmail.vom</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Celular</mat-label>
+        <input matInput formControlName="phone">
+        <mat-error *ngIf="phone.invalid">{{getErrorMessagePhone()}}</mat-error>
+        <mat-hint>65151355.....</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput formControlName="birthdate" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field  floatLabel="always"
+                       appearance="fill">
+        <mat-label>Carnet De Identidad</mat-label>
+        <input matInput formControlName="dni">
+        <mat-error *ngIf="dni.invalid">{{getErrorMessageDNI()}}</mat-error>
+        <mat-hint>882531...</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6" *ngIf="!data.edit">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+
+        <mat-error *ngIf="dni.invalid">{{getErrorMessageDNI()}}</mat-error>
+        <mat-hint>Valor único.</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6" *ngIf="!data.edit">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <mat-error *ngIf="dni.invalid">{{getErrorMessageDNI()}}</mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="col-md-12">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Roles</mat-label>
+        <mat-chip-grid #chipList>
+          <mat-chip class="mat-chip"
+                    *ngFor="let fruit of roles">
+                <span>{{fruit.role_name|titlecase}}
+                  <mat-icon (click)="remove(fruit)">cancel</mat-icon>
+               </span>
+          </mat-chip>
+          <input
+            matInput
+            placeholder="{{filteredRoles.length > 0 ? 'Buscar rol...' : ''}}"
+            formControlName="roles"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList">
+        </mat-chip-grid>
+        <mat-autocomplete #auto="matAutocomplete"
+                          (optionSelected)="selected($event)">
+          <mat-option *ngFor="let fruit of filteredRoles" [value]="fruit">
+            {{fruit.role_name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-raised-button
+          (click)="onSubmit()"
+          class="accept-bt"
+          [disabled]="!volunteerForm.valid"
+          color="primary">{{confirmButton}}</button>
+</mat-dialog-actions>

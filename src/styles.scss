@@ -2,3 +2,135 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.mat-mdc-form-field{
+  width: 100%;
+  font-size: 12px!important;
+  letter-spacing: 0.05em !important;
+  //margin-bottom: 12px;
+  .mat-mdc-floating-label{
+    font-size: 16px!important;
+    letter-spacing: 0.08em !important;
+    //color: #000000!important;
+  }
+  .input{
+    //font-size: 8px!important;
+    letter-spacing: 0.05em !important;
+  }
+  .mat-mdc-select-value-text{
+    font-size: 12px!important;
+  }
+}
+
+.header{
+  border-bottom: 1px solid #2e7d32;
+  width: 96% !important;
+  padding-bottom: 8px;
+  margin: 0 auto !important;
+}
+
+.img{
+  width: 200px;
+  max-height: 50px;
+}
+.title{
+  float: right;
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding: 10px 0;
+}
+
+.mat-dialog-content{
+  padding: 36px !important;
+  letter-spacing: 1px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/*NUEVO*/
+mat-dialog-content{
+  padding: 24px !important;
+  font-size: 0.9em!important;
+}
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  background-color: #162939;
+  color: #FFFFFF!important;
+}
+.dialog-header{
+  //padding:  12px;
+  width: 96% !important;
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}
+
+.mat-mdc-dialog-actions{
+  padding-bottom: 16px!important;
+}
+
+
+.volunteer-cont{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  display: flex;
+  justify-content: space-between;
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}
+.filter-background{
+  border-bottom: 2px solid #6b9074;
+  border-radius: 10px;
+  padding: 16px 8px 12px 8px;
+  margin-bottom: 16px;
+  background: rgba(76, 175, 80, 0.1);
+  .name{
+    display: flex;
+    span{
+      padding-top: 2px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+  }
+}
+.loading{
+  margin: 0 auto;
+  z-index: 100;
+}
+
+mat-error{
+  color: 	#ff5a5f!important;
+}
+
+mat-chip-option{
+  font-size: 12px!important;
+}

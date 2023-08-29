@@ -1,0 +1,60 @@
+.container{
+  margin-top: 70px;
+  width: 95%;
+}
+
+mat-expansion-panel-header{
+  height: 100px;
+}
+
+.card-head{
+  background-color: #212121;
+  color: #FFFFFF;
+  span{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    padding-bottom: 16px;
+    margin: 0 auto;
+  }
+}
+
+.matStepLabel{
+  font-weight: 500!important;
+  letter-spacing: 0.8px;
+}
+
+.next-button{
+  margin-left: 12px;
+  button{
+    padding: 8px 32px;
+  }
+}
+
+.send-data{
+  width: 50%;
+  margin: 12px auto;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  //border: 1px solid #faebd6;
+  background-color: #fcf8e6;
+  .send-data-title{
+    background-color: #6b9074;
+    border-radius: 9px;
+    padding: 10px;
+    color: 	#ffffff;
+  }
+  span{
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.8px;
+  }
+  .send-data-check{
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+}
+.spinn{
+  margin: auto;
+}

@@ -1,0 +1,44 @@
+.mdc-dialog__title{
+  margin: 0 auto !important;
+  display: flex;
+  padding: 0!important;
+  justify-content: space-between;
+  border-bottom: 1px solid #2e7d32;
+  color: #FFFFFF;
+  //position: relative;
+}
+.dialog-header{
+  text-align: center;
+  padding-top: 8px;
+}
+.dialog-title{
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-right: -20px;
+  padding:  16px 12px;
+  margin-top: 8px;
+}
+.img{
+  margin-left: -80px;
+}
+
+.mat-dialog-content{
+  padding: 36px 36px 12px 36px !important;
+  letter-spacing: 1px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.row{
+  margin-top: 12px;
+}
+
+.mat-mdc-form-field-focus-overlay{
+  background-color: #FFFFFF;
+}
+/*
+.mdc-dialog__title{
+  background-color: #2e7d32;
+  padding: 0;
+}
+*/

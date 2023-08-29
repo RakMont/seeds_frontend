@@ -1,0 +1,32 @@
+<div class="container">
+    <app-title-banner
+      [hasTranslate]="false"
+      [title]="'REGISTRAR NUEVA SEMILLA'">
+
+    </app-title-banner>
+
+       <app-personal-info
+         [isFromVolunteer]="true"
+         (donationTypeEmitter)="chooseDonationType($event)"
+         (personalInfoEmitter)="getPersonalInfo($event)"
+       ></app-personal-info>
+
+      <ng-container *ngIf="donationType==='APORTE_CONSTANTE'">
+        <app-constant-donation
+          (constantContribution)="emitConstantContribution($event)">
+        </app-constant-donation>
+      </ng-container>
+      <ng-container *ngIf="donationType==='APORTE_UNICO'">
+        <app-unique-donation
+          (uniqueDonation)="emitUniqueContribution($event)"
+        ></app-unique-donation>
+      </ng-container>
+
+  <div align="end">
+    <button [disabled]="!canSendForm || !confCheck"
+            mat-raised-button color="primary"
+            (click)="sentData()">ENVIAR DATOS
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title"> {{data.title}}</span>
+  </div>
+  <button mat-icon-button class="close-button2" (click)="close()">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="content">{{data.question}}</div>
+  <form class="ref-text" [formGroup]="form" *ngIf="!data.isDelete">
+    <mat-form-field hintLabel="200 caractéres permitidos" appearance="fill">
+      <mat-label>Comentario</mat-label>
+      <textarea formControlName="comment" matInput></textarea>
+      <mat-hint align="end">{{form.get('comment').value?.length || 0}}/200</mat-hint>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button (click)="close()" mat-flat-button>NO</button>
+  <button (click)="onSure()"  mat-flat-button color="primary">SÍ</button>
+</mat-dialog-actions>

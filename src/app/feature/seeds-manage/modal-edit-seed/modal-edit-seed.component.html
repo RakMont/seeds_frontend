@@ -1,0 +1,42 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">EDITAR SEMILLA</span>
+  </div>
+  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <ng-container *ngIf="seedData else loading">
+    <app-personal-info
+      [isFromVolunteer]="true"
+      [seedData]="seedData"
+      (donationTypeEmitter)="chooseDonationType($event)"
+      (personalInfoEmitter)="getPersonalInfo($event)"
+    ></app-personal-info>
+
+    <ng-container *ngIf="donationType==='APORTE_CONSTANTE'">
+      <app-constant-donation
+        [seedContribution]="seedData.contributionConfig"
+        (constantContribution)="emitConstantContribution($event)">
+      </app-constant-donation>
+    </ng-container>
+    <ng-container *ngIf="donationType==='APORTE_UNICO'">
+      <app-unique-donation
+        [seedContribution]="seedData.contributionConfig"
+        (uniqueDonation)="emitUniqueContribution($event)"
+      ></app-unique-donation>
+    </ng-container>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-raised-button
+          (click)="onSubmit()"
+          class="accept-bt"
+          [disabled]="!this.applicantForm"
+          color="primary">EDITAR INFORMACIÓN</button>
+</mat-dialog-actions>

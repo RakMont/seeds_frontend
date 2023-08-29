@@ -1,0 +1,57 @@
+<div class="carr">
+  <app-carousel
+    #carousel
+    [itemWidth]="900"
+    [itemHeigth]="500"
+    [itemsQuantity]="6"
+    [showControls]="true"
+  >
+    <ng-container *duplicate>
+      <img *ngFor="let item of items" [src]="item.img" />
+
+    </ng-container>
+  </app-carousel>
+  <div style="text-align:center">
+    <img
+      *ngFor="let item of items; let i = index"
+      width="40px"
+      style="margin:.25rem"
+      (click)="carousel.setSlide(i)"
+      [src]="item.img"
+    />
+  </div>
+</div>
+<div class="gutters">
+  <div class="box-pasos">
+    <p class="pasos-transforma">
+      ¿COMO SE TRANFORMA 5 DOLARES EN ALIMENTO? </p>
+
+  </div>
+  <div class="box-pasos">
+    <p class="pasos-tr">
+      Todos los fondos recaudados por el Programa Semilla Tienen como objetivo explusivo optimizar el trabajo de
+      la Institucion mediante la compra de </p>
+  </div>
+  <div class="box-pasos">
+    <div class="box">
+      <img class="pasos-image" src="../../../../assets/trigo.png" alt="">
+      <p class="pasos-letra">
+        Alimentos duraderos u alimentos no habituales en donaciones</p>
+    </div>
+
+    <div class="box">
+
+      <img class="pasos-image" src="../../../../assets/combustible.png" alt="">
+      <p class="pasos-letra">
+        Combustible y otros gastos de logistica que implican el traslado de alimentos </p>
+    </div>
+
+    <div class="box">
+
+
+      <img class="pasos-image" src="../../../../assets/gel-hidroalcoholico.png" alt="">
+      <p class="pasos-letra">
+        Material de bioseguridad para nuestros voluntarios </p>
+    </div>
+  </div>
+</div>

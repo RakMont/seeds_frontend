@@ -1,0 +1,65 @@
+<div class="container">
+  <app-title-banner
+    class="banner"
+    [hasTranslate]="false"
+    [title]="'GESTIONAR SEGUIMIENTO'">
+
+  </app-title-banner>
+  <mat-card>
+
+  <mat-tab-group [selectedIndex]="index"
+                 (selectedTabChange)="onTabChanged($event);"
+                 mat-align-tabs="center"
+                 class="tab-group">
+    <mat-tab label="VOLUNTARIOS DE SEGUIMIENTO">
+      <div class="tab-background">
+        <div class="volunteer-cont">
+          <form [formGroup]="val" class="volunteer-head">
+            <mat-chip-listbox formControlName="state">
+              <mat-chip-option class="active" [value]="'Principal'" color="primary" selected>R.Principal</mat-chip-option>
+              <mat-chip-option class="active" [value]="'Registros'" color="primary">R.Registros</mat-chip-option>
+              <mat-chip-option class="active" [value]="'Seguimiento'" color="primary">R.Seguimiento</mat-chip-option>
+              <mat-chip-option class="active" [value]="'Souvenirs'" color="primary">R.Souvenirs</mat-chip-option>
+            </mat-chip-listbox>
+          </form>
+        </div>
+         <ng-container *ngIf="!loadingtable else loading">
+            <app-generic-table
+               *ngIf="data"
+               [inputTable]="data.rows"
+               (actionOutput)="actionOutput($event)"
+             >
+             </app-generic-table>
+
+         </ng-container>
+       </div>
+        <ng-template #loading>
+          <mat-spinner class="loading">
+          </mat-spinner>
+        </ng-template>
+    </mat-tab>
+    <mat-tab  label="SEMILLAS ASIGNADAS" [disabled]="!(index===1)">
+      <div class="tab-background">
+        <app-list-tracking-seeds
+          *ngIf="index===1"
+          (emitter)="back($event)"
+          (selectedSeed)="selectedSeed($event)"
+          [volunterId]="idSelectedVolunter">
+        </app-list-tracking-seeds>
+      </div>
+    </mat-tab>
+    <mat-tab label="APORTES REALIZADOS" [disabled]="!(index===2)">
+      <div class="tab-background">
+        <app-list-seed-donations
+          *ngIf="index===2"
+          (emitter)="back($event)"
+          [seedId]="this.idSelectedSeeds"
+          [trackingAssignmentId]="trackingAssignmentId"
+          [contributionConfigId]="contributionConfigId">
+
+        </app-list-seed-donations>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  </mat-card>
+</div>
