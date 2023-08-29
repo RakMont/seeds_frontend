@@ -16,55 +16,61 @@ export class VolunteerService {
 
   listVolunteers(status: string): Observable<Table> {
     const p = new HttpParams().set('status', status);
-    return this.http.get<Table>(environment.backend + '/seeds/volunters/all/', { params: p });
+    return this.http.get<Table>(environment.backend + '/seeds/volunteers/all/', { params: p });
   }
   getAllRoles(): Observable<Role[]> {
-    return this.http.get<Role[]>(environment.backend + '/seeds/volunters/roles');
+    return this.http.get<Role[]>(environment.backend + '/seeds/volunteers/roles');
   }
   listExiteVolunteers(): Observable<Table> {
     const p = new HttpParams().set('status', 'INACTIVE');
     return this.http.get<Table>(environment.backend +
-      '/seeds/volunters/exitvolunters', { params: p });
+      '/seeds/volunteers/exitvolunters', { params: p });
   }
 
   listTrackingVolunteers(): Observable<Table> {
     //return this.http.get<Table>('./assets/statics/trackingvolunters.json');
-    return this.http.get<Table>(environment.backend + '/seeds/volunters/trackingVolunteers/');
+    return this.http.get<Table>(environment.backend + '/seeds/volunteers/trackingVolunteers/');
   }
   getVolunteer(volunterId: any): Observable<Volunter> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     const p = new HttpParams().set('id', volunterId);
     return this.http.get<Volunter>(environment.backend +
-      '/seeds/volunters/getVolunter', { params: p });
+      '/seeds/volunteers/getVolunter', { params: p });
   }
 
   addVolunteer(volunter: Volunter): Observable<any> {
-    return this.http.post<any>(environment.backend + '/seeds/volunters/create/', volunter);
+    return this.http.post<any>(environment.backend + '/seeds/volunteers/create/', volunter);
   }
 
   updateVolunteer(volunter: Volunter): Observable<any> {
-    return this.http.put<any>(environment.backend + '/seeds/volunters/updateVolunter',  volunter);
+    return this.http.put<any>(environment.backend + '/seeds/volunteers/updateVolunter',  volunter);
   }
 
   exitVolunteer(payload: any): Observable<any>{
-    return this.http.post<any>(environment.backend + '/seeds/volunters/exitVolunter', payload
+    return this.http.post<any>(environment.backend + '/seeds/volunteers/exitVolunter', payload
     );
   }
 
   activateVolunteer(payload: any): Observable<any>{
-    return this.http.post<any>(environment.backend + '/seeds/volunters/activateVolunter', payload
+    return this.http.post<any>(environment.backend + '/seeds/volunteers/activateVolunter', payload
     );
   }
 
   deleteVolunteer(payload: any): Observable<any>{
-    return this.http.post<any>(environment.backend + '/seeds/volunters/deleteVolunter', payload
+    return this.http.post<any>(environment.backend + '/seeds/volunteers/deleteVolunter', payload
     );
   }
 
   listVolunteerExitMessages(id: string): Observable<any> {
     const p = new HttpParams().set('volunterId', id);
-    return this.http.get<any>(environment.backend + '/seeds/volunters/getExitMessages', { params: p });
+    return this.http.get<any>(environment.backend + '/seeds/volunteers/getExitMessages', { params: p });
+  }
+
+  updateVolunteerPassword(payload: any): Observable<any>{
+    console.log('updateVolunteerPassword', payload);
+    return this.http.post<any>(environment.backend + '/seeds/volunteers/updateVolunteerPassword', payload
+    );
   }
 
   listExitVolunteer(filter: VolunterFilter): Observable<Volunter[]> {
@@ -72,7 +78,7 @@ export class VolunteerService {
       .set('status', filter.status)
       .set('roleId', filter.roleId);
 
-    return this.http.get<Volunter[]>(environment.backend + '/seeds/volunters/exitvolunters');
+    return this.http.get<Volunter[]>(environment.backend + '/seeds/volunteers/exitvolunters');
   }
   listen(): Observable<any> {
     return this._listeners.asObservable();

@@ -37,7 +37,7 @@ export class VolunterDialogComponent implements OnInit {
   filteredRoles: Role[] = [];
 
   constructor(public dialogRef: MatDialogRef<VolunterDialogComponent>,
-              private volunterService: VolunteerService,
+              private volunteerService: VolunteerService,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
               private fb: UntypedFormBuilder,
               private matSnackBar: MatSnackBar
@@ -46,12 +46,12 @@ export class VolunterDialogComponent implements OnInit {
   ngOnInit(): void {
     this.getRoles();
     if (this.data.edit){
-      this.getVolunter();
+      this.getVolunteer();
     }
     this.getTitle();
   }
-  getVolunter(): void{
-    this.volunterService.getVolunteer(this.data.volunterId)
+  getVolunteer(): void{
+    this.volunteerService.getVolunteer(this.data.volunterId)
       .subscribe((response) => {
         this.volunteer = response;
         this.volunteerForm.patchValue({
@@ -76,23 +76,28 @@ export class VolunterDialogComponent implements OnInit {
 
   onSubmit(): void{
     if ( !this.data.edit ) {
-      const data = {
-        user: this.volunteerForm.value,
-        entry_date: new Date(),
-        roles: this.roles,
-        username: this.volunteerForm.get('username').value,
-        password: this.volunteerForm.get('password').value
-      };
-      this.volunterService.addVolunteer(data)
-        .subscribe(( data ) => {
-          this.showMessage(data);
-          this.dialogRef.close('success');
-        }, (error) => {
-          this.showMessage(error.error);
-          //this.dialogRef.close();
-          console.log('error', this.volunteerForm.value);
-        });
-    }else{
+      this.createVolunteer();
+    }else {
+      this.updateVolunteer();
+    }
+  }
+  createVolunteer(){
+    const data = {
+      user: this.volunteerForm.value,
+      entry_date: new Date(),
+      roles: this.roles,
+      username: this.volunteerForm.get('username').value,
+      password: this.volunteerForm.get('password').value
+    };
+    this.volunteerService.addVolunteer(data)
+      .subscribe(( data ) => {
+        this.showMessage(data);
+        this.dialogRef.close('success');
+      }, (error) => {
+        this.showMessage(error.error);
+      });
+  }
+  updateVolunteer(){
       const data = {
         volunterId: this.volunteer.volunterId,
         user: this.volunteerForm.value,
@@ -100,14 +105,14 @@ export class VolunterDialogComponent implements OnInit {
         username: this.volunteerForm.get('username').value,
         password: this.volunteerForm.get('password').value
       };
-      this.volunterService.updateVolunteer(data)
+      this.volunteerService.updateVolunteer(data)
         .subscribe(( data ) => {
           this.showMessage(data);
           this.dialogRef.close('success');
         }, (error) => {
           this.showMessage(error.error);
         });
-    }
+
   }
   getErrorMessage(): any {
     if (this.volunteerForm.get('name').hasError('required')) {
@@ -155,7 +160,7 @@ export class VolunterDialogComponent implements OnInit {
     return this.data.edit ? 'GUARDAR EDICIÓN' : 'GUARDAR RESPONSABLE';
   }
   getRoles(): void{
-    this.volunterService.getAllRoles()
+    this.volunteerService.getAllRoles()
       .subscribe((value) => {
         this.allRoles = value;
         this.filteredRoles = value;

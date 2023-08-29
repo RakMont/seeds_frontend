@@ -102,7 +102,7 @@ export class ListTrackingSeedsComponent implements OnChanges {
   }
 
   getVolunteerInfo(){
-    this.volunteerService.getvolunter(this.volunterId)
+    this.volunteerService.getVolunteer(this.volunterId)
       .subscribe((data) =>{
         this.volunteer = data;
         this.loadingVolunteer = false;

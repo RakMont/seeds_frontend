@@ -11,6 +11,7 @@ import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/messag
 import {ExitElementComponent} from "../../../shared/exit-element/exit-element.component";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import {UpdatePasswordComponent} from "../update-password/update-password.component";
 
 @Component({
   selector: 'app-list-volunteers',
@@ -46,7 +47,7 @@ export class ListVolunteersComponent implements OnInit {
       });
   }
 
-  onedit(volunterid: any): void {
+  oneUpdate(volunterid: any): void {
     const dialogRef = this.dialog.open(VolunterDialogComponent, {
       disableClose: false,
       panelClass: 'icon-outside',
@@ -151,7 +152,7 @@ export class ListVolunteersComponent implements OnInit {
     console.log('event', event);
     const id = this.getVolunteerId(event.params);
     if (event.clickedAction === 'editVolunter'){
-      this.onedit(id);
+      this.oneUpdate(id);
     } else if (event.clickedAction === 'seeVolunter'){
       this.onview(id);
     } else if (event.clickedAction === 'inactiveVolunter'){
@@ -160,7 +161,26 @@ export class ListVolunteersComponent implements OnInit {
       this.onDelete(id);
     }else  if (event.clickedAction === 'activateVolunter') {
       this.reactivateVolunter(id);
+    } else  if (event.clickedAction === 'updatePassword') {
+      this.updateVolunteerPassword(id);
     }
+  }
+
+  updateVolunteerPassword(volunteerId:string): void {
+    const dialogRef = this.dialog.open(UpdatePasswordComponent, {
+      disableClose: false,
+      panelClass: 'icon-outside',
+      autoFocus: true,
+      width: '800px',
+      data: {
+        volunterId: volunteerId,
+        edit: true
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('result', result)
+      if (result==='success') { this.getActiveVolunters(this.val.get('state').value); }
+    });
   }
   onDelete(id): void {
     const dialogRef = this.dialog.open(ExitElementComponent, {
@@ -182,7 +202,8 @@ export class ListVolunteersComponent implements OnInit {
             this.showMessage(res);
             if (res) { this.getActiveVolunters(this.val.get('state').value); }
           }, ( error ) => {
-            this.showMessage(error);
+            console.log(error);
+            this.showMessage(error.error);
           });
       }
     });
@@ -193,6 +214,7 @@ export class ListVolunteersComponent implements OnInit {
   }
 
   showMessage(data: any): void{
+    console.log('showMessage', data);
     this.matSnackBar.openFromComponent(MessageSnackBarComponent, {
       data: { data },
       duration: 5000,

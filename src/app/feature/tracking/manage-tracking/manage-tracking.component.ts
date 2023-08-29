@@ -30,7 +30,7 @@ export class ManageTrackingComponent implements OnInit {
   }
   getTrackingVolunters(): void{
     this.loadingtable = true;
-    this.volunterService.listTrackingvolunters().subscribe(
+    this.volunterService.listTrackingVolunteers().subscribe(
       (data) => {
         this.data = data;
         this.loadingtable = false;
