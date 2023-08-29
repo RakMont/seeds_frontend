@@ -28,12 +28,12 @@
                 [stepControl]="donationType"
                 [editable]="false"
                 state="phone">
-        <ng-container *ngIf="donationType==='CONSTANT'">
+        <ng-container *ngIf="donationType==='APORTE_CONSTANTE'">
           <app-constant-donation
             (constantContribution)="emitConstantContribution($event)">
           </app-constant-donation>
         </ng-container>
-        <ng-container *ngIf="donationType==='UNIQUE'">
+        <ng-container *ngIf="donationType==='APORTE_UNICO'">
           <app-unique-donation
             (uniqueDonation)="emitUniqueContribution($event)"
           ></app-unique-donation>

@@ -76,12 +76,12 @@ export class NewSeedFormComponent implements OnInit {
   }
   emitUniqueContribution(event){
     this.contributionPayload = event.uniqueDonation;
-    event.uniqueDonation && this.donationType==='UNIQUE' ? (this.canSendForm = true) : ( this.canSendForm = false)
+    event.uniqueDonation && this.donationType==='APORTE_UNICO' ? (this.canSendForm = true) : ( this.canSendForm = false)
   }
 
   emitConstantContribution(event){
     this.contributionPayload = event.constantContribution;
-    event.constantContribution && this.donationType==='CONSTANT' ?  (this.canSendForm = true) : ( this.canSendForm = false)
+    event.constantContribution && this.donationType==='APORTE_CONSTANTE' ?  (this.canSendForm = true) : ( this.canSendForm = false)
   }
 
   sentData(): void{
@@ -89,7 +89,7 @@ export class NewSeedFormComponent implements OnInit {
     const {country, city, address, ...user} = this.applicantForm;
     const contributor = {country, city, address, user};
     this.contributionPayload.contributor = contributor;
-    if (this.donationType === 'UNIQUE'){
+    if (this.donationType === 'APORTE_UNICO'){
       this.applicantService.createUniqueApplicant(this.contributionPayload)
         .subscribe((response) => {
           this.sentInformaTionMessage(response);
@@ -99,7 +99,7 @@ export class NewSeedFormComponent implements OnInit {
           this.showMessage(error.error);
         });
     }else {
-      this.applicantService.createConstantapplicant(this.contributionPayload)
+      this.applicantService.createConstantApplicant(this.contributionPayload)
         .subscribe((response) => {
           this.sendingData = false;
           this.sentInformaTionMessage(response);

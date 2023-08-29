@@ -82,6 +82,10 @@ import { ListSeedDonationsComponent } from './feature/tracking/list-seed-donatio
 import { AsignSeedVolunteerComponent } from './feature/tracking/manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component';
 import { ModalDonationComponent } from './feature/tracking/manage-donations/modal-donation/modal-donation.component';
 import { ViewDonationComponent } from './feature/tracking/manage-donations/view-donation/view-donation.component';
+import { LogedVolunteerInfoComponent } from './feature/volunteer-manage/loged-volunteer-info/loged-volunteer-info.component';
+import { ModalEditSeedComponent } from './feature/seeds-manage/modal-edit-seed/modal-edit-seed.component';
+import { ModalUnactiveSeedComponent } from './feature/seeds-manage/modal-unactive-seed/modal-unactive-seed.component';
+import { UpdatePasswordComponent } from './feature/volunteer-manage/update-password/update-password.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -121,7 +125,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ListSeedDonationsComponent,
     AsignSeedVolunteerComponent,
     ModalDonationComponent,
-    ViewDonationComponent
+    ViewDonationComponent,
+    LogedVolunteerInfoComponent,
+    ModalEditSeedComponent,
+    ModalUnactiveSeedComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     BrowserModule,

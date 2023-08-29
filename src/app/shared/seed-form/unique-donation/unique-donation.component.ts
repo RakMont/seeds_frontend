@@ -1,8 +1,9 @@
-import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from "@angular/forms";
 import {ComboElement} from "../../../core/models/Utils.model";
 import {ApplicantService} from "../../../core/services/applicant.service";
 import {UtilService} from "../../../core/services/util.service";
+import {ContributionConfigData} from "../../../core/models/Seed.model";
 
 @Component({
   selector: 'app-unique-donation',
@@ -10,6 +11,7 @@ import {UtilService} from "../../../core/services/util.service";
   styleUrls: ['./unique-donation.component.scss']
 })
 export class UniqueDonationComponent implements OnInit, OnChanges {
+  @Input() seedContribution: ContributionConfigData;
   @Output() emitter: EventEmitter<{ tabAction }> = new EventEmitter();
   @Output() uniqueDonation: EventEmitter<{ uniqueDonation }> = new EventEmitter();
   donationForm = this.formBuilder.group({
@@ -17,16 +19,17 @@ export class UniqueDonationComponent implements OnInit, OnChanges {
     paymentMethod: ['', Validators.required],
     send_news: [true, Validators.required],
     date_contribution: ['', Validators.required],
-    sendNewsType: [null],
+    sendNewsType: [''],
   });
   sendingData = false;
   paymentMethods: ComboElement[] = [];
   newsTypes: ComboElement[] = [];
   contributor;
   myFilter = (d: Date | null): boolean => {
-    /* const day = (d || new Date()).getDay();
-     return day !== 0 && day !== 6;*/
-    return d > new Date()
+    if (!this.seedContribution){  return d > new Date()
+
+    }
+   else return true;
   };
 
   constructor(private formBuilder: FormBuilder,
@@ -34,13 +37,33 @@ export class UniqueDonationComponent implements OnInit, OnChanges {
               private utilsService: UtilService) {
   }
 
+
+
   ngOnChanges(changes: SimpleChanges): void {
   }
 
   ngOnInit(): void {
+    this.manageChanges();
+    if(this.seedContribution){
+      this.manageUpdate();
+    }
+    else{
+      this.getPaymentMethods();
+      this.getNewsTypes();
+
+    }
+  }
+  manageUpdate(){
+    this.donationForm.patchValue({
+      contribution_amount: this.seedContribution.contribution.contributionAmount.toString(),
+      paymentMethod: this.seedContribution.contribution.paymentMethod,
+      send_news: this.seedContribution.contribution.sendNews,
+      date_contribution: this.seedContribution.contribution.dateContribution,
+      sendNewsType: this.seedContribution.contribution.sendNewsType,
+    })
     this.getPaymentMethods();
     this.getNewsTypes();
-    this.manageChanges();
+
   }
   get donationAmount(): any {
     return this.donationForm.get('contribution_amount');

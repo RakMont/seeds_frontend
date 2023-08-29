@@ -29,7 +29,7 @@ export class VolunterDetailsComponent implements OnInit {
   }
 
   getVolunter(): void {
-    this.volunterService.getvolunter(this.data.volunteerId).pipe()
+    this.volunterService.getVolunteer(this.data.volunteerId).pipe()
       .subscribe((response) => {
         this.volunteer = response;
         this.cargandoVoluntario = false;

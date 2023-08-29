@@ -90,7 +90,7 @@ export class AsignSeedVolunteerComponent implements OnInit {
   }
 
   getVolunterById(): void{
-    this.volunteerService.getvolunter(this.data.volunterId)
+    this.volunteerService.getVolunteer(this.data.volunterId)
       .subscribe((data) => {
         this.volunter = data ;
         this.assignForm.get('volunter_id').setValue(this.data.volunterId);

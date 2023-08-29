@@ -71,5 +71,44 @@ export interface SeedFilter{
   contributionType?: string;
   seedName?: string;
   applicantName?: string;
-  viewPage: string;
+  viewPage?: string;
+}
+
+export interface SeedData{
+  name: string;
+  lastname: string;
+  email: string;
+  phone: string;
+  dni: string;
+  birthdate: Date;
+  address: string;
+  country?: string;
+  city?: string;
+  send_date?: string;
+  contributorState?: string;
+  registerVolunteer?: string;
+  contributionType?: string;
+  acceptedDate?: string;
+  contributionConfig:ContributionConfigData;
+}
+
+export interface ContributionConfigData{
+  contributionType: string;
+  registerDate: string;
+  contribution: ContributionData;
+  isActive: boolean;
+
+}
+
+export interface ContributionData{
+  contributionAmount: number;
+  paymentMethod: string;
+  sendNews: boolean;
+  sendNewsType: string;
+  startMonth: string;
+  paymentNumberDay: number;
+  remainderType: string;
+  contributionStartDate: Date;
+  contributionEndDate: Date;
+  dateContribution: string;
 }

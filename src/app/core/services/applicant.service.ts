@@ -1,7 +1,7 @@
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from "rxjs";
-import {Applicant, ProcessSeedPayload, Seed, SeedFilter} from '../models/Seed.model';
+import {Applicant, ProcessSeedPayload, Seed, SeedData, SeedFilter} from '../models/Seed.model';
 import {PostMessage} from "../models/Message.model";
 import {Table} from "../models/Table.model";
 import {environment} from "../../../environments/environment";
@@ -19,7 +19,7 @@ export class ApplicantService {
     );
   }
 
-  createConstantapplicant(applicant: Applicant): Observable<any>  {
+  createConstantApplicant(applicant: Applicant): Observable<any>  {
     return this.http.post<any>(environment.backend + '/seeds/applicants/constant', applicant);
   }
 
@@ -27,18 +27,18 @@ export class ApplicantService {
     return this.http.post<any>(environment.backend + '/seeds/applicants/processSeed' , payload);
   }
 
-  getSeedById(id): Observable<Seed> {
+  getSeedById(id): Observable<SeedData> {
     const p = new HttpParams().set('id', id);
-    return this.http.get<Seed>(environment.backend + '/seeds/applicants/getSeedById'
+    return this.http.get<SeedData>(environment.backend + '/seeds/applicants/getSeedById'
       , { params: p });
   }
-  listRejectedAplicants(): Observable<any> {
+  listRejectedApplicants(): Observable<any> {
     return this.http.get<any[]>(environment.backend + '/applicants/rejected');
   }
 
-  aceptapplicant(applicantId: number): Observable<any> {
+ /* acceptApplicant(applicantId: number): Observable<any> {
     return this.http.put<any>(environment.backend + '/applicants/acept/' + applicantId, applicantId);
-  }
+  }*/
 
   listPendingSeeds(): Observable<Table> {
     return this.http.get<Table>(environment.backend + '/seeds/applicants/pending');
@@ -47,8 +47,13 @@ export class ApplicantService {
     return this.http.get<Table>(environment.backend + '/seeds/applicants/rejected');
   }
 
-  listOficialSeeds(): Observable<Table> {
-    return this.http.get<Table>(environment.backend + '/seeds/applicants/acepted');
+  listConfirmedSeeds(filter:SeedFilter): Observable<Table> {
+    const p = new HttpParams().set('status', filter.status)
+      .set('viewPage', filter.viewPage)
+      //.set('contributionType', filter.contributionType? filter.contributionType : null)
+      .set('seedName', filter.seedName? filter.seedName : null)
+      .set('applicantName', filter.applicantName? filter.applicantName : null);
+    return this.http.get<Table>(environment.backend + '/seeds/applicants/processed',{ params: p });
   }
 
   listSeedsAll(filter:SeedFilter): Observable<Table> {
@@ -58,6 +63,15 @@ export class ApplicantService {
       .set('seedName', filter.seedName? filter.seedName : null)
       .set('applicantName', filter.applicantName? filter.applicantName : null);
     return this.http.get<Table>(environment.backend + '/seeds/applicants/all/', { params: p });
+  }
+
+  updateUniqueApplicant(applicant: Applicant): Observable<PostMessage> {
+    return this.http.post<PostMessage>(environment.backend + '/seeds/confirmed/updateUnique', applicant
+    );
+  }
+
+  updateConstantApplicant(applicant: Applicant): Observable<any>  {
+    return this.http.post<any>(environment.backend + '/seeds/confirmed/updateConstant', applicant);
   }
 
   listen(): Observable<any> {

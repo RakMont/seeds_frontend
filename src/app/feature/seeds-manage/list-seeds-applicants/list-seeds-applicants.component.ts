@@ -39,9 +39,12 @@ export class ListSeedsApplicantsComponent implements OnInit{
     this.val.patchValue({state: 'ACCEPTED'});
   }
 
-  getAprovedSeeds(): void{
+  getAcceptedSeeds(): void{
     this.loadingtable = true;
-    this.applicantService.listOficialSeeds().subscribe(
+    let filter:SeedFilter = {
+      status:'ACCEPTED'
+    }
+    this.applicantService.listConfirmedSeeds(filter).subscribe(
       (data) => {
         this.data = data;
         this.loadingtable = false;
@@ -184,7 +187,7 @@ export class ListSeedsApplicantsComponent implements OnInit{
       const value = this.val.get('state').value;
       if(value && value!=this.lastStatus){
         if(value==='CONFIRMED'){
-          this.getAprovedSeeds();
+          this.getAcceptedSeeds();
         }else if (value === 'REJECTED'){
           this.getRejectedSeeds();
         }else if (value==='PENDING'){

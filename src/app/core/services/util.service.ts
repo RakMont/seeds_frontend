@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ComboResponse} from '../models/Utils.model';
+import {Role} from "../models/Volunteer.model";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +31,8 @@ export class UtilService {
   }
   getPaymentNumberDay(): Observable<ComboResponse> {
     return this.http.get<ComboResponse>('./assets/statics/payment_number_day.json');
+  }
+  getAllRoles(): Observable<Role[]> {
+    return this.http.get<Role[]>(environment.backend + '/seeds/volunters/roles');
   }
 }

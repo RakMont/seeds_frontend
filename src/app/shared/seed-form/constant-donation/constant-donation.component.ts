@@ -1,8 +1,9 @@
-import {Component, EventEmitter, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, UntypedFormBuilder, Validators} from "@angular/forms";
 import {ComboElement} from "../../../core/models/Utils.model";
 import {ApplicantService} from "../../../core/services/applicant.service";
 import {UtilService} from "../../../core/services/util.service";
+import {ContributionConfigData, SeedData} from "../../../core/models/Seed.model";
 
 @Component({
   selector: 'app-constant-donation',
@@ -10,6 +11,7 @@ import {UtilService} from "../../../core/services/util.service";
   styleUrls: ['./constant-donation.component.scss']
 })
 export class ConstantDonationComponent implements OnInit {
+  @Input() seedContribution: ContributionConfigData;
   @Output() emitter: EventEmitter<{tabAction}> = new EventEmitter();
   @Output() constantContribution: EventEmitter<{ constantContribution }> = new EventEmitter();
   donationForm = this.formBuilder.group({
@@ -33,22 +35,42 @@ export class ConstantDonationComponent implements OnInit {
               private utilsService: UtilService) { }
 
   ngOnInit(): void {
+    this.manageChanges();
+    if(this.seedContribution){
+      this.manageUpdate();
+    } else{
+      this.getPaymentMethods();
+      this.getNewsTypes();
+      this.getReminderMethods();
+      this.getBeginMonths();
+      this.getPaymentNumberDays();
+    }
+
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+
+  }
+
+  manageUpdate(){
+    this.donationForm.patchValue({
+      contribution_amount: this.seedContribution.contribution.contributionAmount.toString(),
+      paymentMethod: this.seedContribution.contribution.paymentMethod,
+      beginMonth: this.seedContribution.contribution.startMonth,
+      paymentDay: this.seedContribution.contribution.paymentNumberDay.toString(),
+      send_news: this.seedContribution.contribution.sendNews,
+      reminderMethod: this.seedContribution.contribution.remainderType,
+      sendNewsType: this.seedContribution.contribution.sendNewsType,
+    })
     this.getPaymentMethods();
     this.getNewsTypes();
     this.getReminderMethods();
     this.getBeginMonths();
     this.getPaymentNumberDays();
-    this.manageChanges();
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-
   }
   getPaymentMethods(): void{
-    console.log('viene');
     this.utilsService.getPaymentMethods()
       .subscribe((data) => {
         this.paymentMethods = data.data;
-        console.log('llega');
       });
   }
   getNewsTypes(): void{
@@ -133,7 +155,7 @@ export class ConstantDonationComponent implements OnInit {
       return 'Debe elegir una fecha';
     }
   }
-  get childscount(): string{
+  get childCount(): string{
     let amount = Number(this.donationForm.get('contribution_amount').value);
     amount = Math.trunc(amount / 35);
     return amount + ' Niños';
