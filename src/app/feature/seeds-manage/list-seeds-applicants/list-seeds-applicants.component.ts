@@ -67,7 +67,6 @@ export class ListSeedsApplicantsComponent implements OnInit{
   getCurrentUser(){
     this.authService.getCurrentUser()
       .subscribe((data) =>{
-        console.log('aksjdhkasjdh', data);
         this.volunteerProcess = data.volunterId;
       })
   }
@@ -133,18 +132,9 @@ export class ListSeedsApplicantsComponent implements OnInit{
   valueChanges(){
     this.val.get('state').valueChanges.subscribe((value => {
       if(value && value!=this.lastStatus){
-       /* if(value==='CONFIRMED'){
-          this.getAprovedSeeds();
-        }else if (value === 'REJECTED'){
-          this.getRejectedSeeds();
-        }else if (value==='PENDING'){
-          this.getPendingSeeds();
-        }*/
         this.getSeedsApplicants(value);
         this.lastStatus=value;
-      }/*else{
-        this.val.patchValue({state: 'ACTIVE'});
-      }*/
+      }
     }))
   }
 
@@ -185,8 +175,9 @@ export class ListSeedsApplicantsComponent implements OnInit{
   afterClose(result){
     if (result){
       const value = this.val.get('state').value;
-      if(value && value!=this.lastStatus){
-        if(value==='CONFIRMED'){
+      this.getSeedsApplicants(value);
+      /*if(value && value!=this.lastStatus){
+        if(value==='ACCEPTED'){
           this.getAcceptedSeeds();
         }else if (value === 'REJECTED'){
           this.getRejectedSeeds();
@@ -194,7 +185,7 @@ export class ListSeedsApplicantsComponent implements OnInit{
           this.getPendingSeeds();
         }
         this.lastStatus=value;
-      }
+      }*/
     }
   }
 }

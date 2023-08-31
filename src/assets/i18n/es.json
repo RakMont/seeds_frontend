@@ -8,7 +8,8 @@
 
   "want-donate": {
     "title": "FORMULARIO DE REGISTRO DE INFORMACIÓN",
-    "next-button": "SIGUIENTE"
+    "next-button": "SIGUIENTE",
+    "previous-button": "VOLVER"
   },
   "personal-info":{
     "title": "INFORMACIÒN PERSONAL",
@@ -29,50 +30,59 @@
     "fieldCountry":"País",
     "fieldCity":"Ciudad",
     "fieldAddress":"Dirección",
-    "fieldAddressError":"Debe ingresar una dirección"
+    "fieldAddressError":"Debe ingresar una dirección",
+    "contributionTypeBanner": "ELIJA EL TIPO DE APORTE QUE DESEA REALIZAR"
   },
 
-  "tipos-de-aporte":{
+  "contribution-details":{
     "donation-details-span": "DETALLES DEL APORTE",
-    "title-aporte-unico":"Consiste en realizar un aporte de mas de 25 $ o su equivalente de 175 Bs. Podrá elegir el metodo de pago de su eleccion y el dia del es actual en elque realizará sus aporte. Asi mismo, si desea  recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos. ",
-    "title-aporte-constante":"Consiste en realizar un aporte mensual de mas de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el que desee empezar el proceso de aporte (Solo Podra elegir los 3 meses de a partir del mes actual). Podrá elegir el método de pago de su elección la fecha de cobro en la que se espera su aporte, el medio por el cual se desea recibir su recordatorio de aporte mensual. Asi mismo, si desea recibir noticias de los últimos logros delPrograma Semillas gracias a los aportes obtenidos.",
-    "opcion-1":"Opción 1",
-    "opcion-2":"Opción 2",
+    "title-unique-contribution":"APORTE ÚNICO",
+    "detail-unique-contribution":"Consiste en realizar un aporte de mas de 25 $ o su equivalente de 175 Bs. Podrá elegir el metodo de pago de su eleccion y el dia del es actual en elque realizará sus aporte. Asi mismo, si desea  recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos. ",
+    "title-constant-contribution":"APORTE CONSTANTE",
+    "detail-constant-contribution":"Consiste en realizar un aporte mensual de mas de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el que desee empezar el proceso de aporte (Solo Podra elegir los 3 meses de a partir del mes actual). Podrá elegir el método de pago de su elección la fecha de cobro en la que se espera su aporte, el medio por el cual se desea recibir su recordatorio de aporte mensual. Asi mismo, si desea recibir noticias de los últimos logros delPrograma Semillas gracias a los aportes obtenidos.",
+    "title-enterprise-contribution":" APORTE DE EMPRESAS",
+    "detail-enterprise-contribution":"Consiste en realizar un aporte mensual de mas de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el que desee empezar el proceso de aporte (Solo Podra elegir los 3 meses de a partir del mes actual). Podrá elegir el método de pago de su elección la fecha de cobro en la que se espera su aporte, el medio por el cual se desea recibir su recordatorio de aporte mensual. Asi mismo, si desea recibir noticias de los últimos logros delPrograma Semillas gracias a los aportes obtenidos.",
+    "option-1":"Opción 1",
+    "option-2":"Opción 2",
+    "option-3":"Opción 3",
     "boton-volver":"VOLVER",
     "boton-siguiente":"SIGUIENTE"
   },
 
-  "detalles-del-aporte":{
-    "title-aporte-unico":"APORTE UNICO",
-    "campo-monto-aporte-unico":"Monto de Aporte",
-    "campo-obligatorio-monto-aporte-unico":"Debe ingresar el monto de aporte",
-    "campo-metodo-de-pago-aporte-unico":"Método de Pago",
-    "campo-obligatorio-metodo-de-pago-aporte-unico":"Debe elegir el metodo de pago",
-    "campo-fecha-de-aporte-unico":"Fecha de aporte",
-    "campo-obligatorio-fecha-de-aporte-unico":"Debe elegir una fecha",
-    "title-aporte-constante":"APORTE CONSTANTE",
-    "campo-monto-aporte-constante":"Monto de Aporte",
-    "campo-obligatorio-monto-aporte-constante":"Debe ingresar el monto de aporte",
-    "campo-metodo-de-pago-aporte-constante":"Método de Pago",
-    "campo-obligatorio-metodo-de-pago-aporte-constante":"Debe elegir el metodo de pago",
-    "campo-mes-de-inicio-aporte-constante":"Mes de inicio",
-    "campo-obligatorio-mes-de-inicio-aporte-constante":"Debe elegirel mes en el que empezara el ciclo de aportes",
-    "campo-dia-de-aporte-constante":"Dia de aporte",
-    "campo-obligatorio-dia-de-aporte-constante":"Debe elegir el dia del mes en el ue realizara su aporte",
-    "campo-metodo-de-recordatorio-de-aporte-constante":"Metodo de recordatorio",
-    "campo-obligatorio-metodo-de-recordatorio-aporte-constante":"Debe elegir un metodo para recibir recordatorios",
-    "campo-metodo-envio-de-noticias-aporte-constante":"Metodo envio de noticias",
-    "campo-desea-recibir-noticias":"¿Desea recibir noticias?",
-    "boton-si":"SI",
-    "boton-no":"NO",
-    "boton-volver":"VOLVER",
-    "boton-siguiente":"SIGUIENTE"
+  "unique-contribution": {
+    "label-contribution-amount":"Monto de Aporte",
+    "label-contribution-amount-error":"Debe ingresar el monto de aporte",
+    "label-payment-method":"Método de Pago",
+    "label-payment-method-error":"Debe elegir el metodo de pago",
+    "label-payment-date":"Fecha de aporte",
+    "label-payment-date-error":"Debe elegir una fecha",
+    "label-receive-news":"¿ Desea recibir noticias ?",
+    "label-receive-news-positive":"SÍ",
+    "label-receive-news-negative":"NO",
+    "label-send-news-method":"Método envío de noticias"
+  },
+  "constant-contribution":{
+    "label-contribution-amount":"Monto de Aporte",
+    "label-contribution-amount-error":"Debe ingresar el monto de aporte",
+    "label-payment-method":"Método de Pago",
+    "label-payment-method-error":"Debe elegir el metodo de pago",
+    "label-begin-month":"Mes de inicio",
+    "label-begin-month-error":"Debe elegir el mes en el que empezara el ciclo de aportes",
+    "label-contribution-day":"Dia de aporte",
+    "label-contribution-day-error":"Debe elegir el dia del mes en el ue realizara su aporte",
+    "label-reminder-method":"Método de recordatorio",
+    "label-reminder-method-error":"Debe elegir un método para recibir recordatorios",
+    "label-send-news-method":"Método envío de noticias",
+    "label-receive-news":"¿ Desea recibir noticias ?",
+    "label-receive-news-positive":"SÍ",
+    "label-receive-news-negative":"NO"
   },
 
-  "enviar-datos":{
-    "campo-pregunta-eviar-datos":"¿Esta segur@ de enviar sus datos?",
-    "campo-si-estoy-seguro":"SI, ESTOY SEGUR@",
-    "boton-enviar-datos":"ENVIAR DATOS"
+  "send-data":{
+    "send-data-tab": "ENVIAR DATOS",
+    "confirmation-question":"¿Esta segur@ de enviar sus datos?",
+    "confirmation-message":"SI, ESTOY SEGUR@",
+    "send-data-button":"ENVIAR DATOS"
   },
 
   "dolares-en-alimento":{

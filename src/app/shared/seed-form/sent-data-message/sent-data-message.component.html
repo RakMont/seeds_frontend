@@ -1,12 +1,17 @@
 <div mat-dialog-title>
   <div class="dialog-header">
-    <span class="dialog-title"></span>
+    <span class="dialog-title">MENSAJE DE CONFIRMACIÓN</span>
   </div>
   <button mat-icon-button [mat-dialog-close]="true">
     <mat-icon class="close-icon">close</mat-icon>
   </button>
 </div>
 <mat-dialog-content>
+  <app-title-banner
+    [hasTranslate]="false"
+    [title]="'GRACIAS POR ENVIAR SUS DATOS!!!'">
+
+  </app-title-banner>
   <div class="message">
     {{data.data.message}}
   </div>

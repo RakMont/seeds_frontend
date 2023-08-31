@@ -1,7 +1,10 @@
 <div class="personal-info">
   <mat-list>
     <mat-list-item class="donation-section" *ngIf="!isFromVolunteer">
-      <span>{{'personal-info.subtitle' | translate}}</span>
+      <!--<span>{{'personal-info.subtitle' | translate}}</span> -->
+      <app-title-banner [hasTranslate]="true"
+                        [title]="'personal-info.subtitle'"></app-title-banner>
+
     </mat-list-item>
     <ng-container  *ngIf="isFromVolunteer && !seedData">
       <mat-list-item class="donation-section">
@@ -125,7 +128,7 @@
     </form>
     <ng-container *ngIf="!isFromVolunteer else volunteerView">
     <mat-list-item class="donation-section">
-      <span>ELIJA EL TIPO DE APORTE QUE DESEA REALIZAR</span>
+      <span>{{'personal-info.contributionTypeBanner' | translate}}</span>
     </mat-list-item>
       <mat-divider class="subtitle"></mat-divider>
 
@@ -135,21 +138,18 @@
          <mat-expansion-panel-header>
            <mat-panel-description>
              <mat-icon>account_circle</mat-icon>
-             APORTE ÚNICO
+             {{'contribution-details.title-unique-contribution'| translate }}
            </mat-panel-description>
          </mat-expansion-panel-header>
-         <p class="content">Consiste en realizar un aporte
-           de más de 25$ o su equivalente de 175 Bs.
-           Podrá elegir el método de pago de su elección y el día del mes actual en el que realizará su aporte.
-           Así mismo, si desea
-           recibir noticias de los últimos logros del Programa Semillas gracias a los aportes obtenidos.
-         </p>
+         <p class="content">
+           {{'contribution-details.detail-unique-contribution'| translate }}
+          </p>
          <p class="donation-icon">
            <img  src="../../../../assets/donation.png" alt="" srcset="">
          </p>
          <span (click)="emitDonationType('APORTE_UNICO')" class="float-bottom">
             <mat-icon matSuffix>check_circle</mat-icon>
-          Opcion 1
+           {{'contribution-details.option-1'| translate }}
           </span>
 
        </mat-expansion-panel>
@@ -162,24 +162,16 @@
          <mat-expansion-panel-header>
            <mat-panel-description>
              <mat-icon>account_circle</mat-icon>
-             APORTE CONSTANTE
+             {{'contribution-details.title-constant-contribution'| translate }}
            </mat-panel-description>
          </mat-expansion-panel-header>
-         <p class="content">Consiste en realizar un aporte mensual de más
-           de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el
-           que desea empezar el proceso de aporte (Solo Podrá elegir los 3 meses a partir del mes actual). Podrá
-           elegir el método
-           de pago de su elección la fecha de cobro en la que se esperara su aporte,
-           el medio por el cual desea recibir su recordatorio de aporte mensual. Así mismo, si desea recibir
-           noticias de los
-           últimos logros del Programa Semillas gracias a los aportes obtenidos..
-         </p>
+         <p class="content">{{'contribution-details.detail-constant-contribution'| translate }}</p>
          <p class="donation-icon">
            <img  src="../../../../assets/cycle-96.png" alt="" srcset="">
          </p>
          <span (click)="emitDonationType('APORTE_CONSTANTE')" class="float-bottom">
             <mat-icon matSuffix>check_circle</mat-icon>
-            Opcion 2
+           {{'contribution-details.option-2'| translate }}
           </span>
        </mat-expansion-panel>
        <hr
@@ -192,20 +184,18 @@
          <mat-expansion-panel-header>
            <mat-panel-description>
              <mat-icon>account_circle</mat-icon>
-             APORTE DE EMPRESAS
+             {{'contribution-details.title-enterprise-contribution'| translate }}
            </mat-panel-description>
          </mat-expansion-panel-header>
-         <p class="content">Consiste en realizar un aporte mensual de más
-           de 5 $ por la alimentación de un niño o su equivalente de 35 Bs. Podrá elegir el mes en el
-           que desea empezar el proceso de aporte (Solo Podrá elegir los 3 meses a partir del mes actual). Podrá
-           elegir..
+         <p class="content">
+           {{'contribution-details.detail-enterprise-contribution'| translate }}
          </p>
          <p class="donation-icon">
            <img  src="../../../../assets/csr.png" alt="" srcset="">
          </p>
          <span class="float-bottom" (click)="emitDonationType('APORTE_EMPRESAS')">
             <mat-icon matSuffix>check_circle</mat-icon>
-            Opcion 3
+           {{'contribution-details.option-3'| translate }}
           </span>
        </mat-expansion-panel>
        <hr

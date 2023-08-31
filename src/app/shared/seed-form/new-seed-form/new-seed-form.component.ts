@@ -90,26 +90,31 @@ export class NewSeedFormComponent implements OnInit {
     const contributor = {country, city, address, user};
     this.contributionPayload.contributor = contributor;
     if (this.donationType === 'APORTE_UNICO'){
-      this.applicantService.createUniqueApplicant(this.contributionPayload)
-        .subscribe((response) => {
-          this.sentInformaTionMessage(response);
-          this.sendingData = false;
-        }, ( error ) => {
-          this.sendingData = false;
-          this.showMessage(error.error);
-        });
+     this.createUniqueApplicant();
     }else {
-      this.applicantService.createConstantApplicant(this.contributionPayload)
-        .subscribe((response) => {
-          this.sendingData = false;
-          this.sentInformaTionMessage(response);
-        }, ( error ) => {
-          this.sendingData = false;
-          this.showMessage(error.error);
-        });
+      this.createConstantApplicant();
     }
   }
-
+  createUniqueApplicant(){
+    this.applicantService.createUniqueApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.sentInformationMessage(response);
+        this.sendingData = false;
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
+  createConstantApplicant(){
+    this.applicantService.createConstantApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.sendingData = false;
+        this.sentInformationMessage(response);
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
   sentDataConstant(): void{
     this.sendingData = true;
     const {country, city, address, ...user} = this.applicantForm;
@@ -117,7 +122,7 @@ export class NewSeedFormComponent implements OnInit {
     this.contributionPayload.contributor = contributor;
   }
 
-  sentInformaTionMessage(data){
+  sentInformationMessage(data){
     const dialogConfig =  this.dialog.open(SentDataMessageComponent, {
       data: { data },
       disableClose: false,
@@ -126,6 +131,7 @@ export class NewSeedFormComponent implements OnInit {
       width: '500px',
     });
     dialogConfig.afterClosed().subscribe(result => {
+      window.location.reload();
     });
   }
 
