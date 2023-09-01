@@ -74,6 +74,10 @@ export class ApplicantService {
     return this.http.post<any>(environment.backend + '/seeds/confirmed/updateConstant', applicant);
   }
 
+  deactivateSeed(payload): Observable<any>  {
+    return this.http.post<any>(environment.backend + '/seeds/applicants/deactivateContributor', payload);
+  }
+
   listen(): Observable<any> {
     return this._listeners.asObservable();
   }

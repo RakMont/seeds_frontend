@@ -7,9 +7,13 @@
   </button>
 </div>
 <mat-dialog-content *ngIf="seed">
-  <div class="unique-title">INFORMACIÓN PERSONAL</div>
-  <hr>
+  <!--<div class="unique-title">INFORMACIÓN PERSONAL</div>
+   <hr>-->
+
   <div class="row">
+    <app-title-banner
+      [title]="'INFORMACIÓN PERSONAL'">
+    </app-title-banner>
     <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>
       Nombre: </span> {{ seed.name}} {{seed.lastname}}</span>
@@ -36,35 +40,67 @@
       Dirección: </span> {{ seed.address}}</span>
   </div>
 
-  <div class="unique-title">INFORMACIÓN DEL APORTE</div>
-  <hr>
+ <!--
+   <div class="unique-title">INFORMACIÓN DEL APORTE</div>
+    <hr>
+  -->
+
   <div class="row">
-    <span  class="col-md-6"><span style="font-weight: 500">
+    <app-title-banner
+      [title]="'INFORMACIÓN DEL APORTE'">
+    </app-title-banner>
+    <ng-container *ngIf="seed.contributionConfig.contributionType==='APORTE_CONSTANTE' else unique">
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Tipo de aporte: </span>
-       {{seed.contributionConfig.contribution_key}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionType}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Monto de contribución: </span>
-      {{seed.contributionConfig.contribution.contribution_amount}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.contributionAmount}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Método de Pago: </span>
-      {{seed.contributionConfig.contribution.paymentMethod}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.paymentMethod}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Recordatorio: </span>
-      {{seed.contributionConfig.contribution.remainderType}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.remainderType}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Recibir noticias: </span>
-      {{seed.contributionConfig.contribution.send_news ? 'Sí' : 'No'}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.sendNews ? 'Sí' : 'No'}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Envío de noticias: </span>
-      {{seed.contributionConfig.contribution.sendNewsType}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.sendNewsType}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Fecha inicio de aporte: </span>
-      {{seed.contributionConfig.contribution.contributionStartDate| date:'mediumDate'}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.contributionStartDate| date:'mediumDate'}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Fecha fin de aporte: </span>
-      {{seed.contributionConfig.contribution.contributionEndDate | date:'mediumDate'}}</span>
-    <span  class="col-md-6"><span style="font-weight: 500">
+        {{seed.contributionConfig.contribution.contributionEndDate | date:'mediumDate'}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Día de contribución: </span>
+        {{seed.contributionConfig.contribution.paymentNumberDay}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
       <mat-icon>label_important</mat-icon>Mes de inicio: </span>
-      {{seed.contributionConfig.contribution.start_month}}</span>
+        {{seed.contributionConfig.contribution.startMonth}}</span>
+    </ng-container>
+    <ng-template #unique>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Tipo de aporte: </span>
+        {{seed.contributionType}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Monto de contribución: </span>
+        {{seed.contributionConfig.contribution.contributionAmount}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Método de Pago: </span>
+        {{seed.contributionConfig.contribution.paymentMethod}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Recibir noticias: </span>
+        {{seed.contributionConfig.contribution.sendNews ? 'Sí' : 'No'}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Envío de noticias: </span>
+        {{seed.contributionConfig.contribution.sendNewsType}}</span>
+      <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>Fecha de contribución elegida: </span>
+        {{seed.contributionConfig.contribution.dateContribution| date:'mediumDate'}}</span>
+    </ng-template>
+    <p></p>
   </div>
 </mat-dialog-content>

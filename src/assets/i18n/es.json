@@ -49,6 +49,18 @@
     "boton-siguiente":"SIGUIENTE"
   },
 
+  "enterprise-contribution": {
+    "label-contribution-amount":"Monto de Aporte",
+    "label-contribution-amount-error":"Debe ingresar el monto de aporte",
+    "label-payment-method":"Método de Pago",
+    "label-payment-method-error":"Debe elegir el metodo de pago",
+    "label-payment-date":"Fecha de aporte",
+    "label-payment-date-error":"Debe elegir una fecha",
+    "label-receive-news":"¿ Desea recibir noticias ?",
+    "label-receive-news-positive":"SÍ",
+    "label-receive-news-negative":"NO",
+    "label-send-news-method":"Método envío de noticias"
+  },
   "unique-contribution": {
     "label-contribution-amount":"Monto de Aporte",
     "label-contribution-amount-error":"Debe ingresar el monto de aporte",

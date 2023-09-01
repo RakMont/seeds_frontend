@@ -84,6 +84,11 @@ export class NewSeedFormComponent implements OnInit {
     event.constantContribution && this.donationType==='APORTE_CONSTANTE' ?  (this.canSendForm = true) : ( this.canSendForm = false)
   }
 
+  emitEnterpriseContribution(event){
+    this.contributionPayload = event.constantContribution;
+    event.constantContribution && this.donationType==='APORTE_EMPRESAS' ?  (this.canSendForm = true) : ( this.canSendForm = false)
+
+  }
   sentData(): void{
     this.sendingData = true;
     const {country, city, address, ...user} = this.applicantForm;

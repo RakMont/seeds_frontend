@@ -33,7 +33,7 @@ export class ListSeedsComponent implements OnInit {
               private applicantService: ApplicantService) { }
 
   ngOnInit(): void {
-    this.valuechanges();
+    this.valueChanges();
     //this.getPendingSeeds();
     this.getCurrentUser();
     this.val.patchValue({state: 'ACCEPTED'});
@@ -46,7 +46,7 @@ export class ListSeedsComponent implements OnInit {
         this.volunteerProcess = data.volunterId;
       })
   }
-  getAprovedSeeds(state): void{
+  getApprovedSeeds(state): void{
     this.loadingTable = true;
     let filter:SeedFilter = {
       status:state
@@ -72,14 +72,14 @@ export class ListSeedsComponent implements OnInit {
     });
     dialogConfig.afterClosed().subscribe(result => {
       if (result){
-        this.getAprovedSeeds(this.val.get('state').value);
+        this.getApprovedSeeds(this.val.get('state').value);
       }
     });
   }
-  valuechanges(){
+  valueChanges(){
     this.val.get('state').valueChanges.subscribe((value => {
       if(value && value!=this.lastStatus){
-        this.getAprovedSeeds(value);
+        this.getApprovedSeeds(value);
         this.lastStatus=value;
       }
     }))
@@ -120,7 +120,7 @@ export class ListSeedsComponent implements OnInit {
     });
     dialogConfig.afterClosed().subscribe(result => {
       if (result){
-        this.getAprovedSeeds(this.val.get('state').value);
+        this.getApprovedSeeds(this.val.get('state').value);
       }
     });
   }

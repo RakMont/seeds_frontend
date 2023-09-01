@@ -13,17 +13,22 @@
 
       <ng-container *ngIf="donationType==='APORTE_CONSTANTE'">
         <app-constant-donation
-          (constantContribution)="emitConstantContribution($event)">
+          (constantContribution)="emitContribution($event)">
         </app-constant-donation>
       </ng-container>
       <ng-container *ngIf="donationType==='APORTE_UNICO'">
         <app-unique-donation
-          (uniqueDonation)="emitUniqueContribution($event)"
+          (uniqueDonation)="emitContribution($event)"
         ></app-unique-donation>
       </ng-container>
+      <ng-container *ngIf="donationType==='APORTE_EMPRESAS'">
+        <app-enterprise-donation
+          (enterpriseContribution)="emitContribution($event)"
+        ></app-enterprise-donation>
+      </ng-container>
 
-  <div align="end">
-    <button [disabled]="!canSendForm || !confCheck"
+  <div align="center">
+    <button [disabled]="!canSendForm"
             mat-raised-button color="primary"
             (click)="sentData()">ENVIAR DATOS
       <mat-icon>save</mat-icon>

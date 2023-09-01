@@ -86,6 +86,7 @@ import { LogedVolunteerInfoComponent } from './feature/volunteer-manage/loged-vo
 import { ModalEditSeedComponent } from './feature/seeds-manage/modal-edit-seed/modal-edit-seed.component';
 import { ModalUnactiveSeedComponent } from './feature/seeds-manage/modal-unactive-seed/modal-unactive-seed.component';
 import { UpdatePasswordComponent } from './feature/volunteer-manage/update-password/update-password.component';
+import { EnterpriseDonationComponent } from './shared/seed-form/enterprise-donation/enterprise-donation.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -129,7 +130,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LogedVolunteerInfoComponent,
     ModalEditSeedComponent,
     ModalUnactiveSeedComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    EnterpriseDonationComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,11 @@
             (uniqueDonation)="emitUniqueContribution($event)"
           ></app-unique-donation>
         </ng-container>
+        <ng-container *ngIf="donationType==='APORTE_EMPRESAS'">
+          <app-enterprise-donation
+            (uniqueDonation)="emitEnterpriseContribution($event)"
+          ></app-enterprise-donation>
+        </ng-container>
         <div>
           <button mat-flat-button matStepperPrevious>{{'want-donate.previous-button' | translate}}</button>
           <button color="warn" [disabled]="!canSendForm" mat-flat-button matStepperNext>{{'want-donate.next-button' | translate}}</button>

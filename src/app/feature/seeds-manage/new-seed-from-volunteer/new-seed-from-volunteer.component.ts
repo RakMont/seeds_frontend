@@ -40,12 +40,21 @@ export class NewSeedFromVolunteerComponent implements OnInit{
 
   emitUniqueContribution(event){
     this.contributionPayload = event.uniqueDonation;
-    event.uniqueDonation && this.donationType==='UNIQUE' ? (this.canSendForm = true) : ( this.canSendForm = false)
+    event.uniqueDonation && this.donationType==='APORTE_UNICO' ? (this.canSendForm = true) : ( this.canSendForm = false)
   }
 
   emitConstantContribution(event){
     this.contributionPayload = event.constantContribution;
-    event.constantContribution && this.donationType==='CONSTANT' ?  (this.canSendForm = true) : ( this.canSendForm = false)
+    event.constantContribution && this.donationType==='APORTE_CONSTANTE' ?  (this.canSendForm = true) : ( this.canSendForm = false)
+  }
+
+  emitContribution(event){
+    console.log('emitContribution', event)
+    this.donationType==='APORTE_EMPRESAS' ?
+      (this.contributionPayload = event.enterpriseContribution): this.donationType==='APORTE_CONSTANTE' ?
+        (this.contributionPayload = event.constantContribution) : (this.contributionPayload = event.uniqueDonation);
+
+    this.contributionPayload ? (this.canSendForm = true) : (this.canSendForm = false);
   }
 
   sentData(): void{
@@ -53,28 +62,37 @@ export class NewSeedFromVolunteerComponent implements OnInit{
     const {country, city, address, ...user} = this.applicantForm;
     const contributor = {country, city, address, user};
     this.contributionPayload.contributor = contributor;
-    if (this.donationType === 'UNIQUE'){
-      this.applicantService.createUniqueApplicant(this.contributionPayload)
-        .subscribe((response) => {
-          this.sentInformaTionMessage(response);
-          this.sendingData = false;
-        }, ( error ) => {
-          this.sendingData = false;
-          this.showMessage(error.error);
-        });
-    }else {
-      this.applicantService.createConstantApplicant(this.contributionPayload)
-        .subscribe((response) => {
-          this.sendingData = false;
-          this.sentInformaTionMessage(response);
-        }, ( error ) => {
-          this.sendingData = false;
-          this.showMessage(error.error);
-        });
+    if (this.donationType === 'APORTE_UNICO'){
+      this.createUniqueSeed();
+
+    }else if (this.donationType === 'APORTE_CONSTANTE'){
+       this.createConstantSeed();
     }
   }
 
-  sentInformaTionMessage(data){
+  createUniqueSeed(){
+    this.applicantService.createUniqueApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        //this.sentInformationMessage(response);
+        this.sendingData = false;
+        this.showMessage(response);
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
+  createConstantSeed(){
+    this.applicantService.createConstantApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.sendingData = false;
+        //this.sentInformationMessage(response);
+        this.showMessage(response);
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
+  sentInformationMessage(data){
     const dialogConfig =  this.dialog.open(SentDataMessageComponent, {
       data: { data },
       disableClose: false,

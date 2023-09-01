@@ -48,6 +48,19 @@
     "boton-siguiente":"SIGUIENTE"
   },
 
+  "enterprise-contribution": {
+    "label-contribution-amount":"Contribution Amount",
+    "label-contribution-amount-error":"You must enter the amount of contribution",
+    "label-payment-method":"Payment Method",
+    "label-payment-method-error":"You must choose the payment method",
+    "label-payment-date":"Date of contribution",
+    "label-payment-date-error":"You must select a date",
+    "label-receive-news":"Would you like to receive news ?",
+    "label-receive-news-positive":"YES",
+    "label-receive-news-negative":"NO",
+    "label-send-news-method":"Send news method"
+  },
+
   "unique-contribution": {
     "label-contribution-amount":"Contribution Amount",
     "label-contribution-amount-error":"You must enter the amount of contribution",
