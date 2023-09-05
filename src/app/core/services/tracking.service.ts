@@ -38,6 +38,10 @@ export class TrackingService {
       , { params: p });
   }
 
+  listLoggedVolunteerTrackingSeeds(): Observable<Table> {
+    //return this.http.get<Table>(/*environment.backend + */'./assets/statics/trackingseeds.json');
+    return this.http.get<Table>(environment.backend + '/seeds/trackingassignment/volunteerTrackingSeeds');
+  }
 //////////////////////////////
 
   /*listExportRecords(data? : any): Observable<Table> {

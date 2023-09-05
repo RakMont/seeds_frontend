@@ -28,7 +28,7 @@
       <mat-autocomplete
         (optionSelected)="selected($event)"
         autoActiveFirstOption #auto="matAutocomplete">
-        <mat-option  (onSelectionChange)="updateMySelection($event)"
+        <mat-option class="option" (onSelectionChange)="updateMySelection($event)"
                      *ngFor="let option of filteredSeeds | async" [value]="option">
           {{option.largename}}
         </mat-option>

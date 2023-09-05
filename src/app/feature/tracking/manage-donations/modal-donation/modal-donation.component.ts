@@ -65,6 +65,7 @@ export class ModalDonationComponent implements OnInit {
         this.paymentMethods = data.data;
       });
   }
+
   getContributionConfigById(): void{
     this.loadingContributionConfig = true;
     this.contributionconfigservice.getContributionConfigById(
@@ -73,7 +74,7 @@ export class ModalDonationComponent implements OnInit {
       this.contributionConfig = data;
       this.donation.patchValue({
         paymentMethod: this.contributionConfig.contribution.paymentMethod,
-        contribution_ammount: this.contributionConfig.contribution.contribution_amount,
+        contribution_ammount: this.contributionConfig.contribution.contributionAmount,
         contributor_id: this.data.seedId,
         contribution_config_id: this.data.contribution_config_id,
         tracking_assignment_id: this.data.tracking_assignment_id

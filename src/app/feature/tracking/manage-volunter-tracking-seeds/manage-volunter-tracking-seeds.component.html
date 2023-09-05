@@ -1,0 +1,52 @@
+<div class="container">
+  <mat-tab-group [selectedIndex]="index"
+                 (selectedTabChange)="onTabChanged($event);"
+                 mat-align-tabs="center"
+                 class="tab-group">
+    <mat-tab  [disabled]=true>
+      <div class="tab-background">
+        <app-title-banner
+          [title]="'MIS SEMILLAS ASIGNADAS PARA SEGUIMIENTO'">
+        </app-title-banner>
+        <mat-card>
+          <div class="volunteer-cont">
+            <span class="name-cont"> <mat-icon>local_library</mat-icon>
+              <span style="font-weight: 500">Responsable : </span>
+              <span> {{ volunteer?.name}} {{volunteer?.lastname}}</span>
+            </span>
+          </div>
+          <ng-container *ngIf="!loadingtable else loading">
+            <app-generic-table
+              *ngIf="data"
+              [inputTable]="data.rows"
+              (actionOutput)="actionOutput($event)"
+            >
+            </app-generic-table>
+          </ng-container>
+          <ng-template #loading>
+            <mat-spinner>
+            </mat-spinner>
+          </ng-template>
+        </mat-card>
+
+      </div>
+
+    </mat-tab>
+    <mat-tab *ngIf="index===1"  [disabled]=true>
+      <div class="tab-background">
+      <app-title-banner
+        [title]="'APORTES REALIZADOS'">
+      </app-title-banner>
+       <mat-card>
+           <app-list-seed-donations
+             (emitter)="back($event)"
+             [seedId]="this.idSelectedSeeds"
+             [trackingAssignmentId]="trackingAssignmentId"
+             [contributionConfigId]="contributionConfigId">
+           </app-list-seed-donations>
+       </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

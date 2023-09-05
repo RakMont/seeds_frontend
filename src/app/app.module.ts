@@ -87,6 +87,7 @@ import { ModalEditSeedComponent } from './feature/seeds-manage/modal-edit-seed/m
 import { ModalUnactiveSeedComponent } from './feature/seeds-manage/modal-unactive-seed/modal-unactive-seed.component';
 import { UpdatePasswordComponent } from './feature/volunteer-manage/update-password/update-password.component';
 import { EnterpriseDonationComponent } from './shared/seed-form/enterprise-donation/enterprise-donation.component';
+import { ManageVolunterTrackingSeedsComponent } from './feature/tracking/manage-volunter-tracking-seeds/manage-volunter-tracking-seeds.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -131,7 +132,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ModalEditSeedComponent,
     ModalUnactiveSeedComponent,
     UpdatePasswordComponent,
-    EnterpriseDonationComponent
+    EnterpriseDonationComponent,
+    ManageVolunterTrackingSeedsComponent
   ],
   imports: [
     BrowserModule,

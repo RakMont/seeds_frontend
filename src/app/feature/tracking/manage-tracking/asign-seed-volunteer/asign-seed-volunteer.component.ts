@@ -65,7 +65,6 @@ export class AsignSeedVolunteerComponent implements OnInit {
     this.assignForm.patchValue({
       searchValue: evento.source.value.largename
     });
-    console.log('eventochange', evento.source.value);
   }
   private _filter(value: string): BoxSeed[] {
     if (typeof  value === 'string'){

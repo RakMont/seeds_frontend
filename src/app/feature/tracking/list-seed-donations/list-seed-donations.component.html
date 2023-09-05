@@ -23,7 +23,7 @@
   </div>
   <ng-container *ngIf="!loadingTable else loading">
       <app-generic-table
-        *ngIf="data.rows.length"
+        *ngIf="data?.rows.length"
         [inputTable]="data.rows"
         (actionOutput)="actionOutput($event)"
       >

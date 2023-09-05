@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {CellContent, Table} from "../../../core/models/Table.model";
 import {Volunter} from "../../../core/models/Volunteer.model";
 import {TrackingService} from "../../../core/services/tracking.service";
@@ -17,7 +17,7 @@ export interface SelectSeed{
   templateUrl: './list-tracking-seeds.component.html',
   styleUrls: ['./list-tracking-seeds.component.scss']
 })
-export class ListTrackingSeedsComponent implements OnChanges {
+export class ListTrackingSeedsComponent implements OnChanges, OnInit {
   @Input() volunterId: string = null;
   @Output() emitter: EventEmitter<{ tabAction }> = new EventEmitter();
   @Output() selectedSeed: EventEmitter<SelectSeed> = new EventEmitter();
@@ -33,11 +33,24 @@ export class ListTrackingSeedsComponent implements OnChanges {
               private matSnackBar: MatSnackBar) {
   }
 
+  ngOnInit(): void {
+    if(!this.volunterId){
+      this.getVolunteerInfo();
+      this.getLoggedVolunteerTrackingSeeds();
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.getVolunteerInfo();
-    this.getTrackingVolunters();
+    this.getTrackingSeeds();
+
   }
-  getTrackingVolunters(): void{
+  getTrackingSeeds(){
+    if (this.volunterId){
+      this.getTrackingVolunteers();
+    }
+  }
+  getTrackingVolunteers(): void{
     this.loadingtable = true;
     this.trackingService.listTrackingSeeds(this.volunterId).subscribe(
       (data) => {
@@ -47,7 +60,16 @@ export class ListTrackingSeedsComponent implements OnChanges {
         //this.showMessage(error.error);
       });
   }
-
+  getLoggedVolunteerTrackingSeeds(): void{
+    this.loadingtable = true;
+    this.trackingService.listLoggedVolunteerTrackingSeeds().subscribe(
+      (data) => {
+        this.data = data;
+        this.loadingtable = false;
+      }, (error) => {
+        //this.showMessage(error.error);
+      });
+  }
   actionOutput(evento: CellContent): void{
     console.log('event', evento);
     if (evento.clickedAction === 'Donations'){
@@ -91,12 +113,11 @@ export class ListTrackingSeedsComponent implements OnChanges {
       width: '800px',
       data: {
         volunterId: this.volunterId,
-        //isReject: false
       }
     });
     dialogConfig.afterClosed().subscribe(result => {
-      if (result){
-        this.getTrackingVolunters();
+      if (result==='success'){
+        this.getTrackingVolunteers();
       }
     });
   }

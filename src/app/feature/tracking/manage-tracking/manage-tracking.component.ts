@@ -47,7 +47,10 @@ export class ManageTrackingComponent implements OnInit {
       this.openAssinDialog(this.idSelectedVolunter);
     }
   }
-  onTabChanged(evento){}
+  onTabChanged(evento){
+    console.log('eventoonTabChanged', evento)
+    this.index=evento.index;
+  }
 
   openAssinDialog(id): void{
     const dialogConfig =  this.dialog.open(AsignSeedVolunteerComponent, {
