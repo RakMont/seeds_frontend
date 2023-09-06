@@ -7,6 +7,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {VolunteerService} from "../../../core/services/volunteer.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 import {AsignSeedVolunteerComponent} from "../manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component";
+import {ModalUniqueDonationComponent} from "../manage-donations/modal-unique-donation/modal-unique-donation.component";
 export interface SelectSeed{
   seedId: string;
   trackingAssignmentId: string;
@@ -72,17 +73,36 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
   }
   actionOutput(evento: CellContent): void{
     console.log('event', evento);
+    const out: SelectSeed = {
+      seedId: evento.params[0].paramContent,
+      trackingAssignmentId: evento.params[1].paramContent,
+      contributionConfigId: evento.params[2].paramContent
+    };
     if (evento.clickedAction === 'Donations'){
-      const out: SelectSeed = {
-        seedId: evento.params[0].paramContent,
-        trackingAssignmentId: evento.params[1].paramContent,
-        contributionConfigId: evento.params[2].paramContent
-      };
+
       this.selectedSeed.emit(out);
       // this.donations();
+    } else if (evento.clickedAction === 'ViewUniqueDonation'){
+      this.openUniqueContributionModal(out);
     }
   }
 
+  openUniqueContributionModal(out): void{
+    const dialogConfig =  this.dialog.open(ModalUniqueDonationComponent, {
+      disableClose: false,
+      panelClass: 'icon-outside',
+      autoFocus: true,
+      width: '800px',
+      data: {
+        selectSeed: out,
+      }
+    });
+    dialogConfig.afterClosed().subscribe(result => {
+      if (result==='success'){
+        this.getTrackingVolunteers();
+      }
+    });
+  }
   back(): void{
     this.emitter.emit({tabAction: {number: 0}}) ;
   }
@@ -105,7 +125,7 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
     });
   }
 
-  openAssinDialog(): void{
+  openAsignDialog(): void{
     const dialogConfig =  this.dialog.open(AsignSeedVolunteerComponent, {
       disableClose: false,
       panelClass: 'icon-outside',
@@ -121,6 +141,8 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
       }
     });
   }
+
+
 
   getVolunteerInfo(){
     this.volunteerService.getVolunteer(this.volunterId)

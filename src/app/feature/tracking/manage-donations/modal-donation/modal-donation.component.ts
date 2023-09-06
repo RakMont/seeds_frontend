@@ -4,7 +4,6 @@ import {UntypedFormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {UtilService} from "../../../../core/services/util.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {TrackingService} from "../../../../core/services/tracking.service";
 import {ContributionConfigService} from "../../../../core/services/contribution-config.service";
 import {MessageSnackBarComponent} from "../../../../shared/message-snack-bar/message-snack-bar.component";
 import {ContributionService} from "../../../../core/services/contribution.service";
@@ -48,7 +47,7 @@ export class ModalDonationComponent implements OnInit {
               private matSnackBar: MatSnackBar,
               private contributionService: ContributionService,
               public dialogRef: MatDialogRef<ModalDonationComponent>,
-              private contributionconfigservice: ContributionConfigService) { }
+              private contributionConfigService: ContributionConfigService) { }
 
   ngOnInit(): void {
     this.getContributionConfigById();
@@ -68,7 +67,7 @@ export class ModalDonationComponent implements OnInit {
 
   getContributionConfigById(): void{
     this.loadingContributionConfig = true;
-    this.contributionconfigservice.getContributionConfigById(
+    this.contributionConfigService.getContributionConfigById(
       this.data.contribution_config_id
     ).subscribe((data) => {
       this.contributionConfig = data;

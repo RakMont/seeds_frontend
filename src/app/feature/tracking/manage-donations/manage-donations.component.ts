@@ -14,7 +14,7 @@ import {ContributionService} from "../../../core/services/contribution.service";
   styleUrls: ['./manage-donations.component.scss']
 })
 export class ManageDonationsComponent implements OnInit {
-  filterform = this.fb.group({
+  filterForm = this.fb.group({
     beginDate: ['', Validators.required],
     endDate: ['', Validators.required],
     contributionType: [null],
@@ -46,7 +46,7 @@ export class ManageDonationsComponent implements OnInit {
     this.utilServce.getPaymentMethods()
       .subscribe((data) => {
         this.paymentMethods = data.data;
-        this.filterform.patchValue({
+        this.filterForm.patchValue({
           beginDate: new Date(),
           endDate: new Date(),
           paymentMethod: this.paymentMethods[0].value

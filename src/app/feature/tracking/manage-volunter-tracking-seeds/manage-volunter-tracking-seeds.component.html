@@ -15,7 +15,7 @@
               <span> {{ volunteer?.name}} {{volunteer?.lastname}}</span>
             </span>
           </div>
-          <ng-container *ngIf="!loadingtable else loading">
+          <ng-container *ngIf="!loadingTable else loading">
             <app-generic-table
               *ngIf="data"
               [inputTable]="data.rows"
@@ -37,9 +37,17 @@
       <app-title-banner
         [title]="'APORTES REALIZADOS'">
       </app-title-banner>
+        <mat-toolbar>
+          <button mat-icon-button (click)="back()">
+            <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+          </button>
+          <span class="example-spacer"></span>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-toolbar>
        <mat-card>
            <app-list-seed-donations
-             (emitter)="back($event)"
              [seedId]="this.idSelectedSeeds"
              [trackingAssignmentId]="trackingAssignmentId"
              [contributionConfigId]="contributionConfigId">

@@ -61,15 +61,14 @@ mat-dialog-content{
 }
 .mdc-dialog__title{
   margin: 0 auto !important;
-  display: flex;
+  display: flex !important;
   padding: 0!important;
-  justify-content: space-between;
-  border-bottom: 1px solid #2e7d32;
-  background-color: #162939;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #2e7d32!important;
+  background-color: #162939 !important;
   color: #FFFFFF!important;
 }
 .dialog-header{
-  //padding:  12px;
   width: 96% !important;
   text-align: center;
   padding-top: 8px;
@@ -83,6 +82,9 @@ mat-dialog-content{
   margin-top: 8px;
 }
 
+.mat-select-option{
+  font-size: 12px!important;
+}
 .mat-mdc-dialog-actions{
   padding-bottom: 16px!important;
 }

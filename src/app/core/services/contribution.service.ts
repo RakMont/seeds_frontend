@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {Table} from "../models/Table.model";
+import {Volunter} from "../models/Volunteer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +40,11 @@ export class ContributionService {
     return this.http.get<Table>(environment.backend + '/seeds/contribution/getAllRecords', { params: p });
   }
 
+  getContributionRecordById(id: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json');
+    const p = new HttpParams().set('id', id);
+    return this.http.get<any>(environment.backend +
+      '/seeds/contribution/getContributionRecordById', { params: p });
+  }
 }

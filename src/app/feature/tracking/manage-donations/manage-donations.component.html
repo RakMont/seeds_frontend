@@ -5,7 +5,7 @@
       <img class="img" src="../../../../assets/logo.png" />
     </div>
     <hr>
-    <form [formGroup]="filterform" class="row">
+    <form [formGroup]="filterForm" class="row">
       <mat-form-field class="col-md-4" appearance="fill">
         <mat-label>Elige un rando de fechas</mat-label>
         <mat-date-range-input [rangePicker]="picker">
@@ -36,7 +36,7 @@
           <mat-icon>cloud_download</mat-icon>
         </button>
       </div>
-      {{filterform.value|json}}
+      {{filterForm.value|json}}
     </form>
   </mat-card>
   <ng-container *ngIf="!loadingTable else loading">

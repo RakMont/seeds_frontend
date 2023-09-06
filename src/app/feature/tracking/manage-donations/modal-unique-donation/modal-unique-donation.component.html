@@ -1,8 +1,8 @@
 <div mat-dialog-title>
   <div class="dialog-header">
-    <span class="dialog-title">NUEVO APORTE</span>
+    <span class="dialog-title">REGISTRO DE APORTE ÚNICO</span>
   </div>
-  <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
+  <button mat-icon-button [mat-dialog-close]="true">
     <mat-icon class="close-icon">close</mat-icon>
   </button>
 </div>
@@ -20,12 +20,13 @@
                     class="col-md-6" appearance="fill">
       <mat-label>Monto de Aporte</mat-label>
       <input class="example-right-align"
-             required matInput type="number"
+             required matInput
+             oninput="this.value = Math.abs(this.value)|| ''"
              formControlName="contribution_ammount" placeholder="0">
       <mat-error *ngIf="donationAmount.invalid">{{getDonationAmountError()}}</mat-error>
       <!--<span matPrefix>{{dolarsamount}}&nbsp;</span> -->
       <span matSuffix>.00 BOB</span>
-      <mat-hint>{{childscount}}</mat-hint>
+      <mat-hint>{{childCount}}</mat-hint>
     </mat-form-field>
     <mat-form-field
       class="col-md-6"
@@ -97,15 +98,15 @@
                       class="col-md-6 extra" appearance="fill">
         <mat-label>Aporte extra</mat-label>
         <input class="example-right-align"
-               required matInput type="number"
+               required matInput
+               oninput="this.value = Math.abs(this.value)|| ''"
                formControlName="extra_income_ammount" placeholder="0">
         <mat-error *ngIf="donationAmount.invalid">{{getDonationAmountError()}}</mat-error>
         <span matSuffix>.00 BOB</span>
       </mat-form-field>
     </ng-container>
   </form>
-  <!--   {{donation.value | json}}
-  -->
+
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button [disabled]="!donation.valid"
