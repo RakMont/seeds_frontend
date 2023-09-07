@@ -1,6 +1,6 @@
 <div mat-dialog-title>
   <div class="dialog-header">
-    <span class="dialog-title">REGISTRO DE APORTE ÚNICO</span>
+    <span class="dialog-title">{{data.selectSeed.isUpdate? 'ACTUALIZAR ' : ''}}REGISTRO DE APORTE ÚNICO</span>
   </div>
   <button mat-icon-button [mat-dialog-close]="true">
     <mat-icon class="close-icon">close</mat-icon>
@@ -106,11 +106,10 @@
       </mat-form-field>
     </ng-container>
   </form>
-
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button [disabled]="!donation.valid"
           mat-flat-button
           (click)="sendData()"
-          color="primary">REGISTRAR APORTE</button>
+          color="primary">{{data.selectSeed.isUpdate? 'ACTUALIZAR ' : 'REGISTRAR '}} APORTE</button>
 </mat-dialog-actions>

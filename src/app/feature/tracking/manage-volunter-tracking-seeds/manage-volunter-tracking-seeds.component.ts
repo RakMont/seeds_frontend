@@ -56,7 +56,7 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
     }
     else if (evento.clickedAction === 'ViewUniqueDonation'){
       let out = {
-        idSelectedSeeds : evento.params[0].paramContent,
+        seedId : evento.params[0].paramContent,
         trackingAssignmentId : evento.params[1].paramContent,
         contributionConfigId : evento.params[2].paramContent
       }

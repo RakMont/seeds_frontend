@@ -10,6 +10,7 @@ import {ContributionService} from "../../../../core/services/contribution.servic
 
 export interface DialogData {
   id: string;
+  contributionRecordId: string;
   tracking_assignment_id: string;
   contribution_config_id: string;
   seedId: string;
@@ -24,6 +25,7 @@ export interface DialogData {
 export class ModalDonationComponent implements OnInit {
   loadingContributionConfig = true;
   contributionConfig: any;
+  contributionRecord;
   paymentMethods: ComboElement[];
   donation = this.fb.group({
     contribution_record_id: null,
@@ -50,10 +52,36 @@ export class ModalDonationComponent implements OnInit {
               private contributionConfigService: ContributionConfigService) { }
 
   ngOnInit(): void {
-    this.getContributionConfigById();
-    this.initData();
+    if (this.data.isUpdate){
+      this.getContributionRecordById();
+      this.initData();
+    }else{
+      this.getContributionConfigById();
+      this.initData();
+    }
   }
-
+  getContributionRecordById(): void {
+    this.contributionService.getContributionRecordById(this.data.contributionRecordId)
+      .subscribe((data) => {
+        this.contributionRecord = data;
+        //console.log('getContributionRecordById', data)
+        this.donation.patchValue({
+          contribution_record_id: data.contributionRecordId,
+          contribution_config_id: data.contributionConfigId,
+          tracking_assignment_id: data.trackingAssignmentId,
+          contributor_id: data.contributorDTO.seedId,
+          contribution_ammount: data.contributionAmount,
+          expected_payment_date: data.expectedPaymentDate,
+          hasExtra: data.extraIncomeAmount > 0,
+          extra_income_ammount: data.extraIncomeAmount,
+          payment_date: data.paymentDate,
+          paymentMethod: data.paymentMethod,
+          sent_payment_proof: data.sentPaymentProof,
+          receipt_number: data.receiptNumber,
+          receipt_code: data.receiptCode,
+        })
+      })
+  }
   initData(): void{
     this.getPaymentMethods();
   }
@@ -84,27 +112,7 @@ export class ModalDonationComponent implements OnInit {
       this.contributionConfig = null;
       this.loadingContributionConfig = false;
 
-      /*console.log('getContributionConfigById', error );
-      this.contributionConfig = {
-        contribution_config_id: 1,
-        contribution_key: 'APORTE_CONSTANTE',
-        contribution_id: '1',
-        contribution: {
-          const_contribution_id: '1',
-          start_month: 'DICIEMBRE',
-          paymentDate: 5,
-          remainderType: 'CORREO_ELECTRONICO',
-          contributionStartDate: '12/12/2022',
-          contributionEndDate: '12/12/2023',
-          contribution_amount: 35,
-          paymentMethod: 'CODIGO_QR',
-          send_news: true,
-          sendNewsType: 'MENSAJE_WHATSSAP'
-        }
-      };
-      this.donation.patchValue({
-        paymentMethod: this.contributionConfig.contribution.paymentMethod
-      });*/
+
     });
   }
 
@@ -135,6 +143,24 @@ export class ModalDonationComponent implements OnInit {
 
   sendData(){
     const payload = this.donation.value
+    if(this.data.isUpdate){
+      this.updateRecord(payload);
+    }
+    else{
+      this.createRecord(payload);
+    }
+  }
+  updateRecord(payload){
+    this.contributionService.updateContribution(payload)
+      .subscribe((res) => {
+        this.showMessage(res);
+        this.dialogRef.close('success');
+      },(error => {
+        this.showMessage(error.error);
+        this.dialogRef.close();
+      }))
+  }
+  createRecord(payload){
     this.contributionService.saveContribution(payload)
       .subscribe((res) => {
         this.showMessage(res);
@@ -144,7 +170,6 @@ export class ModalDonationComponent implements OnInit {
         this.dialogRef.close();
       }))
   }
-
   showMessage(data: any): void{
     console.log('errormessage', data);
     this.matSnackBar.openFromComponent(MessageSnackBarComponent, {

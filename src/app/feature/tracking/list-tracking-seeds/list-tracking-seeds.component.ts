@@ -8,6 +8,7 @@ import {VolunteerService} from "../../../core/services/volunteer.service";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 import {AsignSeedVolunteerComponent} from "../manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component";
 import {ModalUniqueDonationComponent} from "../manage-donations/modal-unique-donation/modal-unique-donation.component";
+import {ViewDonationComponent} from "../manage-donations/view-donation/view-donation.component";
 export interface SelectSeed{
   seedId: string;
   trackingAssignmentId: string;
@@ -73,20 +74,50 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
   }
   actionOutput(evento: CellContent): void{
     console.log('event', evento);
-    const out: SelectSeed = {
-      seedId: evento.params[0].paramContent,
-      trackingAssignmentId: evento.params[1].paramContent,
-      contributionConfigId: evento.params[2].paramContent
-    };
     if (evento.clickedAction === 'Donations'){
-
+      let out: SelectSeed = {
+        seedId: evento.params[0].paramContent,
+        trackingAssignmentId: evento.params[1].paramContent,
+        contributionConfigId: evento.params[2].paramContent
+      };
       this.selectedSeed.emit(out);
       // this.donations();
     } else if (evento.clickedAction === 'ViewUniqueDonation'){
+      let out: SelectSeed = {
+        seedId: evento.params[0].paramContent,
+        trackingAssignmentId: evento.params[1].paramContent,
+        contributionConfigId: evento.params[2].paramContent
+      };
       this.openUniqueContributionModal(out);
     }
+    else if (evento.clickedAction === 'UpdateRecord'){
+      let out = {
+        isUpdate:true,
+        contributionRecordId: evento.params[0].paramContent}
+      this.openUniqueContributionModal(out);
+    }
+    else if (evento.clickedAction === 'SeeRecord'){
+      let out = {contributionRecordId: evento.params[0].paramContent
+      }
+      this.openViewContributionRecordModal(out);
+    }
   }
-
+  openViewContributionRecordModal(out): void {
+    const dialogConfig = this.dialog.open(ViewDonationComponent, {
+      disableClose: false,
+      panelClass: 'icon-outside',
+      autoFocus: true,
+      width: '800px',
+      data: {
+        selectSeed: out,
+      }
+    });
+    dialogConfig.afterClosed().subscribe(result => {
+      if (result === 'success') {
+        this.getLoggedVolunteerTrackingSeeds();
+      }
+    });
+  }
   openUniqueContributionModal(out): void{
     const dialogConfig =  this.dialog.open(ModalUniqueDonationComponent, {
       disableClose: false,

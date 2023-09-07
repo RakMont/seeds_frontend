@@ -48,7 +48,27 @@ export class ListSeedDonationsComponent implements OnChanges {
       // this.donations();
     }else if (evento.clickedAction === 'deleteRecord'){
       this.onDelete(id);
+    } else if (evento.clickedAction === 'UpdateRecord'){
+      this.openContributionModal(evento.params[0].paramContent);
     }
+  }
+  openContributionModal(contributionRecordId){
+      const dialogConfig =  this.dialog.open(ModalDonationComponent, {
+        disableClose: false,
+        panelClass: 'icon-outside',
+        autoFocus: true,
+        width: '800px',
+        data: {
+          contributionRecordId: contributionRecordId,
+          isUpdate: true
+        }
+      });
+      dialogConfig.afterClosed().subscribe(result => {
+        if (result){
+          this.getDonationsRecord();
+        }
+      });
+
   }
   onAdding(): void{}
   onView(id: string): void{
@@ -89,10 +109,6 @@ export class ListSeedDonationsComponent implements OnChanges {
     return params.find(p => p.paramName === 'contributionRecordId').paramContent;
   }
   newDonation(): void {
-    console.log('new seedId', this.seedId );
-    console.log('new trackingAssignmentId', this.trackingAssignmentId );
-    console.log('new contributionConfigId', this.contributionConfigId );
-
     const dialogConfig =  this.dialog.open(ModalDonationComponent, {
       disableClose: false,
       panelClass: 'icon-outside',

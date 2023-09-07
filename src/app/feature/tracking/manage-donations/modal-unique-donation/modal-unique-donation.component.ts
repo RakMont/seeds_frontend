@@ -87,7 +87,7 @@ export class ModalUniqueDonationComponent implements OnInit{
       this.donation.patchValue({
         paymentMethod: this.contributionConfig.contribution.paymentMethod,
         contribution_ammount: this.contributionConfig.contribution.contributionAmount,
-        contributor_id: this.data.selectSeed.idSelectedSeeds,
+        contributor_id: this.data.selectSeed.seedId,
         contribution_config_id: this.data.selectSeed.contributionConfigId,
         tracking_assignment_id: this.data.selectSeed.trackingAssignmentId,
         expected_payment_date: this.contributionConfig.contribution.dateContribution
