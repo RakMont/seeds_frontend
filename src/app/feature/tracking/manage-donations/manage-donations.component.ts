@@ -7,6 +7,8 @@ import {Router} from "@angular/router";
 import {UtilService} from "../../../core/services/util.service";
 import {TrackingService} from "../../../core/services/tracking.service";
 import {ContributionService} from "../../../core/services/contribution.service";
+import {ReportServiceService} from "../../../core/services/report-service.service";
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-manage-donations',
@@ -32,6 +34,7 @@ export class ManageDonationsComponent implements OnInit {
   seed: any;
 
   constructor( private fb: UntypedFormBuilder,
+               private contributionReportService: ReportServiceService,
                private contributionService: ContributionService,
                private _bottomSheet: MatBottomSheet,
                private router: Router,
@@ -54,6 +57,22 @@ export class ManageDonationsComponent implements OnInit {
         //this.filterform.get('beginDate').disable();
         //this.filterform.get('endDate').disable();
       });
+  }
+
+
+  getReport(){
+    this.contributionReportService.getContributionRecordsReport()
+      .subscribe((data: Blob)=>{
+        const file = new Blob([data], {type: 'application/pdf'});
+        const fileURL = URL.createObjectURL(file);
+        console.log('filename')
+        saveAs(data, 'contributionrecords.pdf')
+        window.open(fileURL, '_blank', 'width=1000, height=800');
+
+
+    },(error)=>{
+        console.log("error",error);
+      })
   }
 
   getContributionTypes(): void {

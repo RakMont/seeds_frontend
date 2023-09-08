@@ -1,43 +1,44 @@
 <div class="container">
+  <app-title-banner
+    [hasTranslate]="false"
+    [title]="'SEGUIMIENTO DE APORTES DE SEMILLAS'">
+
+  </app-title-banner>
   <mat-card>
-    <div  class="header">
-      <span class="title">SEGUIMIENTO</span>
-      <img class="img" src="../../../../assets/logo.png" />
-    </div>
-    <hr>
-    <form [formGroup]="filterForm" class="row">
-      <mat-form-field class="col-md-4" appearance="fill">
-        <mat-label>Elige un rando de fechas</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-          <input disabled matStartDate placeholder="Inicio" formControlName="beginDate">
-          <input disabled matEndDate placeholder="Fin" formControlName="endDate">
-        </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker disabled="false" #picker></mat-date-range-picker>
-      </mat-form-field>
-      <mat-form-field class="col-md-4" appearance="fill">
-        <mat-label>Metodo de pago</mat-label>
-        <mat-select formControlName="paymentMethod" name="food">
-          <mat-option class="option" *ngFor="let m of paymentMethods" [value]="m.value">
-            {{m.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <div class="col-md-3">
-        <mat-chip-listbox class="mat-mdc-chip-set-stacked" formControlName="contributionType">
-          <mat-chip-option *ngFor="let type of contributionTypes" [value]="type.value"  color="accent">{{type.name}}</mat-chip-option>
-        </mat-chip-listbox>
-      </div>
-      <div class="col-md-1">
-        <button (click)="openBottomSheet()"
-                matTooltip="Exportar"
-                mat-mini-fab color="primary">
+    <div class="volunteer-cont">
+      <form [formGroup]="filterForm" class="row">
+        <mat-form-field class="col-md-4" appearance="fill">
+          <mat-label>Elige un rando de fechas</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input disabled matStartDate placeholder="Inicio" formControlName="beginDate">
+            <input disabled matEndDate placeholder="Fin" formControlName="endDate">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker disabled="false" #picker></mat-date-range-picker>
+        </mat-form-field>
+        <mat-form-field class="col-md-4" appearance="fill">
+          <mat-label>Metodo de pago</mat-label>
+          <mat-select formControlName="paymentMethod" name="food">
+            <mat-option class="option" *ngFor="let m of paymentMethods" [value]="m.value">
+              {{m.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="col-md-3">
+          <mat-chip-listbox class="mat-mdc-chip-set-stacked" formControlName="contributionType">
+            <mat-chip-option *ngFor="let type of contributionTypes" [value]="type.value"  color="accent">{{type.name}}</mat-chip-option>
+          </mat-chip-listbox>
+        </div>
+          <button (click)="getReport()"
+              matTooltip="getpdf"
+              mat-mini-fab color="primary">
           <mat-icon>cloud_download</mat-icon>
-        </button>
-      </div>
-      {{filterForm.value|json}}
-    </form>
+         </button>
+         {{filterForm.value|json}}
+      </form>
+    </div>
+
   </mat-card>
   <ng-container *ngIf="!loadingTable else loading">
     <mat-card *ngIf="data.rows.length > 0" id="htmlData">
