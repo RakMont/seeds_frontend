@@ -20,11 +20,14 @@ export class LogInComponent implements OnInit {
     password: [null, Validators.required]
   });
   hide = true;
+  gettingLoginToken = false;
+
   ngOnInit(): void {
   }
 
   login(): void{
     const payload = this.formLogin.value;
+    this.gettingLoginToken = true;
     this.oauthservice.loginVolunter(payload)
       .subscribe((data) => {
         this.dialogRef.close();
@@ -35,6 +38,7 @@ export class LogInComponent implements OnInit {
             this.router.navigate(['/admin/ver-voluntarios']).then(() => {
               window.location.reload();
             });
+            this.gettingLoginToken = false;
           }
         });
       }, ((error) => {

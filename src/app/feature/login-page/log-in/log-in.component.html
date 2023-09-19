@@ -7,7 +7,7 @@
   </button>
 </div>
 <mat-dialog-content class="mat-typography">
-  <form [formGroup]="formLogin" class="row">
+  <form [formGroup]="formLogin" class="row"  *ngIf="!gettingLoginToken else loading">
     <mat-form-field appearance="fill"
                     floatLabel="always"
                     class="col-md-12">
@@ -27,10 +27,14 @@
     </mat-form-field>
   </form>
   {{formLogin.value | json}}
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button mat-flat-button
           (click)="login()"
-          [disabled]="!formLogin.valid"
+          [disabled]="!formLogin.valid || gettingLoginToken"
           color="primary">INICIAR</button>
 </mat-dialog-actions>

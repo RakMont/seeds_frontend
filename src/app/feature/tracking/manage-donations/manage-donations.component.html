@@ -17,39 +17,43 @@
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker disabled="false" #picker></mat-date-range-picker>
         </mat-form-field>
-        <mat-form-field class="col-md-4" appearance="fill">
-          <mat-label>Metodo de pago</mat-label>
-          <mat-select formControlName="paymentMethod" name="food">
-            <mat-option class="option" *ngFor="let m of paymentMethods" [value]="m.value">
-              {{m.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div class="col-md-3">
+          <mat-form-field class="col-md-4" appearance="fill">
+            <mat-label>Metodo de pago</mat-label>
+            <mat-select formControlName="paymentMethod" [disabled]="filterForm.get('activePaymentMethod').value">
+              <mat-option class="option" *ngFor="let m of paymentMethods" [value]="m.value">
+                {{m.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <!--          <mat-checkbox class="col-md-1" [matTooltip]="'Desactivar filtro'" formControlName="activePaymentMethod"></mat-checkbox> -->
+        <div class="col-md-4">
           <mat-chip-listbox class="mat-mdc-chip-set-stacked" formControlName="contributionType">
-            <mat-chip-option *ngFor="let type of contributionTypes" [value]="type.value"  color="accent">{{type.name}}</mat-chip-option>
+            <mat-chip-option class="option" *ngFor="let type of contributionTypes" [value]="type.value"
+                             color="accent">{{type.name}}</mat-chip-option>
           </mat-chip-listbox>
         </div>
-          <button (click)="getReport()"
-              matTooltip="getpdf"
-              mat-mini-fab color="primary">
-          <mat-icon>cloud_download</mat-icon>
-         </button>
-         {{filterForm.value|json}}
+        <div class="col-md-12">
+          <button class="button-width" (click)="buttonGetRecords()" mat-flat-button color="warn">Solicitar aportes</button>
+        </div>
+
       </form>
+      <button class="downloadbutton"
+              (click)="openBottomSheet()"
+              matTooltip="Descargar Registros"
+              mat-fab color="primary">
+        <mat-icon>cloud_download</mat-icon>
+      </button>
     </div>
 
-  </mat-card>
   <ng-container *ngIf="!loadingTable else loading">
-    <mat-card *ngIf="data.rows.length > 0" id="htmlData">
       <app-generic-table
-        *ngIf="data"
+        *ngIf="data?.rows?.length"
         [inputTable]="data.rows"
         (actionOutput)="actionOutput($event)"
       >
       </app-generic-table>
-    </mat-card>
   </ng-container>
+  </mat-card>
 
   <ng-template #loading>
     <mat-spinner class="loading">

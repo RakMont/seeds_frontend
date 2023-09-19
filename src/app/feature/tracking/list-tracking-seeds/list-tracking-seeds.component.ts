@@ -9,6 +9,9 @@ import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/messag
 import {AsignSeedVolunteerComponent} from "../manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component";
 import {ModalUniqueDonationComponent} from "../manage-donations/modal-unique-donation/modal-unique-donation.component";
 import {ViewDonationComponent} from "../manage-donations/view-donation/view-donation.component";
+import {ExportSheetComponent} from "../manage-donations/export-sheet/export-sheet.component";
+import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {ReportServiceService} from "../../../core/services/report-service.service";
 export interface SelectSeed{
   seedId: string;
   trackingAssignmentId: string;
@@ -23,15 +26,17 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
   @Input() volunterId: string = null;
   @Output() emitter: EventEmitter<{ tabAction }> = new EventEmitter();
   @Output() selectedSeed: EventEmitter<SelectSeed> = new EventEmitter();
-  loadingtable = true;
+  loadingTable = true;
   data: Table;
   index = 0;
 
   volunteer: Volunter;
   loadingVolunteer = true;
   constructor(private trackingService: TrackingService,
+              private _bottomSheet: MatBottomSheet,
               private dialog: MatDialog,
               private volunteerService: VolunteerService,
+              private contributionReportService: ReportServiceService,
               private matSnackBar: MatSnackBar) {
   }
 
@@ -53,21 +58,21 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
     }
   }
   getTrackingVolunteers(): void{
-    this.loadingtable = true;
+    this.loadingTable = true;
     this.trackingService.listTrackingSeeds(this.volunterId).subscribe(
       (data) => {
         this.data = data;
-        this.loadingtable = false;
+        this.loadingTable = false;
       }, (error) => {
         //this.showMessage(error.error);
       });
   }
   getLoggedVolunteerTrackingSeeds(): void{
-    this.loadingtable = true;
+    this.loadingTable = true;
     this.trackingService.listLoggedVolunteerTrackingSeeds().subscribe(
       (data) => {
         this.data = data;
-        this.loadingtable = false;
+        this.loadingTable = false;
       }, (error) => {
         //this.showMessage(error.error);
       });
@@ -100,6 +105,10 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
       let out = {contributionRecordId: evento.params[0].paramContent
       }
       this.openViewContributionRecordModal(out);
+    }
+    else{
+      console.log("evento",evento);
+      this.openBottomSheet();
     }
   }
   openViewContributionRecordModal(out): void {
@@ -183,5 +192,38 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
       },(error => {
         this.loadingVolunteer = false;
       }))
+  }
+
+  openBottomSheet(): void {
+    //const queryParams = this.filterForm.value
+    this._bottomSheet.open(ExportSheetComponent).afterDismissed()
+      .subscribe((dats) => {
+        if (dats === 'PDF'){
+          this.getReport();
+          console.log('datos', dats);
+          /*
+          *const url = this.router.serializeUrl(
+            this.router.createUrlTree(
+              ['/admin/tracking/export-tracking'],
+              { queryParams })
+          );
+          window.open(url, '_blank');
+          * */
+        }
+      });
+  }
+  getReport(){
+    this.contributionReportService.getContributionRecordsReport()
+      .subscribe((data: Blob)=>{
+        const file = new Blob([data], {type: 'application/pdf'});
+        const fileURL = URL.createObjectURL(file);
+        console.log('filename')
+        //saveAs(data, 'contributionrecords.pdf')
+        window.open(fileURL, '_blank', 'width=1000, height=800');
+
+
+      },(error)=>{
+        console.log("error",error);
+      })
   }
 }

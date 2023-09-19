@@ -89,6 +89,7 @@ import { UpdatePasswordComponent } from './feature/volunteer-manage/update-passw
 import { EnterpriseDonationComponent } from './shared/seed-form/enterprise-donation/enterprise-donation.component';
 import { ManageVolunterTrackingSeedsComponent } from './feature/tracking/manage-volunter-tracking-seeds/manage-volunter-tracking-seeds.component';
 import { ModalUniqueDonationComponent } from './feature/tracking/manage-donations/modal-unique-donation/modal-unique-donation.component';
+import { ExportSheetComponent } from './feature/tracking/manage-donations/export-sheet/export-sheet.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -135,7 +136,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UpdatePasswordComponent,
     EnterpriseDonationComponent,
     ManageVolunterTrackingSeedsComponent,
-    ModalUniqueDonationComponent
+    ModalUniqueDonationComponent,
+    ExportSheetComponent
   ],
   imports: [
     BrowserModule,

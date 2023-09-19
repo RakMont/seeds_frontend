@@ -34,8 +34,12 @@ export class ContributionService {
   }
 
   listContributionRecords(data? : any): Observable<Table> {
-    let p = new HttpParams();
-    if (data) p = p.append('contributionType', data)
+    console.log('AS', data);
+    //let p = new HttpParams();
+    const p = new HttpParams().set('endDate', data?.endDate)
+      .set('beginDate', data?.beginDate)
+      .set('paymentMethod', data?.paymentMethod)
+      .set('contributionType', data?.contributionType)
     //return this.http.get<Table>(/*environment.backend + */'./assets/statics/donations.json');
     return this.http.get<Table>(environment.backend + '/seeds/contribution/getAllRecords', { params: p });
   }

@@ -31,3 +31,19 @@ export interface ContributorDTO{
   "registerVolunteer": string,
   "contributionType": string,
 }
+
+export enum ReportType{
+  TOTAL_AMOUNT_PDF = 'TOTAL_AMOUNT_PDF',
+  TOTAL_AMOUNT_CSV = 'TOTAL_AMOUNT_CSV',
+  SEED_RECORD_PDF = 'SEED_RECORD_PDF',
+  SEED_RECORD_CSV = 'SEED_RECORD_CSV',
+}
+
+export interface ContributionReportFilter {
+  beginDate: string,
+  endDate: string,
+  paymentMethod,
+  seedId: string,
+  contributionType,
+  reportType:ReportType,
+}

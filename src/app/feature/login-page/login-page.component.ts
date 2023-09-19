@@ -12,7 +12,6 @@ import {TokenService} from "../../core/services/token.service";
 export class LoginPageComponent implements OnInit {
 
   loggedIn = false;
-
   constructor(
     private router: Router,
     private dialog: MatDialog,
