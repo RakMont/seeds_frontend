@@ -38,6 +38,7 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
 
   ngOnInit(): void {
       this.getLoggedVolunteerTrackingSeeds();
+      this.getVolunteerInfo();
   }
 
   getLoggedVolunteerTrackingSeeds(): void{
@@ -171,5 +172,15 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
       },(error)=>{
         console.log("error",error);
       })
+  }
+
+  getVolunteerInfo(){
+    this.volunteerService.getVolunteer()
+      .subscribe((data) =>{
+        this.volunteer = data;
+        this.loadingVolunteer = false;
+      },(error => {
+        this.loadingVolunteer = false;
+      }))
   }
 }

@@ -31,10 +31,10 @@ export class VolunteerService {
     //return this.http.get<Table>('./assets/statics/trackingvolunters.json');
     return this.http.get<Table>(environment.backend + '/seeds/volunteers/trackingVolunteers/');
   }
-  getVolunteer(volunterId: any): Observable<Volunter> {
+  getVolunteer(volunteerId?: any): Observable<Volunter> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    const p = new HttpParams().set('id', volunterId);
+    const p = new HttpParams().set('id', volunteerId ? volunteerId : "");
     return this.http.get<Volunter>(environment.backend +
       '/seeds/volunteers/getVolunter', { params: p });
   }

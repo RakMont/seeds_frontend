@@ -12,7 +12,7 @@ import {FormBuilder} from "@angular/forms";
 })
 export class ManageTrackingComponent implements OnInit {
   index = 0;
-  loadingtable = true;
+  loadingTable = true;
   val = this.formBuilder.group({
     state: [null]
   });
@@ -21,7 +21,7 @@ export class ManageTrackingComponent implements OnInit {
   idSelectedSeeds: string;
   trackingAssignmentId: string;
   contributionConfigId: string;
-  constructor(private volunterService: VolunteerService,
+  constructor(private volunteerService: VolunteerService,
               private formBuilder: FormBuilder,
               private dialog: MatDialog,) { }
 
@@ -29,11 +29,11 @@ export class ManageTrackingComponent implements OnInit {
     this.getTrackingVolunters();
   }
   getTrackingVolunters(): void{
-    this.loadingtable = true;
-    this.volunterService.listTrackingVolunteers().subscribe(
+    this.loadingTable = true;
+    this.volunteerService.listTrackingVolunteers().subscribe(
       (data) => {
         this.data = data;
-        this.loadingtable = false;
+        this.loadingTable = false;
       }
     );
   }
@@ -71,14 +71,12 @@ export class ManageTrackingComponent implements OnInit {
   }
 
   selectedSeed(evento): void{
-    console.log('selectedSeed', evento);
     this.idSelectedSeeds = evento.seedId;
     this.trackingAssignmentId = evento.trackingAssignmentId;
     this.contributionConfigId = evento.contributionConfigId;
     this.index = 2;
   }
-  back(evento): void{
-    console.log('evento', evento);
-    this.index = evento.tabAction.number;
+  back(event): void{
+    this.index = event.tabAction.number;
   }
 }

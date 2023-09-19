@@ -11,7 +11,9 @@ import {ModalUniqueDonationComponent} from "../manage-donations/modal-unique-don
 import {ViewDonationComponent} from "../manage-donations/view-donation/view-donation.component";
 import {ExportSheetComponent} from "../manage-donations/export-sheet/export-sheet.component";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import { saveAs } from 'file-saver';
 import {ReportServiceService} from "../../../core/services/report-service.service";
+import {ContributionReportFilter, ReportType} from "../../../core/models/ContributionRecord.model";
 export interface SelectSeed{
   seedId: string;
   trackingAssignmentId: string;
@@ -77,38 +79,44 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
         //this.showMessage(error.error);
       });
   }
-  actionOutput(evento: CellContent): void{
-    console.log('event', evento);
-    if (evento.clickedAction === 'Donations'){
+  actionOutput(event: CellContent): void{
+    console.log('event', event);
+    if (event.clickedAction === 'Donations'){
       let out: SelectSeed = {
-        seedId: evento.params[0].paramContent,
-        trackingAssignmentId: evento.params[1].paramContent,
-        contributionConfigId: evento.params[2].paramContent
+        seedId: event.params[0].paramContent,
+        trackingAssignmentId: event.params[1].paramContent,
+        contributionConfigId: event.params[2].paramContent
       };
       this.selectedSeed.emit(out);
       // this.donations();
-    } else if (evento.clickedAction === 'ViewUniqueDonation'){
+    } else if (event.clickedAction === 'ViewUniqueDonation'){
       let out: SelectSeed = {
-        seedId: evento.params[0].paramContent,
-        trackingAssignmentId: evento.params[1].paramContent,
-        contributionConfigId: evento.params[2].paramContent
+        seedId: event.params[0].paramContent,
+        trackingAssignmentId: event.params[1].paramContent,
+        contributionConfigId: event.params[2].paramContent
       };
       this.openUniqueContributionModal(out);
     }
-    else if (evento.clickedAction === 'UpdateRecord'){
+    else if (event.clickedAction === 'UpdateRecord'){
       let out = {
         isUpdate:true,
-        contributionRecordId: evento.params[0].paramContent}
+        contributionRecordId: event.params[0].paramContent}
       this.openUniqueContributionModal(out);
     }
-    else if (evento.clickedAction === 'SeeRecord'){
-      let out = {contributionRecordId: evento.params[0].paramContent
+    else if (event.clickedAction === 'SeeRecord'){
+      let out = {contributionRecordId: event.params[0].paramContent
       }
       this.openViewContributionRecordModal(out);
     }
-    else{
-      console.log("evento",evento);
-      this.openBottomSheet();
+    else if(event.clickedAction === 'downloadRecords'){
+      const payload={
+        beginDate: null,
+        endDate: null,
+        paymentMethod: null,
+        contributionType: null,
+        reportType: null,
+        seedId:event.params[0].paramContent}
+      this.openBottomSheet(payload);
     }
   }
   openViewContributionRecordModal(out): void {
@@ -194,34 +202,29 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
       }))
   }
 
-  openBottomSheet(): void {
-    //const queryParams = this.filterForm.value
+  openBottomSheet(payload: ContributionReportFilter): void {
     this._bottomSheet.open(ExportSheetComponent).afterDismissed()
       .subscribe((dats) => {
         if (dats === 'PDF'){
-          this.getReport();
-          console.log('datos', dats);
-          /*
-          *const url = this.router.serializeUrl(
-            this.router.createUrlTree(
-              ['/admin/tracking/export-tracking'],
-              { queryParams })
-          );
-          window.open(url, '_blank');
-          * */
+          payload.reportType = ReportType.SEED_RECORD_PDF
+          this.getReport(payload);
+        }else if (dats === 'EXCEL'){
+          payload.reportType = ReportType.SEED_RECORD_CSV
+          this.getReport(payload);
         }
       });
   }
-  getReport(){
-    this.contributionReportService.getContributionRecordsReport()
+  getReport(payload: ContributionReportFilter){
+    this.contributionReportService.getContributionRecordsReport(payload)
       .subscribe((data: Blob)=>{
         const file = new Blob([data], {type: 'application/pdf'});
-        const fileURL = URL.createObjectURL(file);
-        console.log('filename')
-        //saveAs(data, 'contributionrecords.pdf')
-        window.open(fileURL, '_blank', 'width=1000, height=800');
-
-
+        if (payload.reportType === ReportType.SEED_RECORD_PDF){
+          const fileURL = URL.createObjectURL(file);
+          //saveAs(data, 'seed_records.pdf');
+          window.open(fileURL, '_blank', );
+        }else if(payload.reportType === ReportType.SEED_RECORD_CSV){
+          saveAs(data, 'seed_records.xlsx');
+        }
       },(error)=>{
         console.log("error",error);
       })

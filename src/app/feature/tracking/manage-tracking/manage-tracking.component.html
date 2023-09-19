@@ -23,7 +23,7 @@
             </mat-chip-listbox>
           </form>
         </div>
-         <ng-container *ngIf="!loadingtable else loading">
+         <ng-container *ngIf="!loadingTable else loading">
             <app-generic-table
                *ngIf="data"
                [inputTable]="data.rows"
