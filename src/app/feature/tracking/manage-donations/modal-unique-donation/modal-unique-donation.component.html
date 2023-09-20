@@ -7,7 +7,7 @@
   </button>
 </div>
 <mat-dialog-content>
-  <form [formGroup]="donation" class="row">
+  <form [formGroup]="donation" class="row" *ngIf="!loadingContribution else loading">
     <mat-form-field floatLabel="always" class="col-md-6" appearance="fill">
       <mat-label>Método de pago</mat-label>
       <mat-select formControlName="paymentMethod" required>
@@ -105,7 +105,41 @@
         <span matSuffix>.00 BOB</span>
       </mat-form-field>
     </ng-container>
+    <ng-container *ngIf="donation.get('paymentMethod').value === 'EFECTIVO'">
+      <p></p>
+      <div class="col-md-6">
+      <span class="message">
+        <mat-icon color="primary">priority_high</mat-icon>
+        ¿ Desea registrar algun monto de gasto ?</span>
+        <mat-chip-listbox formControlName="hasExtraExpense">
+          <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
+          <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <ng-container *ngIf="donation.get('hasExtraExpense').value">
+        <mat-form-field floatLabel="always"
+                        class="col-md-6 extra" appearance="fill">
+          <mat-label>Gasto extra</mat-label>
+          <input class="example-right-align"
+                 required matInput  oninput="this.value = Math.abs(this.value)|| ''"
+                 formControlName="extraExpenseAmount" placeholder="0">
+          <span matSuffix>.00 BOB</span>
+        </mat-form-field>
+        <mat-form-field floatLabel="always"
+                        class="col-md-12"
+                        hintLabel="200 caractéres permitidos"
+                        appearance="fill">
+          <mat-label>Razón del gasto extra</mat-label>
+          <textarea formControlName="extraExpenseReason" matInput></textarea>
+          <mat-hint align="end">{{donation.get('extraExpenseReason').value?.length || 0}}/200</mat-hint>
+        </mat-form-field>
+      </ng-container>
+    </ng-container>
   </form>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button [disabled]="!donation.valid"

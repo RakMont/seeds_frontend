@@ -23,7 +23,7 @@ export interface DialogData {
   styleUrls: ['./modal-donation.component.scss']
 })
 export class ModalDonationComponent implements OnInit {
-  loadingContributionConfig = true;
+  loadingContributionProcess = true;
   contributionConfig: any;
   contributionRecord;
   paymentMethods: ComboElement[];
@@ -36,12 +36,15 @@ export class ModalDonationComponent implements OnInit {
     expected_payment_date: [null, Validators.required],
     paymentMethod: [null, Validators.required],
     contribution_ammount  : [null, Validators.required],
-    receipt_number: [null, Validators.required],
-    receipt_code: [null, Validators.required],
+    receipt_number: [''],
+    receipt_code: [''],
     extra_income_ammount: [0],
     sent_payment_proof: [false],
-//    extraExpense: [null, Validators.required],
     hasExtra: [false],
+    hasExtraExpense:[false],
+    extraExpenseId:'',
+    extraExpenseAmount:'',
+    extraExpenseReason:'',
   });
   constructor(private fb: UntypedFormBuilder,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -59,12 +62,12 @@ export class ModalDonationComponent implements OnInit {
       this.getContributionConfigById();
       this.initData();
     }
+
   }
   getContributionRecordById(): void {
     this.contributionService.getContributionRecordById(this.data.contributionRecordId)
       .subscribe((data) => {
         this.contributionRecord = data;
-        //console.log('getContributionRecordById', data)
         this.donation.patchValue({
           contribution_record_id: data.contributionRecordId,
           contribution_config_id: data.contributionConfigId,
@@ -79,11 +82,18 @@ export class ModalDonationComponent implements OnInit {
           sent_payment_proof: data.sentPaymentProof,
           receipt_number: data.receiptNumber,
           receipt_code: data.receiptCode,
+          hasExtraExpense: data.hasExtraExpense,
+          extraExpenseAmount: data.extraExpenseAmount,
+          extraExpenseReason: data.extraExpenseReason
         })
+        this.loadingContributionProcess=false;
+      },(error)=>{
+        this.loadingContributionProcess=false;
       })
   }
   initData(): void{
     this.getPaymentMethods();
+    this.onExtraExpenseChange();
   }
 
   getPaymentMethods(): void {
@@ -94,7 +104,7 @@ export class ModalDonationComponent implements OnInit {
   }
 
   getContributionConfigById(): void{
-    this.loadingContributionConfig = true;
+    this.loadingContributionProcess = true;
     this.contributionConfigService.getContributionConfigById(
       this.data.contribution_config_id
     ).subscribe((data) => {
@@ -106,11 +116,11 @@ export class ModalDonationComponent implements OnInit {
         contribution_config_id: this.data.contribution_config_id,
         tracking_assignment_id: this.data.tracking_assignment_id
       });
-      this.loadingContributionConfig = false;
+      this.loadingContributionProcess = false;
 
     }, (error) => {
       this.contributionConfig = null;
-      this.loadingContributionConfig = false;
+      this.loadingContributionProcess = false;
 
 
     });
@@ -151,27 +161,33 @@ export class ModalDonationComponent implements OnInit {
     }
   }
   updateRecord(payload){
+    this.loadingContributionProcess = true;
     this.contributionService.updateContribution(payload)
       .subscribe((res) => {
         this.showMessage(res);
         this.dialogRef.close('success');
+        this.loadingContributionProcess = false;
+
       },(error => {
         this.showMessage(error.error);
+        this.loadingContributionProcess = false;
         this.dialogRef.close();
       }))
   }
   createRecord(payload){
+    this.loadingContributionProcess = true;
     this.contributionService.saveContribution(payload)
       .subscribe((res) => {
         this.showMessage(res);
+        this.loadingContributionProcess = false;
         this.dialogRef.close('success');
       },(error => {
         this.showMessage(error.error);
+        this.loadingContributionProcess = false;
         this.dialogRef.close();
       }))
   }
   showMessage(data: any): void{
-    console.log('errormessage', data);
     this.matSnackBar.openFromComponent(MessageSnackBarComponent, {
       data: { data },
       duration: 4000,
@@ -179,5 +195,19 @@ export class ModalDonationComponent implements OnInit {
       verticalPosition: 'top',
       panelClass: 'snack-style'
     });
+  }
+
+  onExtraExpenseChange(){
+    this.donation.get('hasExtraExpense').valueChanges.subscribe((data)=>{
+     console.log('hasExtraExpense', data)
+      if(!data){
+        this.donation.patchValue({
+          extraExpenseId:'',
+          extraExpenseAmount:'',
+          extraExpenseReason:'',
+          extraExpenseDate:''
+        })
+      }
+    })
   }
 }

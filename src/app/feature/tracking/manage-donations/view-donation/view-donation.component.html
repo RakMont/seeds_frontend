@@ -26,7 +26,7 @@
       <mat-icon>label_important</mat-icon>
       Tipo de aporte: </span>
         <mat-chip-listbox>
-              <mat-chip class="chip-label" ><span>{{contributionRecord.contributorDTO.contributionType |uppercase}}</span></mat-chip>
+              <mat-chip class="chip-label" ><span>{{contributionRecord.contributorDTO.contributionType}}</span></mat-chip>
         </mat-chip-listbox>
         </span>
       <span  class="col-md-6"><span style="font-weight: 500">
@@ -58,9 +58,17 @@
       <mat-icon>label_important</mat-icon>
       Metodo de pago: </span>
         <mat-chip-listbox>
-              <mat-chip  class="chip-label" ><span>{{contributionRecord.paymentMethod}}</span></mat-chip>
+              <mat-chip  class="chip-label" ><span>{{contributionRecord.paymentMethodLabel}}</span></mat-chip>
         </mat-chip-listbox>
         </span>
+      <ng-container *ngIf="contributionRecord.hasExtraExpense">
+        <span  class="col-md-6"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Monto de gasto extra: </span>{{contributionRecord.extraExpenseAmount }}</span>
+        <span  class="col-md-12"><span style="font-weight: 500">
+      <mat-icon>label_important</mat-icon>
+      Motivo de gasto extra: </span>{{contributionRecord.extraExpenseReason }}</span>
+      </ng-container>
 
     </div>
   </ng-container>

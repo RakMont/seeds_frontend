@@ -14,7 +14,8 @@
          <mat-chip-option class="active" [value]="'ACTIVE'" color="primary" selected>Activos</mat-chip-option>
          <mat-chip-option class="inactive" [value]="'INACTIVE'" color="primary">Inactivos</mat-chip-option>
        </mat-chip-listbox>
-       <button mat-mini-fab color="accent"
+       <button mat-mini-fab class="add-button-color"
+               color="primary"
                (click)="onAdding()"
                matTooltip="Registrar nuevo responsable">
          <mat-icon>person_add</mat-icon>

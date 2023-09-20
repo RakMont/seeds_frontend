@@ -80,7 +80,7 @@ export class ManageDonationsComponent implements OnInit {
         const file = new Blob([data], {type: 'application/pdf'});
         if (payload.reportType === ReportType.TOTAL_AMOUNT_PDF){
           const fileURL = URL.createObjectURL(file);
-          //saveAs(data, 'contribution_records.pdf');
+          saveAs(data, 'contribution_records.pdf');
            window.open(fileURL, '_blank', );
         }else if(payload.reportType === ReportType.TOTAL_AMOUNT_CSV){
           saveAs(data, 'contributionRecords.xlsx');

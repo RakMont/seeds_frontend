@@ -17,10 +17,10 @@ export interface DialogData{
   styleUrls: ['./modal-unique-donation.component.scss']
 })
 export class ModalUniqueDonationComponent implements OnInit{
-  loadingContributionConfig = true;
   contributionConfig: any;
   paymentMethods: ComboElement[];
   contributionRecord;
+  loadingContribution = true;
   donation = this.fb.group({
     contribution_record_id: '',
     tracking_assignment_id: ['', Validators.required],
@@ -30,11 +30,15 @@ export class ModalUniqueDonationComponent implements OnInit{
     expected_payment_date: ['', Validators.required],
     paymentMethod: ['', Validators.required],
     contribution_ammount  :  ['', Validators.required],
-    receipt_number: ['', Validators.required],
-    receipt_code: ['', Validators.required],
+    receipt_number: [''],
+    receipt_code: [''],
     extra_income_ammount: [0],
     sent_payment_proof: [false],
     hasExtra: [false],
+    hasExtraExpense:[false],
+    extraExpenseId:'',
+    extraExpenseAmount:'',
+    extraExpenseReason:'',
   });
   constructor(private fb: UntypedFormBuilder,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -45,14 +49,15 @@ export class ModalUniqueDonationComponent implements OnInit{
               public dialogRef: MatDialogRef<ModalUniqueDonationComponent>) {
   }
   ngOnInit(): void {
-    console.log('asdasdasd', this.data)
     if (this.data.selectSeed.isUpdate){
       this.getContributionRecordById();
-      this.initData();
+      this.getPaymentMethods();
+      this.onExtraExpenseChange();
     }
     else {
       this.getContributionConfigById();
-      this.initData();
+      this.getPaymentMethods();
+      this.onExtraExpenseChange();
     }
   }
 
@@ -76,10 +81,13 @@ export class ModalUniqueDonationComponent implements OnInit{
           receipt_number: data.receiptNumber,
           receipt_code: data.receiptCode,
         })
-      })
+        this.loadingContribution = false;
+      },(error => {
+        this.loadingContribution = false;
+      }))
   }
   getContributionConfigById(): void{
-    this.loadingContributionConfig = true;
+    this.loadingContribution = true;
     this.contributionConfigService.getContributionConfigById(
       this.data.selectSeed.contributionConfigId
     ).subscribe((data) => {
@@ -92,17 +100,14 @@ export class ModalUniqueDonationComponent implements OnInit{
         tracking_assignment_id: this.data.selectSeed.trackingAssignmentId,
         expected_payment_date: this.contributionConfig.contribution.dateContribution
       });
-      console.log('donations', this.donation.value)
-      this.loadingContributionConfig = false;
+      this.loadingContribution = false;
 
     }, (error) => {
       this.contributionConfig = null;
-      this.loadingContributionConfig = false;
+      this.loadingContribution = false;
     });
   }
-  initData(): void{
-    this.getPaymentMethods();
-  }
+
   getPaymentMethods(): void {
     this.utilService.getPaymentMethods()
       .subscribe((data) => {
@@ -164,6 +169,16 @@ export class ModalUniqueDonationComponent implements OnInit{
       panelClass: 'snack-style'
     });
   }
-
-
+  onExtraExpenseChange(){
+    this.donation.get('hasExtraExpense').valueChanges.subscribe((data)=>{
+      if(!data){
+        this.donation.patchValue({
+          extraExpenseId:'',
+          extraExpenseAmount:'',
+          extraExpenseReason:'',
+          extraExpenseDate:''
+        })
+      }
+    })
+  }
 }

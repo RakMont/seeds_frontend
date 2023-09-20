@@ -56,12 +56,10 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
     console.log('event', evento);
 
     if (evento.clickedAction === 'Donations'){
-
         this.idSelectedSeeds = evento.params[0].paramContent,
         this.trackingAssignmentId = evento.params[1].paramContent,
         this.contributionConfigId = evento.params[2].paramContent
         this.index = 1;
-      // this.donations();
     }
     else if (evento.clickedAction === 'ViewUniqueDonation'){
       let out = {
@@ -78,7 +76,7 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
       this.openUniqueContributionModal(out);
     }
     else if (evento.clickedAction === 'SeeRecord'){
-      let out = {contributionRecordId: evento.params[0].paramContent
+      let out = {donationId: evento.params[0].paramContent
       }
       this.openViewContributionRecordModal(out);
     }else if (evento.clickedAction === 'downloadRecords'){
@@ -118,9 +116,7 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
       panelClass: 'icon-outside',
       autoFocus: true,
       width: '800px',
-      data: {
-        selectSeed: out,
-      }
+      data: out
     });
     dialogConfig.afterClosed().subscribe(result => {
       if (result === 'success') {
@@ -128,9 +124,12 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
       }
     });
   }
-  onTabChanged(evento){
-    console.log('eventoonTabChanged', evento)
-    this.index=evento.index;
+  onTabChanged(event){
+    console.log('eventoonTabChanged', event)
+    this.index=event.index;
+    if (event.index === 0 ){
+      this.getLoggedVolunteerTrackingSeeds();
+    }
   }
   back(): void{
     this.index = 0;
@@ -163,7 +162,7 @@ export class ManageVolunterTrackingSeedsComponent implements OnInit{
         const file = new Blob([data], {type: 'application/pdf'});
         if (payload.reportType === ReportType.SEED_RECORD_PDF){
           const fileURL = URL.createObjectURL(file);
-          //saveAs(data, 'seed_records.pdf');
+          saveAs(data, 'seed_records.pdf');
           window.open(fileURL, '_blank', );
         }else if(payload.reportType === ReportType.SEED_RECORD_CSV){
           saveAs(data, 'seed_records.xlsx');

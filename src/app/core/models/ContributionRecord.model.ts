@@ -13,6 +13,10 @@ export interface ContributionRecord{
   "extraExpense": any,
   "trackingAssignmentId": string,
   "contributionConfigId": string
+  paymentMethodLabel: string,
+  extraExpenseReason: string,
+  extraExpenseAmount,
+  hasExtraExpense
 }
 
 export interface ContributorDTO{
