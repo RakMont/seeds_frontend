@@ -65,7 +65,7 @@ export class ManageDonationsComponent implements OnInit {
         this.filterForm.patchValue({
           beginDate: beginDate,
           endDate: endDate,
-          paymentMethod: this.paymentMethods[0].value
+          paymentMethod: this.paymentMethods[4].value
         });
         this.getContributionRecords();
       });
@@ -101,6 +101,16 @@ export class ManageDonationsComponent implements OnInit {
         value: "APORTE_CONSTANTE",
         selected: false,
         name: "APORTE CONSTANTE"
+      },
+      {
+        value:"APORTE_EMPRESAS",
+        selected:false,
+        name:"APORTE EMPRESAS"
+      },
+      {
+        value:"",
+        selected:false,
+        name:"TODOS"
       }
     ]
   }

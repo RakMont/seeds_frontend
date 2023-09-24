@@ -40,7 +40,7 @@
         </ng-container>
         <ng-container *ngIf="donationType==='APORTE_EMPRESAS'">
           <app-enterprise-donation
-            (uniqueDonation)="emitEnterpriseContribution($event)"
+            (enterpriseContribution)="emitEnterpriseContribution($event)"
           ></app-enterprise-donation>
         </ng-container>
         <div>

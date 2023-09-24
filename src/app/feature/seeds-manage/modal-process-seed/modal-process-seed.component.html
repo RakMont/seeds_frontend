@@ -20,7 +20,7 @@
         </mat-chip-listbox>
       </div>
     </div>
-    <ng-container *ngIf="!data.isReject">
+    <ng-container *ngIf="!data.isReject && seed.contributionConfig.contributionType === 'APORTE_CONSTANTE'">
       <mat-form-field
         class="col-md-6"
         floatLabel="always"

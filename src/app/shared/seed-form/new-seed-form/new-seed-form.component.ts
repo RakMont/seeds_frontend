@@ -85,8 +85,9 @@ export class NewSeedFormComponent implements OnInit {
   }
 
   emitEnterpriseContribution(event){
-    this.contributionPayload = event.constantContribution;
-    event.constantContribution && this.donationType==='APORTE_EMPRESAS' ?  (this.canSendForm = true) : ( this.canSendForm = false)
+    console.log("emitEnterpriseContribution", event);
+    this.contributionPayload = event.enterpriseContribution;
+    event.enterpriseContribution && this.donationType==='APORTE_EMPRESAS' ?  (this.canSendForm = true) : ( this.canSendForm = false)
 
   }
   sentData(): void{
@@ -96,12 +97,24 @@ export class NewSeedFormComponent implements OnInit {
     this.contributionPayload.contributor = contributor;
     if (this.donationType === 'APORTE_UNICO'){
      this.createUniqueApplicant();
-    }else {
+    }else if (this.donationType === 'APORTE_CONSTANTE'){
       this.createConstantApplicant();
+    } else if(this.donationType === 'APORTE_EMPRESAS'){
+      this.createEnterpriseApplicant();
     }
   }
   createUniqueApplicant(){
     this.applicantService.createUniqueApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.sentInformationMessage(response);
+        this.sendingData = false;
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
+  createEnterpriseApplicant(){
+    this.applicantService.createEnterpriseApplicant(this.contributionPayload)
       .subscribe((response) => {
         this.sentInformationMessage(response);
         this.sendingData = false;

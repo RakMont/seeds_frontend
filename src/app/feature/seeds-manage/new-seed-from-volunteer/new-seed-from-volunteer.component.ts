@@ -67,6 +67,8 @@ export class NewSeedFromVolunteerComponent implements OnInit{
 
     }else if (this.donationType === 'APORTE_CONSTANTE'){
        this.createConstantSeed();
+    } else if (this.donationType === 'APORTE_EMPRESAS'){
+      this.createEnterpriseSeed();
     }
   }
 
@@ -81,6 +83,18 @@ export class NewSeedFromVolunteerComponent implements OnInit{
         this.showMessage(error.error);
       });
   }
+
+  createEnterpriseSeed(){
+    this.applicantService.createEnterpriseApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.showMessage(response);
+        this.sendingData = false;
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
+
   createConstantSeed(){
     this.applicantService.createConstantApplicant(this.contributionPayload)
       .subscribe((response) => {

@@ -7,7 +7,7 @@
   <mat-card>
     <div class="volunteer-cont">
       <form [formGroup]="filterForm" class="row">
-        <mat-form-field class="col-md-4" appearance="fill">
+        <mat-form-field class="col-md-4" appearance="outline">
           <mat-label>Elige un rando de fechas</mat-label>
           <mat-date-range-input [rangePicker]="picker">
             <input disabled matStartDate placeholder="Inicio" formControlName="beginDate">
@@ -17,7 +17,7 @@
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker disabled="false" #picker></mat-date-range-picker>
         </mat-form-field>
-          <mat-form-field class="col-md-4" appearance="fill">
+          <mat-form-field class="col-md-4" appearance="outline">
             <mat-label>Metodo de pago</mat-label>
             <mat-select formControlName="paymentMethod" [disabled]="filterForm.get('activePaymentMethod').value">
               <mat-option class="option" *ngFor="let m of paymentMethods" [value]="m.value">
@@ -25,13 +25,21 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+        <mat-form-field class="col-md-4" appearance="outline">
+          <mat-label>Tipo de aporte</mat-label>
+          <mat-select formControlName="contributionType">
+            <mat-option class="option" *ngFor="let m of contributionTypes" [value]="m.value">
+              {{m.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
         <!--          <mat-checkbox class="col-md-1" [matTooltip]="'Desactivar filtro'" formControlName="activePaymentMethod"></mat-checkbox> -->
-        <div class="col-md-4">
+        <!--<div class="col-md-4">
           <mat-chip-listbox class="mat-mdc-chip-set-stacked" formControlName="contributionType">
             <mat-chip-option class="option" *ngFor="let type of contributionTypes" [value]="type.value"
                              color="accent">{{type.name}}</mat-chip-option>
           </mat-chip-listbox>
-        </div>
+        </div> -->
         <div class="col-md-12">
           <button class="button-width" (click)="buttonGetRecords()" mat-flat-button color="warn">Solicitar aportes</button>
         </div>
