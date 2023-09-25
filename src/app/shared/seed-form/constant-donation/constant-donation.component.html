@@ -2,51 +2,45 @@
   <form [formGroup]="donationForm" class="row">
     <app-title-banner [hasTranslate]="true" [title]="'contribution-details.title-constant-contribution'"></app-title-banner>
 
-    <div class="col-md-12">
+    <div class="col-md-4">
       <mat-form-field floatLabel="always"
                       appearance="fill">
         <mat-label>
           {{'constant-contribution.label-contribution-amount' |translate}}
         </mat-label>
+        <mat-select formControlName="contribution_amount">
+          <mat-option class="mat-select-option" *ngFor="let month of donationAmounts" [value]="month.value">
+            {{month.name}}
+          </mat-option>
+        </mat-select>
+        <!--
         <input class="example-right-align"
                required matInput type="number"
                formControlName="contribution_amount" placeholder="0">
         <mat-error *ngIf="donationAmount.invalid">{{getDonationAmountError()}}</mat-error>
-        <!--<span matPrefix>{{dolarsamount}}&nbsp;</span> -->
-        <span matSuffix>.00 BOB</span>
+
+        <span matSuffix>.00 BOB</span>-->
         <mat-hint>{{childCount}}</mat-hint>
       </mat-form-field>
     </div>
-    <div class="col-md-6">
-      <mat-form-field floatLabel="always"
-                      appearance="fill">
-        <mat-label>{{'constant-contribution.label-payment-method' |translate}}</mat-label>
-        <mat-select formControlName="paymentMethod">
-          <mat-option class="option" *ngFor="let method of paymentMethods" [value]="method.value">
-            {{method.name}}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="paymentMethod.invalid">{{getPaymentMethodErrorMessage()}}</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <mat-form-field floatLabel="always"
                       appearance="fill">
         <mat-label>{{'constant-contribution.label-begin-month' |translate}}</mat-label>
         <mat-select formControlName="beginMonth">
-          <mat-option class="option" *ngFor="let month of beginMonths" [value]="month.value">
+          <mat-option class="mat-select-option" *ngFor="let month of beginMonths" [value]="month.value">
             {{month.name}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="beginMonth.invalid">{{getbeginMonthErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <mat-form-field floatLabel="always"
                       appearance="fill">
         <mat-label>{{'constant-contribution.label-contribution-day' |translate}}</mat-label>
         <mat-select formControlName="paymentDay">
-          <mat-option class="option" *ngFor="let day of paymentNumberDays" [value]="day.value">
+          <mat-option class="mat-select-option" *ngFor="let day of paymentNumberDays" [value]="day.value">
             {{day.name}}
           </mat-option>
         </mat-select>
@@ -56,28 +50,49 @@
     <div class="col-md-6">
       <mat-form-field floatLabel="always"
                       appearance="fill">
+        <mat-label>{{'constant-contribution.label-payment-method' |translate}}</mat-label>
+        <mat-select formControlName="paymentMethod">
+          <mat-option class="mat-select-option" *ngFor="let method of paymentMethods" [value]="method.value">
+            {{method.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="paymentMethod.invalid">{{getPaymentMethodErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-6">
+      <mat-form-field floatLabel="always"
+                      appearance="fill">
         <mat-label>{{'constant-contribution.label-reminder-method' |translate}}</mat-label>
         <mat-select formControlName="reminderMethod">
-          <mat-option class="option" *ngFor="let remmeth of reminderMethods" [value]="remmeth.value">
+          <mat-option class="mat-select-option" *ngFor="let remmeth of reminderMethods" [value]="remmeth.value">
             {{remmeth.name}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="reminderMethod.invalid">{{getReminderMethodErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
-    <div class="col-md-6 views-fields">
-      <div class="subtitle">{{'constant-contribution.label-receive-news' |translate}}</div>
-      <mat-chip-listbox formControlName="send_news">
-        <mat-chip-option [value]="true" color="accent" selected>{{'constant-contribution.label-receive-news-positive' |translate}}</mat-chip-option>
-        <mat-chip-option [value]="false" color="warn"> {{'constant-contribution.label-receive-news-negative' |translate}}</mat-chip-option>
-      </mat-chip-listbox>
+
+    <div class="col-md-6">
+      <mat-divider class="subtitle"></mat-divider>
+      <div class="option-container">
+        <span class="message">
+        <mat-icon color="primary">priority_high</mat-icon>
+          {{'constant-contribution.label-receive-news' |translate}}</span>
+        <mat-chip-listbox class="chip-list" formControlName="send_news">
+          <mat-chip-option [value]="true" color="accent" selected>{{'constant-contribution.label-receive-news-positive' |translate}}</mat-chip-option>
+          <mat-chip-option [value]="false" color="warn"> {{'constant-contribution.label-receive-news-negative' |translate}}</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <mat-divider class="subtitle"></mat-divider>
     </div>
+
     <div class="col-md-6">
       <mat-form-field floatLabel="always"
                       appearance="fill" *ngIf="donationForm.get('send_news').value === true">
         <mat-label>{{'constant-contribution.label-send-news-method' |translate}}</mat-label>
         <mat-select formControlName="sendNewsType">
-          <mat-option class="option" *ngFor="let method of newsTypes" [value]="method.value">
+          <mat-option class="mat-select-option" *ngFor="let method of newsTypes" [value]="method.value">
             {{method.name}}
           </mat-option>
         </mat-select>

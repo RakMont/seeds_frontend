@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "value": "COCHABAMBA",
+      "selected": true,
+      "name": "Cochabamba"
+    },
+    {
+      "value": "SANTA_CRUZ",
+      "selected": false,
+      "name": "Santa Cruz"
+    },
+    {
+      "value": "SUCRE",
+      "selected": false,
+      "name": "Sucre"
+    },
+    {
+      "value": "BENI",
+      "selected": false,
+      "name": "Beni"
+    },
+    {
+      "value": "TARIJA",
+      "selected": false,
+      "name": "Tarija"
+    },
+    {
+      "value": "LA_PAZ",
+      "selected": false,
+      "name": "La Paz"
+    },
+    {
+      "value": "ORURO",
+      "selected": false,
+      "name": "Oruro"
+    },
+    {
+      "value": "PANDO",
+      "selected": false,
+      "name": "Pando"
+    },
+    {
+      "value": "POTOSI",
+      "selected": false,
+      "name": "Potosí"
+    }
+  ]
+
+}

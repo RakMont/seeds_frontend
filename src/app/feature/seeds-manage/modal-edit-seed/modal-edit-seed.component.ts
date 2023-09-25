@@ -7,6 +7,7 @@ import {Seed, SeedData} from "../../../core/models/Seed.model";
 import {SentDataMessageComponent} from "../../../shared/seed-form/sent-data-message/sent-data-message.component";
 import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {DonationType} from "../../../core/models/ContributionRecord.model";
 
 @Component({
   selector: 'app-modal-edit-seed',
@@ -17,7 +18,7 @@ export class ModalEditSeedComponent  implements OnInit {
   seedData: SeedData;
   loadingSeed = true;
   donationType = null;
-  applicantForm;
+  applicantForm = null;
   contributionPayload;
   canSendForm = false;
   sendingData = false;
@@ -44,32 +45,30 @@ export class ModalEditSeedComponent  implements OnInit {
   }
 
   chooseDonationType(event): void {
-    console.log('chooseDonationType', event);
     // this.index = event.tabAction.number;
     this.donationType = event.donationType;
   }
 
   getPersonalInfo(event) {
-    console.log('event getPersonalInfo', event);
-    if (event) {
       this.applicantForm = event;
-      this.donationType = event.donationType;
+      if (event) this.donationType = event?.donationType;
+  }
+
+  emitContribution(event){
+    switch (this.donationType) {
+      case DonationType.APORTE_EMPRESAS:
+        this.contributionPayload = event.enterpriseContribution
+        break;
+      case DonationType.APORTE_UNICO:
+        this.contributionPayload = event.uniqueDonation
+        break;
+      case DonationType.APORTE_CONSTANTE:
+        this.contributionPayload = event.constantContribution
+        break;
     }
+
+    this.contributionPayload ? (this.canSendForm = true) : (this.canSendForm = false);
   }
-
-  emitUniqueContribution(event) {
-    console.log('emitUniqueContribution', event);
-    this.contributionPayload = event.uniqueDonation;
-    event.uniqueDonation && this.donationType === 'APORTE_UNICO' ? (this.canSendForm = true) : (this.canSendForm = false)
-  }
-
-  emitConstantContribution(event) {
-    console.log('emitConstantContribution', event);
-
-    this.contributionPayload = event.constantContribution;
-    event.constantContribution && this.donationType === 'APORTE_CONSTANTE' ? (this.canSendForm = true) : (this.canSendForm = false)
-  }
-
   onSubmit(): void {
     this.sendingData = true;
     const {country, city, address, ...user} = this.applicantForm;
@@ -78,11 +77,23 @@ export class ModalEditSeedComponent  implements OnInit {
     this.contributionPayload.contributorId = this.data.contributorId
     if (this.donationType === 'APORTE_UNICO') {
       this.updateUniqueApplicant()
-    } else {
+    } else if (this.donationType === 'APORTE_CONSTANTE'){
       this.updateConstantApplicant();
+    } else if (this.donationType === 'APORTE_EMPRESAS'){
+      this.updateEnterpriseSeed();
     }
   }
-
+  updateEnterpriseSeed(){
+    this.applicantService.updateEnterpriseApplicant(this.contributionPayload)
+      .subscribe((response) => {
+        this.showMessage(response);
+        this.sendingData = false;
+        this.dialogRef.close('success');
+      }, ( error ) => {
+        this.sendingData = false;
+        this.showMessage(error.error);
+      });
+  }
   updateConstantApplicant(){
     this.applicantService.updateConstantApplicant(this.contributionPayload)
       .subscribe((response) => {
@@ -122,5 +133,9 @@ export class ModalEditSeedComponent  implements OnInit {
       verticalPosition: 'top',
       panelClass: 'snack-style'
     });
+  }
+
+  get canSend(){
+    return this.applicantForm != null && !this.sendingData;
   }
 }

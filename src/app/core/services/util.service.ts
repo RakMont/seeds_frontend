@@ -35,4 +35,10 @@ export class UtilService {
   getAllRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(environment.backend + '/seeds/volunters/roles');
   }
+  getAllCities(): Observable<ComboResponse> {
+    return this.http.get<ComboResponse>('./assets/statics/cities.json');
+  }
+  getAllDonationAmounts(): Observable<ComboResponse> {
+    return this.http.get<ComboResponse>('./assets/statics/donation_amount.json');
+  }
 }

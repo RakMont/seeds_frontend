@@ -29,6 +29,7 @@ export class ConstantDonationComponent implements OnInit {
   reminderMethods: ComboElement[] = [];
   beginMonths: ComboElement[] = [];
   paymentNumberDays: ComboElement[] = [];
+  donationAmounts: ComboElement[] = [];
   contributor;
   constructor(private formBuilder: FormBuilder,
               private applicantService: ApplicantService,
@@ -44,6 +45,7 @@ export class ConstantDonationComponent implements OnInit {
       this.getReminderMethods();
       this.getBeginMonths();
       this.getPaymentNumberDays();
+      this.getDonationAmounts();
     }
 
   }
@@ -66,6 +68,7 @@ export class ConstantDonationComponent implements OnInit {
     this.getReminderMethods();
     this.getBeginMonths();
     this.getPaymentNumberDays();
+    this.getDonationAmounts();
   }
   getPaymentMethods(): void{
     this.utilsService.getPaymentMethods()
@@ -93,7 +96,12 @@ export class ConstantDonationComponent implements OnInit {
         this.beginMonths = data.data;
       });
   }
-
+  getDonationAmounts(): void{
+    this.utilsService.getAllDonationAmounts()
+      .subscribe((data) => {
+        this.donationAmounts = data.data;
+      });
+  }
   getPaymentNumberDays(): void{
     this.utilsService.getPaymentNumberDay()
       .subscribe((data) => {

@@ -75,6 +75,10 @@ export class ApplicantService {
     );
   }
 
+  updateEnterpriseApplicant (applicant: Applicant): Observable<PostMessage> {
+    return this.http.post<PostMessage>(environment.backend + '/seeds/confirmed/updateEnterprise', applicant
+    );
+  }
   updateConstantApplicant(applicant: Applicant): Observable<any>  {
     return this.http.post<any>(environment.backend + '/seeds/confirmed/updateConstant', applicant);
   }

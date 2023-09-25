@@ -51,3 +51,9 @@ export interface ContributionReportFilter {
   contributionType,
   reportType:ReportType,
 }
+
+export enum DonationType {
+  APORTE_EMPRESAS = 'APORTE_EMPRESAS',
+  APORTE_CONSTANTE = 'APORTE_CONSTANTE',
+  APORTE_UNICO = 'APORTE_UNICO'
+}

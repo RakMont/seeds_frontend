@@ -18,14 +18,20 @@
     <ng-container *ngIf="donationType==='APORTE_CONSTANTE'">
       <app-constant-donation
         [seedContribution]="seedData.contributionConfig"
-        (constantContribution)="emitConstantContribution($event)">
+        (constantContribution)="emitContribution($event)">
       </app-constant-donation>
     </ng-container>
     <ng-container *ngIf="donationType==='APORTE_UNICO'">
       <app-unique-donation
         [seedContribution]="seedData.contributionConfig"
-        (uniqueDonation)="emitUniqueContribution($event)"
+        (uniqueDonation)="emitContribution($event)"
       ></app-unique-donation>
+    </ng-container>
+    <ng-container *ngIf="donationType==='APORTE_EMPRESAS'">
+      <app-enterprise-donation
+        [seedContribution]="seedData.contributionConfig"
+        (enterpriseContribution)="emitContribution($event)"
+      ></app-enterprise-donation>
     </ng-container>
   </ng-container>
   <ng-template #loading>
@@ -33,10 +39,10 @@
     </mat-spinner>
   </ng-template>
 </mat-dialog-content>
-<mat-dialog-actions align="center">
+<mat-dialog-actions align="center" *ngIf="seedData">
   <button mat-raised-button
           (click)="onSubmit()"
           class="accept-bt"
-          [disabled]="!this.applicantForm"
-          color="primary">EDITAR INFORMACIÓN</button>
+          [disabled]="!canSend"
+          color="primary">GUARDAR DATOS</button>
 </mat-dialog-actions>

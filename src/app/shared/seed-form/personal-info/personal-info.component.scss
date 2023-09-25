@@ -98,3 +98,21 @@ mat-error{
 mat-chip-option{
   font-size: 12px;
 }
+
+.message{
+  display: flex;
+  padding: 4px 0;
+  margin-top: 0;
+  font-size: 12px;
+  color: #00000099;
+  letter-spacing: 0.5px;
+}
+
+.option-container{
+  display: flex;
+  .chip-list{
+    margin-top: -10px;
+    padding-left: 10px;
+    //background-color: #6b9074;
+  }
+}

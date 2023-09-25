@@ -15,10 +15,8 @@ export class PersonalInfoComponent implements OnInit {
   @Input() seedData: SeedData = null;
   @Output() donationTypeEmitter: EventEmitter<{donationType}> = new EventEmitter();
   @Output() personalInfoEmitter: EventEmitter<any> = new EventEmitter();
-  constructor(private formBuilder: FormBuilder,
-              private applicantService: ApplicantService,
-              private utilsService: UtilService) { }
   countries: ComboElement[];
+  cities: ComboElement[];
   applicantForm = this.formBuilder.group({
     name: ['', Validators.required],
     lastname: ['', Validators.required],
@@ -30,22 +28,45 @@ export class PersonalInfoComponent implements OnInit {
     country: ['', Validators.required],
     city: ['', Validators.required],
     address: ['', Validators.required],
-    donationType:['', Validators.required]
+    donationType:['', Validators.required],
+    isForeign : [false]
   });
+  constructor(private formBuilder: FormBuilder,
+              private applicantService: ApplicantService,
+              private utilsService: UtilService) { }
+
   myFilter = (d: Date | null): boolean => {
     const year = new Date().getFullYear();
     return d?.getFullYear() < (year-15);
   };
   ngOnInit(): void {
+    this.manageInfoFormChanges();
     if(this.seedData){
       this.manageUpdate();
+    }else{
+      this.getCountries();
+      this.getCities();
+      this.isForeignOnChange();
     }
-    this.getCountries();
-    this.manageInfoFormChanges();
+
   }
 
+  isForeignOnChange(){
+    this.applicantForm.get('isForeign').valueChanges.subscribe((data)=>{
+      if (data){
+        this.applicantForm.patchValue({
+          city:'',
+          country:''
+        })
+      } else{
+        this.applicantForm.patchValue({
+          city:this.cities[0]?.value,
+          country:this.countries[0]?.value
+        })
+      }
+    })
+  }
   manageUpdate(){
-    console.log('this.seed', this.seedData)
     this.applicantForm.patchValue({
       name: this.seedData.name,
       lastname: this.seedData.lastname,
@@ -56,8 +77,13 @@ export class PersonalInfoComponent implements OnInit {
       country: this.seedData.country,
       city:this.seedData.city,
       address: this.seedData.address,
-      donationType:this.seedData.contributionConfig.contributionType
+      donationType:this.seedData.contributionConfig.contributionType,
+      isForeign: this.seedData.isForeign
     })
+    this.getCountries();
+    this.getCities();
+    this.isForeignOnChange();
+    this.donationTypeEmitter.emit({donationType: this.seedData.contributionConfig.contributionType});
   }
   getErrorMessage(): any {
     if (this.applicantForm.get('name').hasError('required')) {
@@ -114,19 +140,25 @@ export class PersonalInfoComponent implements OnInit {
     this.utilsService.getCountries()
       .subscribe((data) => {
         this.countries = data.data;
-        this.applicantForm.get('country').setValue(this.countries[0].value);
+        //if (!this.seedData) this.applicantForm.get('country').setValue(this.countries[0].value);
       });
   }
-
+  getCities(): void {
+    this.utilsService.getAllCities()
+      .subscribe((data) => {
+        this.cities = data.data;
+        //if (!this.seedData) this.applicantForm.get('city').setValue(this.cities[0].value);
+      });
+  }
   manageInfoFormChanges(){
-    this.applicantForm.valueChanges.subscribe((changes) => {
-      console.log('manageInfoFormChanges', changes)
+    this.applicantForm.valueChanges.subscribe
+    ((changes) => {
       if (this.applicantForm.valid){
         this.personalInfoEmitter.emit(this.applicantForm.value);
       }else {
-        this.applicantForm.get('donationType').value ?
-          this.applicantForm.markAllAsTouched()
-          : this.personalInfoEmitter.emit(null);
+        if (this.applicantForm.get('donationType').value) this.applicantForm.markAllAsTouched()
+
+        this.personalInfoEmitter.emit(null);
       }
     })
   }

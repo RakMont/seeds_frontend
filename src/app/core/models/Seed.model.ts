@@ -84,6 +84,7 @@ export interface SeedData{
   address: string;
   country?: string;
   city?: string;
+  isForeign?: boolean;
   send_date?: string;
   contributorState?: string;
   registerVolunteer?: string;
@@ -93,7 +94,7 @@ export interface SeedData{
 }
 
 export interface ContributionConfigData{
-  contributionType: string;
+  contributionType: any;
   registerDate: string;
   contribution: ContributionData;
   isActive: boolean;
