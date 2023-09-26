@@ -1,62 +1,62 @@
 {
   "data": [
     {
-      "value": "1",
+      "value": "ENERO",
       "selected": true,
       "name": "ENERO"
     },
     {
-      "value": "2",
+      "value": "FEBRERO",
       "selected": false,
       "name": "FEBRERO"
     },
     {
-      "value": "3",
+      "value": "MARZO",
       "selected": false,
       "name": "MARZO"
     },
     {
-      "value": "4",
+      "value": "ABRIL",
       "selected": false,
       "name": "ABRIL"
     },
     {
-      "value": "5",
+      "value": "MAYO",
       "selected": false,
       "name": "MAYO"
     },
     {
-      "value": "6",
+      "value": "JUNIO",
       "selected": false,
       "name": "JUNIO"
     },
     {
-      "value": "7",
+      "value": "JULIO",
       "selected": false,
       "name": "JULIO"
     },
     {
-      "value": "8",
+      "value": "AGOSTO",
       "selected": false,
       "name": "AGOSTO"
     },
     {
-      "value": "9",
+      "value": "SEPTIEMBRE",
       "selected": false,
       "name": "SEPTIEMBRE"
     },
     {
-      "value": "10",
+      "value": "OCTUBRE",
       "selected": false,
       "name": "OCTUBRE"
     },
     {
-      "value": "11",
+      "value": "NOVIEMBRE",
       "selected": false,
       "name": "NOVIEMBRE"
     },
     {
-      "value": "12",
+      "value": "DICIEMBRE",
       "selected": false,
       "name": "DICIEMBRE"
     }

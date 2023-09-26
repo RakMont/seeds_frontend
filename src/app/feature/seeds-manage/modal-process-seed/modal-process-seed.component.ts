@@ -52,7 +52,6 @@ export class ModalProcessSeedComponent implements OnInit {
     this.applicantService.getSeedById(this.data.contributorId)
       .subscribe((seed) => {
         this.seed = seed;
-        this.loadingSeed = false;
         this.contributor.patchValue({
           contributor_id: this.data.contributorId,
           processed_date: new Date(),
@@ -60,7 +59,12 @@ export class ModalProcessSeedComponent implements OnInit {
           state: this.data.isReject ? 2 : 1,
           contributionType: this.seed.contribution_config?.contribution_key
         });
-      });
+        this.loadingSeed = false;
+
+      },(error)=>{
+        this.loadingSeed = false;
+
+    });
   }
   get title(): string{
     return this.data.isReject ? 'RECHAZAR SEMILLA' : 'ACEPTAR SEMILLA';

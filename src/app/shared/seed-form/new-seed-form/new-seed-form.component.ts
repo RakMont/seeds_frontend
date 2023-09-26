@@ -92,8 +92,8 @@ export class NewSeedFormComponent implements OnInit {
   }
   sentData(): void{
     this.sendingData = true;
-    const {country, city, address, ...user} = this.applicantForm;
-    const contributor = {country, city, address, user};
+    const {country, city, address,isForeign, ...user} = this.applicantForm;
+    const contributor = {country, city, address, user, isForeign};
     this.contributionPayload.contributor = contributor;
     if (this.donationType === 'APORTE_UNICO'){
      this.createUniqueApplicant();

@@ -7,7 +7,7 @@
   </button>
 </div>
 <mat-dialog-content>
-  <form  [formGroup]="contributor" class="row">
+  <form  [formGroup]="contributor" class="row" *ngIf="!this.loadingSeed else loading">
     <div class="col-md-12">
       <div class="volunteer-cont" *ngIf="seed">
         <div class="name">
@@ -16,7 +16,7 @@
         </div>
         <mat-chip-listbox>
           <mat-chip class="contr-type">
-            <span>{{seed.contributionType | uppercase}}</span></mat-chip>
+            <span>{{seed.contributionType}}</span></mat-chip>
         </mat-chip-listbox>
       </div>
     </div>
@@ -60,11 +60,14 @@
       <mat-hint align="end">{{processReason.value?.length || 0}}/100</mat-hint>
     </mat-form-field>
   </form>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
   <button mat-flat-button
           (click)="onSubmit()"
-          class="accept-bt"
           [disabled]="!contributor.valid"
           color="primary">PROCESAR SEMILLA</button>
 </mat-dialog-actions>

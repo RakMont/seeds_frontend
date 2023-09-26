@@ -176,16 +176,6 @@ export class ListSeedsApplicantsComponent implements OnInit{
     if (result){
       const value = this.val.get('state').value;
       this.getSeedsApplicants(value);
-      /*if(value && value!=this.lastStatus){
-        if(value==='ACCEPTED'){
-          this.getAcceptedSeeds();
-        }else if (value === 'REJECTED'){
-          this.getRejectedSeeds();
-        }else if (value==='PENDING'){
-          this.getPendingSeeds();
-        }
-        this.lastStatus=value;
-      }*/
     }
   }
 }
