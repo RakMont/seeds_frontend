@@ -98,5 +98,36 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <ng-container *ngIf="seedContribution">
+     <div class="col-md-6">
+       <mat-form-field
+         floatLabel="always"
+         appearance="fill">
+         <mat-label>Fecha de inicio del ciclo de aportes</mat-label>
+         <input formControlName="contribution_start_date"
+                matInput
+                required
+                [matDatepicker]="picker">
+         <mat-hint>MM/DD/YYYY</mat-hint>
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker startView="year"></mat-datepicker>
+       </mat-form-field>
+     </div>
+      <div class="col-md-6">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill">
+          <mat-label>Fecha de fin del ciclo de aportes</mat-label>
+          <input formControlName="contribution_end_date"
+                 matInput
+                 required
+                 [matDatepicker]="picker2">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 startView="year"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+    </ng-container>
   </form>
 </div>

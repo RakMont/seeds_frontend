@@ -11,6 +11,9 @@ import {FormBuilder} from "@angular/forms";
 import {ModalEditSeedComponent} from "../modal-edit-seed/modal-edit-seed.component";
 import {ModalUnactiveSeedComponent} from "../modal-unactive-seed/modal-unactive-seed.component";
 import {SeedFilter} from "../../../core/models/Seed.model";
+import {
+  AsignSeedVolunteerComponent
+} from "../../tracking/manage-tracking/asign-seed-volunteer/asign-seed-volunteer.component";
 
 @Component({
   selector: 'app-list-seeds',
@@ -104,6 +107,10 @@ export class ListSeedsComponent implements OnInit {
       this.onDeactivate(id);
     } else if (event.clickedAction === 'SeedInfo'){
       this.onView(id);
+    }else if (event.clickedAction === 'AssignSeed'){
+      console.log('actionOutput',event )
+
+      this.openAssignDialog(event.params);
     }
   }
   onEditSeed(applicantId): void {
@@ -119,7 +126,7 @@ export class ListSeedsComponent implements OnInit {
       }
     });
     dialogConfig.afterClosed().subscribe(result => {
-      if (result){
+      if (result==="success"){
         this.getApprovedSeeds(this.val.get('state').value);
       }
     });
@@ -137,4 +144,24 @@ export class ListSeedsComponent implements OnInit {
       panelClass: 'snack-style'
     });
   }
+
+  openAssignDialog(params): void{
+    const dialogConfig =  this.dialog.open(AsignSeedVolunteerComponent, {
+      disableClose: false,
+      panelClass: 'icon-outside',
+      autoFocus: true,
+      width: '700px',
+      data: {
+        trackingAssignmentId: params[1].paramContent,
+        seedId: params[0].paramContent
+        //isReject: false
+      }
+    });
+    dialogConfig.afterClosed().subscribe(result => {
+      if (result === 'success'){
+        this.getApprovedSeeds(this.val.get('state').value);
+      }
+    });
+  }
+
 }

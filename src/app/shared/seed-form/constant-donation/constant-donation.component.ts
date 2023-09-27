@@ -22,6 +22,8 @@ export class ConstantDonationComponent implements OnInit {
     send_news: [true, Validators.required],
     reminderMethod: ['', Validators.required],
     sendNewsType: ['', Validators.required],
+    contribution_start_date:[null],
+    contribution_end_date:[null]
   });
   sendingData = false;
   paymentMethods: ComboElement[] = [];
@@ -62,6 +64,8 @@ export class ConstantDonationComponent implements OnInit {
       send_news: this.seedContribution.contribution.sendNews,
       reminderMethod: this.seedContribution.contribution.remainderType,
       sendNewsType: this.seedContribution.contribution.sendNewsType,
+      contribution_start_date:this.seedContribution.contribution.contributionStartDate,
+      contribution_end_date:this.seedContribution.contribution.contributionEndDate
     })
     this.getPaymentMethods();
     this.getNewsTypes();

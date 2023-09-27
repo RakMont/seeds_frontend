@@ -1,19 +1,19 @@
 <ng-container *ngIf="!loadingSeed else loadingData">
   <div class="volunteer-cont">
-    <span class="name-cont"> <mat-icon>local_library</mat-icon>
-            <span style="font-weight: 500">Semilla : </span>
-      <span> {{seed.name}} {{seed.lastname}}</span></span>
+    <div>
+      <span class="name-cont">
+      <mat-icon>local_library</mat-icon>
+      <span style="font-weight: 500">Semilla : </span>
+      <span> {{seed.name}} {{seed.lastname}}</span>
+    </span>
+      <span class="name-cont">
+      <mat-icon>date_range</mat-icon>
+      <span style="font-weight: 500">Ciclo de aporte : </span>
+      <span> Fecha Inicio: {{seed.contributionConfig.contribution.contributionStartDate| date:'mediumDate'}} -
+        Fecha Fin: {{seed.contributionConfig.contribution.contributionEndDate| date:'mediumDate'}}</span>
+    </span>
+    </div>
       <div>
-        <!-- <button (click)="openBottomSheet()"
-                 matTooltip="Exportar"
-                 mat-mini-fab color="primary">
-           <mat-icon>cloud_download</mat-icon>
-         </button>
-         <button (click)="openPDF()"
-                 matTooltip="Exportar Registros"
-                 mat-mini-fab color="primary">
-           <mat-icon>cloud_download</mat-icon>
-         </button> -->
         <button (click)="newDonation()"
                 matTooltip="Registrar nuevo aporte"
                 class="add-button-color"

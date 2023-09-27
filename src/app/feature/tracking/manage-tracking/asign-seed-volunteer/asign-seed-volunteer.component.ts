@@ -10,9 +10,11 @@ import {VolunteerService} from "../../../../core/services/volunteer.service";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {MatOptionSelectionChange} from "@angular/material/core";
 import {MessageSnackBarComponent} from "../../../../shared/message-snack-bar/message-snack-bar.component";
+import {ApplicantService} from "../../../../core/services/applicant.service";
 
 export interface DialogData {
-  volunterId: string;
+  trackingAssignmentId?: string;
+  seedId: string
 }
 @Component({
   selector: 'app-asign-seed-volunteer',
@@ -21,8 +23,8 @@ export interface DialogData {
 })
 export class AsignSeedVolunteerComponent implements OnInit {
   filteredSeeds: Observable<BoxSeed[]>;
-  volunter: Volunter = null;
-  allSeeds: BoxSeed[] = [];
+  seed: Volunter = null;
+  allTrackingVolunteers: BoxSeed[] = [];
   loadingAll = true;
   startDate = new Date();
   assignForm = this.form.group({
@@ -37,17 +39,18 @@ export class AsignSeedVolunteerComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private trackingService: TrackingService,
     private volunteerService: VolunteerService,
+    private applicantService: ApplicantService,
     private matSnackBar: MatSnackBar,
     private form: UntypedFormBuilder) { }
 
   ngOnInit(): void {
-    this.getActiveSeeds();
-    this.getVolunterById();
+    this.getTrackingVolunteers();
+    this.getSeedById();
   }
-  getActiveSeeds(): void{
-    this.trackingService.getActiveSeeds()
+  getTrackingVolunteers(): void{
+    this.volunteerService.getComboTrackingVolunteers()
       .subscribe((data) => {
-        this.allSeeds = data;
+        this.allTrackingVolunteers = data;
         this.loadingAll = false;
         this.filteredSeeds = this.assignForm.get('searchValue').valueChanges.pipe(
           startWith(''),
@@ -58,7 +61,7 @@ export class AsignSeedVolunteerComponent implements OnInit {
       });
   }
   selected(evento: MatAutocompleteSelectedEvent){
-    this.assignForm.get('contributor_id').setValue(evento.option.value.contributor_id);
+    this.assignForm.get('volunter_id').setValue(evento.option.value.volunter_id);
     console.log('selected', evento);
   }
   updateMySelection(evento: MatOptionSelectionChange): void{
@@ -69,7 +72,7 @@ export class AsignSeedVolunteerComponent implements OnInit {
   private _filter(value: string): BoxSeed[] {
     if (typeof  value === 'string'){
       const filterValue = value.toLowerCase();
-      return this.allSeeds.filter(option =>
+      return this.allTrackingVolunteers.filter(option =>
         option.largename.toLowerCase().includes(filterValue) ||
         option.dni.toLowerCase().includes(filterValue) ||
         option.email.toLowerCase().includes(filterValue)
@@ -79,6 +82,7 @@ export class AsignSeedVolunteerComponent implements OnInit {
 
   confirm(){
     const form = this.assignForm.value;
+    if (this.data.trackingAssignmentId)form.tracking_assignment_id = this.data.trackingAssignmentId;
     this.trackingService.saveTrackingAssign(form)
       .subscribe((data) => {
         this.showMessage(data);
@@ -88,16 +92,15 @@ export class AsignSeedVolunteerComponent implements OnInit {
       }));
   }
 
-  getVolunterById(): void{
-    this.volunteerService.getVolunteer(this.data.volunterId)
+  getSeedById(): void{
+    this.applicantService.getSeedById(this.data.seedId)
       .subscribe((data) => {
-        this.volunter = data ;
-        this.assignForm.get('volunter_id').setValue(this.data.volunterId);
+        this.seed = data ;
+        this.assignForm.get('contributor_id').setValue(this.data.seedId);
       });
   }
 
   showMessage(data: any): void{
-    console.log('errormessage', data);
     this.matSnackBar.openFromComponent(MessageSnackBarComponent, {
       data: { data },
       duration: 4000,

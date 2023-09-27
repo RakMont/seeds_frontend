@@ -1,6 +1,6 @@
 <div mat-dialog-title>
   <div class="dialog-header">
-    <span class="dialog-title">ASIGNAR SEMILLA A RESPONSABLE</span>
+    <span class="dialog-title">ASIGNAR RESPONSABLE DE SEGUIMIENTO A SEMILLA</span>
   </div>
   <button mat-icon-button class="close-button2" [mat-dialog-close]="true">
     <mat-icon class="close-icon">close</mat-icon>
@@ -9,15 +9,28 @@
 <mat-dialog-content>
   <form [formGroup]="assignForm" class="row">
     <div class="col-md-12">
-      <div class="volunter-cont" *ngIf="volunter">
-        <mat-icon>person</mat-icon>
-        <span>{{volunter.name}} {{volunter.lastname}}</span>
+      <div class="volunteer-cont" *ngIf="seed">
+       <div class="name">
+         <mat-icon>person</mat-icon>
+         <span style="font-weight: 500">Semilla: </span>
+         <span>{{seed.name}} {{seed.lastname}}</span>
+       </div>
       </div>
     </div>
+   <ng-container *ngIf="data.trackingAssignmentId!= null">
+     <mat-divider class="subtitle"></mat-divider>
+     <div class="col-md-12 option-container">
+      <span class="message">
+        <mat-icon color="primary">priority_high</mat-icon>
+        La semilla ya tiene un responsable de seguimiento,
+        al seleccionar otro se reemplazara el responsable actual.</span>
+     </div>
+     <mat-divider class="subtitle"></mat-divider>
+   </ng-container>
     <mat-form-field appearance="fill"
                     [floatLabel]="'always'"
                     class="col-md-12">
-      <mat-label>Seleccionar la semilla</mat-label>
+      <mat-label>Seleccionar al responsable que desea asignar</mat-label>
       <input type="text"
              placeholder="Lucia...."
              aria-label="Number"

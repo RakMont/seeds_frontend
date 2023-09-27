@@ -9,6 +9,9 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import {ViewDonationComponent} from "../manage-donations/view-donation/view-donation.component";
 import {ExitElementComponent} from "../../../shared/exit-element/exit-element.component";
+import {ContributionService} from "../../../core/services/contribution.service";
+import {MessageSnackBarComponent} from "../../../shared/message-snack-bar/message-snack-bar.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-list-seed-donations',
@@ -26,6 +29,8 @@ export class ListSeedDonationsComponent implements OnChanges {
   loadingSeed = true;
   seed: any;
   constructor(private trackingService: TrackingService,
+              private contributionService: ContributionService,
+              private matSnackBar: MatSnackBar,
               private seedService: ApplicantService,
               private _bottomSheet: MatBottomSheet,
               private dialog: MatDialog) { }
@@ -98,11 +103,19 @@ export class ListSeedDonationsComponent implements OnChanges {
     });
     dialogRef.afterClosed().subscribe((result)=>{
       if(result?.status ==='afirmative'){
-
+        this.deleteContribution(id);
       }
     })
   }
 
+  deleteContribution(id){
+    this.contributionService.deleteContributionRecord(id).subscribe((data)=>{
+      this.showMessage(data);
+      this.getDonationsRecord();
+    },(error => {
+      this.showMessage(error.error);
+    }))
+  }
   getDonationId(params: CellParam[]) :string{
     return params.find(p => p.paramName === 'contributionRecordId').paramContent;
   }
@@ -163,5 +176,15 @@ export class ListSeedDonationsComponent implements OnChanges {
       .subscribe((dats) => {
         console.log('sale', dats);
       });*/
+  }
+
+  showMessage(data: any): void{
+    this.matSnackBar.openFromComponent(MessageSnackBarComponent, {
+      data: { data },
+      duration: 4000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: 'snack-style'
+    });
   }
 }

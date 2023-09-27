@@ -17,7 +17,8 @@ export interface ContributionRecord{
   extraExpenseReason: string,
   extraExpenseAmount,
   hasExtraExpense,
-  registerVolunteer
+  registerVolunteer,
+  contributionMonth
 }
 
 export interface ContributorDTO{

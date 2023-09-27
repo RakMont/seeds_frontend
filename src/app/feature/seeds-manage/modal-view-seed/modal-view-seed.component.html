@@ -55,9 +55,14 @@
       <span style="font-weight: 500">Dirección: </span>
     <span> {{ seed.address}}</span>
     </div>
+    <div  class="col-md-6 span-icon">
+      <mat-icon>label_important</mat-icon>
+      <span style="font-weight: 500">Voluntario de registro: </span>
+      <span> {{ seed.registerVolunteer}}</span>
+    </div>
   </div>
 
- <!--
+ <!--registerVolunteer
    <div class="unique-title">INFORMACIÓN DEL APORTE</div>
     <hr>
   -->
@@ -92,6 +97,11 @@
       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Envío de noticias: </span>
         <span>{{seed.contributionConfig.contribution.sendNewsType}}</span>
       </div>
+      <span  class="col-md-6 span-icon">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Día de contribución: </span>
+        <span>{{seed.contributionConfig.contribution.paymentNumberDay}}</span>
+      </span>
       <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Fecha inicio de aporte: </span>
         <span>{{seed.contributionConfig.contribution.contributionStartDate| date:'mediumDate'}}</span>
@@ -100,11 +110,6 @@
       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Fecha fin de aporte: </span>
         <span>{{seed.contributionConfig.contribution.contributionEndDate | date:'mediumDate'}}</span>
       </div>
-      <span  class="col-md-6 span-icon">
-      <mat-icon>label_important</mat-icon>
-        <span style="font-weight: 500">Día de contribución: </span>
-        <span>{{seed.contributionConfig.contribution.paymentNumberDay}}</span>
-      </span>
       <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Mes de inicio: </span>
         <span> {{seed.contributionConfig.contribution.startMonth}}</span>
