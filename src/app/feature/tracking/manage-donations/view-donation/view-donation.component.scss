@@ -1,36 +1,14 @@
-mat-dialog-content{
-  padding: 24px 32px !important;
-  font-size: 0.9em!important;
-  span{
-    display: flex;
-    margin-bottom: 2px;
-  }
-}
-.label-container{
-  span{
-    margin-bottom: 8px;
-    padding-right: 4px;
-  }
-}
 
-.name-cont{
-  display: flex;
-  padding: 6px 0;
-  color: #6b9074;
-  font-size: 14px;
+.span-title{
+  text-align: center;
+  font-weight: 500;
   letter-spacing: 0.5px;
-  span{
-    margin: auto 6px;
-    color: rgba(0, 0, 0, 0.6);
-  }
-}
-
-.chip-label{
-  font-size: 12px;
-  padding-top: 8px;
   margin-top: -4px;
+}
+.contr-type{
   background-color: #6b9074;
   span{
     color: #FFFFFF;
+    font-size: 0.9em;
   }
 }

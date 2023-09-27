@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UntypedFormBuilder, Validators} from "@angular/forms";
 import {ComboElement} from "../../../core/models/Utils.model";
-import {Table, TableRow} from "../../../core/models/Table.model";
+import {CellParam, Table, TableRow} from "../../../core/models/Table.model";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {Router} from "@angular/router";
 import {UtilService} from "../../../core/services/util.service";
@@ -10,6 +10,8 @@ import {ReportServiceService} from "../../../core/services/report-service.servic
 import { saveAs } from 'file-saver';
 import {ExportSheetComponent} from "./export-sheet/export-sheet.component";
 import {ReportType} from "../../../core/models/ContributionRecord.model";
+import {ViewDonationComponent} from "./view-donation/view-donation.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-manage-donations',
@@ -40,6 +42,7 @@ export class ManageDonationsComponent implements OnInit {
                private contributionReportService: ReportServiceService,
                private contributionService: ContributionService,
                private _bottomSheet: MatBottomSheet,
+               private dialog: MatDialog,
                private router: Router,
                private utilServce: UtilService) { }
 
@@ -126,9 +129,14 @@ export class ManageDonationsComponent implements OnInit {
   }
 
   actionOutput(event){
-
+    const id = this.getDonationId(event.params);
+    if (event.clickedAction === 'SeeRecord') {
+      this.onView(id);
+    }
   }
-
+  getDonationId(params: CellParam[]) :string{
+    return params.find(p => p.paramName === 'contributionRecordId').paramContent;
+  }
   openBottomSheet(): void {
     this._bottomSheet.open(ExportSheetComponent).afterDismissed()
       .subscribe((dats) => {
@@ -154,5 +162,18 @@ export class ManageDonationsComponent implements OnInit {
         this.filterForm.get('paymentMethod').setValue('');
       }
     })
+  }
+
+  onView(id: string): void{
+    const dialogRef = this.dialog.open(ViewDonationComponent, {
+      disableClose: false,
+      autoFocus: true,
+      panelClass: 'icon-outside',
+      width: '800px',
+      data: {
+        donationId: id,
+        edit: false
+      }
+    });
   }
 }

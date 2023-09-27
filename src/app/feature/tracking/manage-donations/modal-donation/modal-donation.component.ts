@@ -27,6 +27,8 @@ export class ModalDonationComponent implements OnInit {
   contributionConfig: any;
   contributionRecord;
   paymentMethods: ComboElement[];
+  donationAmounts: ComboElement[];
+  donationMonths: ComboElement[];
   donation = this.fb.group({
     contribution_record_id: null,
     tracking_assignment_id: [null, Validators.required],
@@ -36,7 +38,6 @@ export class ModalDonationComponent implements OnInit {
     expected_payment_date: [null, Validators.required],
     paymentMethod: [null, Validators.required],
     contribution_ammount  : [null, Validators.required],
-    receipt_number: [''],
     receipt_code: [''],
     extra_income_ammount: [0],
     sent_payment_proof: [false],
@@ -45,6 +46,8 @@ export class ModalDonationComponent implements OnInit {
     extraExpenseId:'',
     extraExpenseAmount:'',
     extraExpenseReason:'',
+    contributionMonth:'',
+    validTransaction: [false]
   });
   constructor(private fb: UntypedFormBuilder,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -73,18 +76,19 @@ export class ModalDonationComponent implements OnInit {
           contribution_config_id: data.contributionConfigId,
           tracking_assignment_id: data.trackingAssignmentId,
           contributor_id: data.contributorDTO.seedId,
-          contribution_ammount: data.contributionAmount,
+          contribution_ammount: data.contributionAmount?.toString(),
           expected_payment_date: data.expectedPaymentDate,
           hasExtra: data.extraIncomeAmount > 0,
           extra_income_ammount: data.extraIncomeAmount,
           payment_date: data.paymentDate,
           paymentMethod: data.paymentMethod,
           sent_payment_proof: data.sentPaymentProof,
-          receipt_number: data.receiptNumber,
           receipt_code: data.receiptCode,
           hasExtraExpense: data.hasExtraExpense,
           extraExpenseAmount: data.extraExpenseAmount,
-          extraExpenseReason: data.extraExpenseReason
+          extraExpenseReason: data.extraExpenseReason,
+          contributionMonth: data.contributionMonth,
+          validTransaction: data.validTransaction
         })
         this.loadingContributionProcess=false;
       },(error)=>{
@@ -93,6 +97,8 @@ export class ModalDonationComponent implements OnInit {
   }
   initData(): void{
     this.getPaymentMethods();
+    this.getDonationAmounts();
+    this.getDonationMonths();
     this.onExtraExpenseChange();
   }
 
@@ -103,6 +109,19 @@ export class ModalDonationComponent implements OnInit {
       });
   }
 
+  getDonationAmounts(): void {
+    this.utilService.getAllDonationAmounts()
+      .subscribe((data) => {
+        this.donationAmounts = data.data;
+      });
+  }
+
+  getDonationMonths(): void {
+    this.utilService.getBeginMonths()
+      .subscribe((data) => {
+        this.donationMonths = data.data;
+      });
+  }
   getContributionConfigById(): void{
     this.loadingContributionProcess = true;
     this.contributionConfigService.getContributionConfigById(
@@ -111,7 +130,7 @@ export class ModalDonationComponent implements OnInit {
       this.contributionConfig = data;
       this.donation.patchValue({
         paymentMethod: this.contributionConfig.contribution.paymentMethod,
-        contribution_ammount: this.contributionConfig.contribution.contributionAmount,
+        contribution_ammount: this.contributionConfig.contribution.contributionAmount.toString(),
         contributor_id: this.data.seedId,
         contribution_config_id: this.data.contribution_config_id,
         tracking_assignment_id: this.data.tracking_assignment_id
@@ -199,7 +218,6 @@ export class ModalDonationComponent implements OnInit {
 
   onExtraExpenseChange(){
     this.donation.get('hasExtraExpense').valueChanges.subscribe((data)=>{
-     console.log('hasExtraExpense', data)
       if(!data){
         this.donation.patchValue({
           extraExpenseId:'',
@@ -209,5 +227,9 @@ export class ModalDonationComponent implements OnInit {
         })
       }
     })
+  }
+
+  get canSend(){
+    return this.donation.valid && !this.loadingContributionProcess;
   }
 }

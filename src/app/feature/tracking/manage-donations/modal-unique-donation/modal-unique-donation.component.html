@@ -54,44 +54,46 @@
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker startView="year"></mat-datepicker>
     </mat-form-field>
-
+    <mat-form-field class="col-md-6"
+                    floatLabel="always"
+                    appearance="fill">
+      <mat-label>Codigo de recibo</mat-label>
+      <input formControlName="receipt_code"
+             matInput
+             placeholder="...">
+      <mat-hint>Ingrese el codigo de recibo</mat-hint>
+    </mat-form-field>
     <div class="col-md-12">
-      <span class="message">
+      <mat-divider class="subtitle"></mat-divider>
+      <div class="option-container">
+        <span class="message">
         <mat-icon color="primary">priority_high</mat-icon>
-        ¿ Pruebas del pago recibidas ?</span>
-      <mat-chip-listbox formControlName="sent_payment_proof">
-        <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
-        <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
-      </mat-chip-listbox>
+         ¿ El la transacción de este aporte se encuentra validada ?</span>
+        <mat-chip-listbox class="chip-list" formControlName="validTransaction">
+          <mat-chip-option [value]="true"
+                           class="option"
+                           color="accent" >Sí
+          </mat-chip-option>
+          <mat-chip-option [value]="false"
+                           class="option"
+                           color="warn" selected>No
+          </mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <mat-divider class="subtitle"></mat-divider>
     </div>
-    <ng-container *ngIf="donation.get('sent_payment_proof').value">
-      <mat-form-field class="col-md-6"
-                      floatLabel="always"
-                      appearance="fill">
-        <mat-label>Número de recibo</mat-label>
-        <input formControlName="receipt_number"
-               matInput
-               placeholder="#..">
-        <mat-hint>Ingrese el número de recibo</mat-hint>
-      </mat-form-field>
-      <mat-form-field class="col-md-6"
-                      floatLabel="always"
-                      appearance="fill">
-        <mat-label>Codigo de recibo</mat-label>
-        <input formControlName="receipt_code"
-               matInput
-               placeholder="...">
-        <mat-hint>Ingrese el codigo de recibo</mat-hint>
-      </mat-form-field>
-    </ng-container>
     <div class="col-md-6">
-      <span class="message">
+      <mat-divider class="subtitle"></mat-divider>
+      <div class="option-container">
+         <span class="message">
         <mat-icon color="primary">priority_high</mat-icon>
-        ¿ Desea registrar algun ingreso extra ?</span>
-      <mat-chip-listbox formControlName="hasExtra">
-        <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
-        <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
-      </mat-chip-listbox>
+        ¿ Se realizó algun ingreso extra ?</span>
+        <mat-chip-listbox formControlName="hasExtra">
+          <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
+          <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <mat-divider class="subtitle"></mat-divider>
     </div>
     <ng-container *ngIf="donation.get('hasExtra').value">
       <mat-form-field floatLabel="always"
@@ -108,13 +110,17 @@
     <ng-container *ngIf="donation.get('paymentMethod').value === 'EFECTIVO'">
       <p></p>
       <div class="col-md-6">
-      <span class="message">
-        <mat-icon color="primary">priority_high</mat-icon>
-        ¿ Desea registrar algun monto de gasto ?</span>
-        <mat-chip-listbox formControlName="hasExtraExpense">
-          <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
-          <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
-        </mat-chip-listbox>
+        <mat-divider class="subtitle"></mat-divider>
+      <div class="option-container">
+           <span class="message">
+          <mat-icon color="primary">priority_high</mat-icon>
+          ¿ Se realizo algún gasto extra ?</span>
+          <mat-chip-listbox formControlName="hasExtraExpense">
+            <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
+            <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+          </mat-chip-listbox>
+        </div>
+        <mat-divider class="subtitle"></mat-divider>
       </div>
       <ng-container *ngIf="donation.get('hasExtraExpense').value">
         <mat-form-field floatLabel="always"
@@ -142,8 +148,8 @@
   </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <button [disabled]="!donation.valid"
+  <button [disabled]="!canSend"
           mat-flat-button
           (click)="sendData()"
-          color="primary">{{data.selectSeed.isUpdate? 'ACTUALIZAR ' : 'REGISTRAR '}} APORTE</button>
+          color="primary">{{data.selectSeed.isUpdate? 'ACTUALIZAR DATOS' : 'GUARDAR DATOS'}}</button>
 </mat-dialog-actions>

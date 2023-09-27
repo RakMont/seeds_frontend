@@ -76,6 +76,7 @@ export class ListTrackingSeedsComponent implements OnChanges, OnInit {
         this.data = data;
         this.loadingTable = false;
       }, (error) => {
+        this.loadingTable =false;
         //this.showMessage(error.error);
       });
   }

@@ -8,66 +8,82 @@
 </div>
 <mat-dialog-content>
   <ng-container *ngIf="!loadingContributionConfig else loading">
-    <div class="row label-container" *ngIf="contributionRecord">
-      <div class="volunteer-cont">
-            <span class="name-cont"> <mat-icon>local_library</mat-icon>
-              <span style="font-weight: 500">Semilla : </span>
-              <span> {{contributionRecord.contributorDTO.name}}
-                {{contributionRecord.contributorDTO.lastname}}</span>
-            </span>
+    <div class="row" *ngIf="contributionRecord">
+      <div class="col-md-12">
+        <div class="volunteer-cont" *ngIf="contributionRecord">
+          <div class="name">
+            <mat-icon>person</mat-icon>
+            <span style="font-weight: 500">Semilla : </span>
+            <span>{{contributionRecord.contributorDTO.name}} {{contributionRecord.contributorDTO.lastname}}</span>
+          </div>
+          <mat-chip-listbox>
+            <mat-chip class="contr-type">
+              <span>{{contributionRecord.contributorDTO.contributionType}}</span></mat-chip>
+          </mat-chip-listbox>
+        </div>
       </div>
-      <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Celular: </span>{{contributionRecord.contributorDTO.phone}}</span>
-      <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Ciudad: </span>{{contributionRecord.contributorDTO.city}}</span>
-      <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Tipo de aporte: </span>
-        <mat-chip-listbox>
-              <mat-chip class="chip-label" ><span>{{contributionRecord.contributorDTO.contributionType}}</span></mat-chip>
-        </mat-chip-listbox>
-        </span>
-      <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Monto de aporte: </span>{{contributionRecord.contributionAmount}}</span>
 
-      <span  class="col-md-6"><span style="font-weight: 500">
+      <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon>
-      Fecha de pago esperada: </span>
-        {{contributionRecord.expectedPaymentDate| date:'mediumDate'}}</span>
+        <span style="font-weight: 500">Celular: </span>
+        <span>{{contributionRecord.contributorDTO.phone}}</span>
+      </div>
+      <div  class="col-md-6 span-icon">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Ciudad: </span>
+        <span>{{contributionRecord.contributorDTO.city}}</span>
+      </div>
+      <div  class="col-md-6 span-icon">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Monto de aporte: </span>
+        <span>{{contributionRecord.contributionAmount}}</span>
+      </div>
 
-      <span  class="col-md-6"><span style="font-weight: 500">
+      <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon>
-      Monto de aporte extra: </span>{{contributionRecord.extraIncomeAmount}}</span>
+        <span style="font-weight: 500">Fecha de pago esperada: </span>
+        <span>{{contributionRecord.expectedPaymentDate| date:'mediumDate'}}</span>
+      </div>
 
+      <div  class="col-md-6 span-icon">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Monto de aporte extra: </span>
+        <span>{{contributionRecord.extraIncomeAmount}}</span>
+      </div>
 
-      <span  class="col-md-6"><span style="font-weight: 500">
+      <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon>
-      Fecha de pago: </span>{{contributionRecord.paymentDate | date:'mediumDate'}}</span>
+        <span style="font-weight: 500">Fecha de pago: </span>
+        <span>{{contributionRecord.paymentDate | date:'mediumDate'}}</span>
+      </div>
 
-      <span  class="col-md-6"><span style="font-weight: 500">
+      <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon>
-      Codigo de recibo: </span>{{contributionRecord.receiptCode }}</span>
+        <span style="font-weight: 500">Codigo de recibo: </span>
+      <span>{{contributionRecord.receiptCode ? contributionRecord.receiptCode  : '-----' }}</span>
+      </div>
 
-      <span  class="col-md-6"><span style="font-weight: 500">
+      <div  class="col-md-6 span-icon">
       <mat-icon>label_important</mat-icon>
-      Número de recibo: </span>{{contributionRecord.receiptNumber }}</span>
-      <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Metodo de pago: </span>
-        <mat-chip-listbox>
-              <mat-chip  class="chip-label" ><span>{{contributionRecord.paymentMethodLabel}}</span></mat-chip>
-        </mat-chip-listbox>
-        </span>
+        <span style="font-weight: 500">Metodo de pago: </span>
+        <span>{{contributionRecord.paymentMethodLabel}}</span>
+      </div>
+      <div  class="col-md-6 span-icon">
+        <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Voluntario de registro: </span>
+        <span>{{contributionRecord.registerVolunteer }}</span>
+      </div>
       <ng-container *ngIf="contributionRecord.hasExtraExpense">
-        <span  class="col-md-6"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Monto de gasto extra: </span>{{contributionRecord.extraExpenseAmount }}</span>
-        <span  class="col-md-12"><span style="font-weight: 500">
-      <mat-icon>label_important</mat-icon>
-      Motivo de gasto extra: </span>{{contributionRecord.extraExpenseReason }}</span>
+        <div  class="col-md-6 span-icon">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500">Monto de gasto extra: </span>
+          <span>{{contributionRecord.extraExpenseAmount }}</span>
+        </div>
+        <div  class="col-md-6 span-icon">
+        <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500">Motivo de gasto extra: </span>
+          <span>{{contributionRecord.extraExpenseReason }}</span>
+        </div>
       </ng-container>
 
     </div>

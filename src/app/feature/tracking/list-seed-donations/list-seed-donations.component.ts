@@ -41,7 +41,6 @@ export class ListSeedDonationsComponent implements OnChanges {
 
   actionOutput(evento: CellContent): void{
     const id = this.getDonationId(evento.params);
-    console.log('event', evento);
     if (evento.clickedAction === 'SeeRecord'){
       this.onView(id);
       //this.selectedSeed.emit({seedId: evento.params[0].paramContent})
@@ -64,13 +63,12 @@ export class ListSeedDonationsComponent implements OnChanges {
         }
       });
       dialogConfig.afterClosed().subscribe(result => {
-        if (result){
+        if (result === 'success'){
           this.getDonationsRecord();
         }
       });
 
   }
-  onAdding(): void{}
   onView(id: string): void{
     const dialogRef = this.dialog.open(ViewDonationComponent, {
       disableClose: false,
@@ -122,7 +120,7 @@ export class ListSeedDonationsComponent implements OnChanges {
       }
     });
     dialogConfig.afterClosed().subscribe(result => {
-      if (result){
+      if (result ==='success'){
         this.getDonationsRecord();
       }
     });

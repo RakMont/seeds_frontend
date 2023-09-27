@@ -21,6 +21,7 @@ export class ModalUniqueDonationComponent implements OnInit{
   paymentMethods: ComboElement[];
   contributionRecord;
   loadingContribution = true;
+
   donation = this.fb.group({
     contribution_record_id: '',
     tracking_assignment_id: ['', Validators.required],
@@ -30,7 +31,6 @@ export class ModalUniqueDonationComponent implements OnInit{
     expected_payment_date: ['', Validators.required],
     paymentMethod: ['', Validators.required],
     contribution_ammount  :  ['', Validators.required],
-    receipt_number: [''],
     receipt_code: [''],
     extra_income_ammount: [0],
     sent_payment_proof: [false],
@@ -39,6 +39,8 @@ export class ModalUniqueDonationComponent implements OnInit{
     extraExpenseId:'',
     extraExpenseAmount:'',
     extraExpenseReason:'',
+    contributionMonth:'',
+    validTransaction: [false]
   });
   constructor(private fb: UntypedFormBuilder,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -78,8 +80,9 @@ export class ModalUniqueDonationComponent implements OnInit{
           payment_date: data.paymentDate,
           paymentMethod: data.paymentMethod,
           sent_payment_proof: data.sentPaymentProof,
-          receipt_number: data.receiptNumber,
           receipt_code: data.receiptCode,
+          contributionMonth: data.contributionMonth,
+          validTransaction: data.validTransaction
         })
         this.loadingContribution = false;
       },(error => {
@@ -180,5 +183,9 @@ export class ModalUniqueDonationComponent implements OnInit{
         })
       }
     })
+  }
+
+  get canSend(){
+    return this.donation.valid && !this.loadingContribution;
   }
 }

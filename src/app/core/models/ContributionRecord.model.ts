@@ -16,7 +16,8 @@ export interface ContributionRecord{
   paymentMethodLabel: string,
   extraExpenseReason: string,
   extraExpenseAmount,
-  hasExtraExpense
+  hasExtraExpense,
+  registerVolunteer
 }
 
 export interface ContributorDTO{
