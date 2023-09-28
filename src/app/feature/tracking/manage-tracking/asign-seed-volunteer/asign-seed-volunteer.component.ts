@@ -24,6 +24,7 @@ export interface DialogData {
 export class AsignSeedVolunteerComponent implements OnInit {
   filteredSeeds: Observable<BoxSeed[]>;
   seed: Volunter = null;
+  sendingData = false;
   allTrackingVolunteers: BoxSeed[] = [];
   loadingAll = true;
   startDate = new Date();
@@ -81,13 +82,16 @@ export class AsignSeedVolunteerComponent implements OnInit {
   }
 
   confirm(){
+    this.sendingData = true;
     const form = this.assignForm.value;
     if (this.data.trackingAssignmentId)form.tracking_assignment_id = this.data.trackingAssignmentId;
     this.trackingService.saveTrackingAssign(form)
       .subscribe((data) => {
         this.showMessage(data);
+        this.sendingData =false;
         this.dialogRef.close('success');
       },(error => {
+        this.sendingData =false;
         this.showMessage(error.error);
       }));
   }

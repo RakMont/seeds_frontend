@@ -35,7 +35,7 @@ export class VolunterDialogComponent implements OnInit {
   volunteer: Volunter = null;
   title: string;
   filteredRoles: Role[] = [];
-
+  sendingData = false;
   constructor(public dialogRef: MatDialogRef<VolunterDialogComponent>,
               private volunteerService: VolunteerService,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -75,6 +75,7 @@ export class VolunterDialogComponent implements OnInit {
   }
 
   onSubmit(): void{
+    this.sendingData=true;
     if ( !this.data.edit ) {
       this.createVolunteer();
     }else {
@@ -91,9 +92,11 @@ export class VolunterDialogComponent implements OnInit {
     };
     this.volunteerService.addVolunteer(data)
       .subscribe(( data ) => {
+        this.sendingData=false;
         this.showMessage(data);
         this.dialogRef.close('success');
       }, (error) => {
+        this.sendingData=false;
         this.showMessage(error.error);
       });
   }
@@ -108,8 +111,10 @@ export class VolunterDialogComponent implements OnInit {
       this.volunteerService.updateVolunteer(data)
         .subscribe(( data ) => {
           this.showMessage(data);
+          this.sendingData=false;
           this.dialogRef.close('success');
         }, (error) => {
+          this.sendingData=false;
           this.showMessage(error.error);
         });
 

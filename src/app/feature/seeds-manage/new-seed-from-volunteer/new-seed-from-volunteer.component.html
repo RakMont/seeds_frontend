@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!sendingData else sending">
     <app-title-banner
       [hasTranslate]="false"
       [title]="'REGISTRAR NUEVA SEMILLA'">
@@ -28,10 +28,14 @@
       </ng-container>
 
   <div align="center">
-    <button [disabled]="!canSendForm"
+    <button [disabled]="!canSendForm || sendingData"
             mat-raised-button color="primary"
             (click)="sentData()">ENVIAR DATOS
       <mat-icon>save</mat-icon>
     </button>
   </div>
 </div>
+<ng-template #sending>
+  <mat-spinner mode="indeterminate" class="loading">
+  </mat-spinner>
+</ng-template>

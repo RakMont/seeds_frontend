@@ -3,11 +3,11 @@
       <span class="name-cont"> <mat-icon>local_library</mat-icon>
             <span style="font-weight: 500">Responsable : </span>
         <span> {{ volunteer?.name}} {{volunteer?.lastname}}</span></span>
-        <button (click)="openAsignDialog()"
+        <!--<button (click)="openAsignDialog()"
                 matTooltip="Asignar otra semilla"
                 mat-mini-fab color="accent">
           <mat-icon>group_add</mat-icon>
-        </button>
+        </button> -->
     </div>
   <ng-container *ngIf="!loadingTable else loading">
       <app-generic-table

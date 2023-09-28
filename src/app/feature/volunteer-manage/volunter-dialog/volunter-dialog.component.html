@@ -115,6 +115,6 @@
   <button mat-raised-button
           (click)="onSubmit()"
           class="accept-bt"
-          [disabled]="!volunteerForm.valid"
+          [disabled]="!volunteerForm.valid || sendingData"
           color="primary">{{confirmButton}}</button>
 </mat-dialog-actions>
