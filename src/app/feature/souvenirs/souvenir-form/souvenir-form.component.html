@@ -1,0 +1,170 @@
+<div class="form-container">
+  <app-title-banner
+    [title]="'NUEVO REGISTRO'">
+  </app-title-banner>
+  <form [formGroup]="form" class="row" *ngIf="!loadingSeeds && !loadingVolunteers && !sendingValues else loading">
+    <ng-container *ngIf="selectedSeed != null">
+      <div class="col-md-12">
+        <div class="selected-seed-container">
+        <div class="row">
+          <div class="name col-md-6">
+            <mat-icon>person</mat-icon>
+            <span style="font-weight: 500"> Semilla: </span>
+            <span>{{selectedSeed.largename}}</span>
+          </div>
+          <div class="name col-md-6">
+            <mat-icon>label_important</mat-icon>
+            <span style="font-weight: 500"> Tipo de aporte: </span>
+            <span>{{selectedSeed.contributionType}}</span>
+          </div>
+          <div class="name col-md-6">
+            <mat-icon>label_important</mat-icon>
+            <span style="font-weight: 500"> País: </span>
+            <span>{{ selectedSeed.country | uppercase}}</span>
+          </div>
+          <div class="name col-md-6">
+            <mat-icon>label_important</mat-icon>
+            <span style="font-weight: 500"> Ciudad: </span>
+            <span>{{ selectedSeed.city}}</span>
+          </div>
+          <div class="name col-md-6">
+            <mat-icon>label_important</mat-icon>
+            <span style="font-weight: 500"> Celular: </span>
+            <span>{{ selectedSeed.phone}}</span>
+          </div>
+          <div class="name col-md-6">
+            <mat-icon>label_important</mat-icon>
+            <span style="font-weight: 500"> Correo: </span>
+            <span>{{ selectedSeed.email}}</span>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </ng-container>
+   <div class="col-md-12">
+     <mat-expansion-panel class="mat-expansion" [expanded]="panelOpenStateSeeds">
+       <mat-expansion-panel-header>
+         <mat-panel-title>
+           Elegir una semilla
+         </mat-panel-title>
+         <mat-panel-description>
+           Lista de Semillas registradas
+           <mat-icon>account_circle</mat-icon>
+         </mat-panel-description>
+       </mat-expansion-panel-header>
+       <mat-list>
+         <mat-list-item class="click-item" (click)="choseSeed(seed)"
+                        *ngFor="let seed of allSeeds">
+           <span matListItemTitle>{{seed.largename}} </span>
+           <span matListItemLine>Correo:{{seed.email}} | Pais: {{seed.country |uppercase}}-{{seed.city}}</span>
+         </mat-list-item>
+       </mat-list>
+     </mat-expansion-panel>
+     <p></p>
+   </div>
+    <ng-container *ngIf="selectedSeed!= null">
+      <ng-container *ngIf="selectedVolunteer!=null">
+        <div class="col-md-12">
+          <div class="selected-seed-container">
+           <div class="row">
+             <div class="name col-md-6">
+               <mat-icon>person</mat-icon>
+               <span style="font-weight: 500"> Voluntario: </span>
+               <span>{{selectedVolunteer.largename}}</span>
+             </div>
+             <div class="name col-md-6">
+               <mat-icon>label_important</mat-icon>
+               <span style="font-weight: 500"> Celular: </span>
+               <span>{{ selectedVolunteer.phone}}</span>
+             </div>
+             <div class="name col-md-6">
+               <mat-icon>label_important</mat-icon>
+               <span style="font-weight: 500"> Correo: </span>
+               <span>{{ selectedVolunteer.email}}</span>
+             </div>
+           </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-md-12">
+        <mat-expansion-panel class="mat-expansion" [expanded]="panelOpenStateVolunteers">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Elegir un voluntario a cargo
+            </mat-panel-title>
+            <mat-panel-description>
+              Lista de Responsables de envío de souvenir
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item class="click-item" (click)="choseVolunteer(seed)"
+                           *ngFor="let seed of allSouvenirVolunteers">
+              <span matListItemTitle>{{seed.largename}} </span>
+              <span matListItemLine>Correo:{{seed.email}} | Celular: {{seed.phone |uppercase}}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </div>
+    </ng-container>
+    <p></p>
+    <ng-container *ngIf="selectedSeed!= null && selectedVolunteer!= null">
+      <mat-form-field floatLabel="always" class="col-md-6" appearance="fill">
+        <mat-label>Estado de envío</mat-label>
+        <mat-select formControlName="trackingStatus" required>
+          <mat-option class="mat-select-option" *ngFor="let pm of trackingStatus" [value]="pm.value">
+            {{pm.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="col-md-6">
+        <mat-form-field floatLabel="always"
+                        appearance="fill">
+          <mat-label>Fecha de envío de souvenir</mat-label>
+          <input matInput formControlName="souvenirSendDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-error *ngIf="form.get('souvenirSendDate').invalid">La fecha de envío es requerida.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill">
+          <mat-label>Ciudad de envío elegida</mat-label>
+          <input matInput formControlName="chosenCity" >
+          <mat-error *ngIf="form.get('chosenCity').invalid">La ciudad es requerida.</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-form-field floatLabel="always"
+                      class="col-md-6 extra" appearance="fill">
+        <mat-label>Gasto de envío</mat-label>
+        <input class="example-right-align"
+               required matInput  oninput="this.value = Math.abs(this.value)|| ''"
+               formControlName="spentAmount" placeholder="0">
+        <span matSuffix>.00 BOB</span>
+        <mat-error *ngIf="form.get('spentAmount').invalid">El gasto es requerido.</mat-error>
+      </mat-form-field>
+      <mat-form-field floatLabel="always"
+                      class="col-md-12"
+                      hintLabel="200 caractéres permitidos"
+                      appearance="fill">
+        <mat-label>Observación del envío</mat-label>
+        <textarea formControlName="observation" matInput></textarea>
+        <mat-hint align="end">{{form.get('observation').value?.length || 0}}/200</mat-hint>
+      </mat-form-field>
+    </ng-container>
+<p></p>
+  <div class="col-md-12" align="center">
+    <button mat-flat-button class="send-button"
+            [disabled]="!form.valid || sendingValues"
+            (click)="sendData()" color="primary">ENVIAR DATOS</button>
+  </div>
+  </form>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
+</div>

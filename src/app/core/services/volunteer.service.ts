@@ -5,6 +5,7 @@ import {Table} from '../models/Table.model';
 import {environment} from '../../../environments/environment';
 import {Role, Volunter, VolunterFilter} from '../models/Volunteer.model';
 import {BoxSeed} from "../models/Seed.model";
+import {BoxVolunteer} from "../models/Souvenir.model";
 
 @Injectable({
   providedIn: 'root'
@@ -82,9 +83,9 @@ export class VolunteerService {
     return this.http.get<Volunter[]>(environment.backend + '/seeds/volunteers/exitvolunters');
   }
 
-  getComboTrackingVolunteers(): Observable<BoxSeed[]>{
+  getComboTrackingVolunteers(): Observable<BoxVolunteer[]>{
     //return this.http.get<BoxSeed[]>(/*environment.backend + */'./assets/statics/activeseeds.json');
-    return this.http.get<BoxSeed[]>(environment.backend + '/seeds/volunteers/comboTrackingVolunteers');
+    return this.http.get<BoxVolunteer[]>(environment.backend + '/seeds/volunteers/comboTrackingVolunteers');
   }
 
   listen(): Observable<any> {

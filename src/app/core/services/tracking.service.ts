@@ -18,7 +18,7 @@ export class TrackingService {
   }
   getActiveSeeds(): Observable<BoxSeed[]>{
     //return this.http.get<BoxSeed[]>(/*environment.backend + */'./assets/statics/activeseeds.json');
-    return this.http.get<BoxSeed[]>(environment.backend + '/seeds/applicants/activeseeds');
+    return this.http.get<BoxSeed[]>(environment.backend + '/seeds/applicants/comboActiveSeeds');
   }
 
   saveTrackingAssign(payload): Observable<any> {

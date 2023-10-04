@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-tab-group  [selectedIndex]="index"
+                  (selectedTabChange)="onTabChanged($event);"
+                  mat-align-tabs="center"
+                  class="tab-group">
+
+    <mat-tab [disabled]=true>
+      <div class="tab-background">
+        <app-title-banner
+          [title]="'SEGUIMIENTO A ENVÍO DE SOUVENIRS'">
+        </app-title-banner>
+        <mat-card>
+          <div class="volunteer-cont">
+            <form [formGroup]="val" class="volunteer-head">
+              <mat-chip-listbox formControlName="state">
+                <mat-chip-option class="pending" [value]="'SOUVENIR_PENDING'" color="primary" selected>Pendiente de envío</mat-chip-option>
+                <mat-chip-option class="delivered" [value]="'SOUVENIR_DELIVERED'" color="primary" >Souvenir Entregado</mat-chip-option>
+                <mat-chip-option class="sent" [value]="'SOUVENIR_SENT'" color="primary">Souvenir Enviado</mat-chip-option>
+              </mat-chip-listbox>
+            </form>
+            <button mat-mini-fab class="add-button-color"
+                    color="primary"
+                    (click)="onAdding()"
+                    matTooltip="Registrar nuevo responsable">
+              <mat-icon>person_add</mat-icon>
+            </button>
+          </div>
+          <ng-container *ngIf="!loadingTable else loading">
+            <app-generic-table
+              *ngIf="data"
+              [inputTable]="data.rows"
+              (actionOutput)="actionOutput($event)"
+            >
+            </app-generic-table>
+          </ng-container>
+          <ng-template #loading>
+            <mat-spinner class="loading">
+            </mat-spinner>
+          </ng-template>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab *ngIf="index===1"  [disabled]=true>
+      <div class="tab-background">
+
+      <mat-toolbar>
+        <button mat-icon-button (click)="back()">
+          <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+        </button>
+        <span class="example-spacer"></span>
+      </mat-toolbar>
+      <mat-card>
+        <app-souvenir-form (emitter)="emitter($event)"
+        [isUpdate]="isUpdate"
+        [seedSouvenirTrackingId]="seedSouvenirTrackingId">
+        </app-souvenir-form>
+      </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

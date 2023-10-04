@@ -61,9 +61,12 @@ export interface ProcessSeedPayload{
 export interface BoxSeed{
   contributor_id: string;
   largename: string;
+  country: string;
+  city: string;
   email: string;
   phone: string;
   dni: string;
+  contributionType: string
 }
 
 export interface SeedFilter{

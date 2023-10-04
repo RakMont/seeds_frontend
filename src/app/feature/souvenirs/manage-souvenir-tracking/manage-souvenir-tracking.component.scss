@@ -1,0 +1,88 @@
+.container {
+  margin-top: 70px;
+  width: 96%;
+ // background-color: #C02126;
+}
+mat-card{
+  margin-bottom: 12px;
+  padding: 16px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  letter-spacing: 0.1rem;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.title{
+  float: left;
+  font-size: 18px;
+  letter-spacing: 0.08rem;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 14px 0;
+}
+hr{
+  width: 96%;
+  margin: 12px auto;
+}
+
+.under-card{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.name-cont{
+  display: flex;
+  padding: 6px 0;
+  color: #6b9074;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  span{
+    margin: auto 6px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.tab-group{
+  //padding-right: 8px;
+  //padding-left: 8px;
+  margin-top: -70px;
+}
+
+.tab-background{
+  padding-top: 10px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.fa-2x {
+  //font-size: 2em;
+  margin-top: -10px;
+  margin-left: -8px;
+  color: #555555;
+}
+
+.volunteer-head{
+  display: flex;
+  justify-content: space-between;
+  .delivered.mat-primary.mat-mdc-chip-selected{
+    background-color: #75a84e;
+  }
+
+  .sent.mat-primary.mat-mdc-chip-selected{
+    background-color: #9fc5e8;
+  }
+
+  .pending.mat-primary.mat-mdc-chip-selected{
+    background-color: #f9d66c;
+    color: #E2DFD2;
+  }
+}
+

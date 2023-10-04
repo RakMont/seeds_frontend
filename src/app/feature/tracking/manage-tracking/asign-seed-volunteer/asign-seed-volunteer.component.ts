@@ -11,6 +11,7 @@ import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {MatOptionSelectionChange} from "@angular/material/core";
 import {MessageSnackBarComponent} from "../../../../shared/message-snack-bar/message-snack-bar.component";
 import {ApplicantService} from "../../../../core/services/applicant.service";
+import {BoxVolunteer} from "../../../../core/models/Souvenir.model";
 
 export interface DialogData {
   trackingAssignmentId?: string;
@@ -22,10 +23,10 @@ export interface DialogData {
   styleUrls: ['./asign-seed-volunteer.component.scss']
 })
 export class AsignSeedVolunteerComponent implements OnInit {
-  filteredSeeds: Observable<BoxSeed[]>;
+  filteredSeeds: Observable<BoxVolunteer[]>;
   seed: Volunter = null;
   sendingData = false;
-  allTrackingVolunteers: BoxSeed[] = [];
+  allTrackingVolunteers: BoxVolunteer[] = [];
   loadingAll = true;
   startDate = new Date();
   assignForm = this.form.group({
@@ -70,7 +71,7 @@ export class AsignSeedVolunteerComponent implements OnInit {
       searchValue: evento.source.value.largename
     });
   }
-  private _filter(value: string): BoxSeed[] {
+  private _filter(value: string): BoxVolunteer[] {
     if (typeof  value === 'string'){
       const filterValue = value.toLowerCase();
       return this.allTrackingVolunteers.filter(option =>

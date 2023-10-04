@@ -21,7 +21,6 @@ export class GenericTableComponent implements OnInit {
   ngOnInit(): void {
     if (this.inputTable && this.inputTable.length > 0) {
       this.data = cloneDeep(this.inputTable);
-      console.log('sdasdas', this.data[0]);
       this.parseFormat();
       this.buildColumns();
       if (!this.originalData.length) {
