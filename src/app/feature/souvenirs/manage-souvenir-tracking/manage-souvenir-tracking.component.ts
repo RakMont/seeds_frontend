@@ -93,7 +93,7 @@ export class ManageSouvenirTrackingComponent implements OnInit{
       autoFocus: true,
       width: '800px',
       data: {
-        selectSeed: out,
+        seedSouvenirTrackingId: out.seedSouvenirTrackingId,
       }
     });
   }

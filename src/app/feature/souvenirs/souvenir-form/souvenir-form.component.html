@@ -156,8 +156,43 @@
         <mat-hint align="end">{{form.get('observation').value?.length || 0}}/200</mat-hint>
       </mat-form-field>
     </ng-container>
-<p></p>
-  <div class="col-md-12" align="center">
+  <p>
+    <mat-toolbar class="tool-add">
+      <span class="example-spacer"></span>
+      <button mat-mini-fab class="add-button-color" color="primary"  (click)="addComment()">
+        <mat-icon class="add-course-btn">add</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+    <ng-container formArrayName="souvenirTrackingComments">
+      <ng-container *ngFor="let souvenirTrackingComment of souvenirTrackingComments.controls; let i = index">
+        <ng-container [formGroup]="souvenirTrackingComment">
+          <mat-form-field class="col-md-3" floatLabel="always"
+                          appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input matInput formControlName="comment_date" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+          </mat-form-field>
+          <mat-form-field class="col-md-8" floatLabel="always" appearance="fill">
+            <mat-label>Comentario</mat-label>
+            <input matInput
+                   formControlName="comment"
+                   placeholder="Deja un comentario u actualización del estado del envío">
+          </mat-form-field>
+          <span class="col-md-1">
+            <button mat-icon-button color="primary"  (click)="deleteComment(i)">
+              <mat-icon class="delete-btn">clear</mat-icon>
+           </button>
+          </span>
+          <mat-divider  class="subtitle"></mat-divider>
+        </ng-container>
+
+      </ng-container>
+    </ng-container>
+
+    <div class="col-md-12" align="center">
     <button mat-flat-button class="send-button"
             [disabled]="!form.valid || sendingValues"
             (click)="sendData()" color="primary">ENVIAR DATOS</button>

@@ -54,7 +54,7 @@ export class GenericTableComponent implements OnInit {
     this.columns = sortBy(this.columns, ['order']);
   }
 
-  onclickevent(event): void {
+  onClickEvent(event): void {
     this.actionOutput.emit(event);
   }
   isChip(contents: CellContent[]): boolean{

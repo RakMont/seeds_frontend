@@ -1,7 +1,9 @@
 .form-container{
   padding: 12px;
 }
-
+.example-spacer {
+  flex: 1 1 auto;
+}
 .mat-expansion{
   width: 100%;
   .mat-expansion-panel-header-description {
@@ -55,4 +57,14 @@
 
 .send-button{
  width: 100%;
+}
+
+.tool-add{
+  background: #FFFFFF;
+}
+
+.subtitle {
+  border: 0.5px solid #6b9074;
+  width: 98%;
+  margin: 4px auto 16px ;
 }

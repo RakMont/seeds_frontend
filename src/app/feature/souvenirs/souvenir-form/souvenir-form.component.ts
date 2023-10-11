@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {VolunteerService} from "../../../core/services/volunteer.service";
-import {UntypedFormBuilder, Validators} from "@angular/forms";
+import {FormArray, UntypedFormBuilder, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {BoxVolunteer, SeedSouvenirTracking, TrackingStatus} from "../../../core/models/Souvenir.model";
 import {BoxSeed} from "../../../core/models/Seed.model";
@@ -40,8 +40,11 @@ export class SouvenirFormComponent implements OnInit{
     trackingStatus: [TrackingStatus.SOUVENIR_PENDING, Validators.required],
     chosenCity: ['', [Validators.required]],
     observation: [''],
-    spentAmount:['',Validators.required]
+    selectedDate: [],
+    spentAmount:['',Validators.required],
+    souvenirTrackingComments: this.fb.array([])
   });
+
   constructor(private volunteerService: VolunteerService,
               private trackingService: TrackingService,
               private souvenirTrackingService: SouvenirTrackingService,
@@ -57,7 +60,21 @@ export class SouvenirFormComponent implements OnInit{
 
    }
   }
+  get souvenirTrackingComments() {
+    return this.form.controls["souvenirTrackingComments"] as FormArray;
+  }
 
+  addComment(comment?) {
+    const lessonForm = this.fb.group({
+      commentId: [comment ? comment.commentId : null],
+      comment_date: [comment ? comment.comment_date : new Date(), Validators.required],
+      comment: [comment ? comment.comment : '', Validators.required]
+    });
+    this.souvenirTrackingComments.push(lessonForm);
+  }
+  deleteComment(lessonIndex: number) {
+    this.souvenirTrackingComments.removeAt(lessonIndex);
+  }
   getSouvenirTracking(){
     this.loadingSouvenirTracking = true;
     this.souvenirTrackingService.getSeedSouvenirTracking(this.seedSouvenirTrackingId)
@@ -74,7 +91,11 @@ export class SouvenirFormComponent implements OnInit{
           trackingStatus: this.seedSouvenirTracking.trackingStatus,
           chosenCity: this.seedSouvenirTracking.chosenCity,
           observation: this.seedSouvenirTracking.observation,
-          spentAmount: this.seedSouvenirTracking.spentAmount
+          spentAmount: this.seedSouvenirTracking.spentAmount,
+          selectedDate: this.seedSouvenirTracking.selectedDate
+        })
+        this.seedSouvenirTracking.souvenirTrackingComments.forEach(com=>{
+          this.addComment(com);
         })
         this.panelOpenStateSeeds = false;
         this.panelOpenStateVolunteers = false;

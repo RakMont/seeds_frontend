@@ -26,4 +26,10 @@ export interface SeedSouvenirTracking {
   benefitedContributorLabel: BoxSeed;
   volunteerInChargeId;
   volunteerInChargeLabel: BoxVolunteer;
+  souvenirTrackingComments: CommentRecordDTO[]
+}
+export interface CommentRecordDTO{
+  commentId;
+  comment;
+  comment_date;
 }

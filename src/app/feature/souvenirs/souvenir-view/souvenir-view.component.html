@@ -1,1 +1,111 @@
-<p>souvenir-view works!</p>
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">DETALLE DE REGISTRO</span>
+  </div>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <ng-container *ngIf="!loadingSouvenirTracking else loading">
+    <div class="selected-seed-container">
+      <div class="row">
+        <div class="name col-md-6">
+          <mat-icon>person</mat-icon>
+          <span style="font-weight: 500"> Semilla: </span>
+          <span>{{seedSouvenirTracking.benefitedContributorLabel.largename}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Tipo de aporte: </span>
+          <span>{{seedSouvenirTracking.benefitedContributorLabel.contributionType}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> País: </span>
+          <span>{{ seedSouvenirTracking.benefitedContributorLabel.country | uppercase}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Ciudad: </span>
+          <span>{{ seedSouvenirTracking.benefitedContributorLabel.city}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Celular: </span>
+          <span>{{ seedSouvenirTracking.benefitedContributorLabel.phone}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Correo: </span>
+          <span>{{ seedSouvenirTracking.benefitedContributorLabel.email}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="selected-seed-container">
+      <div class="row">
+        <div class="name col-md-6">
+          <mat-icon>person</mat-icon>
+          <span style="font-weight: 500"> Voluntario: </span>
+          <span>{{seedSouvenirTracking.volunteerInChargeLabel.largename}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Celular: </span>
+          <span>{{ seedSouvenirTracking.volunteerInChargeLabel.phone}}</span>
+        </div>
+        <div class="name col-md-6">
+          <mat-icon>label_important</mat-icon>
+          <span style="font-weight: 500"> Correo: </span>
+          <span>{{ seedSouvenirTracking.volunteerInChargeLabel.email}}</span>
+        </div>
+      </div>
+    </div>
+
+    <p></p>
+   <div class="row">
+     <mat-divider class="subtitle"></mat-divider>
+
+     <span class="span-title">INFORMACIÓN DEL ENVÍO</span>
+     <mat-divider class="subtitle"></mat-divider>
+     <div  class="col-md-6 span-icon">
+       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Fecha de registro: </span>
+       <span>{{seedSouvenirTracking.selectedDate| date:'mediumDate'}}</span>
+     </div>
+     <div  class="col-md-6 span-icon">
+       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Fecha de envío de souvenir: </span>
+       <span> {{seedSouvenirTracking.souvenirSendDate| date:'mediumDate'}}</span>
+     </div>
+     <div  class="col-md-6 span-icon">
+       <mat-icon>label_important</mat-icon><span style="font-weight: 500">Estado de envío: </span>
+       <span> {{seedSouvenirTracking.trackingStatusLabel}}</span>
+     </div>
+     <div class="col-md-6 span-icon">
+       <mat-icon>label_important</mat-icon>
+       <span style="font-weight: 500">Ciudad de envío: </span>
+       <span>{{seedSouvenirTracking.chosenCity}}</span>
+     </div>
+     <div  class="col-md-6 span-icon">
+       <mat-icon>label_important</mat-icon>
+       <span style="font-weight: 500">Gasto de envío: </span>
+       <span>{{seedSouvenirTracking.spentAmount}}</span>
+     </div>
+     <span  class="col-md-12 span-icon">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Observación del envío: </span>
+        <span>{{seedSouvenirTracking.observation}}</span>
+      </span>
+     <p></p>
+     <span  class="col-md-12 span-icon" *ngFor="let c of seedSouvenirTracking.souvenirTrackingComments">
+      <mat-icon>label_important</mat-icon>
+        <span style="font-weight: 500">Comentario: </span>
+        <span>[{{c.comment_date| date:'mediumDate'}}] {{c.comment}}</span>
+      </span>
+   </div>
+
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner mode="indeterminate" class="loading">
+    </mat-spinner>
+  </ng-template>
+</mat-dialog-content>
