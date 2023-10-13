@@ -93,6 +93,10 @@ import { ExportSheetComponent } from './feature/tracking/manage-donations/export
 import { ManageSouvenirTrackingComponent } from './feature/souvenirs/manage-souvenir-tracking/manage-souvenir-tracking.component';
 import { SouvenirFormComponent } from './feature/souvenirs/souvenir-form/souvenir-form.component';
 import { SouvenirViewComponent } from './feature/souvenirs/souvenir-view/souvenir-view.component';
+import { ManageActivitiesComponent } from './feature/public-activities/manage-activities/manage-activities.component';
+import { ModalActivityComponent } from './feature/public-activities/modal-activitie/modal-activity.component';
+import { ModalViewActivitieComponent } from './feature/public-activities/modal-view-activitie/modal-view-activitie.component';
+import { ListActivitiesComponent } from './feature/public-activities/list-activities/list-activities.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -143,7 +147,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ExportSheetComponent,
     ManageSouvenirTrackingComponent,
     SouvenirFormComponent,
-    SouvenirViewComponent
+    SouvenirViewComponent,
+    ManageActivitiesComponent,
+    ModalActivityComponent,
+    ModalViewActivitieComponent,
+    ListActivitiesComponent
   ],
   imports: [
     BrowserModule,

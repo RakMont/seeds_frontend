@@ -19,6 +19,7 @@ import {
 import {
   ManageSouvenirTrackingComponent
 } from "./feature/souvenirs/manage-souvenir-tracking/manage-souvenir-tracking.component";
+import {ManageActivitiesComponent} from "./feature/public-activities/manage-activities/manage-activities.component";
 
 const routes: Routes = [
   {
@@ -71,6 +72,11 @@ const routes: Routes = [
   {
     path:'admin/souvenirs/benefited-seeds',
     component: ManageSouvenirTrackingComponent,
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    path:'admin/activities/manage-activities',
+    component: ManageActivitiesComponent,
     canActivate: [LoginGuardGuard]
   }
 ];

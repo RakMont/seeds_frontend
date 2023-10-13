@@ -1,0 +1,16 @@
+<div class="container">
+
+  <app-title-banner
+    [title]="'LISTA DE ACTIVIDADES ACTUALES'">
+  </app-title-banner>
+  <div class="volunteer-cont">
+
+    <button mat-mini-fab class="add-button-color"
+            color="primary"
+            (click)="onAdding()"
+            matTooltip="Registrar nuevo responsable">
+      <mat-icon>person_add</mat-icon>
+    </button>
+  </div>
+  <app-list-activities></app-list-activities>
+</div>

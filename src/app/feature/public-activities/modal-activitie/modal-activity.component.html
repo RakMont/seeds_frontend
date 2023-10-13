@@ -1,0 +1,56 @@
+<div mat-dialog-title>
+  <div class="dialog-header">
+    <span class="dialog-title">DETALLE DE REGISTRO</span>
+  </div>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <form [formGroup]="activityForm" class="row">
+    <div class="col-md-6">
+      <mat-form-field
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Titulo de la actividad: </mat-label>
+        <input matInput formControlName="title" >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Descripción: </mat-label>
+        <input matInput formControlName="description" >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field
+        floatLabel="always"
+        appearance="fill">
+        <mat-label>Idioma de la actividad</mat-label>
+        <mat-select formControlName="len" required>
+          <mat-option class="mat-select-option" [value]="'SPANISH'">
+            Español
+          </mat-option>
+          <mat-option class="mat-select-option" [value]="'ENGLISH'">
+            Ingles
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+
+        <mat-label>Imagen de actividad</mat-label>
+        <input type="file" accept=".png, .jpg,.jpeg" multiple
+               (change)="cargarImagen($event)" id="inputFile"
+                formControlName="imageLink" >
+    </div>
+  </form>
+  </mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button [disabled]="!activityForm.valid"
+          mat-flat-button
+          (click)="sendData()"
+          color="primary">{{data.isUpdate? 'ACTUALIZAR DATOS' : 'GUARDAR DATOS'}}</button>
+</mat-dialog-actions>
