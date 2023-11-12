@@ -1,14 +1,30 @@
 <div class="nav1">
 </div>
 <nav class="navbar navbar-expand-md navbar-dark" *ngIf="!loggedIn else loggedNav">
-    <div class="leftmenu">
-    <a class="navbar-brand" routerLink="/">
-      <img src="../../../../assets/seeds.png" /></a>
-  </div>
-  <button mat-icon-button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
-          aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+   <ng-container *ngIf="!loggedIn">
+     <button class="len-button" mat-icon-button [matMenuTriggerFor]="menu">
+       <mat-icon>language</mat-icon>
+     </button>
+     <mat-menu #menu="matMenu">
+       <button (click)="changeLen('en')" mat-menu-item>
+         <mat-icon>dialpad</mat-icon>
+         <span>EN</span>
+       </button>
+       <button (click)="changeLen('es')" mat-menu-item>
+         <mat-icon>notifications_off</mat-icon>
+         <span>ES</span>
+       </button>
+     </mat-menu>
+   </ng-container>
+   <div class="leftmenu">
+     <a class="navbar-brand" routerLink="/">
+       <img src="../../../../assets/seeds.png" /></a>
+   </div>
+
+  <button mat-icon-button class="navbar-toggler" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample">
     <mat-icon>menu</mat-icon>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarButtonsExample">
     <ul class="navbar-nav justify-content-start">
       <li class="nav-item" *ngIf="!loggedIn">
@@ -19,21 +35,6 @@
       </li>
       <li class="nav-item" role="presentation" *ngIf="!loggedIn">
         <a class="nav-link" routerLink="actividades-organizacion">{{'navbar.activities' | translate}}</a>
-      </li>
-      <li class="nav-item" role="presentation" *ngIf="!loggedIn">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button (click)="changeLen('en')" mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>EN</span>
-          </button>
-          <button (click)="changeLen('es')" mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>ES</span>
-          </button>
-        </mat-menu>
       </li>
       <li class="nav-item" role="presentation" *ngIf="loggedIn">
         <div class="current-user" *ngIf="currentUser">{{currentUser.name}} {{currentUser.lastname}}</div>
@@ -47,6 +48,7 @@
         </a>
       </li>
     </ul>
+
   </div>
 </nav>
 <ng-template #loggedNav>
@@ -58,7 +60,8 @@
       </button>
       <ng-template #logoimage>
         <div class="navbar-brand">
-          <img src="../../../../assets/logo.png" /></div>
+          <img src="../../../../assets/logo.png" style="align-content: center" />
+        </div>
       </ng-template>
     </div>
     <div class="current-user-menu" role="presentation" *ngIf=" loggedIn">

@@ -4,44 +4,26 @@
   height: calc(100vh - 60px);
 }
 .container {
+  display: flex;
+  flex-direction: column;
   text-align: justify;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  padding: 24px;
+  div{
+    margin: 0 auto;
+  }
 }
 .nfi {
-  max-width: 70%;
-  max-height: 70%;
-  width:650px;
-  height:400px;
-  position:absolute;
+  max-width: 650px;
+  width:100%;
+  height:auto;
   margin-top: 80px;
 }
 
-.noavailable {
-  align-content: center;
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-bottom: 1%;
-  margin-top: 3%;
-  max-width: 100%;
-  display:flex;
-  justify-content: center;
-
-}
-
-div.noavailable2{
-  text-align:center;
-  display:flex;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 500px;
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
 .login-button{
-  width: 400px;
+  width: 300px;
   height: 50px;
   border-radius:15px;
   font-weight: 400;
@@ -54,10 +36,12 @@ div.noavailable2{
   color: whitesmoke;
 }
 
-.voluntario{
+.volunteer{
+  margin-top: 24px;
   color: #343A40;
   margin-bottom: 3%;
-  font-family: 'M PLUS 1 Code', sans-serif;
-  font-weight: 500;
-
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  text-align:center;
 }
+

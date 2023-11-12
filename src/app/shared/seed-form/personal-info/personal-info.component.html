@@ -42,7 +42,7 @@
           appearance="fill">
           <mat-label>{{'personal-info.fieldEmail' | translate}}</mat-label>
           <input required matInput formControlName="email">
-          <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+          <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()| translate}}</mat-error>
           <mat-hint>correo@gmail.vom</mat-hint>
           <mat-icon matSuffix>alternate_email</mat-icon>
         </mat-form-field>
@@ -84,10 +84,10 @@
       <div class="col-md-12 option-container">
       <span class="message">
         <mat-icon color="primary">priority_high</mat-icon>
-        ¿ Es usted un residente extrangero ?</span>
+        {{'personal-info.fieldForeignResident' | translate}}</span>
         <mat-chip-listbox class="chip-list" formControlName="isForeign">
-          <mat-chip-option [value]="true" color="accent" >Sí</mat-chip-option>
-          <mat-chip-option [value]="false" color="warn" selected>No</mat-chip-option>
+          <mat-chip-option [value]="true" color="accent" >{{'helper-label.label-positive'| translate}}</mat-chip-option>
+          <mat-chip-option [value]="false" color="warn" selected>{{'helper-label.label-negative'| translate}}</mat-chip-option>
         </mat-chip-listbox>
       </div>
       <mat-divider class="subtitle"></mat-divider>

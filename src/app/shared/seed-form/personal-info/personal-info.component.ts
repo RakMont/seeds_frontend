@@ -98,9 +98,9 @@ export class PersonalInfoComponent implements OnInit {
   }
   getErrorMessageEmail(): any {
     if (this.applicantForm.get('email').hasError('required')){
-      return 'Debe ingresar el correo';
+      return 'personal-info.fieldEmailError';
     }
-    return this.email.hasError('email') ? 'Debe ingresar un correo valido' : '';
+    return this.email.hasError('email') ? 'personal-info.fieldEmailError2' : '';
   }
 
   getErrorMessagePhone(): any {

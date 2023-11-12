@@ -9,7 +9,6 @@
   padding-top: 0;
   padding-bottom: 0;
   margin-top: -20px;
-  /*height: 80px;*/
 }
 
 ///////////////////////////////////////
@@ -28,16 +27,21 @@
   padding-top: 0;
   padding-bottom: 0;
   margin-top: -20px;
-}
-.navbar-brand img{
-  max-height: 55px;
-  max-width: 200px;
-  padding: 0;
-  margin: 0 auto;
+  .navbar-brand{
+    background-color: #26404e;
+    padding-left: 25px;
+  }
 }
 .navbar-brand{
-  background-color: #26404e;
   width: 270px;
+  margin-left: 0;
+  img{
+    max-height: 55px;
+    max-width: 200px;
+    padding: 0;
+    //padding-left: 24px;
+    margin: 0 auto;
+  }
 }
 
 .current-user-menu mat-icon{
@@ -71,16 +75,27 @@ ul{
   letter-spacing: 0.05em;
 }
 
-
+.nav-item:hover, .nav-link:focus {
+  color: white;
+  border-top: solid #FFFFFF 3px;
+}
+.navbar-toggler {
+  justify-content: left;
+  margin-top: 10px;
+  //padding-bottom: 4px;
+}
 mat-icon{
   color: aliceblue;
 }
-.leftmenu, .navbar-toggler {
-  justify-content: left;
-  /*padding: 4px 0px 0px 0px;*/
-  margin-top: 8px;
+.leftmenu {
+  left: 0;
+  margin-top: 10px;
 }
-
+.len-button{
+  justify-content: left;
+  margin-top: 10px;
+  height: 50px;
+}
 .nav1{
   background-color: #212121;
   max-height: 20px;
