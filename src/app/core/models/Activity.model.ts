@@ -2,11 +2,11 @@ export interface ActivityNewDTO {
   activityId: string;
   title: string;
   description: string;
-  lenTranslateLen: TranslateLen;
+  len: TranslateLen;
   imageLink?: string;
   registerDate;
   regVolunteerName;
-  activityTranslates?: ActivityNewDTO[];
+  translateList?: ActivityNewDTO[];
 }
 export enum TranslateLen{
   ENGLISH = 'ENGLISH',

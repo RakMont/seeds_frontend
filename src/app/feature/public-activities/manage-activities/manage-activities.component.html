@@ -12,5 +12,14 @@
       <mat-icon>person_add</mat-icon>
     </button>
   </div>
-  <app-list-activities></app-list-activities>
+  <ng-container *ngIf="!loadingActivities else loading">
+    <app-list-activities
+      (chosenAction)="chosenAction($event)"
+      [canTakeActions]="true"
+      [activitiesList]="activitiesList"></app-list-activities>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner class="loading">
+    </mat-spinner>
+  </ng-template>
 </div>

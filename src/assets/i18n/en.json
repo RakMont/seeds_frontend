@@ -2,8 +2,8 @@
   "lenVal": "en",
   "navbar": {
     "volunteer-head": "I am volunteer",
-    "want-coll": "Want Collaborate",
-    "activities": "Activities"
+    "want-coll": "I Want to Collaborate",
+    "activities": "Our Activities"
   },
 
   "want-donate": {
@@ -11,27 +11,33 @@
     "next-button": "NEXT",
     "previous-button": "BACK"
   },
+  "helper-label": {
+    "label-positive":"YES",
+    "label-negative":"NO"
+  },
   "personal-info":{
     "title": "PERSONAL INFORMATION",
-    "subtitle":"TO BE PART OF THE SEEDS PROGRAM, ENTER THE NEEDED INFORMATION",
+    "subtitle":"TO BE PART OF THE SEEDS PROGRAM, ENTER THE REQUIRED INFORMATION",
     "fieldName":"Name(s)",
-    "fieldNameHint": "Can enter more than one name",
-    "fieldNameError":"You must enter the name",
-    "fieldLastName":"Last Name(s)",
-    "fieldLastNameHint":"Can enter more than one lastname",
-    "fieldLastNameError":"You must enter the last name",
+    "fieldNameHint": "You can enter more than one name",
+    "fieldNameError":"The name is required",
+    "fieldLastName":"Lastname",
+    "fieldLastNameHint":"You can enter more than one lastname",
+    "fieldLastNameError":"The lastname is required",
     "fieldEmail":"Email",
-    "fieldEmailError":"You must enter the email",
+    "fieldEmailError":"The email is required",
+    "fieldEmailError2":"It have to be a valid email",
     "fieldPhone":"Phone",
-    "fieldPhoneError":"You must enter a cell phone",
+    "fieldPhoneError":"The cellphone is required",
     "fieldBirthdate":"Birthdate",
     "fieldId":"ID",
-    "fieldIdError":"You must enter your ID",
+    "fieldIdError":"The ID is required",
     "fieldCountry":"Country",
     "fieldCity":"City",
     "fieldAddress":"Address",
-    "fieldAddressError":"You must enter an addres",
-    "contributionTypeBanner": "CHOOSE THE CONTRIBUTION YOU WANT TO REALISE"
+    "fieldAddressError":"The address is required",
+    "fieldForeignResident": "Are you a foreign resident ?",
+    "contributionTypeBanner": "CHOOSE THE CONTRIBUTION YOU WANT TO DO"
   },
   "contribution-details":{
     "donation-details-span": "CONTRIBUTION DETAILS",

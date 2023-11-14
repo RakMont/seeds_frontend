@@ -11,8 +11,12 @@
     "next-button": "SIGUIENTE",
     "previous-button": "VOLVER"
   },
+  "helper-label": {
+    "label-positive":"SÍ",
+    "label-negative":"NO"
+  },
   "personal-info":{
-    "title": "INFORMACIÒN PERSONAL",
+    "title": "INFORMACIÓN PERSONAL",
     "subtitle":"PARA PODER SER PARTE DEL PROGRAMA SEMILLAS, INGRESA Y ENVIA TUS DATOS",
     "fieldName":"Nombre(s)",
     "fieldNameHint":"Puede Ingresar mas de un nombre",
@@ -22,6 +26,7 @@
     "fieldLastNameError":"Debe ingresar el apellido",
     "fieldEmail":"Correo",
     "fieldEmailError":"Debe ingresar el correo",
+    "fieldEmailError2":"Debe ingresar un correo valido",
     "fieldPhone":"Celular",
     "fieldPhoneError":"Debe ingresar un celular",
     "fieldBirthdate":"Fecha de nacimiento",
@@ -31,6 +36,7 @@
     "fieldCity":"Ciudad",
     "fieldAddress":"Dirección",
     "fieldAddressError":"Debe ingresar una dirección",
+    "fieldForeignResident": "¿ Es usted un residente extrangero ?",
     "contributionTypeBanner": "ELIJA EL TIPO DE APORTE QUE DESEA REALIZAR"
   },
 

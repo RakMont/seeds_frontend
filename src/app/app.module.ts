@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 //import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic' ;
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { environment } from 'src/environments/environment';
+
 import { CKEditorModule } from 'ng2-ckeditor';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -197,6 +201,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     AngularEditorModule,
     CKEditorModule,
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

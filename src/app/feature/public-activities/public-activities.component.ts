@@ -3,6 +3,8 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {AngularEditorConfig} from '@kolkov/angular-editor';
 import {UntypedFormBuilder} from "@angular/forms";
 import {TranslateService} from "@ngx-translate/core";
+import {ActivitiesService} from "../../core/services/activities.service";
+import {ActivityNewDTO} from "../../core/models/Activity.model";
 
 @Component({
   selector: 'app-public-activities',
@@ -11,6 +13,8 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class PublicActivitiesComponent implements OnInit {
   public Editor = ClassicEditor;
+  activitiesList : ActivityNewDTO[];
+
   previousLen = null;
   form = this.fb.group({
     htmlContent: [],
@@ -46,10 +50,12 @@ export class PublicActivitiesComponent implements OnInit {
   };
 
   constructor(private fb: UntypedFormBuilder,
-              private translate: TranslateService) { }
+              private translate: TranslateService,
+              private activityService: ActivitiesService) { }
 
   ngOnInit(): void {
     this.onChangeCurrentLen();
+    this.getAllActivities();
   }
 
   onReady(evento){
@@ -73,5 +79,13 @@ export class PublicActivitiesComponent implements OnInit {
         }
       }
     )
+  }
+
+  getAllActivities(){
+    this.activityService.getAllActivities().subscribe((data)=>{
+      this.activitiesList = data;
+    },(error => {
+
+    }))
   }
 }

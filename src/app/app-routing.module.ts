@@ -77,6 +77,7 @@ const routes: Routes = [
   {
     path:'admin/activities/manage-activities',
     component: ManageActivitiesComponent,
+    data :{ actions:'canTakeActions'},
     canActivate: [LoginGuardGuard]
   }
 ];

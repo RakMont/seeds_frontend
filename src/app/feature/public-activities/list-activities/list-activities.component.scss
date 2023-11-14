@@ -1,0 +1,42 @@
+.activities-list{
+ max-width: 1000px;
+  margin: 0 auto;
+}
+.activity-cont{
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap ;
+}
+
+.example-card{
+  padding: 12px;
+}
+.content{
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-align: justify;
+  text-justify: inter-word !important;
+}
+
+.card-image{
+  width: 100%;
+  //min-width: 400px;
+  max-width: 400px;
+  height: auto;
+}
+
+.second{
+  //background-color: #C02126;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.activity-options{
+  display: flex;
+  flex-direction: row;
+  margin:  auto 0;
+  justify-content: flex-end;
+}
