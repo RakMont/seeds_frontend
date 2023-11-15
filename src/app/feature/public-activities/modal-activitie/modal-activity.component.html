@@ -6,7 +6,7 @@
     <mat-icon class="close-icon">close</mat-icon>
   </button>
 </div>
-<mat-dialog-content>
+<mat-dialog-content *ngIf="!sendingData else loading">
   <form [formGroup]="activityForm" class="row">
     <div class="col-md-6">
       <mat-form-field
@@ -128,8 +128,12 @@
   </form>
   </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <button [disabled]="!activityForm.valid"
+  <button [disabled]="!activityForm.valid || sendingData "
           mat-flat-button
           (click)="sendData()"
           color="primary">{{data.isUpdate? 'ACTUALIZAR DATOS' : 'GUARDAR DATOS'}}</button>
 </mat-dialog-actions>
+<ng-template #loading>
+  <mat-spinner class="loading">
+  </mat-spinner>
+</ng-template>

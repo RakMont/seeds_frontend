@@ -64,7 +64,8 @@ export class ManageActivitiesComponent implements OnInit{
       }
     });
     dialogConfig.afterClosed().subscribe(result => {
-      if (result){
+      console.log(result)
+      if (result === 'success'){
         this.getAllActivities();
       }
     });

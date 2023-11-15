@@ -40,6 +40,7 @@ export class ContributionService {
       .set('beginDate', data?.beginDate)
       .set('paymentMethod', data?.paymentMethod)
       .set('contributionType', data?.contributionType)
+      .set('volunter_id', data?.volunter_id )
     //return this.http.get<Table>(/*environment.backend + */'./assets/statics/donations.json');
     return this.http.get<Table>(environment.backend + '/seeds/contribution/getAllRecords', { params: p });
   }

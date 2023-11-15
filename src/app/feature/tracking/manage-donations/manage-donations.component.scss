@@ -12,16 +12,31 @@ mat-card{
   font-size: 12px;
 }
 
-.button-width{
+.button-width, {
   margin-left: 4px;
   margin-top: 16px;
   padding: 16px 32px;
+  background-color: rgb(109, 182, 105) !important;
 }
 
 .volunteer-cont{
   padding-left: 32px;
 }
 
-.downloadbutton{
-  background-color: rgb(109, 182, 105);
+.downloadButton{
+  color: rgb(109, 182, 105);
+  //color: rgb(8, 76, 97) !important;
+  margin-left: 4px;
+  margin-top: 16px;
+  padding: 16px 24px;
+}
+
+.clear-button{
+  cursor: pointer;
+}
+
+.action-buttons{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 16px;
 }

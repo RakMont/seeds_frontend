@@ -12,6 +12,11 @@ import {ExportSheetComponent} from "./export-sheet/export-sheet.component";
 import {ReportType} from "../../../core/models/ContributionRecord.model";
 import {ViewDonationComponent} from "./view-donation/view-donation.component";
 import {MatDialog} from "@angular/material/dialog";
+import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
+import {MatOptionSelectionChange} from "@angular/material/core";
+import {BoxVolunteer} from "../../../core/models/Souvenir.model";
+import {map, Observable, startWith} from "rxjs";
+import {VolunteerService} from "../../../core/services/volunteer.service";
 
 @Component({
   selector: 'app-manage-donations',
@@ -22,11 +27,15 @@ export class ManageDonationsComponent implements OnInit {
   filterForm = this.fb.group({
     beginDate: ['', Validators.required],
     endDate: ['', Validators.required],
+    volunter_id: [''],
+    searchValue: [],
     contributionType: [''],
     paymentMethod: [],
     reportType: ReportType,
     activePaymentMethod: [],
   });
+  filteredSeeds: Observable<BoxVolunteer[]>;
+  loadingAll = true;
   paymentMethods: ComboElement[] = [];
   contributionTypes: ComboElement[] = [];
   tracking: TableRow[];
@@ -37,6 +46,7 @@ export class ManageDonationsComponent implements OnInit {
 
   loadingSeed = true;
   seed: any;
+  allTrackingVolunteers: BoxVolunteer[] = [];
 
   constructor( private fb: UntypedFormBuilder,
                private contributionReportService: ReportServiceService,
@@ -44,6 +54,7 @@ export class ManageDonationsComponent implements OnInit {
                private _bottomSheet: MatBottomSheet,
                private dialog: MatDialog,
                private router: Router,
+               private volunteerService: VolunteerService,
                private utilServce: UtilService) { }
 
   ngOnInit(): void {
@@ -51,6 +62,7 @@ export class ManageDonationsComponent implements OnInit {
     this.getContributionTypes();
     //this.getContributionRecords();
     this.paymentMethodActiveValueChanges();
+    this.getTrackingVolunteers();
   }
   getPaymentMethods(): void{
     const beginDate=new Date();
@@ -174,6 +186,47 @@ export class ManageDonationsComponent implements OnInit {
         donationId: id,
         edit: false
       }
+    });
+  }
+
+  selected(evento: MatAutocompleteSelectedEvent){
+    this.filterForm.get('volunter_id').setValue(evento.option.value.volunter_id);
+    console.log('selected', evento);
+  }
+  updateMySelection(evento: MatOptionSelectionChange): void{
+    this.filterForm.patchValue({
+      searchValue: evento.source.value.largename
+    });
+  }
+  private _filter(value: string): BoxVolunteer[] {
+    if (typeof  value === 'string'){
+      const filterValue = value.toLowerCase();
+      return this.allTrackingVolunteers.filter(option =>
+        option.largename.toLowerCase().includes(filterValue) ||
+        option.dni.toLowerCase().includes(filterValue) ||
+        option.email.toLowerCase().includes(filterValue)
+      );
+    }
+  }
+
+  getTrackingVolunteers(): void{
+    this.volunteerService.getComboTrackingVolunteers()
+      .subscribe((data) => {
+        this.allTrackingVolunteers = data;
+        this.loadingAll = false;
+        this.filteredSeeds = this.filterForm.get('searchValue').valueChanges.pipe(
+          startWith(''),
+          map(value => this._filter(value || '')),
+        );
+      }, (error) => {
+        this.loadingAll = false;
+      });
+  }
+
+  clearVolunteer(){
+    this.filterForm.patchValue({
+      searchValue: null,
+      volunter_id: null
     });
   }
 }

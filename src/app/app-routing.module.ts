@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'admin/ver-voluntarios',
     component: ListVolunteersComponent,
-    canActivate: [LoginGuardGuard]
+    //canActivate: [LoginGuardGuard]
   },
   {
     path: 'admin/semillas',

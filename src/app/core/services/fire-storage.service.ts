@@ -3,10 +3,13 @@ import firebase from "firebase/compat/app";
 import 'firebase/compat/storage';
 import {environment} from "../../../environments/environment";
 import { initializeApp } from "firebase/app";
-import {HttpHeaders} from "@angular/common/http";
-
+import {AngularFireStorage} from "@angular/fire/compat/storage";
 firebase.initializeApp(environment.firebaseConfig)
 //const app = initializeApp(environment.firebaseConfig);
+import { getStorage, ref, deleteObject } from "firebase/storage";
+
+const storage = getStorage();
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,20 +17,26 @@ firebase.initializeApp(environment.firebaseConfig)
 export class FireStorageService {
   storageRef = firebase.app().storage().ref();
 
-  constructor() { }
+  constructor(private fireStorage:AngularFireStorage) { }
 
 
-  async uploadImage(name: string, imgBase64: any){
-    const headersObject = new HttpHeaders();
-
+  async sendingImageToFireBase(firebaseFile: any){
     try {
-      console.log(imgBase64);
+      const filename = "activity" + Date.now();
+      const path = `activities/${filename}`
+      const uploadTask =await this.fireStorage.upload(path,firebaseFile)
+      return await uploadTask.ref.getDownloadURL()
+    }
+    catch (err){
+      return null;
 
-      let response = await this.storageRef.child("users/" + name).putString(imgBase64, 'data_url');
-      console.log(response);
-      return await response.ref.getDownloadURL();
+    }
+  }
+
+  async deleteFileFromFB(downloadUrl){
+    try {
+      return await this.fireStorage.storage.refFromURL(downloadUrl).delete();
     }catch (err){
-      console.log("err", err);
       return null;
     }
   }

@@ -23,10 +23,10 @@ export interface DialogData {
   styleUrls: ['./asign-seed-volunteer.component.scss']
 })
 export class AsignSeedVolunteerComponent implements OnInit {
-  filteredSeeds: Observable<BoxVolunteer[]>;
   seed: Volunter = null;
   sendingData = false;
   allTrackingVolunteers: BoxVolunteer[] = [];
+  filteredSeeds: Observable<BoxVolunteer[]>;
   loadingAll = true;
   startDate = new Date();
   assignForm = this.form.group({

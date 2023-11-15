@@ -33,6 +33,30 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <mat-form-field appearance="outline"
+                        [floatLabel]="'always'"
+                        class="col-md-12">
+          <mat-label>Seleccionar voluntario</mat-label>
+          <input type="text"
+                 placeholder="Lucia...."
+                 aria-label="Number"
+                 matInput
+                 required
+                 formControlName="searchValue"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete
+            (optionSelected)="selected($event)"
+            autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option class="option" (onSelectionChange)="updateMySelection($event)"
+                        *ngFor="let option of filteredSeeds | async" [value]="option">
+              {{option.largename}}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-icon matSuffix *ngIf="filterForm.get('volunter_id').value === null else clear">search</mat-icon>
+          <ng-template #clear>
+            <mat-icon class="clear-button" (click)="clearVolunteer()" matSuffix>clear</mat-icon>
+          </ng-template>
+        </mat-form-field>
         <!--          <mat-checkbox class="col-md-1" [matTooltip]="'Desactivar filtro'" formControlName="activePaymentMethod"></mat-checkbox> -->
         <!--<div class="col-md-4">
           <mat-chip-listbox class="mat-mdc-chip-set-stacked" formControlName="contributionType">
@@ -40,19 +64,22 @@
                              color="accent">{{type.name}}</mat-chip-option>
           </mat-chip-listbox>
         </div> -->
-        <div class="col-md-12">
-          <button class="button-width" (click)="buttonGetRecords()" mat-flat-button color="warn">Solicitar aportes</button>
-        </div>
 
       </form>
-      <button class="downloadbutton"
+      <!-- <button class="downloadbutton"
               (click)="openBottomSheet()"
               matTooltip="Descargar Registros"
               mat-fab color="primary">
         <mat-icon>cloud_download</mat-icon>
-      </button>
+      </button>-->
     </div>
+    <div class="action-buttons">
+      <button mat-stroked-button  class="downloadButton"
+              (click)="openBottomSheet()" color="primary"><mat-icon>cloud_download</mat-icon> Descargar</button>
 
+      <button class="button-width" (click)="buttonGetRecords()" mat-flat-button color="primary">Buscar aportes</button>
+
+    </div>
   <ng-container *ngIf="!loadingTable else loading">
       <app-generic-table
         *ngIf="data?.rows?.length"

@@ -37,6 +37,7 @@ export class ModalActivityComponent implements OnInit{
   sendingData = false;
   activity: ActivityNewDTO;
   loadedImage = false;
+  imageHasChange = false;
   constructor(private volunteerService: VolunteerService,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
               private fb: UntypedFormBuilder,
@@ -47,7 +48,6 @@ export class ModalActivityComponent implements OnInit{
               private storageService: FireStorageService
   ) { }
   ngOnInit(): void {
-    console.log("ngoninit", this.data)
     if(this.data.isUpdate) this.getActivity();
     //this.addComment();
   }
@@ -72,20 +72,6 @@ export class ModalActivityComponent implements OnInit{
         })
       })
   }
-  cargarImagen(event: any) {
-    /*let archivos = event.target.files;
-      let reader = new FileReader();
-      let nombre = "fireimg"
-      reader.readAsDataURL(archivos[0]);
-      reader.onloadend = () => {
-        this.loadedImage = true;
-        console.log(reader.result);
-        this.imagenes.push(reader.result);
-        this.storageService.uploadImage(nombre + "_" + Date.now(), reader.result).then(urlImg =>{
-          console.log(urlImg)
-        })
-*/
-    }
 
    onFileChange(event:any){
     const file = event.target.files[0]
@@ -95,21 +81,10 @@ export class ModalActivityComponent implements OnInit{
     reader.onloadend = () => {
       this.loadedImage = true;
       this.image = reader.result;
+      this.imageHasChange = true;
     }
   }
 
-  async sendingImageToFireBase(){
-    try {
-      const filename = "activity" + Date.now();
-      const path = `activities/${filename}`
-      const uploadTask =await this.fireStorage.upload(path,this.firebaseFile)
-      return await uploadTask.ref.getDownloadURL()
-    }
-    catch (err){
-      return null;
-
-    }
-  }
   sendData(){
     this.sendingData = true;
     if(this.data.isUpdate){
@@ -120,23 +95,22 @@ export class ModalActivityComponent implements OnInit{
     }
   }
   updateActivity(){
-    this.sendingImageToFireBase().then(url =>{
-      //console.log("url", url)
-      this.activityForm.get('imageLink').setValue(url);
-      this.activityService.updateActivity(this.activityForm.value)
-        .subscribe((res) => {
-          this.showMessage(res);
-          this.sendingData = false;
-          this.dialogRef.close('success');
-        },(error => {
-          this.showMessage(error.error);
-          this.sendingData = false;
-          this.dialogRef.close();
-        }))
-    })
+    this.sendingData = true;
+    if (this.imageHasChange){
+      this.storageService.deleteFileFromFB(this.activityForm.get('imageLink').value).then(success =>{
+        console.log("delete", success);
+        this.storageService.sendingImageToFireBase(this.firebaseFile).then(url =>{
+          //console.log("url", url)
+          this.activityForm.get('imageLink').setValue(url);
+          this.update();
+        })
+      })
+    } else{
+      this.update();
+    }
   }
-  saveNewActivity(){
-    this.activityService.createActivity(this.activityForm.value)
+  update(){
+    this.activityService.updateActivity(this.activityForm.value)
       .subscribe((res) => {
         this.showMessage(res);
         this.sendingData = false;
@@ -146,6 +120,23 @@ export class ModalActivityComponent implements OnInit{
         this.sendingData = false;
         this.dialogRef.close();
       }))
+  }
+  saveNewActivity(){
+    this.sendingData = true;
+    this.storageService.sendingImageToFireBase(this.firebaseFile).then(url =>{
+      this.activityForm.get('imageLink').setValue(url);
+
+      this.activityService.createActivity(this.activityForm.value)
+      .subscribe((res) => {
+        this.showMessage(res);
+        this.sendingData = false;
+        this.dialogRef.close('success');
+      },(error => {
+        this.showMessage(error.error);
+        this.sendingData = false;
+        this.dialogRef.close();
+      }))
+    })
   }
   showMessage(data: any): void{
     this.matSnackBar.openFromComponent(MessageSnackBarComponent, {
